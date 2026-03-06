@@ -20,8 +20,7 @@ const HeroSection: React.FC = () => {
                 className="object-cover"
             />
 
-            {/* DARK OVERLAY */}
-            <div className="absolute inset-0 bg-black/60"></div>
+
 
             {/* CONTENT */}
             <div className="relative z-10 max-w-[1440px] w-full px-6 md:px-10 lg:pl-[120px]">
