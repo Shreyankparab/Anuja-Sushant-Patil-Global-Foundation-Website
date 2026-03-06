@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "Anuja Sushant Patil Global Foundation",
+  description: "Empowering change through kindness and community support.",
+};
+
 export default function RootLayout({
   children,
 }: {

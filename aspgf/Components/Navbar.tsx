@@ -19,9 +19,9 @@ export function Navbar() {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About Us", href: "/AboutUS" },
+        { name: "About Us", href: "/AboutUs" },
         { name: "Our Work", href: "/OurWork" },
-        { name: "News", href: "/news" },
+        { name: "News", href: "/News" }, // Capital N as in main
         { name: "Impact", href: "/Impact" },
     ];
 
@@ -35,7 +35,7 @@ export function Navbar() {
                 <div className="flex items-center mt-14 ">
                     <div className="relative w-72 h-20 ">
                         <Image
-                            src="/logo.png"
+                            src="/Images/ASPGF_logo.webp"
                             alt="Anuja Sushant Patil Global Foundation"
                             fill
                             className="object-contain "
@@ -131,7 +131,7 @@ export function Navbar() {
             <div className="md:hidden flex items-center justify-between px-6 h-20 bg-white relative z-[110]">
                 <Link href="/" className="relative w-48 h-12">
                     <Image
-                        src="/logo.png"
+                        src="/Images/ASPGF_logo.webp"
                         alt="Logo"
                         fill
                         className="object-contain"
