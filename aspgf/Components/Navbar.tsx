@@ -54,7 +54,7 @@ export function Navbar() {
                             <p
                                 className={`${nunito.className} font-extrabold text-[#1A2E35]`}
                             >
-                                +91 45545 4545
+                                +91 9684001643
                             </p>
                         </div>
                     </div>
@@ -67,9 +67,9 @@ export function Navbar() {
                         <div>
                             <p className="text-gray-400 font-medium">Send email</p>
                             <p
-                                className={`${nunito.className} font-extrabold text-[#1A2E35] uppercase`}
+                                className={`${nunito.className} font-extrabold text-[#1A2E35] lowercase`}
                             >
-                                needhelp@company.com
+                                project.director@aspgf.org
                             </p>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export function Navbar() {
                     <div className="flex items-center gap-2">
                         <MapPin size={14} className="text-[#00715D]" />
                         <div>
-                            <p className="text-gray-400 font-medium">Baner</p>
+                            <p className="text-gray-400 font-medium">Balewadi</p>
                             <p
                                 className={`${nunito.className} font-extrabold text-[#1A2E35]`}
                             >

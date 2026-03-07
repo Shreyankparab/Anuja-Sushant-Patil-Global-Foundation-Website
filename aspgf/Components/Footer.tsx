@@ -36,7 +36,7 @@ export default function Footer() {
             {/* TOP SECTION */}
             <div className="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 pb-6">
                 {/* LEFT SIDE */}
-                <div className="flex flex-col items-start text-left pl-2 md:pl-16 lg:pl-20">
+                <div className="flex flex-col items-start text-center pl-2 md:pl-16 lg:pl-20">
                     {/* LOGO WITH WHITE BLUR EFFECT */}
                     {/* <div className="relative mb-10 w-fit group"> */}
                     {/* Soft Glass Blur Background */}
