@@ -32,6 +32,7 @@ export default function NewsSection() {
       setCanScrollLeft(scrollLeft > 10);
       setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
     }
+  };
 
   const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -147,14 +148,10 @@ export default function NewsSection() {
 
           <div className="hidden lg:block">
             <button
-
-              className={`${cabin.className} mt-10 px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 hover:scale-105 transition-transform`}
-
               onClick={() => router.push("/News")}
-              className={`${cabin.className} cursor-pointer mt-4 px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
-
+              className={`${cabin.className} cursor-pointer mt-4 px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
             >
-            Read More
+              Read More
             </button>
           </div>
         </div>
@@ -274,8 +271,7 @@ export default function NewsSection() {
       />
     </section >
   );
-}}
-
+}
 function NewsCard({ card, onOpen }: any) {
   return (
     <div
