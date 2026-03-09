@@ -288,11 +288,10 @@ export default function ImpactComponent() {
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`w-9 h-9 rounded-full text-sm font-bold transition-all ${
-                      currentPage === page
-                        ? "bg-[#00735C] text-white shadow-md"
-                        : "bg-white border border-gray-200 text-gray-500 hover:border-[#00735C] hover:text-[#00735C]"
-                    }`}
+                    className={`w-9 h-9 rounded-full text-sm font-bold transition-all ${currentPage === page
+                      ? "bg-[#00735C] text-white shadow-md"
+                      : "bg-white border border-gray-200 text-gray-500 hover:border-[#00735C] hover:text-[#00735C]"
+                      }`}
                   >
                     {page}
                   </button>
@@ -315,7 +314,11 @@ export default function ImpactComponent() {
 
       {/* VIDEO POPUP MODAL (Enhanced with Sidebar) */}
       {activeVideo && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 animate-in fade-in duration-300 backdrop-blur-md">
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 animate-in fade-in duration-300 backdrop-blur-md overflow-hidden"
+          onWheel={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+        >
           <div className="w-full h-full max-w-[1600px] flex flex-col p-4 md:p-8 relative">
             {/* Header */}
             <div className="flex justify-between items-center mb-6 gap-4">
@@ -353,10 +356,13 @@ export default function ImpactComponent() {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex-1 flex flex-col lg:flex-row gap-8 overflow-hidden items-center justify-center">
-              {/* Left: Player Section */}
+            <div
+              className="flex-1 flex flex-col lg:flex-row gap-8 overflow-hidden items-stretch justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Left: Player Section - Wrapped in a container for vertical centering */}
               <div
-                className={`transition-all duration-500 ease-in-out flex flex-col gap-4 ${showSidebar ? "lg:w-3/4" : "lg:w-full"}`}
+                className={`transition-all duration-500 ease-in-out flex flex-col justify-center gap-4 ${showSidebar ? "lg:w-3/4" : "lg:w-full"}`}
               >
                 <div className="w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
                   <iframe
@@ -399,17 +405,18 @@ export default function ImpactComponent() {
                     />
                   </div>
                 </div>
-                <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
+                <div
+                  className="flex-1 overflow-y-auto p-4 custom-scrollbar min-h-0"
+                >
                   <div className="flex flex-col gap-4">
                     {videoStories.map((video) => (
                       <div
                         key={video.id}
                         onClick={() => setActiveVideo(video)}
-                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${
-                          activeVideo.id === video.id
-                            ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
-                            : "hover:bg-white/10"
-                        }`}
+                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeVideo.id === video.id
+                          ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
+                          : "hover:bg-white/10"
+                          }`}
                       >
                         <div className="relative w-28 aspect-video rounded-lg overflow-hidden flex-shrink-0">
                           <Image

@@ -73,7 +73,7 @@ function AnimatedCard({ name1, name2, role, experience, image }: any) {
       onClick={handleClick}
       className="
         opacity-100
-        relative group w-[330px] md:w-[380px] rounded-3xl overflow-hidden shadow-xl cursor-pointer
+        relative group w-[330px] md:w-[380px] rounded-3xl overflow-hidden shadow-xl cursor-default
         transition-all duration-700
       "
     >
@@ -128,10 +128,9 @@ function AnimatedCard({ name1, name2, role, experience, image }: any) {
           p-6 text-white text-center
           bg-white/20 backdrop-blur-xl
           transform-gpu transition-all duration-500 ease-out
-          ${
-            isOpen
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100"
+          ${isOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100"
           }
         `}
       >

@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Nunito, Cabin, Caveat } from "next/font/google";
 import { FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { videoStories } from "@/data/impactData";
+import { videoStories, type ImpactVideoStory } from "@/data/impactData";
+import { Play, X, Info, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +19,8 @@ const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 export default function ImpactSection() {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeVideo, setActiveVideo] = useState<ImpactVideoStory | null>(null);
+  const [showSidebar, setShowSidebar] = useState(true);
   const sliderRef = useRef<HTMLDivElement>(null);
   const touchStart = useRef<number | null>(null);
 
@@ -55,6 +57,27 @@ export default function ImpactSection() {
     if (distance < -50) prevSlide();
     touchStart.current = null;
   };
+
+  const getYoutubeEmbedUrl = (url: string) => {
+    const regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11
+      ? `https://www.youtube.com/embed/${match[2]}?autoplay=1`
+      : null;
+  };
+
+  /* PREVENT BODY SCROLL WHEN MODAL IS OPEN */
+  useEffect(() => {
+    if (activeVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [activeVideo]);
 
   return (
     <section className="py-24 bg-[#FCFCFC] overflow-hidden">
@@ -106,7 +129,7 @@ export default function ImpactSection() {
                 onClick={() => router.push("/Impact")}
                 className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
               >
-              Explore More
+                Explore More
               </button>
             </div>
           </div>
@@ -149,7 +172,7 @@ export default function ImpactSection() {
                             className="absolute inset-0 bg-black/20 flex items-center justify-center cursor-pointer"
                             onClick={(e) => {
                               e.stopPropagation();
-                              setActiveVideo(story.videoUrl);
+                              setActiveVideo(story);
                             }}
                           >
                             <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/40 shadow-xl transition-transform duration-300 hover:scale-110">
@@ -209,33 +232,149 @@ export default function ImpactSection() {
         </div>
       </div>
 
-      {/* VIDEO POPUP (Keep existing logic) */}
+      {/* VIDEO POPUP MODAL (Enhanced with Sidebar) */}
       {activeVideo && (
         <div
-          className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 animate-in fade-in duration-300 backdrop-blur-md overflow-hidden"
           onClick={() => setActiveVideo(null)}
         >
           <div
-            className="relative w-full max-w-[900px] aspect-video bg-black rounded-xl overflow-hidden shadow-2xl"
+            className="w-full h-full max-w-[1600px] flex flex-col p-4 md:p-8 relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="absolute top-3 right-3 z-20 bg-white/90 text-black px-3 py-1 rounded-full text-sm font-bold"
-              onClick={() => setActiveVideo(null)}
-            >
-              ✕
-            </button>
-            <iframe
-              src={
-                activeVideo
-                  .replace("youtu.be/", "youtube.com/embed/")
-                  .split("?")[0]
-              }
-              title="Impact Video"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="w-full h-full"
-            />
+            {/* Header */}
+            <div className="flex justify-between items-center mb-6 gap-4">
+              <div className="flex flex-col min-w-0 flex-1">
+                <span
+                  className={`${caveat.className} text-[#00735C] text-xl font-bold italic`}
+                >
+                  Impact Stories
+                </span>
+                <h2
+                  className={`${nunito.className} text-white text-xl md:text-3xl font-extrabold leading-tight`}
+                >
+                  {activeVideo.title}
+                </h2>
+              </div>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setShowSidebar(!showSidebar)}
+                  className={`p-3 rounded-full transition-all hover:scale-110 active:scale-95 ${showSidebar ? "bg-[#00735C] text-black" : "bg-white/10 text-white"}`}
+                  title="Toggle Stories"
+                >
+                  <Info size={16} className="md:w-6 md:h-6" />
+                </button>
+                <button
+                  onClick={() => setActiveVideo(null)}
+                  className="text-white/60 hover:text-white transition-colors p-3 bg-white/10 rounded-full hover:bg-red-500/80 group"
+                  title="Close View"
+                >
+                  <X
+                    size={24}
+                    className="md:w-8 md:h-8 group-rotate-90 transition-transform duration-300"
+                  />
+                </button>
+              </div>
+            </div>
+
+            {/* Main Content Area */}
+            <div className="flex-1 flex flex-col lg:flex-row gap-8 overflow-hidden items-stretch justify-center">
+              {/* Left: Player Section - Wrapped in a container to maintain centering if needed */}
+              <div
+                className={`transition-all duration-500 ease-in-out flex flex-col justify-center gap-4 ${showSidebar ? "lg:w-3/4" : "lg:w-full"}`}
+              >
+                <div className="w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
+                  <iframe
+                    src={getYoutubeEmbedUrl(activeVideo.videoUrl) || ""}
+                    className="w-full h-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="hidden lg:flex items-center gap-6 p-4 bg-white/5 rounded-xl border border-white/5">
+                  <div className="flex items-center gap-2 text-gray-400 font-bold">
+                    <MapPin size={18} className="text-[#00735C]" />
+                    <span>{activeVideo.location}</span>
+                  </div>
+                  <div className="w-px h-6 bg-white/10" />
+                  <div className="text-gray-400 font-bold">
+                    {activeVideo.year} | {activeVideo.duration}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Sidebar Section */}
+              <div
+                className={`transition-all duration-500 ease-in-out flex flex-col bg-white/5 rounded-2xl border border-white/10 overflow-hidden ${showSidebar ? "lg:w-1/4 opacity-100" : "w-0 opacity-0 pointer-events-none border-none ml-[-2rem]"}`}
+              >
+                <div className="p-5 border-b border-white/10 flex items-center justify-between">
+                  <div className="flex items-center gap-3 text-[#00735C]">
+                    <Play size={20} fill="currentColor" />
+                    <h3
+                      className={`${nunito.className} text-white font-bold text-lg`}
+                    >
+                      More Stories
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <X
+                      size={16}
+                      className="text-white/30 cursor-pointer hover:text-red-500 transition-colors"
+                      onClick={() => setShowSidebar(false)}
+                    />
+                  </div>
+                </div>
+                <div className="flex-1 overflow-y-auto p-4 custom-scrollbar min-h-0">
+                  <div className="flex flex-col gap-4">
+                    {videoStories.map((video) => (
+                      <div
+                        key={video.id}
+                        onClick={() => setActiveVideo(video)}
+                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeVideo.id === video.id
+                          ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
+                          : "hover:bg-white/10"
+                          }`}
+                      >
+                        <div className="relative w-28 aspect-video rounded-lg overflow-hidden flex-shrink-0">
+                          <Image
+                            src={video.thumbnail}
+                            alt={video.title}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Play
+                              size={16}
+                              fill="currentColor"
+                              className="text-white"
+                            />
+                          </div>
+                          {activeVideo.id === video.id && (
+                            <div className="absolute inset-0 bg-[#00735C]/60 flex items-center justify-center">
+                              <div className="flex gap-1">
+                                <span className="w-1 h-3 bg-white animate-bounce-slow"></span>
+                                <span className="w-1 h-4 bg-white animate-bounce"></span>
+                                <span className="w-1 h-2 bg-white animate-bounce-slow"></span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4
+                            className={`${nunito.className} text-white font-bold text-sm line-clamp-2 leading-tight mb-1`}
+                          >
+                            {video.title}
+                          </h4>
+                          <span className="text-gray-500 text-[10px] uppercase font-black tracking-wider">
+                            {video.duration}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

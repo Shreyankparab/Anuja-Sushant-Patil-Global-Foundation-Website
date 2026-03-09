@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { allWorkItems } from "@/data/ourWorkData";
+import { useRouter } from "next/navigation";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -14,6 +15,7 @@ const cabin = Cabin({
 
 const OurWorkSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const isHovered = useRef(false);
@@ -113,12 +115,13 @@ const OurWorkSection = () => {
             </h2>
           </div>
 
-          <div className="flex-shrink-0 hidden xs:block">
+          <div className="flex-shrink-0 block mt-4 md:mt-0">
             <button
-              className={`group ${cabin.className} font-bold text-[16px] flex items-center gap-6 bg-[#00715D] hover:bg-[#008a73] text-white py-1.5 pl-8 pr-1.5 rounded-full shadow-md transition-all duration-300 min-w-[220px] max-w-[240px] border border-white/10`}
+              onClick={() => router.push("/OurWork")}
+              className={`group ${cabin.className} cursor-pointer font-bold text-[16px] flex items-center gap-6 bg-white hover:bg-gray-50 text-[#00715D] py-1.5 pl-8 pr-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 min-w-[220px] max-w-[240px] border border-white/20`}
             >
-              <span className="flex-grow text-left">View Works</span>
-              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-[#125B49] transition-transform duration-500 group-hover:rotate-45">
+              <span className="flex-grow text-left">View our Works</span>
+              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#00715D] text-white transition-transform duration-500 group-hover:rotate-45">
                 <svg
                   width="20"
                   height="20"
@@ -191,7 +194,13 @@ const OurWorkSection = () => {
                   >
                     {project.description}
                   </p>
-                  <button className="flex items-center gap-3 bg-[#00715D] hover:bg-[#008a73] text-white py-1.5 pl-5 pr-1.5 rounded-full font-bold text-sm min-w-[180px] justify-between border border-white/10 group/btn">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      router.push("/OurWork");
+                    }}
+                    className="flex items-center gap-3 cursor-pointer bg-[#00715D] hover:bg-[#008a73] text-white py-1.5 pl-5 pr-1.5 rounded-full font-bold text-sm min-w-[180px] justify-between border border-white/10 group/btn"
+                  >
                     <span>View Our Work</span>
                     <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center text-[#125B49] transition-transform duration-300 group-hover/btn:rotate-45">
                       <svg
