@@ -145,7 +145,7 @@ export default function NewsComponent() {
                                         setActiveCategory(cat);
                                         setIsDropdownOpen(false);
                                     }}
-                                    className={`${nunito.className} w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
+                                    className={`${nunito.className}  w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
                                         ? "bg-[#0f766e]/5 text-[#0f766e]"
                                         : "text-gray-600 hover:bg-gray-50 hover:text-[#0f766e]"
                                         }`}
@@ -163,7 +163,7 @@ export default function NewsComponent() {
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`${nunito.className} text-lg transition ${activeCategory === cat
+                            className={`${nunito.className} cursor-pointer hover:scale-110 text-lg transition ${activeCategory === cat
                                 ? "font-extrabold text-[#0f766e]"
                                 : "text-black"
                                 }`}

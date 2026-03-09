@@ -141,4 +141,34 @@ export const videoStories: ImpactVideoStory[] = [
     duration: "0:12 min",
     videoUrl: "https://youtu.be/h0vL5KjC-FI?si=R5fg0a2y_7-gQo9w",
   },
+  
+  {
+    id: 10,
+    thumbnail: "/images/impact-5.png",
+    title: "How Fee Assistance Changed My Future",
+    location: "PUNE",
+    year: "2023",
+    name: "abc",
+    designation: "Teacher, Narayana Rao Sanas School",
+    description:
+      "Being associated with the Anuja Sushant Patil Global Foundation has been a meaningful experience for me as a teacher. The foundation’s empathy-driven initiatives have positively impacted our classrooms and supported students’ academic and personal growth. Their commitment to integrity and education continues to inspire both educators and learners.",
+
+    duration: "0:12 min",
+    videoUrl: "https://youtu.be/h0vL5KjC-FI?si=R5fg0a2y_7-gQo9w",
+  },
+  {
+    id: 11,
+    thumbnail: "/images/impact-6.png",
+    title:
+      "How timely educational assistance helps students stay focused and motivated",
+    location: "PUNE",
+    year: "2023",
+    name: "abc",
+    designation: "Teacher, Narayana Rao Sanas School",
+    description:
+      "Being associated with the Anuja Sushant Patil Global Foundation has been a meaningful experience for me as a teacher. The foundation’s empathy-driven initiatives have positively impacted our classrooms and supported students’ academic and personal growth. Their commitment to integrity and education continues to inspire both educators and learners.",
+
+    duration: "1:10 min",
+    videoUrl: "https://youtu.be/h0vL5KjC-FI?si=R5fg0a2y_7-gQo9w",
+  },
 ];
