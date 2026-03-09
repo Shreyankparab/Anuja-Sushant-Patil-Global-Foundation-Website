@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,16 +15,17 @@ const cabin = Cabin({
 });
 
 export function Navbar() {
+    const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About Us", href: "/AboutUs" },
-        { name: "Our Work", href: "/OurWork" },
-        { name: "News", href: "/News" },
-        { name: "Gallary", href: "/Gallary" },
-        { name: "Impact", href: "/Impact" },
+        { name: "About Us", href: "/about-us" },
+        { name: "Our Work", href: "/our-work" },
+        { name: "News", href: "/news" },
+        { name: "Gallery", href: "/gallery" },
+        { name: "Impact", href: "/impact" },
     ];
 
     const [isVisible, setIsVisible] = useState(true);
@@ -60,14 +62,14 @@ export function Navbar() {
             document.documentElement.style.overflow = "hidden"; // Also lock html tag
             document.body.style.touchAction = "none"; // Disable touch scroll
         } else {
-            document.body.style.overflow = "auto";
-            document.documentElement.style.overflow = "auto";
-            document.body.style.touchAction = "auto";
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+            document.body.style.touchAction = "";
         }
         return () => {
-            document.body.style.overflow = "auto";
-            document.documentElement.style.overflow = "auto";
-            document.body.style.touchAction = "auto";
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+            document.body.style.touchAction = "";
         };
     }, [isMenuOpen]);
 
@@ -114,11 +116,16 @@ export function Navbar() {
                             <Phone size={14} className="text-[#00715D]" />
                             <div>
                                 <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Helpline</p>
-                                <p
-                                    className={`${cabin.className} font-extrabold text-[#1A2E35]`}
+                                <a
+                                    href="tel:+919684001643"
+                                    className="hover:underline"
                                 >
-                                    9684001643
-                                </p>
+                                    <p
+                                        className={`${cabin.className} font-extrabold text-[#1A2E35]`}
+                                    >
+                                        9684001643
+                                    </p>
+                                </a>
                             </div>
                         </div>
 
@@ -129,11 +136,16 @@ export function Navbar() {
                             <Mail size={14} className="text-[#00715D]" />
                             <div>
                                 <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Send email</p>
-                                <p
-                                    className={`${cabin.className} font-extrabold text-[#1A2E35] lowercase`}
+                                <a
+                                    href="mailto:project.director@aspgf.org"
+                                    className="hover:underline"
                                 >
-                                    project.director@aspgf.org
-                                </p>
+                                    <p
+                                        className={`${cabin.className} font-extrabold text-[#1A2E35] lowercase`}
+                                    >
+                                        project.director@aspgf.org
+                                    </p>
+                                </a>
                             </div>
                         </div>
 
@@ -185,7 +197,7 @@ export function Navbar() {
 
                     {/* CONTACT BUTTON */}
                     <Link
-                        href="/contactUs"
+                        href="/contact-us"
                         className="h-16 px-10 bg-[#A828C6] hover:bg-[#9122AB] transition-all flex items-center gap-2 text-white font-black text-sm uppercase tracking-widest cursor-pointer whitespace-nowrap"
                     >
                         <Phone size={18} fill="white" />
@@ -231,13 +243,13 @@ export function Navbar() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className={`${nunito.className} text-xl font-extrabold transition-colors flex items-center justify-between group ${isActive ? "text-[#00735C]" : "text-[#1A2E35] hover:text-[#00735C]"
+                                        className={`${nunito.className} text-xl font-extrabold transition-colors flex items-center justify-between group ${isActive ? "text-[#00735C]" : "text-[#1A2E35] xl:hover:text-[#00735C]"
                                             }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         {link.name}
                                         <div
-                                            className={`w-2 h-2 rounded-full bg-[#00735C] transition-opacity ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                                            className={`w-2 h-2 rounded-full bg-[#00735C] transition-opacity ${isActive ? "opacity-100" : "opacity-0 xl:group-hover:opacity-100"
                                                 }`}
                                         />
                                     </Link>
@@ -250,16 +262,20 @@ export function Navbar() {
                         <div className="bg-gray-50 p-4 rounded-2xl space-y-3">
                             <div className="flex items-center gap-3 text-sm text-gray-500">
                                 <Phone size={16} className="text-[#00735C]" />
-                                <span className={`${cabin.className} font-bold`}>9684001643</span>
+                                <a href="tel:+919684001643" className="hover:underline">
+                                    <span className={`${cabin.className} font-bold`}>9684001643</span>
+                                </a>
                             </div>
                             <div className="flex items-center gap-3 text-sm text-gray-500 lowercase tracking-tighter">
                                 <Mail size={16} className="text-[#00735C]" />
-                                <span className={`${cabin.className} font-bold`}>project.director@aspgf.org</span>
+                                <a href="mailto:project.director@aspgf.org" className="hover:underline">
+                                    <span className={`${cabin.className} font-bold`}>project.director@aspgf.org</span>
+                                </a>
                             </div>
                         </div>
 
                         <Link
-                            href="/contactUs"
+                            href="/contact-us"
                             onClick={() => setIsMenuOpen(false)}
                             className="w-full py-4 bg-[#A828C6] text-white rounded-2xl flex items-center justify-center gap-2 font-black uppercase tracking-[0.1em] shadow-lg shadow-purple-500/20"
                         >

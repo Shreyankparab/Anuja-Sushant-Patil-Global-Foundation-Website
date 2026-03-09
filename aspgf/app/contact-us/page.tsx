@@ -448,9 +448,14 @@ export default function ContactPage() {
                                 Helpline
                             </p>
 
-                            <p className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] leading-tight`}>
-                                +91 9684001643
-                            </p>
+                            <a
+                                href="tel:+919684001643"
+                                className="hover:underline transition-all"
+                            >
+                                <p className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] leading-tight`}>
+                                    +91 9684001643
+                                </p>
+                            </a>
                         </div>
 
                         {/* Email */}
@@ -463,9 +468,14 @@ export default function ContactPage() {
                                 Email
                             </p>
 
-                            <p className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] break-all leading-tight`}>
-                                project.director@aspgf.org
-                            </p>
+                            <a
+                                href="mailto:project.director@aspgf.org"
+                                className="hover:underline transition-all"
+                            >
+                                <p className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] break-all leading-tight`}>
+                                    project.director@aspgf.org
+                                </p>
+                            </a>
                         </div>
                     </div>
 

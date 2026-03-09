@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { pageContent } from "@/data/gallary";
-import GalleryModal from "@/Components/Gallary/GalleryModal";
+import { pageContent } from "@/data/gallery";
+import GalleryModal from "@/Components/Gallery/GalleryModal";
 
 import { Nunito, Cabin, Caveat } from "next/font/google";
 
@@ -17,7 +17,7 @@ const nunito = Nunito({ subsets: ["latin"] });
 const cabin = Cabin({ subsets: ["latin"] });
 const caveat = Caveat({ subsets: ["latin"] });
 
-export default function EventsGallarys() {
+export default function EventsGallery() {
   /* ---------------- DATA ---------------- */
   const { categories, events } = pageContent;
 
@@ -139,8 +139,8 @@ export default function EventsGallarys() {
 
         <div className="absolute bottom-0 left-0 w-full h-2 bg-[#A828C6]" />
       </div>
-     
-     
+
+
       {/* CATEGORY FILTER */}
 
       <div className="mt-10 text-center px-6">
@@ -155,9 +155,8 @@ export default function EventsGallarys() {
 
             <ChevronDown
               size={18}
-              className={`transition-transform ${
-                isDropdownOpen ? "rotate-180" : ""
-              }`}
+              className={`transition-transform ${isDropdownOpen ? "rotate-180" : ""
+                }`}
             />
           </button>
 
@@ -170,11 +169,10 @@ export default function EventsGallarys() {
                     setActiveCategory(cat);
                     setIsDropdownOpen(false);
                   }}
-                  className={`w-full text-left px-5 py-3 text-sm font-semibold ${
-                    activeCategory === cat
-                      ? "bg-[#0f766e]/10 text-[#0f766e]"
-                      : "text-black hover:bg-gray-50"
-                  }`}
+                  className={`w-full text-left px-5 py-3 text-sm font-semibold ${activeCategory === cat
+                    ? "bg-[#0f766e]/10 text-[#0f766e]"
+                    : "text-black hover:bg-gray-50"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -190,11 +188,10 @@ export default function EventsGallarys() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`${nunito.className} text-lg transition hover:scale-110 cursor-pointer ${
-                activeCategory === cat
-                  ? "font-extrabold text-[#0f766e]"
-                  : "text-black"
-              }`}
+              className={`${nunito.className} text-lg transition hover:scale-110 cursor-pointer ${activeCategory === cat
+                ? "font-extrabold text-[#0f766e]"
+                : "text-black"
+                }`}
             >
               {cat}
             </button>
@@ -272,9 +269,8 @@ export default function EventsGallarys() {
               <button
                 key={page}
                 onClick={() => setCurrentPage(page)}
-                className={`w-9 h-9 rounded-full ${
-                  currentPage === page ? "bg-[#0f766e] text-white" : "border"
-                }`}
+                className={`w-9 h-9 rounded-full ${currentPage === page ? "bg-[#0f766e] text-white" : "border"
+                  }`}
               >
                 {page}
               </button>

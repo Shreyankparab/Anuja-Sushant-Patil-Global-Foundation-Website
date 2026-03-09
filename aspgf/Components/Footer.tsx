@@ -22,12 +22,12 @@ export default function Footer() {
 
     const links = [
         { label: "Home", href: "/" },
-        { label: "About us", href: "/AboutUs" },
-        { label: "Our Work", href: "/OurWork" },
-        { label: "News", href: "/News" },
-        { label: "Gallery", href: "/Gallery" },
-        { label: "Impact", href: "/Impact" },
-        { label: "Contact Us", href: "/contactUs" },
+        { label: "About us", href: "/about-us" },
+        { label: "Our Work", href: "/our-work" },
+        { label: "News", href: "/news" },
+        { label: "Gallery", href: "/gallery" },
+        { label: "Impact", href: "/impact" },
+        { label: "Contact Us", href: "/contact-us" },
     ];
 
     return (
@@ -110,14 +110,24 @@ export default function Footer() {
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-2">
                                     <Image src="/mail.svg" width={20} height={20} alt="mail" />
                                 </div>
-                                <span>project.director@aspgf.org</span>
+                                <a
+                                    href="mailto:project.director@aspgf.org"
+                                    className="hover:underline transition-all"
+                                >
+                                    project.director@aspgf.org
+                                </a>
                             </div>
 
                             <div className="flex items-center gap-3 text-[16px] font-bold">
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-2">
                                     <Image src="/call.svg" width={20} height={20} alt="phone" />
                                 </div>
-                                <span>96840 01643</span>
+                                <a
+                                    href="tel:+919684001643"
+                                    className="hover:underline transition-all"
+                                >
+                                    96840 01643
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -132,18 +142,18 @@ export default function Footer() {
                 </p>
 
                 <div className="flex justify-between md:justify-end items-center w-full md:w-auto gap-6 md:gap-10 font-bold">
-                    <a
-                        href="#"
+                    <Link
+                        href="/privacy-policy"
                         className="opacity-70 hover:opacity-100 transition-opacity"
                     >
                         Privacy Policy
-                    </a>
-                    <a
-                        href="#"
+                    </Link>
+                    <Link
+                        href="/terms-of-service"
                         className="opacity-70 hover:opacity-100 transition-opacity"
                     >
                         Terms of Service
-                    </a>
+                    </Link>
                 </div>
             </div>
         </footer>

@@ -10,14 +10,6 @@ export default function LoadingHandler() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        setIsLoading(true);
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 600); // Swifter transition
-        return () => clearTimeout(timer);
-    }, [pathname, searchParams]);
-
-    useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 800);
