@@ -24,6 +24,7 @@ export function Navbar() {
     { name: "About Us", href: "/AboutUs" },
     { name: "Our Work", href: "/OurWork" },
     { name: "News", href: "/News" }, // Capital N as in main
+    { name: "Gallary", href: "/Gallary" },
     { name: "Impact", href: "/Impact" },
   ];
 
@@ -187,7 +188,10 @@ export function Navbar() {
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <li key={link.name} className="transition-colors hover:scale-110 hover:duration-100 group">
+                  <li
+                    key={link.name}
+                    className="transition-colors hover:scale-110 hover:duration-100 group"
+                  >
                     <Link
                       href={link.href}
                       className={`cursor-pointer  whitespace-nowrap transition-all duration-300  ${
