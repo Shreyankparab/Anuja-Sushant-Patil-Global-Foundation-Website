@@ -14,6 +14,18 @@ const cabin = Cabin({
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef(null);
+  const handleScroll = () => {
+    const element = document.getElementById("our-work");
+    if (element) {
+      // offset calculation (optional but helpful if you have a fixed header)
+      const topOffset = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: topOffset,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -24,14 +36,14 @@ const HeroSection: React.FC = () => {
         duration: 1.2,
         stagger: 0.2,
         ease: "power3.out",
-        delay: 0.3
+        delay: 0.3,
       });
 
       // Subtle parallax or zoom on background image
       gsap.from(".hero-bg", {
         scale: 1.1,
         duration: 3,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     }, heroRef);
 
@@ -39,7 +51,10 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative w-full h-[90vh] overflow-hidden flex items-center">
+    <section
+      ref={heroRef}
+      className="relative w-full h-[90vh] overflow-hidden flex items-center"
+    >
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 hero-bg">
         <Image
@@ -81,6 +96,7 @@ const HeroSection: React.FC = () => {
           {/* BUTTON */}
           <div className="mt-10">
             <button
+              onClick={handleScroll}
               className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
             >
               DISCOVER MORE
