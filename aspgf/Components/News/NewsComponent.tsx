@@ -104,6 +104,17 @@ export default function NewsComponent() {
         currentPage * ITEMS_PER_PAGE
     );
 
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        if (gridRef.current) {
+            // Scroll to just above the grid
+            const yOffset = -150;
+            const element = gridRef.current;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="bg-[#f5f5f5]">
             {/* HEADER */}
@@ -176,7 +187,7 @@ export default function NewsComponent() {
                 {/* GRID */}
                 <div
                     ref={gridRef}
-                    className="flex flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6 mb-12"
+                    className="flex flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6 mb-12 scroll-mt-32"
                 >
                     {paginatedNews.map((item, index) => (
                         <div
@@ -227,7 +238,7 @@ export default function NewsComponent() {
                 {totalPages > 1 && (
                     <div className="flex items-center justify-center gap-2 pb-10">
                         <button
-                            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                             disabled={currentPage === 1}
                             className="flex items-center gap-1 px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-500 hover:border-[#0f766e] hover:text-[#0f766e] disabled:opacity-40 transition-all bg-white"
                         >
@@ -237,7 +248,7 @@ export default function NewsComponent() {
                         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                             <button
                                 key={page}
-                                onClick={() => setCurrentPage(page)}
+                                onClick={() => handlePageChange(page)}
                                 className={`w-9 h-9 rounded-full text-sm font-bold transition-all ${currentPage === page
                                     ? "bg-[#0f766e] text-white shadow-md"
                                     : "bg-white border border-gray-200 text-gray-500 hover:border-[#0f766e] hover:text-[#0f766e]"
@@ -248,7 +259,7 @@ export default function NewsComponent() {
                         ))}
 
                         <button
-                            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                            onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                             disabled={currentPage === totalPages}
                             className="flex items-center gap-1 px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-500 hover:border-[#0f766e] hover:text-[#0f766e] disabled:opacity-40 transition-all bg-white"
                         >

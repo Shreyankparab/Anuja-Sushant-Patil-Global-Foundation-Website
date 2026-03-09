@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Nunito, Cabin } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
+import { Suspense } from "react";
+import LoadingHandler from "@/Components/Common/LoadingHandler";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +31,10 @@ const cabin = Cabin({
 export const metadata: Metadata = {
   title: "Anuja Sushant Patil Global Foundation",
   description: "Empowering change through kindness and community support.",
+  icons: {
+    icon: "/Images/simple-peacock.svg",
+    shortcut: "/Images/simple-peacock.svg",
+  }
 };
 
 export default function RootLayout({
@@ -41,6 +47,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${cabin.variable} antialiased overflow-x-hidden`}
       >
+        <Suspense fallback={null}>
+          <LoadingHandler />
+        </Suspense>
         {/* Prevent horizontal overflow globally */}
         <div className="relative w-full overflow-x-hidden">
 

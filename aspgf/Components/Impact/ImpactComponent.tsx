@@ -25,6 +25,14 @@ export default function ImpactComponent() {
   const headerRef = useRef(null); // Added for header animation
   const [activeVideo, setActiveVideo] = useState<VideoStory | null>(null);
   const [showSidebar, setShowSidebar] = useState(true);
+  const storiesSectionRef = useRef<HTMLElement>(null);
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    if (storiesSectionRef.current) {
+      storiesSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   /* HEADER ANIMATION LOGIC */
   useEffect(() => {
@@ -62,17 +70,19 @@ export default function ImpactComponent() {
   }, [activeVideo]);
 
   const featuredVideo = videoStories.find((v) => v.isFeatured);
-  const stackedVideos = videoStories.filter((v) => v.id === 2 || v.id === 3);
-  const gridVideos = videoStories.filter((v) => v.id > 3);
+  const otherVideos = videoStories.filter((v) => !v.isFeatured);
 
-  const ITEMS_PER_PAGE = 3;
+  const ITEMS_PER_PAGE = 8; // 2 for stacked + 6 for grid
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(gridVideos.length / ITEMS_PER_PAGE);
-  const paginatedGridVideos = gridVideos.slice(
+  const totalPages = Math.ceil(otherVideos.length / ITEMS_PER_PAGE);
+  const currentPageVideos = otherVideos.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE,
   );
+
+  const stackedVideos = currentPageVideos.slice(0, 2);
+  const gridVideos = currentPageVideos.slice(2);
 
   const getYoutubeEmbedUrl = (url: string) => {
     const regExp =
@@ -121,7 +131,10 @@ export default function ImpactComponent() {
       {/* VIDEO STORIES SECTION... */}
 
       {/* VIDEO STORIES SECTION (Light Theme) */}
-      <section className="py-20 px-6 bg-white text-black border-t border-gray-100">
+      <section
+        ref={storiesSectionRef}
+        className="py-20 px-6 bg-white text-black border-t border-gray-100 scroll-mt-20"
+      >
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="mb-12">
@@ -183,7 +196,7 @@ export default function ImpactComponent() {
 
             {/* Stacked (Right Two) */}
             <div className="flex flex-col gap-6">
-              {stackedVideos.map((video) => (
+              {stackedVideos.map((video: VideoStory) => (
                 <div
                   key={video.id}
                   className="group bg-white rounded-lg overflow-hidden flex flex-col flex-1 shadow-sm border border-gray-100"
@@ -229,7 +242,7 @@ export default function ImpactComponent() {
 
           {/* Bottom Grid: 3 Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {paginatedGridVideos.map((video) => (
+            {gridVideos.map((video: VideoStory) => (
               <div
                 key={video.id}
                 className="group bg-white rounded-lg overflow-hidden flex flex-col shadow-sm border border-gray-100"
@@ -276,7 +289,7 @@ export default function ImpactComponent() {
           {totalPages > 1 && (
             <div className="flex items-center justify-center gap-2">
               <button
-                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
                 className="flex items-center gap-1 px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-500 hover:border-[#00735C] hover:text-[#00735C] disabled:opacity-40 transition-all bg-white"
               >
@@ -287,7 +300,7 @@ export default function ImpactComponent() {
                 (page) => (
                   <button
                     key={page}
-                    onClick={() => setCurrentPage(page)}
+                    onClick={() => handlePageChange(page)}
                     className={`w-9 h-9 rounded-full text-sm font-bold transition-all ${currentPage === page
                       ? "bg-[#00735C] text-white shadow-md"
                       : "bg-white border border-gray-200 text-gray-500 hover:border-[#00735C] hover:text-[#00735C]"
@@ -300,7 +313,7 @@ export default function ImpactComponent() {
 
               <button
                 onClick={() =>
-                  setCurrentPage((p) => Math.min(totalPages, p + 1))
+                  handlePageChange(Math.min(totalPages, currentPage + 1))
                 }
                 disabled={currentPage === totalPages}
                 className="flex items-center gap-1 px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-500 hover:border-[#00735C] hover:text-[#00735C] disabled:opacity-40 transition-all bg-white"

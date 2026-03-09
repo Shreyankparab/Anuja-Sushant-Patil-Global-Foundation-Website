@@ -84,8 +84,15 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
         }
     }, [rest.length, activeCategory, featured, currentPage]);
 
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        if (containerRef.current) {
+            containerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     return (
-        <div ref={containerRef} className={`${cabin.className} flex-1 min-w-0`}>
+        <div ref={containerRef} className={`${cabin.className} flex-1 min-w-0 scroll-mt-32`}>
 
             {/* Featured Card */}
             {featured && (
@@ -164,7 +171,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
             {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2">
                     <button
-                        onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                        onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                         disabled={currentPage === 1}
                         className="flex items-center gap-1 px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-500 hover:border-[#00735C] hover:text-[#00735C] disabled:opacity-40 transition-all"
                     >
@@ -174,7 +181,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                         <button
                             key={page}
-                            onClick={() => setCurrentPage(page)}
+                            onClick={() => handlePageChange(page)}
                             className={`w-9 h-9 rounded-full text-sm font-bold transition-all ${currentPage === page
                                 ? "bg-[#00735C] text-white shadow-md"
                                 : "border border-gray-200 text-gray-500 hover:border-[#00735C] hover:text-[#00735C]"
@@ -185,7 +192,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                     ))}
 
                     <button
-                        onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                        onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                         disabled={currentPage === totalPages}
                         className="flex items-center gap-1 px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-500 hover:border-[#00735C] hover:text-[#00735C] disabled:opacity-40 transition-all"
                     >
