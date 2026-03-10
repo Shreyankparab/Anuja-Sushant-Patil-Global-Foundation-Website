@@ -25,7 +25,7 @@ export default function Footer() {
         { label: "About us", href: "/AboutUs" },
         { label: "Our Work", href: "/OurWork" },
         { label: "News", href: "/News" },
-        { label: "Gallery", href: "/Gallery" },
+        { label: "Gallery", href: "/Gallary" },
         { label: "Impact", href: "/Impact" },
         { label: "Contact Us", href: "/contactUs" },
     ];
