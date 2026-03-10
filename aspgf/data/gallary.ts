@@ -59,6 +59,7 @@ export const pageContent = {
       categories: "Health",
       date: "15/09/2025",
       images: [
+
         "/Images/Gallery/malhar-Bday/20251025_114825.webp",
         "/Images/Gallery/malhar-Bday/20251025_115439.webp",
         "/Images/Gallery/malhar-Bday/20251025_120134.webp",
@@ -68,6 +69,17 @@ export const pageContent = {
         "/Images/Gallery/malhar-Bday/20251025_122945.webp",
         "/Images/Gallery/malhar-Bday/20251025_123325.webp",
         "/Images/Gallery/malhar-Bday/20251025_122242.webp",
+
+        "/Images/Gallery/Malhar-Bday/20251025_114825.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_115439.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_120134.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_122134.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_122226.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_122242.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_122945.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_123325.webp",
+        "/Images/Gallery/Malhar-Bday/20251025_122242.webp",
+
 
       ],
     },

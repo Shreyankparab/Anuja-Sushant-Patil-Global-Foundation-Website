@@ -1,4 +1,4 @@
-import EventsGallarys from "@/Components/Gallary/GallaryComponent";
+import EventsGallarys from "@/Components/Gallery/GalleryComponent";
 // import EventsPage from "@/Components/Gallary/GallaryComponent";
 // import NewsComponent from "@/Components/Gallary/GallaryComponent";
 

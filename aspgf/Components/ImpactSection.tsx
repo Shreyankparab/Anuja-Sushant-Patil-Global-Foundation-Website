@@ -147,7 +147,7 @@ export default function ImpactSection() {
             {/* BUTTON - Desktop Only */}
             <div className="mt-10 hidden lg:block">
               <button
-                onClick={() => router.push("/Impact")}
+                onClick={() => router.push("/impact")}
                 className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
               >
                 Explore More
@@ -244,7 +244,7 @@ export default function ImpactSection() {
               {/* BUTTON - Mobile Only */}
               <div className="lg:hidden">
                 <button
-                  onClick={() => router.push("/Impact")}
+                  onClick={() => router.push("/impact")}
                   className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
                 >
                   Explore More

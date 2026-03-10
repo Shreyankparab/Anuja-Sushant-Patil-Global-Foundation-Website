@@ -68,7 +68,7 @@ const OurWorkSection = () => {
 
   return (
     <section
-  
+
       id="our-work"
       className="relative w-full bg-white py-16 md:pt-32 md:pb-24 mt-[-1px] overflow-hidden"
     >
@@ -118,11 +118,11 @@ const OurWorkSection = () => {
 
           <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:justify-start mt-4 md:mt-0">
             <button
-              onClick={() => router.push("/OurWork")}
-              className={`group ${cabin.className} cursor-pointer font-bold text-[14px] md:text-[16px] flex items-center gap-4 md:gap-6 bg-white hover:bg-gray-50 text-[#00715D] py-1 md:py-1.5 pl-6 md:pl-8 pr-1 md:pr-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 min-w-0 md:min-w-[220px] max-w-[240px] border border-white/20`}
+              onClick={() => router.push("/our-work")}
+              className={`group ${cabin.className} cursor-pointer font-bold text-[14px] md:text-[16px] flex items-center gap-4 md:gap-6 bg-white xl:hover:bg-gray-50 text-[#00715D] py-1 md:py-1.5 pl-6 md:pl-8 pr-1 md:pr-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 min-w-0 md:min-w-[220px] max-w-[240px] border border-white/20`}
             >
               <span className="flex-grow text-left">View our Works</span>
-              <span className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#00715D] text-white transition-transform duration-500 group-hover:rotate-45 flex-shrink-0">
+              <span className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#00715D] text-white transition-transform duration-500 xl:group-hover:rotate-45 flex-shrink-0">
                 <svg
                   width="18"
                   height="18"
@@ -199,7 +199,7 @@ const OurWorkSection = () => {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      router.push(`/OurWork#project-${project.id}`);
+                      router.push(`/our-work#project-${project.id}`);
                     }}
                     className="flex items-center gap-3 cursor-pointer bg-[#00715D] hover:bg-[#008a73] text-white py-1.5 pl-5 pr-1.5 rounded-full font-bold text-sm min-w-[180px] justify-between border border-white/10 group/btn"
                   >
