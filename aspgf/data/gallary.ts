@@ -3,7 +3,7 @@ export const pageContent = {
     category: "News & Events",
     title: "Community-focused work for a better tomorrow.",
   },
-  categories: ["All", "Health", "Old Age", "Education"],
+  categories: ["All", "Health", "Old Age", "Education", "Orphanage"],
   events: [
     {
       id: "poona-blind-school-1",
@@ -34,7 +34,8 @@ export const pageContent = {
     {
       id: "mauli-krupa-1",
       slug: "spreading-joy-this-christmas-mauli-krupa-1",
-      title: "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
+      title:
+        "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
       location: "Pune",
       categories: "Education",
       date: "12/08/2025",
@@ -68,7 +69,6 @@ export const pageContent = {
         "/Images/Gallery/Malhar-Bday/20251025_122945.webp",
         "/Images/Gallery/Malhar-Bday/20251025_123325.webp",
         "/Images/Gallery/Malhar-Bday/20251025_122242.webp",
-
       ],
     },
     {
@@ -91,6 +91,46 @@ export const pageContent = {
         "/Images/impact-6.png",
         "/Images/impact-7.png",
         "/Images/WhatWeDo1.webp",
+      ],
+    },
+    {
+      id: "mauli-krupa",
+      slug: "Swarnanagari-Old-Age-Home-Balewadi",
+      title: "Swarnanagari Old Age Home ",
+      location: "Balewadi",
+      categories: "Old Age",
+      date: "12/08/2025",
+      images: [
+        "/Images/Gallery/DSC04220.webp",
+        "/Images/Gallery/DSC04221.webp",
+        "/Images/Gallery/DSC04228.webp",
+        "/Images/Gallery/DSC04239.webp",
+        "/Images/Gallery/DSC04241.webp",
+        "/Images/Gallery/DSC04245.webp",
+      ],
+    },
+    {
+      id: "mauli-krupa",
+      slug: "Beggar-Rehabilitation-Center-Phulenagar-Pune",
+      title: "Beggar Rehabilitation Center ",
+      location: "Phulenagar, Pune",
+      categories: "Orphanage",
+      date: "12/08/2025",
+      images: [
+        "/Images/Gallery/Begger/20251115_110959.webp",
+        "/Images/Gallery/Begger/20251115_113257.webp",
+        "/Images/Gallery/Begger/20251115_113345.webp",
+        "/Images/Gallery/Begger/20251115_113459.webp",
+        "/Images/Gallery/Begger/20251115_114025.webp",
+        "/Images/Gallery/Begger/20251115_114219.webp",
+        "/Images/Gallery/Begger/20251115_114343.webp",
+        "/Images/Gallery/Begger/20251115_120150.webp",
+        "/Images/Gallery/Begger/20251115_121248.webp",
+        "/Images/Gallery/Begger/20251115_121341.webp",
+        "/Images/Gallery/Begger/20251115_121810.webp",
+        "/Images/Gallery/Begger/20251115_121940.webp",
+        "/Images/Gallery/Begger/20251115_130823.webp",
+        "/Images/Gallery/Begger/20251115_131522.webp",
       ],
     },
   ],
