@@ -52,7 +52,7 @@ export default function Footer() {
                     {/* DESCRIPTION */}
                     <p className="max-w-xl text-[18px] leading-relaxed mb-6 opacity-90 font-medium text-center">
                         Committed to education, community outreach, and inclusive social
-                        impact through structured initiatives
+                        impact through structured initiatives      
                     </p>
 
                     {/* SOCIAL ICONS */}
