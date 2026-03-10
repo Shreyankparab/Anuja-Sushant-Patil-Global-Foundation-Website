@@ -4,6 +4,7 @@ import React from "react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { Banknote, Building2, CreditCard, Landmark } from "lucide-react";
 import DonateForm from "./DonateForm";
+import Image from "next/image";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
@@ -70,18 +71,38 @@ export default function DonateUsComponent() {
 
                         <div className="bg-[#00735C] rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden transition-all hover:shadow-xl hover:shadow-[#00735C]/20">
                             <div className="absolute right-[-20px] bottom-[-20px] w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-                            <div className="relative z-10">
-                                <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support Our Cause</h3>
-                                <p className={`${cabin.className} text-white/90 mb-8 text-lg leading-relaxed italic`}>
-                                    &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
-                                </p>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-sm">
-                                        <Landmark size={24} />
+
+                            <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
+                                {/* Left: 60% Content */}
+                                <div className="w-full md:w-[60%]">
+                                    <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support Our Cause</h3>
+                                    <p className={`${cabin.className} text-white/90 mb-8 text-lg leading-relaxed italic`}>
+                                        &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
+                                    </p>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-sm">
+                                            <Landmark size={24} />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">Pay via UPI</p>
+                                            <p className="font-bold text-lg">project.director@aspgf</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">Pay via UPI</p>
-                                        <p className="font-bold text-lg">project.director@aspgf</p>
+                                </div>
+
+                                {/* Right: 40% QR Image */}
+                                <div className="w-full md:w-[40%] flex justify-center md:justify-end">
+                                    <div className="bg-white p-5 rounded-[32px] shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 cursor-pointer">
+                                        <div className="relative p-2 bg-gray-50 rounded-2xl border border-gray-100">
+                                            <Image
+                                                src="/Images/donation-qr.png"
+                                                alt="Donation QR Code"
+                                                width={260}
+                                                height={260}
+                                                className="rounded-xl"
+                                            />
+                                        </div>
+                                        <p className={`${nunito.className} text-[#00735C] text-xs font-black text-center mt-4 uppercase tracking-[0.2em]`}>Scan to Support</p>
                                     </div>
                                 </div>
                             </div>
