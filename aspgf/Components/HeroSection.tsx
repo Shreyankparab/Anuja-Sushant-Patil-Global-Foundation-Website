@@ -57,12 +57,21 @@ const HeroSection: React.FC = () => {
     >
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 hero-bg">
+        {/* Desktop Hero Image */}
         <Image
           src="/Images/hero5.svg"
-          alt="Hero Background"
+          alt="Hero Background Desktop"
           fill
           priority
-          className="object-cover"
+          className="hidden md:block object-cover"
+        />
+        {/* Mobile Hero Image */}
+        <Image
+          src="/Images/mobile-hero-img.svg"
+          alt="Hero Background Mobile"
+          fill
+          priority
+          className="block md:hidden object-cover"
         />
         {/* Optional overlay for better text contrast if needed */}
         <div className="absolute inset-0 bg-black/30"></div>

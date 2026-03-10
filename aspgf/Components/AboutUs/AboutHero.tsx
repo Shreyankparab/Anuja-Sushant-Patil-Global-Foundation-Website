@@ -43,11 +43,20 @@ export default function AboutHero() {
         >
             {/* Background Image */}
             <div className="absolute inset-0 z-0 hero-bg">
+                {/* Desktop Background Image */}
                 <Image
                     src="/Images/About_Hero.webp"
                     alt="Happy children in community"
                     fill
-                    className="object-cover object-center"
+                    className="hidden md:block object-cover object-center"
+                    priority
+                />
+                {/* Mobile Background Image */}
+                <Image
+                    src="/Images/hero-image-about-us.svg"
+                    alt="Happy children in community mobile"
+                    fill
+                    className="block md:hidden object-cover object-center"
                     priority
                 />
                 {/* Overlay for text readability */}

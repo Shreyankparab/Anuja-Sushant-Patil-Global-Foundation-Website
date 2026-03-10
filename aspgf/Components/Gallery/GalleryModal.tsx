@@ -56,8 +56,8 @@ export default function GalleryModal({
       className="fixed inset-0 z-[9999] flex flex-col md:flex-row bg-black/95 backdrop-blur-xl"
       onClick={onClose}
     >
-      {/* Top Bar */}
-      <div className="absolute top-0 inset-x-0 h-20 flex items-center justify-between px-6 z-[100] pointer-events-none">
+      {/* Top Bar Actions */}
+      <div className="absolute top-0 inset-x-0 h-24 flex items-center justify-between px-8 z-[200] pointer-events-none">
         <div
           className={`${cabin.className} text-white/50 text-sm font-bold pointer-events-auto bg-black/20 px-4 py-2 rounded-full backdrop-blur-md`}
         >
@@ -116,9 +116,9 @@ export default function GalleryModal({
 
       {/* Sidebar/Overlay Info */}
       <div
-        className={`fixed md:relative bottom-0 left-0 right-0 md:top-0 w-full md:w-[400px] h-[60vh] md:h-full bg-black/80 md:bg-black/40 backdrop-blur-2xl md:backdrop-blur-none border-t md:border-t-0 md:border-l border-white/10 p-6 md:p-8 transition-all duration-500 z-[150] overflow-y-auto no-scrollbar ${showInfo
-            ? "translate-y-0 md:translate-x-0 opacity-100"
-            : "translate-y-full md:translate-x-full opacity-0 pointer-events-none md:absolute md:right-0"
+        className={`fixed md:relative bottom-0 left-0 right-0 md:top-0 w-full md:w-[400px] h-[60vh] md:h-full bg-black/80 md:bg-black/95 backdrop-blur-2xl border-t md:border-t-0 md:border-l border-white/10 p-6 md:p-8 pt-20 md:pt-24 transition-all duration-500 z-[150] overflow-y-auto no-scrollbar ${showInfo
+          ? "translate-y-0 md:translate-x-0 opacity-100"
+          : "translate-y-full md:translate-x-full opacity-0 pointer-events-none md:absolute md:right-0"
           }`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -132,11 +132,11 @@ export default function GalleryModal({
           </button>
         </div>
 
-        <h2
-          className={`${nunito.className} text-white text-xl md:text-2xl font-black mb-4 md:mb-6`}
-        >
-          {currentItem.title}
-        </h2>
+        <div className="flex items-center justify-between mb-8 pr-20">
+          <h2 className={`${nunito.className} text-white text-xl md:text-2xl font-black leading-tight pr-4`}>
+            {currentItem.title}
+          </h2>
+        </div>
         <div className="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
           <span
             className={`${cabin.className} text-[#3ed0a6] text-xs font-bold uppercase tracking-widest flex items-center gap-2`}

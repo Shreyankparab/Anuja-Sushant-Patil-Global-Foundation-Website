@@ -25,7 +25,7 @@ export default function FoundersSection() {
           role="Founder"
           experience="20+ years of leadership in social development"
           image="/Images/SushantPatil.webp"
-          link="/AboutUs#sushant-patil"
+          link="/about-us#sushant-patil"
         />
         <AnimatedCard
           name1="Adv. Anuja Sushant"
@@ -33,7 +33,7 @@ export default function FoundersSection() {
           role="Founder"
           experience="20+ years of experience in the education industry"
           image="/Images/AnujaPatil.webp"
-          link="/AboutUs#anuja-patil"
+          link="/about-us#anuja-patil"
         />
       </div>
     </section>
@@ -60,6 +60,20 @@ function AnimatedCard({ name1, name2, role, experience, image, link }: any) {
 
     if (cardRef.current) observer.observe(cardRef.current);
   }, []);
+
+  // Close when clicking outside on mobile
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleGlobalClick = (e: MouseEvent) => {
+      if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("click", handleGlobalClick);
+    return () => window.removeEventListener("click", handleGlobalClick);
+  }, [isOpen]);
 
   // detect mobile click
   const handleClick = () => {
