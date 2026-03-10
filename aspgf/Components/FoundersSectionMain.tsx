@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
+import { useLoading } from "./Common/LoadingHandler";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const manrope = Cabin({
@@ -75,15 +76,19 @@ function AnimatedCard({ name1, name2, role, experience, image, link }: any) {
     return () => window.removeEventListener("click", handleGlobalClick);
   }, [isOpen]);
 
+  const { startLoading } = useLoading();
+
   // detect mobile click
   const handleClick = () => {
     if (window.innerWidth < 768) {
       if (isOpen) {
+        startLoading();
         router.push(link);
       } else {
         setIsOpen(true);
       }
     } else {
+      startLoading();
       router.push(link);
     }
   };
@@ -177,6 +182,7 @@ function AnimatedCard({ name1, name2, role, experience, image, link }: any) {
           className="mt-6 px-6 py-2 bg-white text-[#0b6a52] rounded-full font-bold text-sm hover:bg-gray-100 transition-colors"
           onClick={(e) => {
             e.stopPropagation();
+            startLoading();
             router.push(link);
           }}
         >

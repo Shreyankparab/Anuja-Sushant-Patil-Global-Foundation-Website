@@ -8,6 +8,7 @@ import { videoStories, type ImpactVideoStory } from "@/data/impactData";
 import { Play, X, Info, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
+import { useLoading } from "./Common/LoadingHandler";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({
@@ -18,6 +19,7 @@ const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function ImpactSection() {
   const router = useRouter();
+  const { startLoading } = useLoading();
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<ImpactVideoStory | null>(null);
   const [showSidebar, setShowSidebar] = useState(true);
@@ -147,7 +149,10 @@ export default function ImpactSection() {
             {/* BUTTON - Desktop Only */}
             <div className="mt-10 hidden lg:block">
               <button
-                onClick={() => router.push("/impact")}
+                onClick={() => {
+                  startLoading();
+                  router.push("/impact");
+                }}
                 className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
               >
                 Explore More
@@ -244,7 +249,10 @@ export default function ImpactSection() {
               {/* BUTTON - Mobile Only */}
               <div className="lg:hidden">
                 <button
-                  onClick={() => router.push("/impact")}
+                  onClick={() => {
+                    startLoading();
+                    router.push("/impact");
+                  }}
                   className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
                 >
                   Explore More

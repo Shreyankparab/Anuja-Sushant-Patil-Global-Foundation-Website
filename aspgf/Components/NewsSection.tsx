@@ -7,6 +7,7 @@ import { Caveat, Nunito, Cabin } from "next/font/google";
 import { newsData } from "@/data/newsData";
 import NewsModal from "./News/NewsModal";
 import { useRouter } from "next/navigation";
+import { useLoading } from "./Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -17,6 +18,7 @@ const cabin = Cabin({
 
 export default function NewsSection() {
   const router = useRouter();
+  const { startLoading } = useLoading();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalInitialIndex, setModalInitialIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -90,7 +92,10 @@ export default function NewsSection() {
 
           <div className="hidden lg:block">
             <button
-              onClick={() => router.push("/news")}
+              onClick={() => {
+                startLoading();
+                router.push("/news");
+              }}
 
               className={`${cabin.className} cursor-pointer mt-4 px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
 
@@ -139,7 +144,10 @@ export default function NewsSection() {
           <div className="absolute bottom-4 left-8 right-8 flex items-center justify-between gap-4 z-20">
             {/* Mobile Only: Scaled Discover More Button */}
             <button
-              onClick={() => router.push("/news")}
+              onClick={() => {
+                startLoading();
+                router.push("/news");
+              }}
               className={`${cabin.className} lg:hidden px-10 py-3.5 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 active:scale-95 transition-all flex-shrink-0`}
             >
               Read More

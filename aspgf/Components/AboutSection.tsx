@@ -241,6 +241,7 @@ import { Caveat, Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLoading } from "./Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -255,6 +256,7 @@ if (typeof window !== "undefined") {
 
 const AboutSection = () => {
   const router = useRouter();
+  const { startLoading } = useLoading();
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -457,7 +459,10 @@ const AboutSection = () => {
 
           <div ref={buttonRef} className="pt-6">
             <button
-              onClick={() => router.push("/about-us")}
+              onClick={() => {
+                startLoading();
+                router.push("/about-us");
+              }}
               className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
             >
               Know More
