@@ -5,11 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-import { Phone, Mail, MapPin, Menu, X } from "lucide-react";
-
 import { Phone, Mail, MapPin, Menu, X, HandHeart } from "lucide-react";
-
 import { Nunito, Cabin } from "next/font/google";
+
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({
@@ -25,17 +23,11 @@ export function Navbar() {
     const navLinks = [
         { name: "Home", href: "/" },
 
-        { name: "About Us", href: "/AboutUs" },
-        { name: "Our Work", href: "/OurWork" },
-        { name: "News", href: "/News" },
-        { name: "Gallery", href: "/Gallary" },
-        { name: "Impact", href: "/Impact" },
-
         { name: "About Us", href: "/about-us" },
         { name: "Our Work", href: "/our-work" },
-        { name: "News", href: "/news" },
+        { name: "News", href: "/News" },
         { name: "Gallery", href: "/gallery" },
-        { name: "Impact", href: "/impact" },
+        { name: "Impact", href: "/Impact" },
         { name: "Contact Us", href: "/contact-us" },
 
     ];

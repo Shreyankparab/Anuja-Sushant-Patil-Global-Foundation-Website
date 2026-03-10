@@ -22,14 +22,6 @@ export default function Footer() {
 
     const links = [
         { label: "Home", href: "/" },
-
-        { label: "About us", href: "/AboutUs" },
-        { label: "Our Work", href: "/OurWork" },
-        { label: "News", href: "/News" },
-        { label: "Gallery", href: "/Gallary" },
-        { label: "Impact", href: "/Impact" },
-        { label: "Contact Us", href: "/contactUs" },
-
         { label: "About us", href: "/about-us" },
         { label: "Our Work", href: "/our-work" },
         { label: "News", href: "/news" },
