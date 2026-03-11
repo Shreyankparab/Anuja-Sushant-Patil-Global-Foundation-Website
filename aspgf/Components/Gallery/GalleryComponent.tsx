@@ -62,25 +62,7 @@ export default function EventsGallery() {
   /* ---------------- ANIMATIONS ---------------- */
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero Animation
-      gsap.from(".hero-content > *", {
-        y: 50,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power4.out",
-      });
-
-      // Background decorative elements
-      gsap.to(".blob", {
-        x: "random(-50, 50)",
-        y: "random(-50, 50)",
-        duration: 10,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        stagger: 2
-      });
+    /* GRID ANIMATION */
 
       // Cards reveal
       ScrollTrigger.batch(".event-card", {
@@ -123,45 +105,72 @@ export default function EventsGallery() {
 
   return (
     <main className="min-h-screen bg-[#fafafa] overflow-hidden">
-      {/* PREMIUM HERO SECTION */}
-      <section ref={heroRef} className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-[#0f766e] overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl -mr-64 -mt-64 blob" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#A828C6]/10 rounded-full blur-3xl -ml-32 -mb-32 blob" />
-
-        <div className="container mx-auto px-6 relative z-10 hero-content text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] md:text-sm font-medium mb-4 md:mb-6">
-            <FiCamera className="text-[#3ed0a6]" />
-            <span className={cabin.className}>VISUAL JOURNEY</span>
-          </div>
-
-          <h1 className={`${nunito.className} text-3xl md:text-7xl font-black text-white leading-tight mb-4 md:mb-8 max-w-4xl tracking-tight`}>
-            Capturing Moments <br className="hidden md:block" />
-            <span className="text-[#3ed0a6]">of Impact.</span>
-          </h1>
-
-          <p className={`${inter.className} text-sm md:text-xl text-white/70 max-w-2xl leading-relaxed mb-8 md:mb-10`}>
-            A visual documentation of our programs, initiatives, and the lives transformed through community engagement and foundation support.
-          </p>
-
-          {/* CATEGORY BAR */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 mt-6 md:mt-12">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl transition-all duration-300 text-xs md:text-sm font-bold tracking-wide
-                  ${activeCategory === cat
-                    ? "bg-white text-[#0f766e] shadow-lg scale-105"
-                    : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      {/* SIMPLE HEADER SECTION */}
+      <div className="bg-[#0f766e] py-16 text-white text-center relative">
+        <div className="flex justify-center mb-4">
+          <span ref={tagRef} className={`${caveat.className} text-2xl text-white`}>
+            Visual Journey
+          </span>
         </div>
-      </section>
+
+        <h2
+          ref={headingRef}
+          className={`${nunito.className} text-4xl font-bold`}
+        >
+          Capturing Moments of Impact.
+        </h2>
+      </div>
+
+      {/* CATEGORY BAR */}
+      <div className="py-8 bg-white border-b border-gray-100 px-6">
+        {/* Mobile Dropdown */}
+        <div className="md:hidden relative max-w-[280px] mx-auto z-30">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className={`${nunito.className} w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1A2E35] shadow-sm transition-all focus:border-[#0f766e]`}
+          >
+            <span>{activeCategory}</span>
+            <ChevronDown size={18} className={`text-[#0f766e] transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
+          </button>
+
+          {isDropdownOpen && (
+            <div className="absolute z-40 mt-2 w-full rounded-xl border border-gray-100 bg-white shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    setIsDropdownOpen(false);
+                  }}
+                  className={`${nunito.className} w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
+                    ? "bg-[#0f766e]/5 text-[#0f766e]"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-[#0f766e]"
+                    }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Desktop Categories */}
+        <div className="hidden md:flex flex-wrap justify-center gap-2 md:gap-4">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-6 py-2 rounded-full transition-all duration-300 text-sm font-bold
+                ${activeCategory === cat
+                  ? "bg-[#0f766e] text-white shadow-md scale-105"
+                  : "text-gray-400 hover:text-[#0f766e]"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* GALLERY GRID SECTION */}
       <section ref={contentRef} className="container mx-auto px-4 md:px-6 py-12 md:py-20">
@@ -297,14 +306,6 @@ export default function EventsGallery() {
         items={modalData.items}
         initialIndex={modalData.index}
       />
-
-      {/* CSS STYLES FOR BLOBS */}
-      <style jsx>{`
-        .blob {
-          filter: blur(80px);
-          opacity: 0.4;
-        }
-      `}</style>
     </main>
   );
 }

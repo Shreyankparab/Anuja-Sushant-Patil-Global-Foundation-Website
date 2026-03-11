@@ -1,4 +1,4 @@
-export type Category = "All" | "Health" | "Old Age" | "Education" | "Orphanage" | "Child_Labour";
+export type Category = "All" | "Health" | "Old Age" | "Education" | "Orphanage";
 
 export interface NewsItem {
     id: number;
@@ -45,7 +45,7 @@ export const newsData: NewsItem[] = [
     {
         id: 5,
         title: "Sweeter Distribution Ceremony",
-        category: "Child_Labour",
+        category: "Orphanage",
         image: "/Images/News/news5.webp",
         location: "Mumbai",
         date: "10/08/2025",
@@ -53,7 +53,7 @@ export const newsData: NewsItem[] = [
     {
         id: 6,
         title: "Sweeter Distribution Ceremony",
-        category: "Child_Labour",
+        category: "Orphanage",
         image: "/Images/News/news6.webp",
         location: "Pune",
         date: "11/08/2025",
@@ -85,7 +85,7 @@ export const newsData: NewsItem[] = [
     {
         id: 10,
         title: "Bal Ashram Food and Blanket Distribution",
-        category: "Child_Labour",
+        category: "Orphanage",
         image: "/Images/News/news12.webp",
         location: "Pune",
         date: "11/08/2025",

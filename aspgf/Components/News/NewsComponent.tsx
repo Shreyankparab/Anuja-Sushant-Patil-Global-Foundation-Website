@@ -15,7 +15,7 @@ import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import NewsModal from "./NewsModal";
 
-const categories: Category[] = ["All", "Education", "Child_Labour", "Orphanage", "Health", "Old Age"];
+const categories: Category[] = ["All", "Education", "Orphanage", "Health", "Old Age"];
 
 const caveat = Caveat({ subsets: ["latin"] });
 const nunito = Nunito({ subsets: ["latin"] });
@@ -31,7 +31,6 @@ export default function NewsComponent() {
     const gridRef = useRef<HTMLDivElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
     const tagRef = useRef<HTMLSpanElement>(null);
-    const imageContainerRef = useRef<HTMLDivElement>(null);
 
     const filteredData =
         activeCategory === "All"
@@ -131,14 +130,12 @@ export default function NewsComponent() {
                 >
                     Community-focused work for a better tomorrow.
                 </h2>
-
-                <div className="absolute bottom-0 left-0 w-full h-2 bg-[#A828C6]" />
             </div>
 
-            {/* FILTER */}
-            <div className="py-12 text-center px-6">
+            {/* CATEGORY BAR */}
+            <div className="py-8 bg-white border-b border-gray-100 px-6">
                 {/* Mobile Dropdown */}
-                <div className="md:hidden mb-8 relative max-w-[280px] mx-auto z-30">
+                <div className="md:hidden relative max-w-[280px] mx-auto z-30">
                     <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         className={`${nunito.className} w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1A2E35] shadow-sm transition-all focus:border-[#0f766e]`}
@@ -156,7 +153,7 @@ export default function NewsComponent() {
                                         setActiveCategory(cat);
                                         setIsDropdownOpen(false);
                                     }}
-                                    className={`${nunito.className}  w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
+                                    className={`${nunito.className} w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
                                         ? "bg-[#0f766e]/5 text-[#0f766e]"
                                         : "text-gray-600 hover:bg-gray-50 hover:text-[#0f766e]"
                                         }`}
@@ -169,21 +166,25 @@ export default function NewsComponent() {
                 </div>
 
                 {/* Desktop Categories */}
-                <div className="hidden md:flex justify-center gap-10 flex-wrap mb-10">
+                <div className="hidden md:flex flex-wrap justify-center gap-2 md:gap-4">
                     {categories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`${nunito.className} cursor-pointer hover:scale-110 text-lg transition ${activeCategory === cat
-                                ? "font-extrabold text-[#0f766e]"
-                                : "text-black"
+                            className={`px-6 py-2 rounded-full transition-all duration-300 text-sm font-bold
+                ${activeCategory === cat
+                                    ? "bg-[#0f766e] text-white shadow-md scale-105"
+                                    : "text-gray-400 hover:text-[#0f766e]"
                                 }`}
                         >
                             {cat}
                         </button>
                     ))}
                 </div>
+            </div>
 
+            {/* GRID */}
+            <div className="py-12 text-center px-6">
                 {/* GRID */}
                 <div
                     ref={gridRef}

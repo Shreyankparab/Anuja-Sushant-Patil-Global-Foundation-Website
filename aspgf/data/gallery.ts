@@ -3,14 +3,14 @@ export const pageContent = {
     category: "Gallery & Events",
     title: "Community-focused work for a better tomorrow.",
   },
-  categories: ["All", "Health", "Old Age", "Education", "Orphanage", "Child_Labour"],
+  categories: ["All", "Health", "Old Age", "Education", "Orphanage"],
   events: [
     {
       id: "mauli-krupa-1",
       slug: "spreading-joy-this-christmas-mauli-krupa-1",
       title: "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
       location: "Pune",
-      categories: "Child_Labour",
+      categories: "Orphanage",
       date: "12/08/2025",
       images: [
         "/Images/Gallery/christmas/DSC00596.webp",
@@ -131,7 +131,7 @@ export const pageContent = {
       slug: "matruchhaya-children-home",
       title: "Matruchhaya Children Home",
       location: "Pune",
-      categories: "Child_Labour",
+      categories: "Orphanage",
       date: "20/10/2025",
       images: [
         "/Images/Gallery/Matruchhaya-Children-Home/20251025_115144(0).webp",
