@@ -79,7 +79,7 @@ const OurWorkSection = () => {
         <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none z-30">
           <div className="relative w-full h-12 md:h-16 lg:h-20 scale-y-[-1]">
             <Image
-              src="/images/shape-2.png"
+              src="/Images/shape-2.png"
               alt="Top ripped edge"
               fill
               className="object-cover object-top"
@@ -91,7 +91,7 @@ const OurWorkSection = () => {
         <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-30">
           <div className="relative w-full h-12 md:h-16 lg:h-20">
             <Image
-              src="/images/shape-2.png"
+              src="/Images/shape-2.png"
               alt="Bottom ripped edge divider"
               fill
               className="object-cover object-top"
