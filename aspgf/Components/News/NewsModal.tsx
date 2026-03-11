@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import Image from "next/image";
 import {
     FiCalendar,
@@ -49,16 +48,8 @@ export default function NewsModal({ isOpen, onClose, items, initialIndex }: News
 
     const selectedNews = selectedIndex !== null ? items[selectedIndex] : null;
 
-    /* ANIMATE IMAGE TRANSITION */
-    useEffect(() => {
-        if (selectedIndex !== null && imageContainerRef.current) {
-            gsap.fromTo(
-                imageContainerRef.current,
-                { opacity: 1, x: direction * 100 },
-                { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }
-            );
-        }
-    }, [selectedIndex, direction]);
+    /* Image transitions are now handled by React state and CSS classes */
+
 
     const handlePrev = (e?: React.MouseEvent) => {
         e?.stopPropagation();

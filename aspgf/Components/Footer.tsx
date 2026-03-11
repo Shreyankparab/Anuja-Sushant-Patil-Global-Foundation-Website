@@ -40,12 +40,12 @@ export default function Footer() {
             <div className="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 pb-6">
                 {/* LEFT SIDE */}
                 <div className="flex flex-col items-center text-center pl-2 md:pl-16 lg:pl-20">
-                    <div className="relative w-[300px] md:w-[450px] h-[80px] md:h-[110px] mx-auto">
+                    <div className="relative w-[300px] md:w-[450px] h-[80px] md:h-[110px] mx-auto bg-white rounded-2xl p-4 mb-6 shadow-sm">
                         <Image
                             src="/Images/aspgf-logo.png"
                             alt="Logo"
                             fill
-                            className="object-contain"
+                            className="object-contain p-2"
                             priority
                         />
                     </div>

@@ -5,8 +5,8 @@ const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | ASPGF",
-    description: "Privacy Policy of Anuja Sushant Patil Global Foundation (ASPGF).",
+    title: "Privacy Policy",
+    description: "Privacy Policy of Anuja Sushant Patil Global Foundation (ASPGF). Learn how we protect your data and maintain your privacy.",
 };
 
 export default function PrivacyPolicy() {

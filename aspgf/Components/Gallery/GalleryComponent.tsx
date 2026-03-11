@@ -2,18 +2,12 @@
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { pageContent } from "@/data/gallery";
 import GalleryModal from "@/Components/Gallery/GalleryModal";
 import { Nunito, Cabin, Caveat, Inter } from "next/font/google";
 import { FiCalendar, FiMapPin, FiCamera, FiArrowRight } from "react-icons/fi";
 import { ChevronDown, ChevronLeft, ChevronRight, Grid, Layout } from "lucide-react";
-
-// Register ScrollTrigger
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const nunito = Nunito({ subsets: ["latin"] });
 const cabin = Cabin({ subsets: ["latin"] });
@@ -21,6 +15,7 @@ const caveat = Caveat({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
 export default function EventsGallery() {
+  const revealRef = useScrollReveal();
   const { categories, events } = pageContent;
 
   /* ---------------- STATE ---------------- */
@@ -59,29 +54,7 @@ export default function EventsGallery() {
     setCurrentPage(1);
   }, [activeCategory]);
 
-  /* ---------------- ANIMATIONS ---------------- */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-    /* GRID ANIMATION */
-
-      // Cards reveal
-      ScrollTrigger.batch(".event-card", {
-        onEnter: (elements) => {
-          gsap.from(elements, {
-            y: 60,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "power3.out",
-            overwrite: true
-          });
-        },
-        once: true
-      });
-    });
-
-    return () => ctx.revert();
-  }, [paginatedEvents]);
+  /* IntersectionObserver is handled by the hook */
 
   const openGallery = (images: string[], index: number, event: any) => {
     const formattedItems = images.map((img) => ({
@@ -104,18 +77,17 @@ export default function EventsGallery() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fafafa] overflow-hidden">
+    <main ref={revealRef} className="min-h-screen bg-[#fafafa] overflow-hidden">
       {/* SIMPLE HEADER SECTION */}
       <div className="bg-[#0f766e] py-16 text-white text-center relative">
-        <div className="flex justify-center mb-4">
-          <span ref={tagRef} className={`${caveat.className} text-2xl text-white`}>
+        <div className="flex justify-center mb-4 reveal">
+          <span className={`${caveat.className} text-2xl text-white`}>
             Visual Journey
           </span>
         </div>
 
         <h2
-          ref={headingRef}
-          className={`${nunito.className} text-4xl font-bold`}
+          className={`${nunito.className} text-4xl font-bold reveal delay-100`}
         >
           Capturing Moments of Impact.
         </h2>
@@ -177,7 +149,7 @@ export default function EventsGallery() {
         <div className="grid grid-cols-1 gap-12 md:gap-24">
           {paginatedEvents.length > 0 ? (
             paginatedEvents.map((event, idx) => (
-              <div key={`${event.id}-${idx}`} className="event-card group">
+              <div key={`${event.id}-${idx}`} className="group reveal">
                 {/* Event Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-8 gap-4 md:gap-6 border-l-4 border-[#0f766e] pl-4 md:pl-6 leading-none">
                   <div className="max-w-2xl">

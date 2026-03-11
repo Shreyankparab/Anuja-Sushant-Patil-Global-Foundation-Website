@@ -16,18 +16,9 @@ const focusItems = [
   "Orphanage",
 ];
 
-const CustomStar = () => (
-  <span className="mx-12 md:mx-20 flex items-center justify-center shrink-0">
-    <svg width="65" height="65" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M41 10h18v26l22.5-13 9 15.6L68 51.1l22.5 13-9 15.6-22.5-13V92H41V66.7L18.5 79.7l-9-15.6 22.5-13L9.5 38.1l9-15.6L41 35.5V10z"
-        fill="white"
-        stroke="#006e57"
-        strokeWidth="6"
-        strokeLinejoin="round"
-        style={{ paintOrder: 'stroke fill' }}
-      />
-    </svg>
+const Separator = () => (
+  <span className={`${lexend.className} mx-12 md:mx-20 text-[60px] md:text-[80px] font-black text-[#006e57]`}>
+    |
   </span>
 );
 
@@ -44,7 +35,7 @@ export default function FocusArea() {
               >
                 {item}
               </span>
-              <CustomStar />
+              <Separator />
             </React.Fragment>
           ))}
         </div>
@@ -57,7 +48,7 @@ export default function FocusArea() {
               >
                 {item}
               </span>
-              <CustomStar />
+              <Separator />
             </React.Fragment>
           ))}
         </div>

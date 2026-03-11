@@ -20,16 +20,14 @@ const HistorySection = dynamic(() => import("@/Components/AboutUs/HistorySection
 });
 
 export const metadata: Metadata = {
-    title: "About Us | Global Foundation",
+    title: "About Us",
     description:
-        "Learn about Global Foundation's mission, vision, and leadership committed to empowering communities through education, healthcare, and sustainable development.",
+        "Learn about Anuja Sushant Patil Global Foundation's mission, vision, and leadership committed to empowering communities through education, healthcare, and sustainable development.",
     openGraph: {
-        title: "About Us | Global Foundation",
+        title: "About Us | Anuja Sushant Patil Global Foundation",
         description:
-            "Discover our mission, vision, and leadership driving sustainable social impact.",
-        url: "https://yourdomain.com/about",
-        siteName: "Global Foundation",
-        type: "website",
+            "Discover our mission, vision, and leadership driving sustainable social impact in our communities.",
+        url: "https://aspgf.org/about-us",
     },
 };
 

@@ -29,11 +29,50 @@ const cabin = Cabin({
 });
 
 export const metadata: Metadata = {
-  title: "Anuja Sushant Patil Global Foundation",
-  description: "Empowering change through kindness and community support.",
+  title: {
+    default: "Anuja Sushant Patil Global Foundation (ASPGF)",
+    template: "%s | Anuja Sushant Patil Global Foundation",
+  },
+  description: "Anuja Sushant Patil Global Foundation (ASPGF) is a non-profit organization dedicated to community-focused work, education, health, and sustainable development for a better tomorrow.",
+  keywords: ["ASPGF", "Anuja Sushant Patil Global Foundation", "NGO Pune", "Social Impact", "Community Support", "Education Charity", "Health Initiatives", "Orphanage Support", "Old Age Home Support"],
+  authors: [{ name: "Anuja Sushant Patil Global Foundation" }],
+  creator: "Anuja Sushant Patil Global Foundation",
+  publisher: "Anuja Sushant Patil Global Foundation",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://aspgf.org"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Anuja Sushant Patil Global Foundation",
+    description: "Empowering communities through compassion and horizontal growth.",
+    url: "https://aspgf.org",
+    siteName: "ASPGF",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/Images/aspgf-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Anuja Sushant Patil Global Foundation Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anuja Sushant Patil Global Foundation",
+    description: "Empowering change through kindness and community support.",
+    images: ["/Images/aspgf-logo.png"],
+  },
   icons: {
     icon: "/Images/simple-peacock.svg",
     shortcut: "/Images/simple-peacock.svg",
+    apple: "/Images/simple-peacock.svg",
   }
 };
 

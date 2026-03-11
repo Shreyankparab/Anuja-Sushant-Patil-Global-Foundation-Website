@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { newsData, Category, NewsItem } from "@/data/newsData";
 import Image from "next/image";
 import {
@@ -22,6 +22,7 @@ const nunito = Nunito({ subsets: ["latin"] });
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function NewsComponent() {
+    const revealRef = useScrollReveal();
     const [activeCategory, setActiveCategory] = useState<Category>("All");
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,55 +38,7 @@ export default function NewsComponent() {
             ? newsData
             : newsData.filter((item) => item.category === activeCategory);
 
-    /* GRID ANIMATION */
-    useEffect(() => {
-        if (!gridRef.current) return;
-
-        const cards = gridRef.current.querySelectorAll(".card");
-
-        gsap.fromTo(
-            cards,
-            { opacity: 0, y: 40 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: "power3.out",
-            },
-        );
-    }, [activeCategory]);
-
-    /* TEXT REVEAL */
-    useEffect(() => {
-        const animateText = (el: HTMLElement | null) => {
-            if (!el) return;
-
-            const words = el.innerText.split(" ");
-
-            el.innerHTML = words
-                .map(
-                    (word) =>
-                        `<span style="display:inline-block;overflow:hidden">
-              <span style="display:inline-block">${word}</span>
-            </span>`,
-                )
-                .join(" ");
-
-            const inner = el.querySelectorAll("span span");
-
-            gsap.from(inner, {
-                y: 40,
-                opacity: 0,
-                stagger: 0.08,
-                duration: 0.8,
-                ease: "power3.out",
-            });
-        };
-
-        animateText(tagRef.current);
-        animateText(headingRef.current);
-    }, []);
+    /* Animations are now handled via reveal classes */
 
 
 
@@ -115,18 +68,17 @@ export default function NewsComponent() {
     };
 
     return (
-        <div className="bg-[#f5f5f5]">
+        <div ref={revealRef} className="bg-[#f5f5f5]">
             {/* HEADER */}
             <div className="bg-[#0f766e] py-16 text-white text-center relative">
-                <div className="flex justify-center mb-4">
-                    <span ref={tagRef} className={`${caveat.className} text-2xl text-white`}>
+                <div className="flex justify-center mb-4 reveal">
+                    <span className={`${caveat.className} text-2xl text-white`}>
                         News & Events
                     </span>
                 </div>
 
                 <h2
-                    ref={headingRef}
-                    className={`${nunito.className} text-4xl font-bold`}
+                    className={`${nunito.className} text-4xl font-bold reveal delay-100`}
                 >
                     Community-focused work for a better tomorrow.
                 </h2>
@@ -193,7 +145,7 @@ export default function NewsComponent() {
                     {paginatedNews.map((item, index) => (
                         <div
                             key={item.id}
-                            className="card group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg w-full max-w-[380px] h-[500px]"
+                            className="card group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg w-full max-w-[380px] h-[500px] reveal"
                             onClick={() => {
                                 setModalInitialIndex((currentPage - 1) * ITEMS_PER_PAGE + index);
                                 setIsModalOpen(true);

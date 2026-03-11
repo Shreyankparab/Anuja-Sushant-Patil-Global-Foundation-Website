@@ -2,8 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { TrendingUp, Lightbulb, ThumbsUp } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Nunito, Cabin } from "next/font/google";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
@@ -33,67 +31,66 @@ const statsData = [
   },
 ];
 
-export default function StatsSection() {
-  const statsRefs = useRef<(HTMLDivElement | null)[]>([]);
+const Counter = ({ target, duration = 2000, trigger }: { target: number, duration?: number, trigger: boolean }) => {
+  const [count, setCount] = React.useState(0);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    if (!trigger) return;
 
-    const stats = statsRefs.current;
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [target, duration, trigger]);
 
-    stats.forEach((stat, index) => {
-      if (!stat) return;
+  return <>{count}</>;
+};
 
-      const targetValue = statsData[index].value;
-      const counterObj = { val: 0 };
-      const counterDisplay = stat.querySelector(".counter-value");
+export default function StatsSection() {
+  const [hasIntersected, setHasIntersected] = React.useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-      gsap.to(counterObj, {
-        val: targetValue,
-        duration: 2,
-        scrollTrigger: {
-          trigger: stat,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-        onUpdate: () => {
-          if (counterDisplay) {
-            counterDisplay.textContent = Math.floor(counterObj.val).toString();
-          }
-        },
-      });
-
-      // Fade in and slide up animation for the card
-      gsap.fromTo(stat,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: stat,
-            start: "top 90%",
-          }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasIntersected(true);
         }
-      );
-    });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-24">
+    <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-24">
       {statsData.map((stat, index) => (
         <div
           key={stat.id}
-          ref={(el) => { statsRefs.current[index] = el; }}
-          className="flex flex-col items-center"
+          className={`flex flex-col items-center transition-all duration-1000 transform ${
+            hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+          style={{ transitionDelay: `${index * 200}ms` }}
         >
           <div className="w-16 h-16 rounded-full border-2 border-[#00735C]/30 flex items-center justify-center mb-6 shadow-sm">
             {stat.icon}
           </div>
 
           <div className={`${nunito.className} text-4xl md:text-5xl font-black text-[#1A2E35] mb-2 flex items-baseline`}>
-            <span className="counter-value">0</span>
+            <span>
+              <Counter target={stat.value} trigger={hasIntersected} />
+            </span>
             <span>{stat.suffix}</span>
           </div>
 

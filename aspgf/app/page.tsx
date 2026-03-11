@@ -11,6 +11,12 @@ import OurWorkSection from "@/Components/OurWorkSection";
 
 
 import ImpactSection from "@/Components/ImpactSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Anuja Sushant Patil Global Foundation",
+  description: "Anuja Sushant Patil Global Foundation (ASPGF) is committed to empowering communities through education, health, and sustainable social impact initiatives in Pune.",
+};
 
 export default function Page() {
   return (

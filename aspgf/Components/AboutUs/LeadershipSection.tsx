@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
 import Image from "next/image";
-import gsap from "gsap";
 import { Nunito, Cabin } from "next/font/google";
 
 const nunito = Nunito({
@@ -15,33 +13,6 @@ const cabin = Cabin({
 });
 
 export default function LeadershipSection() {
-    useEffect(() => {
-        // Floating up and down animation for badges
-        gsap.to(".badge-trust", {
-            y: 10,
-            duration: 2,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            stagger: {
-                each: 0.2,
-                from: "random",
-            },
-        });
-
-        gsap.to(".badge-vision", {
-            y: -10,
-            duration: 2.5,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            stagger: {
-                each: 0.2,
-                from: "random",
-            },
-        });
-    }, []);
-
     return (
         <section className="bg-white py-20">
             <div className="max-w-5xl mx-auto px-8 space-y-20">
@@ -60,7 +31,7 @@ export default function LeadershipSection() {
                         <div className="relative flex flex-col items-start">
                             <div className="relative group w-full aspect-square max-w-[400px]">
                                 {/* Trustworthy Badge - Floating Outside */}
-                                <div className="badge-trust absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                                     Trustworthy
                                 </div>
@@ -75,7 +46,7 @@ export default function LeadershipSection() {
                                 </div>
 
                                 {/* Vision & Aim Badge - Floating Outside */}
-                                <div className="badge-vision absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="text-teal-500 text-[10px]">◈</span>
                                     Vision & Aim
                                 </div>
@@ -187,7 +158,7 @@ export default function LeadershipSection() {
                         <div className="order-1 md:order-2 relative flex flex-col items-center md:items-end mt-8 md:mt-0">
                             <div className="relative group w-full aspect-square max-w-[400px]">
                                 {/* Trustworthy Badge - Floating Outside */}
-                                <div className="badge-trust absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                                     Trustworthy
                                 </div>
@@ -202,7 +173,7 @@ export default function LeadershipSection() {
                                 </div>
 
                                 {/* Vision & Aim Badge - Floating Outside */}
-                                <div className="badge-vision absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="text-teal-500 text-[10px]">◈</span>
                                     Vision & Aim
                                 </div>
@@ -317,7 +288,7 @@ export default function LeadershipSection() {
                         <div className="relative flex flex-col items-start">
                             <div className="relative group w-full aspect-square max-w-[400px]">
                                 {/* Trustworthy Badge - Floating Outside */}
-                                <div className="badge-trust absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                                     Trustworthy
                                 </div>
@@ -332,7 +303,7 @@ export default function LeadershipSection() {
                                 </div>
 
                                 {/* Vision & Aim Badge - Floating Outside */}
-                                <div className="badge-vision absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="text-teal-500 text-[10px]">◈</span>
                                     Vision & Aim
                                 </div>

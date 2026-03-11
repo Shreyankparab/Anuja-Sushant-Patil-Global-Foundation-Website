@@ -5,9 +5,9 @@ import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { MapPin, Play, X, ChevronLeft, ChevronRight, Info } from "lucide-react";
 import StatsSection from "../StatsSection";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { videoStories } from "@/data/impactData";
+
+type VideoStory = (typeof videoStories)[0];
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({
@@ -16,13 +16,10 @@ const nunito = Nunito({
 });
 const cabin = Cabin({ subsets: ["latin"] });
 
-gsap.registerPlugin(ScrollTrigger);
-
-type VideoStory = (typeof videoStories)[0];
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function ImpactComponent() {
-  const sectionRef = useRef(null);
-  const headerRef = useRef(null); // Added for header animation
+  const sectionRef = useScrollReveal();
   const [activeVideo, setActiveVideo] = useState<VideoStory | null>(null);
   const [showSidebar, setShowSidebar] = useState(true);
   const storiesSectionRef = useRef<HTMLElement>(null);
@@ -33,29 +30,6 @@ export default function ImpactComponent() {
       storiesSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
-  /* HEADER ANIMATION LOGIC */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      tl.from(".animate-header-item", {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
-    }, headerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   /* PREVENT BODY SCROLL WHEN MODAL IS OPEN */
   useEffect(() => {
@@ -97,8 +71,8 @@ export default function ImpactComponent() {
     <main className="min-h-screen relative">
       <section ref={sectionRef} className="py-20 px-6 bg-white overflow-hidden">
         {/* Wrap header in ref and add animation classes */}
-        <div ref={headerRef} className="max-w-6xl mx-auto text-center">
-          <div className="animate-header-item flex items-center justify-center gap-4 mb-2">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-2 reveal">
             <div className="h-[1px] w-12 md:w-20 bg-gray-300"></div>
             <span
               className={`${caveat.className} text-xl md:text-2xl text-[#6f7775] font-bold italic`}
@@ -109,19 +83,19 @@ export default function ImpactComponent() {
           </div>
 
           <h2
-            className={`animate-header-item ${nunito.className} text-4xl md:text-6xl font-black text-[#00735C] mb-6 leading-tight uppercase`}
+            className={`${nunito.className} text-4xl md:text-6xl font-black text-[#00735C] mb-6 leading-tight uppercase reveal delay-100`}
           >
             Our <br className="hidden md:block" /> Impact
           </h2>
 
           <p
-            className={`animate-header-item ${cabin.className} max-w-2xl mx-auto text-gray-600 text-base md:text-lg mb-16 leading-relaxed font-semibold`}
+            className={`${cabin.className} max-w-2xl mx-auto text-gray-600 text-base md:text-lg mb-16 leading-relaxed font-semibold reveal delay-200`}
           >
             Real change created through compassion, collaboration, and a shared
             commitment to building stronger and more resilient communities.
           </p>
 
-          <div className="mt-16">
+          <div className="mt-16 reveal delay-300">
             <StatsSection />
           </div>
         </div>

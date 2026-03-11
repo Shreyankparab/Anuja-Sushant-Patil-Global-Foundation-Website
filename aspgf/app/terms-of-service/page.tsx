@@ -5,8 +5,8 @@ const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-    title: "Terms of Service | ASPGF",
-    description: "Terms and conditions for using the Anuja Sushant Patil Global Foundation website.",
+    title: "Terms of Service",
+    description: "Terms and conditions for using the Anuja Sushant Patil Global Foundation (ASPGF) website.",
 };
 
 export default function TermsOfService() {

@@ -4,8 +4,6 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { FaCheckCircle, FaPlay, FaTrophy } from "react-icons/fa";
 import { Caveat, Nunito, Cabin } from "next/font/google";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -14,13 +12,11 @@ const cabin = Cabin({
   weight: ["400", "500", "600", "700"],
 });
 
-gsap.registerPlugin(ScrollTrigger);
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function WhatWeDoSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const leftRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
+  const containerRef = useScrollReveal();
+  const [activeTab, setActiveTab] = useState<"Orphanage" | "Education" | "Counselling" | "Old Age">("Education");
 
   const tabContent: Record<string, { description: string; points: string[] }> =
     {
@@ -44,16 +40,6 @@ export default function WhatWeDoSection() {
           "Scholarships for Differently-Abled Students",
         ],
       },
-      //   Education: {
-      //   description:
-      //     "Our primary focus area is education, where we support students through scholarships, mentorship, and academic resources. The ASPG Foundation aims to create equal opportunities for deserving students and promote access to quality education for sustainable community development.",
-      //   points: [
-      //     "Eligibility: Applicant must generally be an Indian citizen.",
-      //     "Family's annual income should not exceed the specified scholarship limit.",
-      //     "Student must have obtained the required minimum qualifying marks in the previous examination.",
-      //     "Scholarship support for deserving students to continue higher education.",
-      //   ],
-      // },
       Counselling: {
         description:
           "Our counselling centre offers emotional and psychological support to help individuals build self-awareness, resilience, emotional balance, and healthy communication in their personal and professional lives.",
@@ -80,50 +66,6 @@ export default function WhatWeDoSection() {
 
   const tabs = ["Orphanage", "Education", "Counselling", "Old Age"] as const;
 
-  const [activeTab, setActiveTab] =
-    useState<(typeof tabs)[number]>("Education");
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(leftRef.current, {
-        x: -80,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      });
-
-      gsap.from(rightRef.current, {
-        x: 80,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      });
-
-      /* CHECKLIST STAGGER ANIMATION */
-      gsap.from(listRef.current?.children || [], {
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.18,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: listRef.current,
-          start: "top 85%",
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const mainImages = [
     "/What-We-Do/20251115_121341.webp",
     "/What-We-Do/20251115_121248.webp",
@@ -144,45 +86,24 @@ export default function WhatWeDoSection() {
 
   const [mainIndex, setMainIndex] = useState(0);
   const [secondIndex, setSecondIndex] = useState(0);
-
-  const mainImageRef = useRef<HTMLDivElement>(null);
-  const secondImageRef = useRef<HTMLDivElement>(null);
+  const [isMainFading, setIsMainFading] = useState(false);
+  const [isSecondFading, setIsSecondFading] = useState(false);
 
   useEffect(() => {
     const mainInterval = setInterval(() => {
-      gsap.to(mainImageRef.current, {
-        opacity: 0,
-        scale: 1.05,
-        duration: 0.7,
-        ease: "power2.out",
-        onComplete: () => {
-          setMainIndex((prev) => (prev + 1) % mainImages.length);
-
-          gsap.fromTo(
-            mainImageRef.current,
-            { opacity: 0, scale: 1.1 },
-            { opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" },
-          );
-        },
-      });
+      setIsMainFading(true);
+      setTimeout(() => {
+        setMainIndex((prev) => (prev + 1) % mainImages.length);
+        setIsMainFading(false);
+      }, 700);
     }, 5000);
 
     const secondInterval = setInterval(() => {
-      gsap.to(secondImageRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        onComplete: () => {
-          setSecondIndex((prev) => (prev + 1) % secondImages.length);
-
-          gsap.fromTo(
-            secondImageRef.current,
-            { opacity: 0, y: -20 },
-            { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
-          );
-        },
-      });
+      setIsSecondFading(true);
+      setTimeout(() => {
+        setSecondIndex((prev) => (prev + 1) % secondImages.length);
+        setIsSecondFading(false);
+      }, 600);
     }, 7200);
 
     return () => {
@@ -193,12 +114,12 @@ export default function WhatWeDoSection() {
 
   return (
     <section
-      ref={sectionRef}
-      className="w-full px-6 md:px-20 lg:px-8 lg:pl-[120px] py-20 bg-white"
+      ref={containerRef}
+      className="w-full px-6 md:px-20 lg:px-8 lg:pl-[120px] py-20 bg-white overflow-hidden"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* LEFT CONTENT */}
-        <div ref={leftRef}>
+        <div className="reveal-left">
           {/* WHAT WE DO TAG */}
           <div className="flex items-center gap-3 mb-4">
             <p
@@ -216,12 +137,12 @@ export default function WhatWeDoSection() {
           </h2>
 
           {/* TABS */}
-          <div className="grid grid-cols-4 gap-2 mb-8 md:flex md:flex-wrap md:gap-4">
+          <div className="flex flex-wrap gap-3 mb-8 md:gap-4">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`${cabin.className} w-full md:w-auto px-2 md:px-8 py-3 rounded-full font-extrabold text-[14px] md:text-[15px] tracking-wide transition-all duration-300 shadow-sm ${
+                className={`${cabin.className} px-4 md:px-8 py-3 rounded-full font-extrabold text-[14px] md:text-[15px] tracking-wide transition-all duration-300 shadow-sm whitespace-nowrap ${
                   activeTab === tab
                     ? "bg-[#0b6a52] text-white shadow-md"
                     : "bg-white text-[#1A2E35] border border-gray-200 hover:bg-gray-50"
@@ -241,14 +162,15 @@ export default function WhatWeDoSection() {
 
           {/* CHECK LIST */}
           <ul
-            ref={listRef}
             className={`${nunito.className} space-y-5 text-[#1A2E35] font-bold text-[16px]`}
           >
             {tabContent[activeTab].points.map((point, index) => (
               <li
                 key={index}
-                className="flex items-start gap-4 animate-fadeUp"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`flex items-start gap-4 transition-all duration-700 transform ${
+                  true ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="mt-1 bg-[#0b6a52]/10 p-1 rounded-full">
                   <FaCheckCircle className="text-[#0b6a52] text-[15px]" />
@@ -260,71 +182,42 @@ export default function WhatWeDoSection() {
         </div>
 
         {/* RIGHT SIDE IMAGES */}
-        <div ref={rightRef} className="relative">
+        <div className="relative reveal-right">
           {/* Remaining UI unchanged */}
           <div className="relative flex items-center justify-center lg:justify-start">
             <div className="relative">
               {/* MAIN IMAGE */}
               <div
-                ref={mainImageRef}
                 className="relative w-[300px] h-[450px] md:w-[480px] md:h-[550px] overflow-hidden rounded-[40px]"
               >
-                <Image
-                  src={mainImages[mainIndex]}
-                  alt="Community"
-                  fill
-                  className="object-cover"
-                />
+                <div className={`relative w-full h-full transition-all duration-700 transform ${isMainFading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}>
+                  <Image
+                    src={mainImages[mainIndex]}
+                    alt="Community"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-
-              {/* SERVING SINCE */}
-              {/* <div className="absolute bottom-[20%] -left-16 md:-left-28 bg-[#0b6a52] md:h-16  text-white p-4 md:p-5 rounded-xl shadow-lg w-[180px] md:w-[190px] z-30 flex items-center gap-3">
-                <div className="w-6 h-7 md:w-8 md:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FaTrophy className="text-white text-lg md:text-xl" />
-                </div>
-                <div>
-                  <p
-                    className={`${cabin.className} text-[12px] md:text-[12px] font-bold tracking-wide leading-tight`}
-                  >
-                    Serving Since 2024
-                  </p>
-                  <p
-                    className={`${cabin.className} text-[10px] md:text-[12px] opacity-80 font-medium`}
-                  >
-                    Committed to Social Impact.
-                  </p>
-                </div>
-              </div> */}
-
-              {/* SERVING COMMUNITIES */}
-              {/* <div className="absolute top-[12%] -right-22  md:-right-38 bg-[#0b6a52] text-white p-2 pl-2 md:p-5 rounded-xl shadow-lg h-32 md:h-26 w-[130px] md:w-[190px] z-30">
-                <p
-                  className={`${nunito.className} text-[12px] md:text-[14px] font-bold leading-tight tracking-wide`}
-                >
-                  Serving Communities <br />
-                  Through Compassion, <br />
-                  Action & Sustainable <br />
-                  Impact.
-                </p>
-              </div> */}
 
               {/* SECOND IMAGE */}
               <div className="absolute bottom-[-20px] right-[-44px] md:bottom-[-60px] md:right-[-92px] md:mt-80 z-20">
                 <div className="relative w-[185px] h-[240px] md:w-[300px] md:h-[350px]">
                   <div
-                    ref={secondImageRef}
                     className="relative w-full h-full rounded-t-[30px] md:rounded-t-[45px] overflow-hidden border-2 md:border-4 border-white bg-white"
                   >
-                    <Image
-                      src={secondImages[secondIndex]}
-                      alt="Kids"
-                      fill
-                      className="object-cover"
-                    />
+                     <div className={`relative w-full h-full transition-all duration-500 transform ${isSecondFading ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`}>
+                      <Image
+                        src={secondImages[secondIndex]}
+                        alt="Kids"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
 
                     <div className="absolute bottom-[-2px] -left-5 -right-5 h-[45px] md:h-[70px] z-10">
                       <Image
-                        src="/images/shape-3.svg"
+                        src="/shape-3.svg"
                         alt="mask"
                         fill
                         className="object-cover scale-x-125"

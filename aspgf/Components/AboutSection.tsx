@@ -4,8 +4,6 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLoading } from "./Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
@@ -15,92 +13,12 @@ const cabin = Cabin({
   weight: ["400", "500", "600", "700"],
 });
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
   const router = useRouter();
   const { startLoading } = useLoading();
-
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
-  const highlightRef = useRef<HTMLDivElement>(null);
-  const featuresRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      });
-
-      tl.from(imageRef.current, {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      })
-        .from(
-          headingRef.current,
-          {
-            y: 60,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.6",
-        )
-        .from(
-          textRef.current,
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.5",
-        )
-        .from(
-          highlightRef.current,
-          {
-            x: -40,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.5",
-        )
-        .from(
-          featuresRef.current,
-          {
-            y: 30,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.2,
-            ease: "power3.out",
-          },
-          "-=0.4",
-        )
-        .from(
-          buttonRef.current,
-          {
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.6,
-            ease: "back.out(1.7)",
-          },
-          "-=0.4",
-        );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const sectionRef = useScrollReveal();
 
   return (
     <section
@@ -110,8 +28,7 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* LEFT SIDE */}
         <div
-          ref={imageRef}
-          className="order-2 lg:order-1 relative w-full max-w-[450px] lg:max-w-[550px] mx-auto pt-8 pb-16 pl-10 sm:pl-12 lg:pl-8"
+          className="order-2 lg:order-1 relative w-full max-w-[450px] lg:max-w-[550px] mx-auto pt-8 pb-16 pl-10 sm:pl-12 lg:pl-8 reveal"
         >
           <div className="absolute top-0 left-[-5%] w-[85%] aspect-[9/10] bg-[#F9F7F1] z-0 block border border-transparent shadow-sm">
             <div className="absolute inset-0 opacity-100 flex items-center justify-center p-4 overflow-hidden">
@@ -140,7 +57,7 @@ const AboutSection = () => {
               <div className="relative w-full h-full rounded-full border border-gray-100 flex items-center justify-center">
                 <div className="relative w-[80%] h-[80%] z-10">
                   <Image
-                    src="/Images/main-peacock.png"
+                    src="/Images/simple-peacock.svg"
                     alt="Peacock Logo"
                     fill
                     className="object-contain"
@@ -179,7 +96,7 @@ const AboutSection = () => {
             aria-hidden="true"
           ></div>
 
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 reveal delay-100">
             <span
               className={`${caveat.className} text-[#6f7775] text-[24px] font-bold tracking-wide mt-1`}
             >
@@ -188,15 +105,13 @@ const AboutSection = () => {
           </div>
 
           <h2
-            ref={headingRef}
-            className={`${nunito.className} text-[#00715D] text-4xl lg:text-5xl font-extrabold leading-[1.15] max-w-[600px] pr-4`}
+            className={`${nunito.className} text-[#00715D] text-4xl lg:text-5xl font-extrabold leading-[1.15] max-w-[600px] pr-4 reveal delay-200`}
           >
             Collective effort can create meaningful social impact
           </h2>
 
           <p
-            ref={textRef}
-            className={`${cabin.className} text-gray-500 leading-relaxed text-[15px] lg:text-[16px] max-w-[600px]`}
+            className={`${cabin.className} text-gray-500 leading-relaxed text-[15px] lg:text-[16px] max-w-[600px] reveal delay-300`}
           >
             Anuja Sushant Patil Global Foundation is a registered not-for-profit
             organization established in 2025, focused on community development,
@@ -204,8 +119,7 @@ const AboutSection = () => {
           </p>
 
           <div
-            ref={highlightRef}
-            className="relative pl-5 py-1 -mt-2 mb-2 max-w-[600px]"
+            className="relative pl-5 py-1 -mt-2 mb-2 max-w-[600px] reveal delay-400"
           >
             <div className="absolute left-0 top-1 bottom-1 w-1 bg-[#00715D] rounded-full"></div>
             <p
@@ -218,11 +132,10 @@ const AboutSection = () => {
           </div>
 
           <div
-            ref={featuresRef}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-6 pt-2 max-w-[600px]"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-6 pt-2 max-w-[600px] reveal delay-500"
           ></div>
 
-          <div ref={buttonRef} className="pt-6">
+          <div className="pt-6 reveal delay-500">
             <button
               onClick={() => {
                 startLoading();

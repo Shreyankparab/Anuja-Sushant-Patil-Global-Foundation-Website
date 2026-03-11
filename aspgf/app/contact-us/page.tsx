@@ -11,15 +11,13 @@ const cabin = Cabin({
 });
 
 export const metadata: Metadata = {
-  title: "Contact Us | ASPGF",
+  title: "Contact Us",
   description:
-    "Get in touch with ASPGF. Reach out for volunteering, partnerships, or any queries.",
+    "Get in touch with Anuja Sushant Patil Global Foundation (ASPGF). Reach out for volunteering, partnerships, or any queries.",
   openGraph: {
-    title: "Contact Us | ASPGF",
-    description: "Feel free to reach out with any questions or feedback.",
-    url: "https://yourdomain.com/contact",
-    siteName: "ASPGF",
-    type: "website",
+    title: "Contact Us | Anuja Sushant Patil Global Foundation",
+    description: "Feel free to reach out with any questions or feedback about our initiatives.",
+    url: "https://aspgf.org/contact-us",
   },
 };
 

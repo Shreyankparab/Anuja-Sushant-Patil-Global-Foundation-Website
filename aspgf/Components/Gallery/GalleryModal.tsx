@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import Image from "next/image";
 import {
   X,

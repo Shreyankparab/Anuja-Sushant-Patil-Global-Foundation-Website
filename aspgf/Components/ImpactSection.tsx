@@ -6,7 +6,6 @@ import { Nunito, Cabin, Caveat } from "next/font/google";
 import { FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { videoStories, type ImpactVideoStory } from "@/data/impactData";
 import { Play, X, Info, MapPin } from "lucide-react";
-import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { useLoading } from "./Common/LoadingHandler";
 
@@ -57,16 +56,7 @@ export default function ImpactSection() {
     return () => clearInterval(interval);
   }, [nextSlide, activeVideo, activeIndex]);
 
-  useEffect(() => {
-    const cards = sliderRef.current?.querySelectorAll(".impact-card");
-    if (cards) {
-      gsap.to(cards, {
-        duration: 0.8,
-        ease: "power3.out",
-        overwrite: true,
-      });
-    }
-  }, [activeIndex]);
+  /* Cards transition is handled by React state and CSS inline styles below */
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStart.current = e.touches[0].clientX;
