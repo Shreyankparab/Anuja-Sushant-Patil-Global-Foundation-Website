@@ -17,28 +17,33 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "Who can benefit from the foundation’s initiatives?",
+      question: "What is the mission of Anuja Sushant Patil Global Foundation?",
       answer:
-        "The foundation’s initiatives are designed to support communities, students, and individuals through educational, social, and outreach-based programs, depending on the nature of each initiative.The foundation’s initiatives are designed to support communities, students, and individuals through educational, social, and outreach-based programs, depending on the nature of each initiative.The foundation’s initiatives are designed to support communities, students, and individuals through educational, social, and outreach-based programs, depending on the nature of each initiative.",
-    },
-    {
-      question: "What type of work does the foundation focus on?",
-      answer:
-        "We focus on community development, education, healthcare initiatives, and social upliftment activities across various regions.",
-    },
-    {
-      question: "Are all activities listed on the website real and verified?",
-      answer:
-        "Yes, every activity showcased on our website is genuine and verified by our team.",
+        "Anuja Sushant Patil Global Foundation is committed to creating positive social impact through initiatives focused on education, community development, social welfare, and empowerment. Our mission is to support individuals and communities by providing opportunities, resources, and awareness programs that encourage sustainable growth and equal opportunities for all.",
     },
     {
       question:
-        "Does the foundation accept online donations through this website?",
+        "Who can participate in the foundation’s programs and initiatives?",
       answer:
-        "Yes, we accept secure online donations that directly support our missions and activities.",
+        "Our programs are designed to benefit individuals and communities who seek support in areas such as education, social awareness, and community development. Students, youth, women, and underserved communities can benefit from various initiatives organized by the foundation.",
+    },
+    {
+      question:
+        "How can I volunteer or contribute to the foundation’s activities?",
+      answer:
+        "Individuals who are passionate about social service can participate by volunteering in our programs, supporting community initiatives, or contributing their skills and knowledge. Volunteers play an important role in helping us expand our reach and create meaningful social impact.",
+    },
+    {
+      question: "Does the foundation accept donations or external support?",
+      answer:
+        "Yes, the foundation welcomes support from individuals and organizations who wish to contribute to our mission. Donations and partnerships help us expand our initiatives in education, social welfare, and community development while reaching more people in need.",
+    },
+    {
+      question: "How does the foundation ensure transparency in its work?",
+      answer:
+        "Anuja Sushant Patil Global Foundation believes in transparency and accountability. We maintain clear communication about our initiatives, activities, and programs to ensure that supporters and communities can trust the work we do.",
     },
   ];
-
   return (
     <section className="relative w-full py-12 md:py-20 bg-[#f6f1e7] overflow-hidden">
       {/* Background Image Subtly Visible */}
@@ -66,9 +71,11 @@ export default function FAQSection() {
             <p
               className={`${manrope.className} text-gray-600 leading-relaxed max-w-lg`}
             >
-              Proactively procrastinate cross-platform results via extensive
-              ideas distinctively underwhelm enterprise. Compellingly plagiarize
-              value-added sources with inexpensive schemas.
+              We believe in transparency and open communication with our
+              community. Here are some of the most common questions people ask
+              about Anuja Sushant Patil Global Foundation, our initiatives, and
+              how individuals can participate in our mission to support
+              education, community development, and social welfare.
             </p>
           </div>
 
@@ -80,28 +87,32 @@ export default function FAQSection() {
               return (
                 <div
                   key={index}
-                  className={`transition-all duration-500 ease-in-out bg-white shadow-sm rounded-[32px] border border-gray-100 overflow-hidden ${isOpen
+                  className={`transition-all duration-500 ease-in-out bg-white shadow-sm rounded-[32px] border border-gray-100 overflow-hidden ${
+                    isOpen
                       ? "ring-2 ring-[#00715D]/5 ring-offset-0 scale-[1.02]"
                       : "hover:border-[#00715D]/30"
-                    }`}
+                  }`}
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className={`w-full flex items-center justify-between text-left gap-4 py-5 px-6 md:py-6 md:px-8 transition-colors duration-300 ${isOpen ? "bg-[#0b6a52]/5" : ""
-                      }`}
+                    className={`w-full flex items-center justify-between text-left gap-4 py-5 px-6 md:py-6 md:px-8 transition-colors duration-300 ${
+                      isOpen ? "bg-[#0b6a52]/5" : ""
+                    }`}
                   >
                     <h3
-                      className={`${nunito.className} text-[16px] md:text-lg font-bold transition-colors duration-300 ${isOpen ? "text-[#00715D]" : "text-[#1A2E35]"
-                        }`}
+                      className={`${nunito.className} text-[16px] md:text-lg font-bold transition-colors duration-300 ${
+                        isOpen ? "text-[#00715D]" : "text-[#1A2E35]"
+                      }`}
                     >
                       {item.question}
                     </h3>
 
                     <span
-                      className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500 flex-shrink-0 ${isOpen
+                      className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500 flex-shrink-0 ${
+                        isOpen
                           ? "bg-[#00715D] text-white rotate-180"
                           : "bg-gray-100 text-[#00715D]"
-                        }`}
+                      }`}
                     >
                       {isOpen ? (
                         <FiMinus className="w-5 h-5" />
@@ -113,10 +124,11 @@ export default function FAQSection() {
 
                   {/* ANSWER WRAPPER WITH SMOOTH HEIGHT TRANSITION */}
                   <div
-                    className={`grid transition-all duration-500 ease-in-out ${isOpen
+                    className={`grid transition-all duration-500 ease-in-out ${
+                      isOpen
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0"
-                      }`}
+                    }`}
                   >
                     <div className="overflow-hidden">
                       <div className="px-6 pb-6 md:px-8 md:pb-8">
