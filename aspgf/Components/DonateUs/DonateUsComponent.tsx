@@ -75,7 +75,7 @@ export default function DonateUsComponent() {
                             <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
                                 {/* Left: 60% Content */}
                                 <div className="w-full md:w-[60%]">
-                                    <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support Our Cause</h3>
+                                    <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support the Change</h3>
                                     <p className={`${cabin.className} text-white/90 mb-8 text-lg leading-relaxed italic`}>
                                         &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
                                     </p>
@@ -113,7 +113,7 @@ export default function DonateUsComponent() {
                     <div className="w-full lg:w-1/2">
                         <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
                             <div className="mb-8">
-                                <h2 className={`${nunito.className} text-3xl font-extrabold text-[#1A2E35] mb-2`}>Donation Inquiry</h2>
+                                <h2 className={`${nunito.className} text-3xl font-extrabold text-[#1A2E35] mb-2`}>Inquiry</h2>
                                 <p className={`${cabin.className} text-gray-500`}>Fill out this form and we'll get in touch with you regarding your contribution.</p>
                             </div>
                             <DonateForm />

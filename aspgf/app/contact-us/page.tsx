@@ -51,79 +51,87 @@ export default function ContactPage() {
           {/* <ContactForm /> */}
 
           {/* CONTACT INFO GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-9 md:pt-32">
+          <div className="mt-8 lg:mt-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Address */}
-            <div className="sm:row-span-2 bg-[#f8faf9] p-3 rounded-xl border border-[#e8f1ec]">
-              <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center mb-2 mt-1 md:mt-8">
-                <MapPin className="text-[#00735C]" size={16} />
+            <div className="sm:row-span-2 bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex flex-col h-full gap-4">
+              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                <MapPin className="text-[#00735C]" size={20} />
               </div>
 
-              <p
-                className={`${nunito.className} text-[16px] font-extrabold text-[#00735C] uppercase tracking-wider mb-1 `}
-              >
-                Address
-              </p>
+              <div>
+                <p
+                  className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1.5`}
+                >
+                  Address
+                </p>
 
-              <p
-                className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] leading-tight`}
-              >
-                Dr. Sushant Patil Corporate, Office No. 615, 6th Floor, <br />{" "}
-                Solitaire Business Hub, Balewadi High Street, <br /> Baner, Pune
-                411045
-              </p>
+                <p
+                  className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] leading-relaxed`}
+                >
+                  Dr. Sushant Patil Corporate, Office No. 615, 6th Floor, <br />
+                  Solitaire Business Hub, Balewadi High Street, <br /> Baner, Pune
+                  411045
+                </p>
+              </div>
             </div>
 
             {/* Phone */}
-            <div className="bg-[#f8faf9] p-3 rounded-xl border border-[#e8f1ec]">
-              <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center mb-2">
-                <Phone className="text-[#00735C]" size={16} />
+            <div className="bg-[#f8faf9] p-5 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                <Phone className="text-[#00735C]" size={20} />
               </div>
 
-              <p
-                className={`${nunito.className} text-[16px] font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}
-              >
-                Helpline
-              </p>
-
-              <a
-                href="tel:+919684001643"
-                className="hover:underline transition-all"
-              >
+              <div>
                 <p
-                  className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] leading-tight`}
+                  className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1`}
                 >
-                  +91 9684001643
+                  Helpline
                 </p>
-              </a>
+
+                <a
+                  href="tel:+919684001643"
+                  className="hover:underline transition-all"
+                >
+                  <p
+                    className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] leading-tight`}
+                  >
+                    +91 9684001643
+                  </p>
+                </a>
+              </div>
             </div>
 
             {/* Email */}
-            <div className="bg-[#f8faf9] p-3 rounded-xl border border-[#e8f1ec]">
-              <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center mb-2">
-                <span className="text-[#00735C] font-semibold text-base">
+            <div className="bg-[#f8faf9] p-5 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                <span className="text-[#00735C] font-semibold text-lg">
                   @
                 </span>
               </div>
 
-              <p
-                className={`${nunito.className} text-[16px] font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}
-              >
-                Email
-              </p>
-
-              <a
-                href="mailto:project.director@aspgf.org"
-                className="hover:underline transition-all"
-              >
+              <div>
                 <p
-                  className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] break-all leading-tight`}
+                  className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1`}
                 >
-                  project.director@aspgf.org
+                  Email
                 </p>
-              </a>
+
+                <a
+                  href="mailto:project.director@aspgf.org"
+                  className="hover:underline transition-all"
+                >
+                  <p
+                    className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] break-all leading-tight`}
+                  >
+                    project.director@aspgf.org
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
         {/* RIGHT SIDE */}
         <div className="w-full lg:w-1/2 flex flex-col gap-8">

@@ -16,7 +16,16 @@ export const submitToGoogleSheets = async (data: any) => {
             },
             body: JSON.stringify({
                 ...data,
-                timestamp: new Date().toLocaleString(),
+                timestamp: (() => {
+                    const now = new Date();
+                    const d = String(now.getDate()).padStart(2, '0');
+                    const m = String(now.getMonth() + 1).padStart(2, '0');
+                    const y = now.getFullYear();
+                    const hh = String(now.getHours()).padStart(2, '0');
+                    const mm = String(now.getMinutes()).padStart(2, '0');
+                    const ss = String(now.getSeconds()).padStart(2, '0');
+                    return `${d}/${m}/${y}, ${hh}:${mm}:${ss}`;
+                })(),
             }),
         });
         return { success: true };

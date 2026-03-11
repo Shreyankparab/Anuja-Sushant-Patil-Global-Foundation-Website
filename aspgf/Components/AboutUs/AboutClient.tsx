@@ -66,7 +66,7 @@ export default function AboutClient() {
               </span>
 
               <div className="relative z-10 flex items-center justify-center bg-white/20 w-7 h-7 md:w-9 md:h-9 rounded-full group-hover:bg-white group-hover:text-[#00735C] transition-all duration-500">
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
               </div>
             </a>
           </div>
@@ -105,33 +105,46 @@ export default function AboutClient() {
           </div>
 
           {/* TAB CONTENT */}
-          <div className={`transition-all duration-500 transform ${isChanging ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`}>
+          <div>
             {activeTab === "mission" && (
-              <div>
-                <p className={`${cabin.className} text-gray-600 mb-6 font-normal`}>
+              <div className="fade-up">
+                <p className={`${cabin.className} text-gray-600 mb-6`}>
                   Our mission is to build inclusive platforms that empower
                   communities through education, healthcare, and sustainable
-                  opportunities.
+                  opportunities. Our mission is to build inclusive platforms
+                  that empower communities through education, healthcare, and
+                  sustainable opportunities.
                 </p>
 
                 <ul className="space-y-3">
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To support students from financially challenged backgrounds
                     by providing educational scholarships.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To uplift vulnerable communities through social, emotional,
                     and psychological support.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To create safe and nurturing spaces for children, women, and
                     senior citizens.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To strengthen society with programs that promote mental
                     well-being, skill development, and sustainable progress.
                   </li>
@@ -140,48 +153,109 @@ export default function AboutClient() {
             )}
 
             {activeTab === "vision" && (
-              <div>
-                <p className={`${cabin.className} text-gray-600 mb-6 font-normal`}>
+              <div className="fade-up">
+                <p
+                  className={`${cabin.className} text-gray-600 mb-6 font-normal`}
+                >
                   To build a society where education empowers, compassion
                   uplifts, and equal opportunities enable every individual to
-                  lead a life of dignity, confidence, and self-reliance.
+                  lead a life of dignity, confidence, and self-reliance creating
+                  a future where knowledge, innovation, and humanity work
+                  together for the progress of all.
                 </p>
 
                 <ul className="space-y-3">
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                    Ensure every child and student has access to quality education.
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Ensure every child and student has access to quality
+                    education and scholarships, regardless of financial
+                    background.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                    Support senior citizens with a safe, respectful environment.
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Support senior citizens with a safe, respectful, and caring
+                    environment for a dignified life.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                    Provide shelter, education, and protection for orphaned children and destitute women.
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Provide shelter, education, and protection for orphaned
+                    children and destitute women to help them rebuild their
+                    lives.
+                  </li>
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Build compassionate and inclusive communities where everyone
+                    has the opportunity to grow with dignity and confidence.
                   </li>
                 </ul>
               </div>
             )}
 
             {activeTab === "value" && (
-              <div>
-                <p className={`${cabin.className} text-gray-600 mb-6 font-normal`}>
-                  At Anuja Sushant Patil Global Foundation, our work is guided by integrity, compassion, and sustainable social impact.
+              <div className="fade-up">
+                <p
+                  className={`${cabin.className} text-gray-600 mb-6 font-normal`}
+                >
+                  At Anuja Sushant Patil Global Foundation, our work is guided
+                  by a strong commitment to integrity, compassion, and
+                  sustainable social impact. We believe that meaningful change
+                  begins with responsible action, inclusive opportunities, and a
+                  deep respect for human dignity. Through our programs in
+                  education, community welfare, and social development, we
+                  strive to empower individuals and strengthen communities for a
+                  better future.
                 </p>
 
                 <ul className="space-y-3">
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                    Upholding integrity and transparency in every initiative.
+                  {/* <li
+                  className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                >
+                  <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
+                  Upholding integrity and transparency in every initiative and
+                  community partnership.
+                </li> */}
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Expanding access to quality education and opportunities for
+                    underserved communities.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                    Expanding access to quality education.
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Promoting equality, dignity, and respect for every
+                    individual regardless of background.
                   </li>
-                  <li className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}>
-                    <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                    Promoting equality, dignity, and respect for every individual.
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Encouraging sustainable development and responsible
+                    community engagement.
+                  </li>
+
+                  <li
+                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                  >
+                    <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
+                    Creating long-term social impact through collaboration,
+                    empathy, and innovation.
                   </li>
                 </ul>
               </div>

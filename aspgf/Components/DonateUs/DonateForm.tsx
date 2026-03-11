@@ -23,6 +23,7 @@ type FormData = {
     };
     isCompany: boolean;
     company: string;
+    address: string;
     message: string;
 };
 
@@ -61,7 +62,8 @@ export default function DonateForm() {
             countryCode: `+${dialCode}`,
             phone: actualPhone,
             isCompany: data.isCompany ? "Yes" : "No",
-            company: data.isCompany ? data.company : "N/A"
+            company: data.isCompany ? data.company : "N/A",
+            address: data.address
         };
         await submitToGoogleSheets(submissionData);
         setIsSubmitting(false);
@@ -112,7 +114,7 @@ export default function DonateForm() {
                             id="email"
                             placeholder="aspgf@gmail.com"
                             suppressHydrationWarning
-                            className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.email ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${cabin.className}`}
+                            className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.email ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${nunito.className}`}
                         />
                         {errors.email && <span className="text-red-500 text-xs font-semibold">{errors.email.message}</span>}
                     </div>
@@ -224,6 +226,20 @@ export default function DonateForm() {
                     {errors.company && <span className="text-red-500 text-xs font-semibold">{errors.company.message}</span>}
                 </div>
 
+                {/* Address */}
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="address" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Address <span className="text-red-500">*</span></label>
+                    <textarea
+                        {...register("address", { required: "Address is required" })}
+                        id="address"
+                        rows={2}
+                        placeholder="Your full address"
+                        suppressHydrationWarning
+                        className={`w-full p-5 rounded-2xl bg-gray-50 border ${errors.address ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 resize-none ${cabin.className}`}
+                    ></textarea>
+                    {errors.address && <span className="text-red-500 text-xs font-semibold">{errors.address.message}</span>}
+                </div>
+
                 {/* Additional Info */}
                 <div className="flex flex-col gap-2">
                     <label htmlFor="message" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Additional Information</label>
@@ -249,7 +265,7 @@ export default function DonateForm() {
                                 Submitting...
                             </>
                         ) : (
-                            "Submit to Donate"
+                            "Send Inquiry"
                         )}
                     </button>
                 </div>
