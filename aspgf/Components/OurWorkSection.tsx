@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { allWorkItems } from "@/data/ourWorkData";
 import { useRouter } from "next/navigation";
+import { useLoading } from "./Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -16,6 +17,7 @@ const cabin = Cabin({
 const OurWorkSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { startLoading } = useLoading();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const isHovered = useRef(false);
@@ -118,7 +120,10 @@ const OurWorkSection = () => {
 
           <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:justify-start mt-4 md:mt-0">
             <button
-              onClick={() => router.push("/our-work")}
+              onClick={() => {
+                startLoading();
+                router.push("/our-work");
+              }}
               className={`group ${cabin.className} cursor-pointer font-bold text-[14px] md:text-[16px] flex items-center gap-4 md:gap-6 bg-white xl:hover:bg-gray-50 text-[#00715D] py-1 md:py-1.5 pl-6 md:pl-8 pr-1 md:pr-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 min-w-0 md:min-w-[220px] max-w-[240px] border border-white/20`}
             >
               <span className="flex-grow text-left">View our Works</span>
@@ -199,6 +204,7 @@ const OurWorkSection = () => {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
+                      startLoading();
                       router.push(`/our-work#project-${project.id}`);
                     }}
                     className="flex items-center gap-3 cursor-pointer bg-[#00715D] hover:bg-[#008a73] text-white py-1.5 pl-5 pr-1.5 rounded-full font-bold text-sm min-w-[180px] justify-between border border-white/10 group/btn"

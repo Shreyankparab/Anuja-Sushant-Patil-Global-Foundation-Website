@@ -278,7 +278,6 @@ export function Navbar() {
                                 </a>
                             </div>
                         </div>
-
                         <Link
                             href="/donate-us"
                             onClick={() => setIsMenuOpen(false)}

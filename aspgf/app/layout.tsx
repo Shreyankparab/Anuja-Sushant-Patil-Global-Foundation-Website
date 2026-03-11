@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { Suspense } from "react";
-import LoadingHandler from "@/Components/Common/LoadingHandler";
+import LoadingHandler, { LoadingProvider } from "@/Components/Common/LoadingHandler";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,26 +47,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${cabin.variable} antialiased overflow-x-hidden`}
       >
-        <Suspense fallback={null}>
-          <LoadingHandler />
-        </Suspense>
-        {/* Prevent horizontal overflow globally */}
-        <div className="relative w-full overflow-x-hidden">
+        <LoadingProvider>
+          <Suspense fallback={null}>
+            <LoadingHandler />
+          </Suspense>
+          {/* Prevent horizontal overflow globally */}
+          <div className="relative w-full overflow-x-hidden">
 
-          {/* Fixed Header */}
-          <div className="fixed inset-x-0 top-0 z-50">
-            <Navbar />
+            {/* Fixed Header */}
+            <div className="fixed inset-x-0 top-0 z-50">
+              <Navbar />
+            </div>
+
+            {/* Page Content */}
+            <main className="pt-20 xl:pt-28 w-full">
+              {children}
+            </main>
+
+            <Footer />
+
           </div>
-
-          {/* Page Content */}
-          <main className="pt-20 xl:pt-28 w-full">
-            {children}
-          </main>
-
-          <Footer />
-
-        </div>
-      </body>
+        </LoadingProvider>      </body>
     </html>
   );
 }

@@ -8,6 +8,7 @@ import { videoStories, type ImpactVideoStory } from "@/data/impactData";
 import { Play, X, Info, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
+import { useLoading } from "./Common/LoadingHandler";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({
@@ -18,6 +19,7 @@ const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function ImpactSection() {
   const router = useRouter();
+  const { startLoading } = useLoading();
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<ImpactVideoStory | null>(null);
   const [showSidebar, setShowSidebar] = useState(true);
@@ -125,9 +127,9 @@ export default function ImpactSection() {
 
                 {/* Second Line with SVG and Text */}
                 <div className="flex items-center gap-4 mt-2">
-                  <div className="relative w-10 h-10 md:w-14 md:h-14 flex-shrink-0">
+                  <div className="relative w-10 h-10 md:w-14 md:h-14 min-w-[40px] min-h-[40px] flex-shrink-0">
                     <Image
-                      src="/images/Quattaion.svg"
+                      src="/Images/Quattaion.svg"
                       alt="Quotation icon"
                       fill
                       className="object-contain"
@@ -147,7 +149,10 @@ export default function ImpactSection() {
             {/* BUTTON - Desktop Only */}
             <div className="mt-10 hidden lg:block">
               <button
-                onClick={() => router.push("/impact")}
+                onClick={() => {
+                  startLoading();
+                  router.push("/impact");
+                }}
                 className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
               >
                 Explore More
@@ -192,7 +197,7 @@ export default function ImpactSection() {
                             src={story.thumbnail}
                             alt={story.name}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                           />
                           <div
                             className="absolute inset-0 bg-black/20 flex items-center justify-center cursor-pointer"
@@ -212,20 +217,22 @@ export default function ImpactSection() {
                       </div>
 
                       {/* CONTENT SIDE */}
-                      <div className="w-full md:w-[55%] p-6 md:p-10 flex flex-col justify-center text-white">
+                      <div className="w-full md:w-[55%] p-6 md:p-10 flex flex-col justify-between text-white h-full">
                         <div className="mb-4 md:mb-6">
                           <p
-                            className={`${cabin.className} text-[13px] md:text-[15px] lg:text-[16px] leading-[1.5] md:leading-[1.6] opacity-90 font-medium italic`}
+                            className={`${cabin.className} text-[13px] md:text-[15px] lg:text-[16px] leading-[1.5] md:leading-[1.6] opacity-90 font-medium italic line-clamp-6 md:line-clamp-10`}
                           >
                             "{story.description}"
                           </p>
                         </div>
+
                         <div className="mt-2">
                           <h4
                             className={`${nunito.className} text-[18px] md:text-[22px] font-extrabold tracking-tight`}
                           >
                             {story.name}
                           </h4>
+
                           <p
                             className={`${cabin.className} text-gray-400 text-[11px] md:text-[13px] font-medium opacity-80 mt-1 uppercase tracking-widest`}
                           >
@@ -244,7 +251,10 @@ export default function ImpactSection() {
               {/* BUTTON - Mobile Only */}
               <div className="lg:hidden">
                 <button
-                  onClick={() => router.push("/impact")}
+                  onClick={() => {
+                    startLoading();
+                    router.push("/impact");
+                  }}
                   className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
                 >
                   Explore More
@@ -368,10 +378,11 @@ export default function ImpactSection() {
                       <div
                         key={video.id}
                         onClick={() => setActiveVideo(video)}
-                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeVideo.id === video.id
-                          ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
-                          : "hover:bg-white/10"
-                          }`}
+                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${
+                          activeVideo.id === video.id
+                            ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
+                            : "hover:bg-white/10"
+                        }`}
                       >
                         <div className="relative w-28 aspect-video rounded-lg overflow-hidden flex-shrink-0">
                           <Image
