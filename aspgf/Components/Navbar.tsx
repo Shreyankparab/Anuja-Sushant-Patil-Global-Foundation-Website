@@ -148,7 +148,7 @@ export function Navbar() {
                                     <p
                                         className={`${cabin.className} font-extrabold text-[#1A2E35] lowercase`}
                                     >
-                                        project.director@aspgf.org
+                                        project.director<span className={nunito.className}>@</span>aspgf.org
                                     </p>
                                 </a>
                             </div>
@@ -160,7 +160,7 @@ export function Navbar() {
                         <div className="flex items-center gap-2">
                             <MapPin size={14} className="text-[#00715D]" />
                             <div>
-                                <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Baner</p>
+                                <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Balewadi</p>
                                 <p
                                     className={`${cabin.className} font-extrabold text-[#1A2E35]`}
                                 >
@@ -274,7 +274,7 @@ export function Navbar() {
                             <div className="flex items-center gap-3 text-sm text-gray-500 lowercase tracking-tighter">
                                 <Mail size={16} className="text-[#00735C]" />
                                 <a href="mailto:project.director@aspgf.org" className="hover:underline">
-                                    <span className={`${cabin.className} font-bold`}>project.director@aspgf.org</span>
+                                    <span className={`${cabin.className} font-bold`}>project.director<span className={nunito.className}>@</span>aspgf.org</span>
                                 </a>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Target, Eye, Heart, ArrowRight } from "lucide-react";
+import { Target, Eye, Heart, ArrowRight, Download } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
@@ -83,17 +83,17 @@ export default function AboutClient() {
                             href="/New_Brochure _ASPGF.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`${nunito.className} group relative inline-flex items-center gap-4 md:gap-5 bg-[#00735C] text-white px-7 py-3.5 md:px-10 md:py-5 rounded-full font-extrabold overflow-hidden transition-all duration-300 shadow-xl shadow-[#00735C]/20 hover:shadow-2xl hover:shadow-[#00735C]/40 hover:-translate-y-1 active:scale-95`}
+                            className={`${nunito.className} group relative inline-flex items-center gap-3 md:gap-4 bg-[#00735C] text-white px-5 py-2.5 md:px-8 md:py-3.5 rounded-full font-extrabold overflow-hidden transition-all duration-300 shadow-xl shadow-[#00735C]/20 hover:shadow-2xl hover:shadow-[#00735C]/40 hover:-translate-y-1 active:scale-95`}
                         >
                             {/* Subtle Hover Layer */}
                             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
 
-                            <span className="relative z-10 uppercase tracking-[0.1em] text-[12px] md:text-[13px]">
+                            <span className="relative z-10 uppercase tracking-[0.1em] text-[10px] md:text-[12px]">
                                 Download Brochure
                             </span>
 
-                            <div className="relative z-10 flex items-center justify-center bg-white/20 w-7 h-7 md:w-9 md:h-9 rounded-full group-hover:bg-white group-hover:text-[#00735C] transition-all duration-500">
-                                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                            <div className="relative z-10 flex items-center justify-center bg-white/20 w-6 h-6 md:w-7 md:h-7 rounded-full group-hover:bg-white group-hover:text-[#00735C] transition-all duration-500">
+                                <Download className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-y-0.5 transition-transform duration-300" />
                             </div>
                         </a>
                     </div>

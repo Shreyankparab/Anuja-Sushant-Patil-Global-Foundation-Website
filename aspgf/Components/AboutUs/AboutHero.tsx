@@ -39,43 +39,43 @@ export default function AboutHero() {
     return (
         <section
             ref={heroRef}
-            className="relative w-full h-[500px] md:h-[600px] overflow-hidden flex items-center"
+            className="relative w-full h-[100dvh] md:h-[650px] overflow-hidden flex items-end md:items-center pb-20 md:pb-0"
         >
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0 hero-bg">
+            {/* Background Image - Full width and height */}
+            <div className="absolute inset-0 z-0 hero-bg w-full h-full">
                 <Image
                     src="/Images/About_Hero.webp"
-                    alt="Happy children in community"
+                    alt="About Us Hero"
                     fill
                     className="object-cover object-center"
                     priority
                 />
-                {/* Overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                {/* Gradient overlay to match the high-contrast aesthetic in the screenshot */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/80 md:via-black/20 md:to-transparent"></div>
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
-                <div className="hero-text max-w-2xl">
-                    {/* Main Heading */}
-                    <h1 className={`${nunito.className} text-white text-[38px] md:text-[56px] font-extrabold leading-[1.1] mb-6 tracking-tight`}>
-                        Committed To Purpose,<br />
-                        Guided By Integrity
+            <div className="relative z-10 w-full px-6 md:px-12 lg:pl-[120px] lg:pr-10">
+                <div className="hero-text max-w-4xl mx-auto md:mx-0">
+                    {/* Main Heading - Large and bold for mobile impact */}
+                    <h1 className={`${nunito.className} text-white text-[38px] sm:text-[44px] md:text-[64px] font-extrabold leading-[1.1] mb-6 tracking-tight`}>
+                        Committed to Purpose,<br />
+                        Guided by Integrity
                     </h1>
 
-                    {/* Decorative White Line (40% style) */}
-                    <div className="h-1 w-48 bg-white opacity-90 rounded-full mb-8"></div>
+                    {/* Decorative White Line (matches screenshot spacing) */}
+                    <div className="h-[3px] w-full max-w-[320px] md:max-w-md bg-white opacity-100 mb-8 rounded-full"></div>
 
-                    {/* About Us Label */}
-                    <p className={`${caveat.className} text-white text-3xl md:text-4xl mb-2 font-normal italic`}>
+                    {/* About Us Label - Signature Caveat font, large for mobile */}
+                    <p className={`${caveat.className} text-white text-[56px] md:text-[64px] mb-4 font-normal`}>
                         About Us
                     </p>
 
-                    {/* Green Accent Line */}
-                    <div className="h-[2px] w-full max-w-[400px] bg-[#00735C] opacity-80 mb-6"></div>
+                    {/* Teal Accent Line (Design separator) */}
+                    <div className="h-[4px] w-full max-w-[280px] md:max-w-[400px] bg-[#00735C] opacity-100 mb-8 rounded-full"></div>
 
-                    {/* Description Paragraph */}
-                    <p className={`${cabin.className} text-white/90 text-[15px] md:text-[18px] font-medium leading-relaxed max-w-lg`}>
+                    {/* Description Paragraph - Clean and readable */}
+                    <p className={`${cabin.className} text-white text-[16px] sm:text-[18px] md:text-[22px] font-medium leading-[1.5] max-w-2xl opacity-95`}>
                         Working Towards Inclusive Development Through Education, Outreach, And Community Engagement
                     </p>
                 </div>

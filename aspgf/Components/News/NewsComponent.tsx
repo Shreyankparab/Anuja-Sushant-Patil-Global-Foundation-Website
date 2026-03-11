@@ -15,7 +15,7 @@ import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import NewsModal from "./NewsModal";
 
-const categories: Category[] = ["All", "Health", "Old Age", "Education"];
+const categories: Category[] = ["All", "Education", "Child_Labour", "Orphanage", "Health", "Old Age"];
 
 const caveat = Caveat({ subsets: ["latin"] });
 const nunito = Nunito({ subsets: ["latin"] });
@@ -192,19 +192,19 @@ export default function NewsComponent() {
                     {paginatedNews.map((item, index) => (
                         <div
                             key={item.id}
-                            className="card group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg w-full max-w-[380px]"
+                            className="card group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg w-full max-w-[380px] h-[500px]"
                             onClick={() => {
                                 setModalInitialIndex((currentPage - 1) * ITEMS_PER_PAGE + index);
                                 setIsModalOpen(true);
                             }}
                         >
-                            <div className="relative w-full overflow-hidden bg-white">
+                            <div className="relative w-full h-full overflow-hidden bg-white">
                                 <Image
                                     src={item.image}
                                     alt={item.title}
                                     width={500}
                                     height={700}
-                                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                 />
                             </div>
 

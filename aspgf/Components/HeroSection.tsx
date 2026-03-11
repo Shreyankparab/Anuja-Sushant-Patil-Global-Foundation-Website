@@ -70,34 +70,34 @@ const HeroSection: React.FC = () => {
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-[1440px] w-full px-6 md:px-10 lg:pl-[120px]">
-        <div className="max-w-3xl hero-text">
+        <div className="max-w-3xl hero-text text-left">
           {/* SUBTITLE */}
           <p
-            className={`${caveat.className} text-[#38b6a1] text-3xl font-bold mb-4`}
+            className={`${caveat.className} text-[#38b6a1] text-2xl md:text-3xl font-bold mb-4 tracking-wide`}
           >
             Always Donate for Humanity
           </p>
 
           {/* TITLE */}
           <h1
-            className={`${nunito.className} text-4xl md:text-6xl font-extrabold leading-tight text-white mb-6 md:mb-0`}
+            className={`${nunito.className} text-4xl md:text-6xl font-extrabold leading-[1.15] text-white mb-6`}
           >
-            <span className="text-[#a020f0]">Empower change</span>, one act
+            <span className="text-[#A828C6]">Empower change</span>, one act
             <br className="hidden md:block" /> of kindness at a time
           </h1>
 
           {/* DESCRIPTION */}
           <p
-            className={`${cabin.className} text-xl text-white mt-6 font-medium opacity-90 leading-relaxed`}
+            className={`${cabin.className} text-lg md:text-xl text-white/90 mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl`}
           >
             Working together to uplift communities and create lasting change.
           </p>
 
           {/* BUTTON */}
-          <div className="mt-10">
+          <div className="mt-8 md:mt-10">
             <button
               onClick={handleScroll}
-              className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
+              className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#00735C] to-[#00b874] shadow-lg shadow-[#00735C]/20 hover:shadow-xl hover:shadow-[#00735C]/40 hover:-translate-y-1 transition-all duration-300 transform tracking-wider uppercase`}
             >
               DISCOVER MORE
             </button>

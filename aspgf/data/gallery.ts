@@ -3,19 +3,14 @@ export const pageContent = {
     category: "Gallery & Events",
     title: "Community-focused work for a better tomorrow.",
   },
-  categories: ["All", "Health", "Old Age", "Education", "Orphanage"],
+  categories: ["All", "Health", "Old Age", "Education", "Orphanage", "Child_Labour"],
   events: [
-<<<<<<< HEAD
-
-=======
-  
     {
       id: "mauli-krupa-1",
       slug: "spreading-joy-this-christmas-mauli-krupa-1",
-      title:
-        "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
+      title: "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
       location: "Pune",
-      categories: "Education",
+      categories: "Child_Labour",
       date: "12/08/2025",
       images: [
         "/Images/Gallery/christmas/DSC00596.webp",
@@ -30,8 +25,6 @@ export const pageContent = {
         "/Images/Gallery/christmas/crismas4.webp",
       ],
     },
-  
->>>>>>> 1e9ad0aad04ed482b4ab7beca3d868313d727cb0
     {
       id: "mauli-krupa",
       slug: "Swarnanagari-Old-Age-Home-Balewadi",
@@ -48,8 +41,6 @@ export const pageContent = {
         "/Images/Gallery/DSC04245.webp",
       ],
     },
-<<<<<<< HEAD
-
     {
       id: "poona-blind-school-1",
       slug: "a-visit-that-inspires-poona-blind-school-1",
@@ -77,34 +68,13 @@ export const pageContent = {
       ],
     },
     {
-      id: "mauli-krupa-1",
-      slug: "spreading-joy-this-christmas-mauli-krupa-1",
-      title: "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
-      location: "Pune",
-      categories: "Education",
-      date: "12/08/2025",
-      images: [
-        "/Images/Gallery/christmas/DSC00596.webp",
-        "/Images/Gallery/christmas/DSC00618.webp",
-        "/Images/Gallery/christmas/DSC00619.webp",
-        "/Images/Gallery/christmas/DSC00776.webp",
-        "/Images/Gallery/christmas/DSC00784.webp",
-        "/Images/Gallery/christmas/DSC00807.webp",
-        "/Images/Gallery/christmas/crismas1.webp",
-        "/Images/Gallery/christmas/crismas2.webp",
-        "/Images/Gallery/christmas/crismas3.webp",
-        "/Images/Gallery/christmas/crismas4.webp",
-      ],
-    },
-    {
-      id: "poona-blind-school-2",
-      slug: "a-visit-that-inspires-poona-blind-school-2",
+      id: "Malhar Bday Celebration",
+      slug: "malhar-birthday-celebration",
       title: "Malhar Birthday Celebration",
       location: "Pune",
       categories: "Health",
       date: "15/09/2025",
       images: [
-
         "/Images/Gallery/malhar-Bday/20251025_114825.webp",
         "/Images/Gallery/malhar-Bday/20251025_115439.webp",
         "/Images/Gallery/malhar-Bday/20251025_120134.webp",
@@ -114,43 +84,67 @@ export const pageContent = {
         "/Images/Gallery/malhar-Bday/20251025_122945.webp",
         "/Images/Gallery/malhar-Bday/20251025_123325.webp",
         "/Images/Gallery/malhar-Bday/20251025_122242.webp",
-
-        "/Images/Gallery/Malhar-Bday/20251025_114825.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_115439.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_120134.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_122134.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_122226.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_122242.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_122945.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_123325.webp",
-        "/Images/Gallery/Malhar-Bday/20251025_122242.webp",
-
-
       ],
     },
     {
-      id: "mauli-krupa-2",
-      slug: "community-celebration-mauli-krupa-2",
-      title: "Building Brighter Futures",
+      id: "Scholarship-Distribution",
+      slug: "scholarship-distribution-program",
+      title: "Scholarship Distribution Program",
       location: "Pune",
-      categories: "Old Age",
+      categories: "Education",
+      date: "26/11/2025",
+      images: [
+        "/Images/Gallery/Schoolrship-Distribution/04-Picsart-AiImageEnhancer - Copy.webp",
+        "/Images/Gallery/Schoolrship-Distribution/05-Picsart-AiImageEnhancer - Copy.webp",
+        "/Images/Gallery/Schoolrship-Distribution/05-Picsart-AiImageEnhancer.webp",
+        "/Images/Gallery/Schoolrship-Distribution/DSC02768 - Copy.webp",
+        "/Images/Gallery/Schoolrship-Distribution/DSC02772-Picsart-AiImageEnhancer - Copy.webp",
+        "/Images/Gallery/Schoolrship-Distribution/DSC02810 - Copy.webp",
+        "/Images/Gallery/Schoolrship-Distribution/DSC02813-Picsart-AiImageEnhancer.webp",
+        "/Images/Gallery/Schoolrship-Distribution/DSC02831-Picsart-AiImageEnhancer.webp",
+        "/Images/Gallery/Schoolrship-Distribution/DSC02870-Picsart-AiImageEnhancer.webp",
+      ],
+    },
+    {
+      id: "variProgram",
+      slug: "vari-relief-program",
+      title: "Vari Relief Program",
+      location: "Pune",
+      categories: "Health",
+      date: "26/11/2025",
+      images: [
+        "/Images/Gallery/variProgram/DSC02547.webp",
+        "/Images/Gallery/variProgram/DSC02596.webp",
+        "/Images/Gallery/variProgram/DSC02597.webp",
+        "/Images/Gallery/variProgram/DSC02627.webp",
+        "/Images/Gallery/variProgram/DSC02628.webp",
+        "/Images/Gallery/variProgram/DSC02640.webp",
+        "/Images/Gallery/variProgram/DSC02643.webp",
+        "/Images/Gallery/variProgram/DSC02657.webp",
+        "/Images/Gallery/variProgram/DSC02662.webp",
+        "/Images/Gallery/variProgram/DSC02670.webp",
+        "/Images/Gallery/variProgram/DSC02710.webp",
+      ],
+    },
+    {
+      id: "Matruchhaya-Children-Home",
+      slug: "matruchhaya-children-home",
+      title: "Matruchhaya Children Home",
+      location: "Pune",
+      categories: "Child_Labour",
       date: "20/10/2025",
       images: [
-        "/Images/donations.png",
-        "/Images/donations-2.png",
-        "/Images/donations-3.png",
-        "/Images/christmas-donations.png",
-        "/Images/impact-1.png",
-        "/Images/impact-2.png",
-        "/Images/impact-3.png",
-        "/Images/impact-4.png",
-        "/Images/impact-5.png",
-        "/Images/impact-6.png",
-        "/Images/impact-7.png",
-        "/Images/WhatWeDo1.webp",
-=======
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_115144(0).webp",
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_115438(0).webp",
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_115722.webp",
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_120134.webp",
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_120307.webp",
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_122242.webp",
+        "/Images/Gallery/Matruchhaya-Children-Home/20251025_122944.webp",
+      ],
+    },
     {
-      id: "mauli-krupa",
+      id: "beggar-rehabilitation",
       slug: "Beggar-Rehabilitation-Center-Phulenagar-Pune",
       title: "Beggar Rehabilitation Center ",
       location: "Phulenagar, Pune",
@@ -171,8 +165,9 @@ export const pageContent = {
         "/Images/Gallery/Begger/20251115_121940.webp",
         "/Images/Gallery/Begger/20251115_130823.webp",
         "/Images/Gallery/Begger/20251115_131522.webp",
->>>>>>> 1e9ad0aad04ed482b4ab7beca3d868313d727cb0
       ],
     },
+
+
   ],
 };

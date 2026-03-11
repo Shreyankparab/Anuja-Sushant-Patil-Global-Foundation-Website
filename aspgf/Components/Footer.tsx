@@ -116,7 +116,7 @@ export default function Footer() {
                                     href="mailto:project.director@aspgf.org"
                                     className="hover:underline transition-all"
                                 >
-                                    project.director@aspgf.org
+                                    project.director<span className={nunito.className}>@</span>aspgf.org
                                 </a>
                             </div>
 

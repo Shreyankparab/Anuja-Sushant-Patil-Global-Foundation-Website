@@ -84,7 +84,7 @@ export default function ContactPage() {
                         {/* Email */}
                         <div className="bg-[#f8faf9] p-3 rounded-xl border border-[#e8f1ec]">
                             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center mb-2">
-                                <span className="text-[#00735C] font-semibold text-base">@</span>
+                                <span className={`${nunito.className} text-[#00735C] font-semibold text-base`}>@</span>
                             </div>
 
                             <p className={`${nunito.className} text-[16px] font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                                 className="hover:underline transition-all"
                             >
                                 <p className={`${cabin.className} text-[#1A2E35] font-normal text-[12px] break-all leading-tight`}>
-                                    project.director@aspgf.org
+                                    project.director<span className={nunito.className}>@</span>aspgf.org
                                 </p>
                             </a>
                         </div>
