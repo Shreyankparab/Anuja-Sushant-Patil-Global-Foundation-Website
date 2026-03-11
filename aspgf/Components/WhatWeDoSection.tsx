@@ -24,41 +24,64 @@ export default function WhatWeDoSection() {
 
   const tabContent: Record<string, { description: string; points: string[] }> =
     {
-      Charity: {
+      Orphanage: {
         description:
-          "Over the years, the foundation has undertaken several community-focused initiatives aimed at social welfare and inclusive development.",
+          "We provide safe shelter, education, and emotional care for vulnerable individuals, ensuring they have the opportunity to grow, learn, and become confident members of society.",
         points: [
-          "Aashadhi Wari Support Initiative",
-          "Blind School Visit (Joy Distribution)",
-          "Spreading Christmas Joy at Mauli Krupa Orphanage",
-          "Scholarship Distribution Program",
+          "Support for orphaned children",
+          "Shelter for destitute children",
+          "Care and protection for women without family support",
+          "Education and life development support",
         ],
       },
-      "Focus Area": {
+      Education: {
         description:
-          "Our primary focus area is education, where we support students through scholarships, mentorship, and academic resources. The ASPG Foundation aims to create equal opportunities for deserving students and promote access to quality education for sustainable community development.",
+          "We believe education is the foundation of a nation, and every child deserves access to learning. ASPGF provides financial assistance to students facing financial challenges so their education continues without interruption.",
         points: [
-          "Eligibility: Applicant must generally be an Indian citizen.",
-          "Family's annual income should not exceed the specified scholarship limit.",
-          "Student must have obtained the required minimum qualifying marks in the previous examination.",
-          "Scholarship support for deserving students to continue higher education.",
+          "Pre-Matric Scholarships (Class 1–10)",
+          "Post-Matric Scholarships (Undergraduate & Postgraduate)",
+          "Higher Education Scholarships",
+          "Scholarships for Differently-Abled Students",
         ],
       },
-      Goals: {
+      //   Education: {
+      //   description:
+      //     "Our primary focus area is education, where we support students through scholarships, mentorship, and academic resources. The ASPG Foundation aims to create equal opportunities for deserving students and promote access to quality education for sustainable community development.",
+      //   points: [
+      //     "Eligibility: Applicant must generally be an Indian citizen.",
+      //     "Family's annual income should not exceed the specified scholarship limit.",
+      //     "Student must have obtained the required minimum qualifying marks in the previous examination.",
+      //     "Scholarship support for deserving students to continue higher education.",
+      //   ],
+      // },
+      Counselling: {
         description:
-          "We are committed to long-term sustainability and systemic change through clearly defined objectives and measurable impact assessments.",
+          "Our counselling centre offers emotional and psychological support to help individuals build self-awareness, resilience, emotional balance, and healthy communication in their personal and professional lives.",
         points: [
-          "Quality Education for All",
-          "Universal Health Coverage",
-          "Sustainable Livelihoods",
-          "Inclusive Community Growth",
+          "Individual, family, and group counselling",
+          "Academic and vocational guidance",
+          "Mental health counselling for anxiety, depression, and stress",
+          "Addiction counselling",
+          "Relationship and social counselling",
+        ],
+      },
+      "Old Age": {
+        description:
+          "ASPGF supports senior citizens by providing a secure, respectful, and caring environment where elders can live with dignity, companionship, and emotional well-being.",
+        points: [
+          "Comfortable accommodation",
+          "Nutritious meals",
+          "Medical care and health support",
+          "Recreational and social activities",
+          "Celebration of festivals and cultural programs",
         ],
       },
     };
 
-  const tabs = ["Charity", "Focus Area", "Goals"] as const;
+  const tabs = ["Orphanage", "Education", "Counselling", "Old Age"] as const;
 
-  const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>("Charity");
+  const [activeTab, setActiveTab] =
+    useState<(typeof tabs)[number]>("Education");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -101,6 +124,73 @@ export default function WhatWeDoSection() {
     return () => ctx.revert();
   }, []);
 
+  const mainImages = [
+    "/What-We-Do/20251115_121341.webp",
+    "/What-We-Do/20251115_121248.webp",
+    "/What-We-Do/20251115_121810.webp",
+    "/What-We-Do/DSC04228.webp",
+    "/What-We-Do/DSC04221.webp",
+    "/What-We-Do/DSC04245.webp",
+  ];
+
+  const secondImages = [
+    "/What-We-Do/20251115_121940.webp",
+    "/What-We-Do/DSC04239.webp",
+    "/What-We-Do/20251115_130823.webp",
+    "/What-We-Do/DSC04221.webp",
+    "/What-We-Do/20251115_131522.webp",
+    "/What-We-Do/DSC04220.webp",
+  ];
+
+  const [mainIndex, setMainIndex] = useState(0);
+  const [secondIndex, setSecondIndex] = useState(0);
+
+  const mainImageRef = useRef<HTMLDivElement>(null);
+  const secondImageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const mainInterval = setInterval(() => {
+      gsap.to(mainImageRef.current, {
+        opacity: 0,
+        scale: 1.05,
+        duration: 0.7,
+        ease: "power2.out",
+        onComplete: () => {
+          setMainIndex((prev) => (prev + 1) % mainImages.length);
+
+          gsap.fromTo(
+            mainImageRef.current,
+            { opacity: 0, scale: 1.1 },
+            { opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" },
+          );
+        },
+      });
+    }, 5000);
+
+    const secondInterval = setInterval(() => {
+      gsap.to(secondImageRef.current, {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: "power2.out",
+        onComplete: () => {
+          setSecondIndex((prev) => (prev + 1) % secondImages.length);
+
+          gsap.fromTo(
+            secondImageRef.current,
+            { opacity: 0, y: -20 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+          );
+        },
+      });
+    }, 7200);
+
+    return () => {
+      clearInterval(mainInterval);
+      clearInterval(secondInterval);
+    };
+  }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -126,12 +216,12 @@ export default function WhatWeDoSection() {
           </h2>
 
           {/* TABS */}
-          <div className="grid grid-cols-3 gap-3 mb-8 md:flex md:flex-wrap md:gap-4">
+          <div className="grid grid-cols-4 gap-2 mb-8 md:flex md:flex-wrap md:gap-4">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`${cabin.className} w-full md:w-auto px-4 md:px-8 py-3 rounded-full font-extrabold text-[14px] md:text-[15px] tracking-wide transition-all duration-300 shadow-sm ${
+                className={`${cabin.className} w-full md:w-auto px-2 md:px-8 py-3 rounded-full font-extrabold text-[14px] md:text-[15px] tracking-wide transition-all duration-300 shadow-sm ${
                   activeTab === tab
                     ? "bg-[#0b6a52] text-white shadow-md"
                     : "bg-white text-[#1A2E35] border border-gray-200 hover:bg-gray-50"
@@ -171,23 +261,16 @@ export default function WhatWeDoSection() {
 
         {/* RIGHT SIDE IMAGES */}
         <div ref={rightRef} className="relative">
-          {/* DOT PATTERN */}
-          {/* <div className="absolute -bottom-16 -left-16 opacity-30 -z-10">
-            <Image
-              src="/Images/dots-pattern.png"
-              alt="dots"
-              width={160}
-              height={160}
-            />
-          </div> */}
-
           {/* Remaining UI unchanged */}
           <div className="relative flex items-center justify-center lg:justify-start">
             <div className="relative">
               {/* MAIN IMAGE */}
-              <div className="relative w-[240px] h-[450px] md:w-[400px] md:h-[550px] overflow-hidden rounded-[40px]">
+              <div
+                ref={mainImageRef}
+                className="relative w-[300px] h-[450px] md:w-[480px] md:h-[550px] overflow-hidden rounded-[40px]"
+              >
                 <Image
-                  src="/Images/WhatWeDo1.webp"
+                  src={mainImages[mainIndex]}
                   alt="Community"
                   fill
                   className="object-cover"
@@ -195,13 +278,13 @@ export default function WhatWeDoSection() {
               </div>
 
               {/* SERVING SINCE */}
-              <div className="absolute bottom-[20%] -left-16 md:-left-28 bg-[#0b6a52] text-white p-4 md:p-5 rounded-xl shadow-lg w-[180px] md:w-[220px] z-30 flex items-center gap-3">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              {/* <div className="absolute bottom-[20%] -left-16 md:-left-28 bg-[#0b6a52] md:h-16  text-white p-4 md:p-5 rounded-xl shadow-lg w-[180px] md:w-[190px] z-30 flex items-center gap-3">
+                <div className="w-6 h-7 md:w-8 md:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <FaTrophy className="text-white text-lg md:text-xl" />
                 </div>
                 <div>
                   <p
-                    className={`${cabin.className} text-[12px] md:text-[14px] font-bold tracking-wide leading-tight`}
+                    className={`${cabin.className} text-[12px] md:text-[12px] font-bold tracking-wide leading-tight`}
                   >
                     Serving Since 2024
                   </p>
@@ -211,26 +294,29 @@ export default function WhatWeDoSection() {
                     Committed to Social Impact.
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               {/* SERVING COMMUNITIES */}
-              <div className="absolute top-[12%] -right-24 md:-right-46 bg-[#0b6a52] text-white p-4 md:p-5 rounded-xl shadow-lg w-[160px] md:w-[200px] z-30">
+              {/* <div className="absolute top-[12%] -right-22  md:-right-38 bg-[#0b6a52] text-white p-2 pl-2 md:p-5 rounded-xl shadow-lg h-32 md:h-26 w-[130px] md:w-[190px] z-30">
                 <p
-                  className={`${nunito.className} text-[13px] md:text-[15px] font-extrabold leading-tight tracking-wide`}
+                  className={`${nunito.className} text-[12px] md:text-[14px] font-bold leading-tight tracking-wide`}
                 >
                   Serving Communities <br />
                   Through Compassion, <br />
                   Action & Sustainable <br />
                   Impact.
                 </p>
-              </div>
+              </div> */}
 
               {/* SECOND IMAGE */}
-              <div className="absolute bottom-[-20px] right-[-20px] md:bottom-[-40px] md:right-[-60px] z-20">
-                <div className="relative w-[165px] h-[225px] md:w-[225px] md:h-[300px]">
-                  <div className="relative w-full h-full rounded-t-[30px] md:rounded-t-[45px] overflow-hidden border-2 md:border-4 border-white bg-white">
+              <div className="absolute bottom-[-20px] right-[-44px] md:bottom-[-60px] md:right-[-92px] md:mt-80 z-20">
+                <div className="relative w-[185px] h-[240px] md:w-[300px] md:h-[350px]">
+                  <div
+                    ref={secondImageRef}
+                    className="relative w-full h-full rounded-t-[30px] md:rounded-t-[45px] overflow-hidden border-2 md:border-4 border-white bg-white"
+                  >
                     <Image
-                      src="/Images/WhatWeDo2.webp"
+                      src={secondImages[secondIndex]}
                       alt="Kids"
                       fill
                       className="object-cover"
