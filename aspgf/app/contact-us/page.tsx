@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import ContactForm from "@/Components/ContactUs/ContactForm";
 import { MapPin, Phone } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 
@@ -53,85 +52,85 @@ export default function ContactPage() {
           {/* CONTACT INFO GRID */}
           <div className="mt-8 lg:mt-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Address */}
-            <div className="sm:row-span-2 bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex flex-col h-full gap-4">
-              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
-                <MapPin className="text-[#00735C]" size={20} />
-              </div>
+              {/* Address */}
+              <div className="sm:row-span-2 bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex flex-col h-full gap-4">
+                <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-[#00735C]" size={20} />
+                </div>
 
-              <div>
-                <p
-                  className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1.5`}
-                >
-                  Address
-                </p>
-
-                <p
-                  className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] leading-relaxed`}
-                >
-                  Dr. Sushant Patil Corporate, Office No. 615, 6th Floor, <br />
-                  Solitaire Business Hub, Balewadi High Street, <br /> Baner, Pune
-                  411045
-                </p>
-              </div>
-            </div>
-
-            {/* Phone */}
-            <div className="bg-[#f8faf9] p-5 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
-                <Phone className="text-[#00735C]" size={20} />
-              </div>
-
-              <div>
-                <p
-                  className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1`}
-                >
-                  Helpline
-                </p>
-
-                <a
-                  href="tel:+919684001643"
-                  className="hover:underline transition-all"
-                >
+                <div>
                   <p
-                    className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] leading-tight`}
+                    className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1.5`}
                   >
-                    +91 9684001643
+                    Address
                   </p>
-                </a>
-              </div>
-            </div>
 
-            {/* Email */}
-            <div className="bg-[#f8faf9] p-5 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
-                <span className="text-[#00735C] font-semibold text-lg">
-                  @
-                </span>
-              </div>
-
-              <div>
-                <p
-                  className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1`}
-                >
-                  Email
-                </p>
-
-                <a
-                  href="mailto:project.director@aspgf.org"
-                  className="hover:underline transition-all"
-                >
                   <p
-                    className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] break-all leading-tight`}
+                    className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] leading-relaxed`}
                   >
-                    project.director@aspgf.org
+                    Dr. Sushant Patil Corporate, Office No. 615, 6th Floor, <br />
+                    Solitaire Business Hub, Balewadi High Street, <br /> Baner, Pune
+                    411045
                   </p>
-                </a>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="bg-[#f8faf9] p-5 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                  <Phone className="text-[#00735C]" size={20} />
+                </div>
+
+                <div>
+                  <p
+                    className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1`}
+                  >
+                    Helpline
+                  </p>
+
+                  <a
+                    href="tel:+919684001643"
+                    className="hover:underline transition-all"
+                  >
+                    <p
+                      className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] leading-tight`}
+                    >
+                      +91 9684001643
+                    </p>
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="bg-[#f8faf9] p-5 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                  <span className="text-[#00735C] font-semibold text-lg">
+                    @
+                  </span>
+                </div>
+
+                <div>
+                  <p
+                    className={`${nunito.className} text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1`}
+                  >
+                    Email
+                  </p>
+
+                  <a
+                    href="mailto:project.director@aspgf.org"
+                    className="hover:underline transition-all"
+                  >
+                    <p
+                      className={`${nunito.className} text-[#1A2E35] font-medium text-[14px] break-all leading-tight`}
+                    >
+                      project.director@aspgf.org
+                    </p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
         {/* RIGHT SIDE */}
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
