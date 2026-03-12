@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { TrendingUp, Lightbulb, ThumbsUp } from "lucide-react";
+import { GraduationCap, Users, HandHeart } from "lucide-react";
 import { Nunito, Cabin } from "next/font/google";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
@@ -10,24 +10,27 @@ const cabin = Cabin({ subsets: ["latin"] });
 const statsData = [
   {
     id: 1,
-    icon: <TrendingUp className="w-8 h-8 text-[#00735C]" />,
-    value: 98,
-    suffix: "%",
-    label: "Beneficiaries Reached",
+    icon: <GraduationCap className="w-8 h-8 text-[#00735C]" />,
+    prefix: "₹",
+    value: 10,
+    suffix: "+ Lakhs",
+    label: "Scholarships Provided",
   },
   {
     id: 2,
-    icon: <Lightbulb className="w-8 h-8 text-[#00735C]" />,
-    value: 1265,
+    icon: <Users className="w-8 h-8 text-[#00735C]" />,
+    prefix: "",
+    value: 2200,
     suffix: "+",
-    label: "Families Benefited",
+    label: "Peoples Benefited",
   },
   {
     id: 3,
-    icon: <ThumbsUp className="w-8 h-8 text-[#00735C]" />,
-    value: 36,
-    suffix: "k",
-    label: "Students Supported",
+    icon: <HandHeart className="w-8 h-8 text-[#00735C]" />,
+    prefix: "₹",
+    value: 5,
+    suffix: "+ Lakhs",
+    label: "Essentials Donated",
   },
 ];
 
@@ -78,9 +81,8 @@ export default function StatsSection() {
       {statsData.map((stat, index) => (
         <div
           key={stat.id}
-          className={`flex flex-col items-center transition-all duration-1000 transform ${
-            hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`flex flex-col items-center transition-all duration-1000 transform ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
           style={{ transitionDelay: `${index * 200}ms` }}
         >
           <div className="w-16 h-16 rounded-full border-2 border-[#00735C]/30 flex items-center justify-center mb-6 shadow-sm">
@@ -88,6 +90,7 @@ export default function StatsSection() {
           </div>
 
           <div className={`${nunito.className} text-4xl md:text-5xl font-black text-[#1A2E35] mb-2 flex items-baseline`}>
+            {stat.prefix && <span>{stat.prefix}</span>}
             <span>
               <Counter target={stat.value} trigger={hasIntersected} />
             </span>

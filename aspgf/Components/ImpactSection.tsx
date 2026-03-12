@@ -5,7 +5,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Nunito, Cabin, Caveat } from "next/font/google";
 import { FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { videoStories, type ImpactVideoStory } from "@/data/impactData";
-import { Play, X, Info, MapPin } from "lucide-react";
+import { Play, X, Info } from "lucide-react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useLoading } from "./Common/LoadingHandler";
 
@@ -15,6 +16,18 @@ const cabin = Cabin({
   weight: ["400", "500", "600", "700"],
 });
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
+
+const verticalThumbnails: Record<number, string> = {
+  1: "/Images/Impact/impact-vertical/Chetan_Nachare.png",
+  2: "/Images/Impact/impact-vertical/Priya_Jadhav.png",
+  3: "/Images/Impact/impact-vertical/Pradnya_Wankhede_Student.png",
+  4: "/Images/Impact/impact-vertical/Vahol_Sir.png",
+  5: "/Images/Impact/impact-vertical/Kirti_Chorghe.png",
+  6: "/Images/Impact/impact-vertical/Oum_Aene.png",
+  7: "/Images/Impact/impact-vertical/Archana_Shelke.png",
+  8: "/Images/Impact/impact-vertical/Shubham_Shinde.png",
+  9: "/Images/Impact/impact-vertical/L_V_Rode.png",
+};
 
 export default function ImpactSection() {
   const router = useRouter();
@@ -184,10 +197,10 @@ export default function ImpactSection() {
                       <div className="w-full md:w-[45%] aspect-video md:aspect-auto relative p-3 md:p-4">
                         <div className="relative w-full h-full rounded-[18px] md:rounded-[24px] overflow-hidden group">
                           <Image
-                            src={story.thumbnail}
+                            src={!isMobile && verticalThumbnails[story.id] ? verticalThumbnails[story.id] : story.thumbnail}
                             alt={story.name}
                             fill
-                            className="object-contain"
+                            className={!isMobile ? "object-cover" : "object-contain"}
                           />
                           <div
                             className="absolute inset-0 bg-black/20 flex items-center justify-center cursor-pointer"
@@ -331,7 +344,7 @@ export default function ImpactSection() {
                 </div>
                 <div className="hidden lg:flex items-center gap-6 p-4 bg-white/5 rounded-xl border border-white/5">
                   <div className="flex items-center gap-2 text-gray-400 font-bold">
-                    <MapPin size={18} className="text-[#00735C]" />
+                    <FaMapMarkerAlt size={18} className="text-[#00735C]" />
                     <span>{activeVideo.location}</span>
                   </div>
                   <div className="w-px h-6 bg-white/10" />
@@ -368,11 +381,10 @@ export default function ImpactSection() {
                       <div
                         key={video.id}
                         onClick={() => setActiveVideo(video)}
-                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${
-                          activeVideo.id === video.id
+                        className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeVideo.id === video.id
                             ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
                             : "hover:bg-white/10"
-                        }`}
+                          }`}
                       >
                         <div className="relative w-28 aspect-video rounded-lg overflow-hidden flex-shrink-0">
                           <Image

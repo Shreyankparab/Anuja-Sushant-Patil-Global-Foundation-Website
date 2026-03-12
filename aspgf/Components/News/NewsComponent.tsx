@@ -6,16 +6,16 @@ import { newsData, Category, NewsItem } from "@/data/newsData";
 import Image from "next/image";
 import {
     FiCalendar,
-    FiMapPin,
     FiX,
     FiArrowLeft,
     FiArrowRight,
 } from "react-icons/fi";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import NewsModal from "./NewsModal";
 
-const categories: Category[] = ["All", "Education", "Orphanage", "Health", "Old Age"];
+const categories: Category[] = ["All", "Education", "Orphanage", "Charity", "Old Age"];
 
 const caveat = Caveat({ subsets: ["latin"] });
 const nunito = Nunito({ subsets: ["latin"] });
@@ -172,7 +172,7 @@ export default function NewsComponent() {
                                     </span>
 
                                     <span className="flex items-center gap-1.5">
-                                        <FiMapPin size={12} className="text-[#3ed0a6]" />
+                                        <FaMapMarkerAlt size={12} className="text-[#3ed0a6]" />
                                         {item.location}
                                     </span>
                                 </p>

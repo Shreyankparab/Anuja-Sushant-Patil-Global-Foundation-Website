@@ -56,12 +56,12 @@ export default function LeadershipSection() {
                                 <h4
                                     className={`${nunito.className} font-extrabold text-[18px] text-black`}
                                 >
-                                    Dr. Sushant Patil
+                                    Dr. Sushant Vijaykumar Patil
                                 </h4>
                                 <p
                                     className={`${cabin.className} text-[14px] font-medium text-gray-600`}
                                 >
-                                    Founder
+                                    Founder, ASPGF
                                 </p>
                             </div>
                         </div>
@@ -182,12 +182,12 @@ export default function LeadershipSection() {
                                 <h4
                                     className={`${nunito.className} font-extrabold text-[18px] text-black`}
                                 >
-                                    Adv. Anuja Patil
+                                    Adv. Anuja Sushant Patil
                                 </h4>
                                 <p
                                     className={`${cabin.className} text-[14px] font-medium text-gray-600`}
                                 >
-                                    Founder
+                                    Founder, ASPGF
                                 </p>
                             </div>
                         </div>
@@ -318,7 +318,7 @@ export default function LeadershipSection() {
                                 <p
                                     className={`${cabin.className} text-[14px] font-medium text-gray-600 uppercase tracking-wide`}
                                 >
-                                    Project Director
+                                    Project Director, ASPGF
                                 </p>
                             </div>
                         </div>

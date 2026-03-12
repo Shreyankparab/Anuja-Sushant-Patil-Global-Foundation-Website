@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
-import { FaCheckCircle, FaPlay, FaTrophy } from "react-icons/fa";
+import { FaCheckCircle, FaPlay, FaTrophy, FaTimes } from "react-icons/fa";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
@@ -17,6 +17,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 export default function WhatWeDoSection() {
   const containerRef = useScrollReveal();
   const [activeTab, setActiveTab] = useState<"Orphanage" | "Education" | "Counselling" | "Old Age">("Education");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const tabContent: Record<string, { description: string; points: string[] }> =
     {
@@ -84,32 +85,19 @@ export default function WhatWeDoSection() {
     "/What-We-Do/DSC04220.webp",
   ];
 
-  const [mainIndex, setMainIndex] = useState(0);
-  const [secondIndex, setSecondIndex] = useState(0);
-  const [isMainFading, setIsMainFading] = useState(false);
-  const [isSecondFading, setIsSecondFading] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const mainInterval = setInterval(() => {
-      setIsMainFading(true);
+    const interval = setInterval(() => {
+      setIsFading(true);
       setTimeout(() => {
-        setMainIndex((prev) => (prev + 1) % mainImages.length);
-        setIsMainFading(false);
+        setCurrentIndex((prev) => (prev + 1) % mainImages.length);
+        setIsFading(false);
       }, 700);
     }, 5000);
 
-    const secondInterval = setInterval(() => {
-      setIsSecondFading(true);
-      setTimeout(() => {
-        setSecondIndex((prev) => (prev + 1) % secondImages.length);
-        setIsSecondFading(false);
-      }, 600);
-    }, 7200);
-
-    return () => {
-      clearInterval(mainInterval);
-      clearInterval(secondInterval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -179,6 +167,17 @@ export default function WhatWeDoSection() {
               </li>
             ))}
           </ul>
+
+          {activeTab === "Education" && (
+            <div className="mt-8 transition-all duration-700 transform opacity-100 translate-y-0">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className={`${cabin.className} bg-[#0b6a52] text-white px-8 py-3 rounded-full font-bold text-[15px] hover:bg-[#0a5a45] transition-colors shadow-md`}
+              >
+                Check Eligibility
+              </button>
+            </div>
+          )}
         </div>
 
         {/* RIGHT SIDE IMAGES */}
@@ -190,9 +189,9 @@ export default function WhatWeDoSection() {
               <div
                 className="relative w-[300px] h-[450px] md:w-[480px] md:h-[550px] overflow-hidden rounded-[40px]"
               >
-                <div className={`relative w-full h-full transition-all duration-700 transform ${isMainFading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}>
+                <div className={`relative w-full h-full transition-all duration-700 transform ${isFading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}>
                   <Image
-                    src={mainImages[mainIndex]}
+                    src={mainImages[currentIndex]}
                     alt="Community"
                     fill
                     className="object-cover"
@@ -206,9 +205,9 @@ export default function WhatWeDoSection() {
                   <div
                     className="relative w-full h-full rounded-t-[30px] md:rounded-t-[45px] overflow-hidden border-2 md:border-4 border-white bg-white"
                   >
-                     <div className={`relative w-full h-full transition-all duration-500 transform ${isSecondFading ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`}>
+                     <div className={`relative w-full h-full transition-all duration-500 transform ${isFading ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`}>
                       <Image
-                        src={secondImages[secondIndex]}
+                        src={secondImages[currentIndex]}
                         alt="Kids"
                         fill
                         className="object-cover"
@@ -231,6 +230,73 @@ export default function WhatWeDoSection() {
           {/* RIGHT SIDE END */}
         </div>
       </div>
+
+      {/* SCHOLARSHIP MODAL */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+          <div className="relative w-full max-w-3xl max-h-[90vh] bg-wrap bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+            
+            {/* Peacock SVG Background */}
+            <div className="absolute inset-0 opacity-30 pointer-events-none z-0 flex items-center justify-center">
+              <Image 
+                src="/Images/simple-peacock.svg" 
+                alt="Peacock Background" 
+                fill 
+                className="object-contain scale-[0.8] md:scale-[0.7]"
+              />
+            </div>
+
+            {/* Static Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 p-2 text-gray-500 hover:text-red-500 transition-colors bg-white/80 backdrop-blur-sm hover:bg-red-50 rounded-full z-20 shadow-sm border border-gray-100"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+            
+            {/* Scrollable Content */}
+            <div className="overflow-y-auto p-6 md:p-10 scrollbar-hide relative z-10">
+              <h3 className={`${nunito.className} text-[#0b6a52] text-2xl md:text-3xl font-extrabold mb-6 pr-8`}>
+              Eligibility Criteria for (ASPG) Scholarship
+            </h3>
+            
+            <ul className={`${cabin.className} space-y-4 text-[#2b2b2b] text-[16px] md:text-[18px] mb-10`}>
+              <li>The applicant must generally be an Indian citizen.</li>
+              <li>The family's annual income should not exceed a specified limit.</li>
+              <li>The student must have obtained minimum qualifying marks in the previous examination.</li>
+            </ul>
+
+            <h3 className={`${nunito.className} text-[#0b6a52] text-2xl md:text-3xl font-extrabold mb-6`}>
+              Documents Required for Scholarship Application
+            </h3>
+            
+            <ul className={`${cabin.className} space-y-3 text-[#2b2b2b] text-[16px] md:text-[18px] list-none`}>
+              {[
+                { label: "Bonafide Certificate", desc: "Bonafide certificate from the educational institution." },
+                { label: "Admission Fee Receipt", desc: "Proof of admission to the educational institution." },
+                { label: "Marksheet", desc: "Previous exam marksheet (10th or 12th)." },
+                { label: "Aadhaar Card", desc: "Student's Aadhaar card." },
+                { label: "Income Certificate", desc: "Issued by the Tehsildar or competent authority." },
+                { label: "Sources of Income", desc: "" },
+                { label: "Bank Account Details", desc: "Student's bank account and passbook." },
+                { label: "Residence Certificate", desc: "Proof of residential address." },
+                { label: "Passport Size Photo", desc: "Recent passport size photo of the student." },
+                { label: "Other Documents", desc: "" },
+                { label: "Hostel Receipt", desc: "If staying in a hostel." },
+              ].map((doc, idx) => (
+                <li key={idx} className="flex items-start gap-2">
+                  <span className="text-gray-400 mt-[2px] text-sm leading-none">•</span>
+                  <div>
+                    <span className="font-bold text-[#0b6a52]">{doc.label}</span>
+                    {doc.desc && <span className="">: {doc.desc}</span>}
+                  </div>
+                </li>
+              ))}
+            </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -3,7 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
-import { MapPin, Play, X, ChevronLeft, ChevronRight, Info } from "lucide-react";
+import { Play, X, ChevronLeft, ChevronRight, Info } from "lucide-react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import StatsSection from "../StatsSection";
 import { videoStories } from "@/data/impactData";
 
@@ -150,7 +151,7 @@ export default function ImpactComponent() {
                     <div
                       className={`${cabin.className} flex items-center gap-1.5 text-[#00735C] font-bold text-xs mb-3 uppercase tracking-wider`}
                     >
-                      <MapPin size={14} fill="currentColor" />
+                      <FaMapMarkerAlt size={14} />
                       <span>{featuredVideo.location}</span>
                     </div>
                     <h3
@@ -195,7 +196,7 @@ export default function ImpactComponent() {
                     <div
                       className={`${cabin.className} flex items-center gap-1.5 text-[#00735C] font-bold text-[10px] mb-2 uppercase tracking-wider`}
                     >
-                      <MapPin size={12} fill="currentColor" />
+                      <FaMapMarkerAlt size={12} />
                       <span>{video.location}</span>
                     </div>
                     <h3
@@ -241,7 +242,7 @@ export default function ImpactComponent() {
                   <div
                     className={`${cabin.className} flex items-center gap-1.5 text-[#00735C] font-bold text-[10px] mb-2 uppercase tracking-wider`}
                   >
-                    <MapPin size={12} fill="currentColor" />
+                    <FaMapMarkerAlt size={12} />
                     <span>{video.location}</span>
                   </div>
                   <h3
@@ -361,7 +362,7 @@ export default function ImpactComponent() {
                 </div>
                 <div className="hidden lg:flex items-center gap-6 p-4 bg-white/5 rounded-xl border border-white/5">
                   <div className="flex items-center gap-2 text-gray-400 font-bold">
-                    <MapPin size={18} className="text-[#00735C]" />
+                    <FaMapMarkerAlt size={18} className="text-[#00735C]" />
                     <span>{activeVideo.location}</span>
                   </div>
                   <div className="w-px h-6 bg-white/10" />

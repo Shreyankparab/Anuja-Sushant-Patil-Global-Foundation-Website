@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { MapPin, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { newsData } from "@/data/newsData";
 import NewsModal from "./News/NewsModal";
@@ -241,7 +242,7 @@ function NewsCard({ card, onOpen }: { card: any; onOpen: () => void }) {
         <div
           className={`${cabin.className} flex items-center gap-2 text-white/90 text-[12px] font-bold mb-2`}
         >
-          <MapPin size={14} className="text-[#3ed0a6]" /> {card.location}
+          <FaMapMarkerAlt size={14} className="text-[#3ed0a6]" /> {card.location}
         </div>
 
         <h3

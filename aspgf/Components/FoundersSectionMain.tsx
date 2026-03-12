@@ -22,17 +22,18 @@ export default function FoundersSection() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <AnimatedCard
-          name1="Dr. Sushant Patil"
-          role="Founder"
-          experience="20+ years of leadership in social development"
+          name1="Dr. Sushant Vijaykumar"
+          name2="Patil"
+          role="Founder, ASPGF"
+          // experience="20+ years of leadership in social development"
           image="/Images/SushantPatil.webp"
           link="/about-us#sushant-patil"
         />
         <AnimatedCard
           name1="Adv. Anuja Sushant"
           name2="Patil"
-          role="Founder"
-          experience="20+ years of experience in the education industry"
+          role="Founder, ASPGF"
+          // experience="20+ years of experience in the education industry"
           image="/Images/AnujaPatil.webp"
           link="/about-us#anuja-patil"
         />

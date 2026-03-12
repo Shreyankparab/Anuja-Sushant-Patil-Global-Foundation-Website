@@ -92,7 +92,7 @@ export default function DonateForm() {
                             })}
                             type="text"
                             id="name"
-                            placeholder="Connor Mitchell"
+                            placeholder="Enter your name"
                             suppressHydrationWarning
                             className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.name ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${cabin.className}`}
                         />
@@ -112,7 +112,7 @@ export default function DonateForm() {
                             })}
                             type="email"
                             id="email"
-                            placeholder="aspgf@gmail.com"
+                            placeholder="Enter your email address"
                             suppressHydrationWarning
                             className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.email ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${nunito.className}`}
                         />
@@ -247,7 +247,7 @@ export default function DonateForm() {
                         {...register("message")}
                         id="message"
                         rows={4}
-                        placeholder="Share your feedback or message"
+                        placeholder="Enter additional information"
                         suppressHydrationWarning
                         className={`w-full p-5 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#00735C] focus:ring-2 focus:ring-[#00735C]/20 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 resize-none ${cabin.className}`}
                     ></textarea>

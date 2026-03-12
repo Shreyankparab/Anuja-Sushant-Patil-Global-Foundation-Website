@@ -57,14 +57,14 @@ export default function DonateUsComponent() {
                                 <div className="bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md">
                                     <Banknote className="text-[#00735C] mb-3" size={24} />
                                     <p className={`${nunito.className} text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>Account Number</p>
-                                    <p className={`${cabin.className} text-[#1A2E35] font-extrabold text-lg tracking-wider`}>50200114093952</p>
+                                    <p className={`${cabin.className} text-[#1A2E35] font-extrabold text-lg tracking-wider`}>50200110314690</p>
                                 </div>
 
                                 {/* IFSC Code */}
                                 <div className="bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md">
                                     <Landmark className="text-[#00735C] mb-3" size={24} />
                                     <p className={`${nunito.className} text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>IFSC Code</p>
-                                    <p className={`${cabin.className} text-[#1A2E35] font-extrabold text-lg tracking-wider`}>HDFC0000103</p>
+                                    <p className={`${cabin.className} text-[#1A2E35] font-extrabold text-lg tracking-wider`}>HDFC0002453</p>
                                 </div>
                             </div>
                         </div>
@@ -72,38 +72,55 @@ export default function DonateUsComponent() {
                         <div className="bg-[#00735C] rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden transition-all hover:shadow-xl hover:shadow-[#00735C]/20">
                             <div className="absolute right-[-20px] bottom-[-20px] w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
 
-                            <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
-                                {/* Left: 60% Content */}
-                                <div className="w-full md:w-[60%]">
-                                    <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support the Change</h3>
-                                    <p className={`${cabin.className} text-white/90 mb-8 text-lg leading-relaxed italic`}>
-                                        &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
-                                    </p>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-sm">
+                            <div className="flex flex-col md:flex-row gap-8 relative z-10 items-start">
+                                {/* Left Content: Text + UPI */}
+                                <div className="w-full md:w-full flex flex-col gap-10">
+                                    <div className="md:w-[55%]">
+                                        <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support the Change</h3>
+                                        <p className={`${cabin.className} text-white/90 mb-0 text-lg leading-relaxed italic`}>
+                                            &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
+                                        </p>
+                                    </div>
+
+                                    <a
+                                        href="upi://pay?pa=anujasushantpatilglo.82069939@hdfcbank&pn=Anuja%20Sushant%20Patil%20Global%20Foundation"
+                                        className="flex items-center gap-4 group/upi w-full md:w-fit hover:opacity-90 transition-all overflow-hidden"
+                                    >
+                                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/upi:bg-white/30 transition-colors flex-shrink-0">
                                             <Landmark size={24} />
                                         </div>
-                                        <div>
+                                        <div className="min-w-0">
                                             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">Pay via UPI</p>
-                                            <p className="font-bold text-lg">project.director@aspgf</p>
+                                            <p className="font-bold text-sm md:text-lg break-all md:break-normal">anujasushantpatilglo.82069939@hdfcbank</p>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
 
-                                {/* Right: 40% QR Image */}
-                                <div className="w-full md:w-[40%] flex justify-center md:justify-end">
-                                    <div className="bg-white p-5 rounded-[32px] shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 cursor-pointer">
+                                {/* Right: QR Image (Absolute on Desktop for Size) */}
+                                <div className="w-full md:absolute md:top-[-20px] md:right-0 md:w-auto flex flex-col items-center justify-center">
+                                    <div className="bg-white p-5 rounded-[32px] shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 cursor-pointer w-full max-w-[280px]">
                                         <div className="relative p-2 bg-gray-50 rounded-2xl border border-gray-100">
                                             <Image
-                                                src="/Images/donation-qr.png"
+                                                src="/Images/qr-code.png"
                                                 alt="Donation QR Code"
                                                 width={260}
                                                 height={260}
-                                                className="rounded-xl"
+                                                className="rounded-xl w-full h-auto"
                                             />
                                         </div>
                                         <p className={`${nunito.className} text-[#00735C] text-xs font-black text-center mt-4 uppercase tracking-[0.2em]`}>Scan to Support</p>
                                     </div>
+
+                                    {/* Mobile Click to Pay Button */}
+                                    <a
+                                        href="upi://pay?pa=anujasushantpatilglo.82069939@hdfcbank&pn=Anuja%20Sushant%20Patil%20Global%20Foundation"
+                                        className="md:hidden mt-8 w-full max-w-[280px] py-4 bg-white text-[#00735C] rounded-2xl flex items-center justify-center gap-3 font-black uppercase tracking-widest shadow-xl active:scale-95 transition-all border-2 border-transparent"
+                                    >
+                                        <div className="w-8 h-8 rounded-full bg-[#00735C]/10 flex items-center justify-center">
+                                            <Landmark size={18} />
+                                        </div>
+                                        <span>Donate Now</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

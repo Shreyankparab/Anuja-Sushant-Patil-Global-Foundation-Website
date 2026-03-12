@@ -73,14 +73,17 @@ const HeroSection: React.FC = () => {
             <span className="text-[#A828C6]">Empower change</span>, one act
             <br className="hidden md:block" /> of kindness at a time
           </h1>
-
+          {/* <p className="text-lg md:text-xl text-white/90 mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}">LEADING WITH INTIGRETY SERVING WITH EMPATHY</p> */}
           {/* DESCRIPTION */}
           <p
-            className={`${cabin.className} text-lg md:text-xl text-white/90 mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`${cabin.className} text-lg md:text-xl text-white/90 mt-6 md:mt-6 font-medium leading-relaxed max-w-2xl transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            Working together to uplift communities and create lasting change.
-          </p>
+            {/* <span className="text-[#ffffff] ">LEADING WITH INTERGRITY SERVING WITH EMPATHY.</span><br /> */}
+            <span className="text-[#ffffff] ">"Leading with Integrity, Serving with Empathy."</span><br />
 
+            {/* Working together to uplift communities and create lasting change. */}
+          </p>
+          {/* <span className="text-[#C048DC]">LEADING WITH INTIGRETY SERVING WITH EMPATHY,</span><br /> */}
           {/* BUTTON */}
           <div className={`mt-8 md:mt-10 transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <button

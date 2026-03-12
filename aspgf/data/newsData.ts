@@ -1,4 +1,4 @@
-export type Category = "All" | "Health" | "Old Age" | "Education" | "Orphanage";
+export type Category = "All" | "Charity" | "Old Age" | "Education" | "Orphanage";
 
 export interface NewsItem {
     id: number;
@@ -16,7 +16,7 @@ export const newsData: NewsItem[] = [
         category: "Education",
         image: "/Images/News/news1.webp",
         location: "Pune",
-        date: "23/07/2025",
+        date: "23/07/2025", //NA
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ export const newsData: NewsItem[] = [
         category: "Education",
         image: "/Images/News/news2.webp",
         location: "Alandi",
-        date: "23/07/2025",
+        date: "23/07/2025",//NA
     },
     {
         id: 3,
@@ -32,7 +32,7 @@ export const newsData: NewsItem[] = [
         category: "Education",
         image: "/Images/News/news10.webp",
         location: "Alandi",
-        date: "23/07/2025",
+        date: "11/07/2025",
     },
     {
         id: 4,
@@ -40,39 +40,39 @@ export const newsData: NewsItem[] = [
         category: "Education",
         image: "/Images/News/news4.webp",
         location: "Pune",
-        date: "23/07/2025",
+        date: "11/07/2025",
     },
     {
         id: 5,
-        title: "Sweeter Distribution Ceremony",
+        title: "Sweater Distribution Ceremony",
         category: "Orphanage",
         image: "/Images/News/news5.webp",
         location: "Mumbai",
-        date: "10/08/2025",
+        date: "27/08/2025",
     },
     {
         id: 6,
-        title: "Sweeter Distribution Ceremony",
+        title: "Sweater Distribution Ceremony",
         category: "Orphanage",
         image: "/Images/News/news6.webp",
         location: "Pune",
-        date: "11/08/2025",
+        date: "11/08/2025",//NA
     },
     {
         id: 7,
-        title: "Blanket, Sweeter Distribution Ceremony",
+        title: "Blanket, Sweater Distribution Ceremony",
         category: "Orphanage",
         image: "/Images/News/news7.webp",
         location: "Nashik",
-        date: "15/08/2025",
+        date: "22/11/2025",
     },
     {
         id: 8,
-        title: "Blanket and Sweeter Distribution)",
+        title: "Blanket and Sweater Distribution",
         category: "Orphanage",
         image: "/Images/News/news8.webp",
         location: "Pune",
-        date: "23/07/2025",
+        date: "22/11/2025",
     },
     {
         id: 9,
@@ -80,7 +80,7 @@ export const newsData: NewsItem[] = [
         category: "Education",
         image: "/Images/News/news3.webp",
         location: "Mumbai",
-        date: "10/08/2025",
+        date: "09/07/2025",
     },
     {
         id: 10,
@@ -88,7 +88,7 @@ export const newsData: NewsItem[] = [
         category: "Orphanage",
         image: "/Images/News/news12.webp",
         location: "Pune",
-        date: "11/08/2025",
+        date: "27/10/2025",
     },
     // {
     //     id: 11,
@@ -109,7 +109,7 @@ export const newsData: NewsItem[] = [
     // {
     //     id: 13,
     //     title: "Medical support initiative (Copy 2)",
-    //     category: "Health",
+    //     category: "Charity",
     //     image: "/Images/News/news12.webp",
     //     location: "Mumbai",
     //     date: "10/08/2025",

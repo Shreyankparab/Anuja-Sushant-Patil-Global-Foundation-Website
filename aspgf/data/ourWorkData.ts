@@ -10,7 +10,7 @@ export interface WorkItem {
 
 export const workCategories = [
     "All Category",
-    "Health",
+    "Charity",
     "Education",
     "Old Age",
     "Orphanage",
@@ -19,87 +19,87 @@ export const workCategories = [
 export const allWorkItems: WorkItem[] = [
     {
         id: 1,
-        image: "/Images/Gallery/variProgram/DSC02643.webp",
-        category: "Health",
-        date: "26/11/2025",
-        title: "Vari Relief Program",
+        image: "/Images/Gallery/variProgram/aashadi_vari_image_7.webp",
+        category: "Charity",
+        date: "22/06/2025",
+        title: "Vari Program",
         description:
-            "During the sacred Ashadhi Wari pilgrimage, our foundation organized a large-scale relief distribution program to support Warkaris walking long distances in challenging weather conditions.",
+            "During this program, the foundation distributed essential items to Warkari devotees. A total of 200 raincoats, 200 umbrellas, 1000 biscuit packets, drinking water bottles, tea, and 50 kg of sabudana khichdi  were distributed to support the pilgrims during their journey.",
         featured: true,
     },
 
 
     {
         id: 2,
-        image: "/Images/Gallery/Schoolrship-Distribution/04-Picsart-AiImageEnhancer - Copy.webp",
+        image: "/Images/Gallery/Schoolrship-Distribution/scholarship_image_1.webp",
         category: "Education",
-        date: "26/11/2025",
+        date: "08/07/2025",
         title: "Scholarship Distribution Program",
         description:
-            "To support education for deserving students, the foundation conducted a scholarship distribution program for...",
+            "At Narayanrao Sanas Vidyalaya, Dhayari, the foundation provided financial assistance to needy students. A total scholarship amount of ₹5,13,000 was distributed to 116 students to support their Educational fees.",
     },
     {
         id: 3,
-        image: "/Images/Gallery/Begger/20251115_110959.webp",
+        image: "/Images/Gallery/Begger/begger_image_1.webp",
         category: "Orphanage",
-        date: "12/08/2025",
+        date: "15/11/2025",
         title: "Beggar Rehabilitation Center",
         description:
-            "A winter relief and community cleanliness initiative was conducted...",
+            "At the Beggar Rehabilitation Center in Phulenagar, the foundation distributed blankets to 100 people and sweaters to 22 individuals. Along with this, a cleanliness drive was conducted in the surrounding area with the help of NSS (National Service Scheme) volunteers. A total of 50 students from Dr. D. Y. Patil Engineering College and Ajeenkya D. Y. Patil College participated in shramdaan (voluntary service) and contributed to the cleanliness campaign.",
         // featured: true,
     },
     {
         id: 4,
-        image: "/Images/Gallery/Matruchhaya-Children-Home/20251025_115144(0).webp",
+        image: "/Images/Gallery/Matruchhaya-Children-Home/mch_image_1.webp",
         category: "Orphanage",
-        date: "20/10/2025",
+        date: "25/10/2025",
         title: "Matruchhaya Children's Home",
         description:
-            "Support provided to orphaned children for winter preparedness and daily sustenance.",
+            "Alandi Road, Pune | 25 October 2025 On the occasion of Malhar’s birthday, son of Hon. Rajkunwar Tai Deshmukh-Gaikwad, the foundation distributed warm sweaters to 30 children at Matruchhaya Orphanage. Additionally, grocery supplies sufficient for two to three months were also provided to support the children.",
     },
     {
         id: 5,
-        image: "/Images/Gallery/christmas/DSC00596.webp",
+        image: "/Images/Gallery/christmas/christmas_image_1.webp",
         category: "Orphanage",
-        date: "12/08/2025",
-        title: "Spreading Joy This Christmas: A Celebration with Children at Mauli Krupa",
+        date: "24/12/2025",
+        title: "Stationery Kit and Snacks Distribution Program on the Occasion of Christmas",
         description:
-            "A heartwarming Christmas celebration by Anuja Sushant Patil Global Foundation featuring stationery kit distribution.",
+            "Through Mauli Krupa Orphan Children Ashram Annapurna Children’s Hostel, Wadgaon Road, Annapurna Nagar, Opposite Indrayani Clinic, Alandi (Devachi), Tal. Khed, Dist. Pune On the occasion of Christmas, a Stationery Kit and Snacks Distribution Program  has been organized at the above location.",
     },
     {
         id: 6,
-        image: "/Images/Gallery/DSC04220.webp",
+        image: "/Images/Gallery/Old-Age/old_age_image_1.webp",
         category: "Old Age",
-        date: "12/08/2025",
-        title: "Swarnanagari Old Age Home",
+        date: "29/08/2025",
+        title: "Swarnanagari Old Age Home Program",
         description:
-            "Monthly support drive providing essential supplies and companionship to elderly residents at the old age home.",
+            "The foundation distributed *grocery items worth ₹30,000 along with medicines and medical tablets to residents of Swarnangari Old Age Home. Approximately 60–65 elderly residents benefited from this initiative.",
     },
     // {
     //     id: 7,
     //     image: "/Images/Impact/impact-1.webp",
-    //     category: "Health",
+    //     category: "Charity",
     //     date: "12/08/2025",
     //     title: "A Visit That Inspires: Poona Blind School & Home",
     //     description:
     //         "Empowering students with digital skills through hands-on workshops conducted at government schools.",
     // },
-    {
-        id: 7,
-        image: "/Images/Gallery/Malhar-Bday/20251025_114825.webp",
-        category: "Health",
-        date: "15/09/2025",
-        title: "Malhar Birthday Celebration",
-        description:
-            "Free meals served daily to underprivileged families and individuals in need across Pune.",
-    },
-    {
-        id: 8,
-        image: "/Images/Gallery/Schoolrship-Distribution/05-Picsart-AiImageEnhancer - Copy.webp",
-        category: "Education",
-        date: "26/11/2025",
-        title: "Scholarship Distribution Program",
-        description:
-            "A seminar focused on skill development and entrepreneurship opportunities for underprivileged women.",
-    },
+    // {
+    //     id: 7,
+    //     image: "/Images/Gallery/Malhar-Bday/malhar_birthday_1.webp",
+    //     category: "Charity",
+    //     date: "15/09/2025",
+    //     title: "Malhar Birthday Celebration",
+    //     description:
+    //         "Free meals served daily to underprivileged families and individuals in need across Pune.",
+    // },
+    // {
+    //     id: 8,
+    //     image: "/Images/Gallery/Schoolrship-Distribution/scholarship_image_2.webp",
+    //     category: "Education",
+    //     date: "26/11/2025",
+    //     title: "Scholarship Distribution Program",
+    //     description:
+    //         "A seminar focused on skill development and entrepreneurship opportunities for underprivileged women.",
+    // },
 ];

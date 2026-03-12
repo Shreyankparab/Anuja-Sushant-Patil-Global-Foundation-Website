@@ -17,9 +17,22 @@ interface OurWorkContentProps {
     searchQuery: string;
 }
 
+const DESC_LIMIT = 130; // characters before "Read more" kicks in
+
 export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkContentProps) {
     const [currentPage, setCurrentPage] = useState(1);
+    const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
     const containerRef = React.useRef<HTMLDivElement>(null);
+
+    const toggleExpand = (id: number, e: React.MouseEvent) => {
+        e.stopPropagation();
+        setExpandedIds((prev) => {
+            const next = new Set(prev);
+            if (next.has(id)) next.delete(id);
+            else next.add(id);
+            return next;
+        });
+    };
 
     // Reset to page 1 when filtering changes
     React.useEffect(() => {
@@ -132,7 +145,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                         <div
                             key={item.id}
                             id={`project-${item.id}`}
-                            className="rounded-xl overflow-hidden border border-gray-100 bg-white shadow-md hover:shadow-lg transition-all duration-300 group flex flex-col h-full scroll-mt-20"
+                            className={`rounded-xl overflow-hidden border border-gray-100 bg-white shadow-md hover:shadow-lg transition-all duration-300 group flex flex-col h-full scroll-mt-20 ${expandedIds.has(item.id) ? "self-start w-full" : ""}`}
                         >
                             <div className="relative w-full h-60 sm:h-72 overflow-hidden shrink-0">
                                 <Image
@@ -154,9 +167,25 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                                 <h3 className={`${nunito.className} font-extrabold text-[#1A2E35] text-xl mb-3 leading-snug`}>
                                     {item.title}
                                 </h3>
-                                <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
-                                    {item.description}
-                                </p>
+                                {item.description.length <= DESC_LIMIT ? (
+                                    <p className="text-gray-500 text-sm leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                ) : (
+                                    <div>
+                                        <p className="text-gray-500 text-sm leading-relaxed">
+                                            {expandedIds.has(item.id)
+                                                ? item.description
+                                                : item.description.slice(0, DESC_LIMIT).trimEnd() + "…"}
+                                        </p>
+                                        <button
+                                            onClick={(e) => toggleExpand(item.id, e)}
+                                            className="mt-1.5 text-[#00735C] text-xs font-bold hover:underline focus:outline-none transition-colors duration-200"
+                                        >
+                                            {expandedIds.has(item.id) ? "Read less" : "Read more"}
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
