@@ -53,13 +53,13 @@ export const allWorkItems: WorkItem[] = [
         image: "/Images/Gallery/Matruchhaya-Children-Home/mch_image_1.webp",
         category: "Orphanage",
         date: "25/10/2025",
-        title: "Matruchhaya Children's Home",
+        title: "Malhar Birthday Celebration",
         description:
             "Alandi Road, Pune | 25 October 2025 On the occasion of Malhar’s birthday, son of Hon. Rajkunwar Tai Deshmukh-Gaikwad, the foundation distributed warm sweaters to 30 children at Matruchhaya Orphanage. Additionally, grocery supplies sufficient for two to three months were also provided to support the children.",
     },
     {
         id: 5,
-        image: "/Images/Gallery/christmas/christmas_image_1.webp",
+        image: "/Images/Gallery/christmas/christmas_image_2.webp",
         category: "Orphanage",
         date: "24/12/2025",
         title: "Stationery Kit and Snacks Distribution Program on the Occasion of Christmas",

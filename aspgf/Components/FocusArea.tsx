@@ -8,10 +8,12 @@ const lexend = Lexend({ subsets: ["latin"], weight: ["800", "900"] });
 const focusItems = [
   "Education",
   "Health Care",
+  "Charity",
   "Old Age Care",
   "Orphanage",
   "Education",
   "Health Care",
+  "Charity",
   "Old Age Care",
   "Orphanage",
 ];

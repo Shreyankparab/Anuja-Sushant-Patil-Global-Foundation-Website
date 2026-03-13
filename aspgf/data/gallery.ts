@@ -13,8 +13,8 @@ export const pageContent = {
       categories: "Orphanage",
       date: "24/12/2025",
       images: [
-        "/Images/Gallery/christmas/christmas_image_1.webp",
         "/Images/Gallery/christmas/christmas_image_2.webp",
+        "/Images/Gallery/christmas/christmas_image_1.webp",
         "/Images/Gallery/christmas/christmas_image_3.webp",
         "/Images/Gallery/christmas/christmas_image_4.webp",
         "/Images/Gallery/christmas/christmas_image_5.webp",
@@ -113,12 +113,12 @@ export const pageContent = {
       categories: "Charity",
       date: "22/06/2025",
       images: [
+        "/Images/Gallery/variProgram/aashadi_vari_image_7.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_3.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_2.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_4.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_5.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_6.webp",
-        "/Images/Gallery/variProgram/aashadi_vari_image_7.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_8.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_9.webp",
         "/Images/Gallery/variProgram/aashadi_vari_image_10.webp",

@@ -29,6 +29,7 @@ export default function GalleryModal({
   useEffect(() => {
     if (isOpen) {
       setSelectedIndex(initialIndex);
+      setShowInfo(true);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -47,7 +48,7 @@ export default function GalleryModal({
     setZoom(1);
   };
 
-  if (!isOpen || selectedIndex === null) return null;
+  if (!isOpen || selectedIndex === null || !items[selectedIndex]) return null;
   const currentItem = items[selectedIndex];
 
   return (

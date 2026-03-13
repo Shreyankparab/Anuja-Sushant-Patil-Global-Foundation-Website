@@ -31,7 +31,7 @@ export default function LeadershipSection() {
                         <div className="relative flex flex-col items-start">
                             <div className="relative group w-full aspect-square max-w-[400px]">
                                 {/* Trustworthy Badge - Floating Outside */}
-                                <div className="animate-float absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float-subtle absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                                     Trustworthy
                                 </div>
@@ -46,7 +46,7 @@ export default function LeadershipSection() {
                                 </div>
 
                                 {/* Vision & Aim Badge - Floating Outside */}
-                                <div className="animate-float-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                <div className="animate-float-subtle-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="text-teal-500 text-[10px]">◈</span>
                                     Vision & Aim
                                 </div>
@@ -71,7 +71,7 @@ export default function LeadershipSection() {
                                 className={`${cabin.className} text-[16px] text-gray-700 leading-relaxed text-justify`}
                             >
 
-                                Every great change begins with a simple belief — that we can
+                                Every great change begins with a simple belief - that we can
                                 make a difference. The{" "}
                                 <strong className="text-[#0a7061]">
                                     Anuja Sushant Patil Global Foundation
@@ -157,10 +157,10 @@ export default function LeadershipSection() {
                         {/* Image Side - First in DOM for Mobile */}
                         <div className="order-1 md:order-2 relative flex flex-col items-center md:items-end mt-8 md:mt-0">
                             <div className="relative group w-full aspect-square max-w-[400px]">
-                                {/* Trustworthy Badge - Floating Outside */}
-                                <div className="animate-float absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                {/* Compassionate Badge - Floating Outside */}
+                                <div className="animate-float-subtle absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                                    Trustworthy
+                                    Compassionate
                                 </div>
 
                                 <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
@@ -172,10 +172,10 @@ export default function LeadershipSection() {
                                     />
                                 </div>
 
-                                {/* Vision & Aim Badge - Floating Outside */}
-                                <div className="animate-float-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                {/* Empowering Badge - Floating Outside */}
+                                <div className="animate-float-subtle-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="text-teal-500 text-[10px]">◈</span>
-                                    Vision & Aim
+                                    Empowering
                                 </div>
                             </div>
                             <div className="mt-6 text-left w-full max-w-[400px]">
@@ -220,7 +220,7 @@ export default function LeadershipSection() {
                                 className={`${cabin.className} text-[16px] text-gray-700 leading-relaxed text-justify`}
                             >
                                 <strong className="text-[#0a7061]">Education</strong> is not
-                                just about academics — it is about{" "}
+                                just about academics - it is about{" "}
                                 <strong className="text-[#0a7061]">
                                     shaping confident, capable, and responsible individuals
                                 </strong>{" "}
@@ -287,10 +287,10 @@ export default function LeadershipSection() {
                         {/* RIGHT IMAGE SIDE (Moved to Left) */}
                         <div className="relative flex flex-col items-start">
                             <div className="relative group w-full aspect-square max-w-[400px]">
-                                {/* Trustworthy Badge - Floating Outside */}
-                                <div className="animate-float absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                {/* Impactful Badge - Floating Outside */}
+                                <div className="animate-float-subtle absolute -top-3 -left-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                                    Trustworthy
+                                    Impactful
                                 </div>
 
                                 <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
@@ -302,10 +302,10 @@ export default function LeadershipSection() {
                                     />
                                 </div>
 
-                                {/* Vision & Aim Badge - Floating Outside */}
-                                <div className="animate-float-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
+                                {/* Action Oriented Badge - Floating Outside */}
+                                <div className="animate-float-subtle-delayed absolute -bottom-3 -right-3 text-black bg-white px-3 py-2.5 rounded-full text-[10px] font-bold flex items-center gap-1.5 shadow-xl z-20 w-fit">
                                     <span className="text-teal-500 text-[10px]">◈</span>
-                                    Vision & Aim
+                                    Action Oriented
                                 </div>
                             </div>
 
@@ -354,27 +354,27 @@ export default function LeadershipSection() {
                             <p
                                 className={`${cabin.className} text-[16px] text-gray-700 leading-relaxed text-justify`}
                             >
-                                Our vision is to create a society where{" "}
-                                <strong className="text-[#0a7061]">knowledge</strong> is not a
-                                privilege, but a right; where{" "}
-                                <strong className="text-[#0a7061]">helping the needful</strong>{" "}
-                                is not an act of charity, but a
-                                <strong className="text-[#0a7061]"> responsibility</strong> we
-                                all share. By{" "}
+                                Our vision is to build a society where{" "}
+                                <strong className="text-[#0a7061]">knowledge</strong> is accessible to
+                                everyone, not limited to a few; where{" "}
+                                <strong className="text-[#0a7061]">supporting those in need</strong>{" "}
+                                is not merely an act of kindness, but a
+                                <strong className="text-[#0a7061]"> shared responsibility</strong> of
+                                every individual. By{" "}
                                 <strong className="text-[#0a7061]">
-                                    nurturing young minds
+                                    empowering young minds
                                 </strong>
                                 ,{" "}
                                 <strong className="text-[#0a7061]">
-                                    supporting communities
+                                    uplifting communities
                                 </strong>
                                 , and{" "}
                                 <strong className="text-[#0a7061]">
-                                    encouraging self-reliance
+                                    promoting self-reliance
                                 </strong>
-                                , we aim to build a world where progress is{" "}
+                                , we strive to create a future where growth is{" "}
                                 <strong className="text-[#0a7061]">
-                                    inclusive and sustainable
+                                    inclusive, meaningful, and sustainable
                                 </strong>
                                 .
                             </p>

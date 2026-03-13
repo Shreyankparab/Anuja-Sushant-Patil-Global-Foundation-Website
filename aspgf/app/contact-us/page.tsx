@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { MapPin, Phone } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
+import ContactMap from "@/Components/ContactUs/ContactMap";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -134,45 +135,8 @@ export default function ContactPage() {
 
         {/* RIGHT SIDE */}
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
-          {/* MAP */}
-          <div className="w-full h-80 sm:h-80 lg:h-[380px] bg-gray-100 rounded-[32px] overflow-hidden relative shadow-sm">
-            <iframe
-              src="https://maps.google.com/maps?q=Seamedu%20%2F%20Toolbox%20Studio%2C%206th%20Floor%2C%20Solitaire%20Business%20Hub%2C%20Office%20No.%20612%2C%20Balewadi%20High%20St%2C%20Balewadi%2C%20Pune%2C%20Maharashtra%20411045&t=&z=17&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale-[0.1] contrast-[0.9]"
-            ></iframe>
-            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-5 w-[80%] sm:w-[280px] bg-white/95 backdrop-blur-md p-4 rounded-2xl flex items-center justify-between shadow-lg">
-              <div>
-                <p
-                  className={`${cabin.className} text-[13px] font-extrabold text-[#1A2E35]`}
-                >
-                  Solitaire Business Hub
-                </p>
-                <div className="mt-0.5 flex items-center gap-1.5">
-                  <span
-                    className={`w-[5px] h-[5px] rounded-full ${new Date().getDay() !== 0 ? "bg-[#00735C] animate-pulse" : "bg-red-500"}`}
-                  ></span>
-                  <p
-                    className={`${cabin.className} text-[10px] ${new Date().getDay() !== 0 ? "text-[#00735C]" : "text-red-500"} font-extrabold uppercase tracking-widest`}
-                  >
-                    {new Date().getDay() !== 0 ? "Open Now" : "Closed Now"}
-                  </p>
-                </div>
-              </div>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Seamedu+%2F+Toolbox+Studio%2C+6th+Floor%2C+Solitaire+Business+Hub%2C+Office+No.+612%2C+Balewadi+High+St%2C+Balewadi%2C+Pune%2C+Maharashtra+411045"
-                target="_blank"
-                className={`${cabin.className} bg-[#00735C] text-white text-[9px] tracking-wider font-extrabold px-4 py-2.5 rounded-lg hover:bg-[#005c49] transition-colors`}
-              >
-                GET DIRECTIONS
-              </a>
-            </div>
-          </div>
+          {/* MAP with Loader */}
+          <ContactMap />
 
           {/* OFFICE HOURS CARD */}
           <div className="bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/60">

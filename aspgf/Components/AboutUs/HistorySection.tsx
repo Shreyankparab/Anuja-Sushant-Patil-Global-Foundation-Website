@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { JSX, useEffect, useState } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 import { Caveat, Nunito, Cabin } from "next/font/google";
 
@@ -13,7 +14,7 @@ const cabin = Cabin({
 });
 
 // founding year
-const START_YEAR = 2023;
+const START_YEAR = 2025;
 const CURRENT_YEAR = new Date().getFullYear();
 
 const DEFAULT_CHARITY_INFO = {
@@ -50,28 +51,27 @@ const DEFAULT_CHARITY_INFO = {
 const historyData: Record<string, any> = {
   "2026": {
     year: "Year 2026",
-    title: "Foundation Laid",
+    title: "Expanding Global Reach",
     points: [
       {
-        head: "Initial Community Research.",
-        sub: ["Identified 10 high-need zones.", "Surveyed 500+ families."],
-      },
-      {
-        head: "Infrastructure Development.",
+        head: "International Partnerships & Growth.",
         sub: [
-          "Built and renovated schools in underserved communities.",
-          "Supplied educational materials including textbooks and stationery.",
+          "Partnering with global NGOs to scale impact.",
+          "Launching cross-border digital learning initiatives.",
         ],
       },
       {
-        head: "Initial Community Research.",
-        sub: ["Identified 10 high-need zones.", "Surveyed 500+ families."],
+        head: "Unified Scholarship Fund.",
+        sub: [
+          "Expanding scholarship reach to more schools and colleges.",
+          "Establishing a dedicated mentorship program for scholars.",
+        ],
       },
       {
-        head: "Infrastructure Development.",
+        head: "Community Development.",
         sub: [
-          "Built and renovated schools in underserved communities.",
-          "Supplied educational materials including textbooks and stationery.",
+          "Inaugurating new vocational training centers.",
+          "Strengthening rural healthcare support systems.",
         ],
       },
     ],
@@ -79,97 +79,34 @@ const historyData: Record<string, any> = {
 
   "2025": {
     year: "Year 2025",
-    title: "Expanding Global Reach",
+    title: "Foundation Laid & Major Milestones",
     points: [
       {
-        head: "International Partnerships Established.",
+        head: "Empowering Education.",
         sub: [
-          "Partnered with 5 global NGOs.",
-          "Launched cross-border digital learning.",
+          "Distributed ₹5,13,000 in scholarships to 116 needy students.",
+          "Direct educational fee support for students in critical financial need.",
         ],
       },
       {
-        head: "Global Scholarship Fund.",
+        head: "Community Welfare & Pilgrim Support.",
         sub: [
-          "Awarded scholarships to students across 3 continents.",
-          "Launched the Global Scholars mentorship program.",
+          "Distributed raincoats, umbrellas, and food to 200+ Warkari pilgrims.",
+          "Organized food and essentials distribution for underserved communities.",
         ],
       },
       {
-        head: "International Partnerships Established.",
+        head: "Rehabilitation & Cleanliness Initiatives.",
         sub: [
-          "Partnered with 5 global NGOs.",
-          "Launched cross-border digital learning.",
+          "Conducted cleanliness drives with 50+ college volunteers.",
+          "Provided blankets and warm clothing at Phulenagar Rehabilitation Center.",
         ],
       },
       {
-        head: "International Partnerships Established.",
+        head: "Social Care & Orphanage Support.",
         sub: [
-          "Partnered with 5 global NGOs.",
-          "Launched cross-border digital learning.",
-        ],
-      },
-    ],
-  },
-  "2024": {
-    year: "Year 2024",
-    title: "Foundation Laid",
-    points: [
-      {
-        head: "Initial Community Research.",
-        sub: ["Identified 10 high-need zones.", "Surveyed 500+ families."],
-      },
-      {
-        head: "Infrastructure Development.",
-        sub: [
-          "Built and renovated schools in underserved communities.",
-          "Supplied educational materials including textbooks and stationery.",
-        ],
-      },
-      {
-        head: "Initial Community Research.",
-        sub: ["Identified 10 high-need zones.", "Surveyed 500+ families."],
-      },
-      {
-        head: "Infrastructure Development.",
-        sub: [
-          "Built and renovated schools in underserved communities.",
-          "Supplied educational materials including textbooks and stationery.",
-        ],
-      },
-    ],
-  },
-
-  "2023": {
-    year: "Year 2025",
-    title: "Expanding Global Reach",
-    points: [
-      {
-        head: "International Partnerships Established.",
-        sub: [
-          "Partnered with 5 global NGOs.",
-          "Launched cross-border digital learning.",
-        ],
-      },
-      {
-        head: "Global Scholarship Fund.",
-        sub: [
-          "Awarded scholarships to students across 3 continents.",
-          "Launched the Global Scholars mentorship program.",
-        ],
-      },
-      {
-        head: "International Partnerships Established.",
-        sub: [
-          "Partnered with 5 global NGOs.",
-          "Launched cross-border digital learning.",
-        ],
-      },
-      {
-        head: "International Partnerships Established.",
-        sub: [
-          "Partnered with 5 global NGOs.",
-          "Launched cross-border digital learning.",
+          "Delivered grocery supplies & sweaters to Matruchhaya Orphanage.",
+          "Organized Swarnanagari Old Age Home support with medicines & essentials.",
         ],
       },
     ],
@@ -181,8 +118,6 @@ const ALL_YEARS = Array.from(
   { length: CURRENT_YEAR - START_YEAR + 1 },
   (_, i) => (CURRENT_YEAR - i).toString(),
 );
-
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function HistorySection(): JSX.Element {
   const [activeYear, setActiveYear] = useState<string>(CURRENT_YEAR.toString());
@@ -260,7 +195,7 @@ export default function HistorySection(): JSX.Element {
             <div className="h-1.5 w-48 bg-[#00735C] rounded-full mb-8 reveal delay-300"></div>
 
             {/* YEAR SELECTION SECTION */}
-            <div className="mb-14 relative select-none mr-0 reveal delay-400">
+            <div className="mb-4 relative select-none mr-0 reveal delay-400">
               <div className="flex justify-between items-center mb-10 px-1">
                 <h3 className={`${nunito.className} text-[13px] font-bold text-gray-400 uppercase tracking-widest`}>Journey Roadmap</h3>
                 <div className="px-5 py-2 bg-[#e6f1ef] rounded-2xl border border-[#00735C]/20 shadow-sm flex items-center gap-3">
@@ -271,11 +206,7 @@ export default function HistorySection(): JSX.Element {
 
               {/* HORIZONTAL SCROLLING ROADMAP (Universal) */}
               <div className="relative w-full overflow-x-auto pb-12 pt-4 custom-scrollbar scroll-smooth">
-                <div className="flex items-center gap-14 md:gap-24 min-w-max relative py-4 px-6 pr-14">
-                  {/* Background Track Line */}
-                  <div className="absolute top-1/2 left-0 w-full h-[3px] bg-gray-100 -translate-y-1/2 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#00735C]/5 w-full"></div>
-                  </div>
+                <div className="flex items-center gap-20 md:gap-32 relative py-4 px-6">
                   {/* Years Roadmap (Descending Order) */}
                   {ALL_YEARS.map((year: string, index: number) => {
                     const isActive = activeYear === year;
@@ -288,7 +219,7 @@ export default function HistorySection(): JSX.Element {
                       >
                         {/* Connecting segment to the next year (Neutral Light Gray) */}
                         {index < ALL_YEARS.length - 1 && (
-                          <div className="absolute top-1/2 left-1/2 w-14 md:w-24 h-[3px] -translate-y-1/2 z-0 bg-gray-100"></div>
+                          <div className="absolute top-1/2 left-1/2 w-20 md:w-32 h-[3px] -translate-y-1/2 z-0 bg-gray-100 transition-all duration-300"></div>
                         )}
 
                         {/* Roadmap Point: Green for Active, Gray for Others */}
@@ -354,69 +285,3 @@ export default function HistorySection(): JSX.Element {
     </section>
   );
 }
-
-
-
-
-
-// <div className="py-6 pl-0 md:pl-16 max-w-2xl">
-//           <div className="flex items-center gap-2 mb-3">
-//             <span className={`${caveat.className} text-[#6F7775] text-2xl`}>
-//               Our History
-//             </span>
-//           </div>
-
-//           <h2
-//             className={`${nunito.className} text-[36px] md:text-[42px] font-extrabold text-[#00735C] mb-4`}
-//           >
-//             The Journey of Anuja Sushant Patil Global Foundation
-//           </h2>
-
-//           <div className="h-1.5 w-40 bg-[#00735C] rounded-full mb-8"></div>
-
-//           <div className="space-y-6">
-//             <p
-//               className={`${cabin.className} text-gray-600 text-[15px] leading-relaxed`}
-//             >
-//               Anuja Sushant Patil Global Foundation was established with a
-//               vision to create meaningful and lasting social impact by
-//               supporting communities through education, social welfare, and
-//               sustainable development initiatives. The foundation was built on
-//               the belief that every individual deserves access to
-//               opportunities that promote dignity, equality, and personal
-//               growth.
-//             </p>
-
-//             <p
-//               className={`${cabin.className} text-gray-600 text-[15px] leading-relaxed`}
-//             >
-//               Since its inception, the foundation has worked to empower
-//               individuals and uplift communities through various initiatives
-//               focused on education support, social awareness, and community
-//               development programs. By collaborating with volunteers, social
-//               workers, and community leaders, the organization strives to
-//               address real-world challenges faced by underserved populations.
-//             </p>
-
-//             <p
-//               className={`${cabin.className} text-gray-600 text-[15px] leading-relaxed`}
-//             >
-//               The foundation also emphasizes youth empowerment, women’s
-//               development, and community engagement. Through knowledge-sharing
-//               programs, awareness campaigns, and social support initiatives,
-//               the organization continues to encourage individuals to become
-//               active contributors to positive societal change.
-//             </p>
-
-//             <p
-//               className={`${cabin.className} text-gray-600 text-[15px] leading-relaxed`}
-//             >
-//               Today, Anuja Sushant Patil Global Foundation remains committed
-//               to building a more inclusive and compassionate society. With a
-//               strong focus on transparency, collaboration, and long-term
-//               impact, the foundation continues its journey of creating
-//               opportunities, empowering communities, and contributing to
-//               sustainable social progress.
-//             </p>
-//           </div>
-//         </div>

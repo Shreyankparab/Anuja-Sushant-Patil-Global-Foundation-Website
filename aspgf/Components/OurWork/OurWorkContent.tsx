@@ -22,6 +22,7 @@ const DESC_LIMIT = 130; // characters before "Read more" kicks in
 export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkContentProps) {
     const [currentPage, setCurrentPage] = useState(1);
     const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
+    const [highlightedId, setHighlightedId] = useState<number | null>(null);
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     const toggleExpand = (id: number, e: React.MouseEvent) => {
@@ -67,12 +68,19 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
         if (hash && hash.startsWith("#project-")) {
             const id = parseInt(hash.replace("#project-", ""));
 
+            // Function to trigger highlight
+            const triggerHighlight = () => {
+                setHighlightedId(id);
+                setTimeout(() => setHighlightedId(null), 1500);
+            };
+
             // 1. Check if it's the featured item
             if (featured && featured.id === id) {
                 const element = document.getElementById(hash.substring(1));
                 if (element) {
                     setTimeout(() => {
                         element.scrollIntoView({ behavior: "smooth", block: "center" });
+                        triggerHighlight();
                     }, 500);
                 }
                 return;
@@ -84,12 +92,13 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                 const targetPage = Math.floor(index / ITEMS_PER_PAGE) + 1;
                 if (currentPage !== targetPage) {
                     setCurrentPage(targetPage);
-                    // The scroll will happen in the next effect when the page is updated
+                    // The scroll and highlight will happen in the targetPage update
                 } else {
                     const element = document.getElementById(hash.substring(1));
                     if (element) {
                         setTimeout(() => {
                             element.scrollIntoView({ behavior: "smooth", block: "center" });
+                            triggerHighlight();
                         }, 500);
                     }
                 }
@@ -111,7 +120,8 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
             {featured && (
                 <div
                     id={`project-${featured.id}`}
-                    className="mb-10 rounded-xl overflow-hidden border border-gray-100 bg-white shadow-md flex flex-col md:flex-row min-h-[350px] md:h-[450px]"
+                    className={`mb-10 rounded-xl overflow-hidden border bg-white flex flex-col md:flex-row min-h-[350px] md:h-[450px] transition-all duration-500 ${highlightedId === featured.id ? "border-[#00735C] shadow-[0_0_30px_rgba(0,115,92,0.4)] scale-[1.01]" : "border-gray-100 shadow-md"
+                        }`}
                 >
                     <div className="relative w-full md:w-[60%] shrink-0 h-[280px] md:h-full p-3 md:p-4">
                         <div className="relative w-full h-full overflow-hidden rounded-xl shadow-sm">
@@ -145,7 +155,9 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                         <div
                             key={item.id}
                             id={`project-${item.id}`}
-                            className={`rounded-xl overflow-hidden border border-gray-100 bg-white shadow-md hover:shadow-lg transition-all duration-300 group flex flex-col h-full scroll-mt-20 ${expandedIds.has(item.id) ? "self-start w-full" : ""}`}
+                            className={`rounded-xl overflow-hidden border bg-white transition-all duration-500 group flex flex-col h-full scroll-mt-20 ${expandedIds.has(item.id) ? "self-start w-full" : ""
+                                } ${highlightedId === item.id ? "border-[#00735C] shadow-[0_0_30px_rgba(0,115,92,0.4)] scale-[1.02] z-10" : "border-gray-100 shadow-md hover:shadow-lg"
+                                }`}
                         >
                             <div className="relative w-full h-60 sm:h-72 overflow-hidden shrink-0">
                                 <Image

@@ -25,21 +25,41 @@ const OurWorkSection = () => {
   // 1. Clone the data for seamless looping
   const duplicatedItems = [...allWorkItems, ...allWorkItems];
 
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
+    setScrollLeft(scrollRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollRef.current.offsetLeft || 0);
+    const walk = (x - startX) * 2; // Scroll speed multiplier
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   const handleScroll = () => {
     if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const { scrollLeft, scrollWidth } = scrollRef.current;
       const halfWidth = scrollWidth / 2;
 
       // 2. Infinite Loop Logic:
-      // If we scroll past the first set of items, jump back to the start of the first set
       if (scrollLeft >= halfWidth) {
         scrollRef.current.scrollLeft = scrollLeft - halfWidth;
       } else if (scrollLeft <= 0) {
-        // If we scroll backwards past the start, jump to the end of the first set
         scrollRef.current.scrollLeft = halfWidth;
       }
 
-      // Calculate progress based on the original list length
+      // Calculate progress
       const progress = (scrollLeft / halfWidth) * 100;
       setScrollProgress(progress % 100);
     }
@@ -56,8 +76,7 @@ const OurWorkSection = () => {
     let animationFrameId: number;
 
     const scroll = () => {
-      if (!isHovered.current && container) {
-        // 3. Use requestAnimationFrame for buttery smooth 60fps movement
+      if (!isHovered.current && !isDragging && container) {
         container.scrollLeft += 1;
       }
       animationFrameId = requestAnimationFrame(scroll);
@@ -66,11 +85,10 @@ const OurWorkSection = () => {
     animationFrameId = requestAnimationFrame(scroll);
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, []);
+  }, [isDragging]);
 
   return (
     <section
-
       id="our-work"
       className="relative w-full bg-white py-16 md:pt-32 md:pb-24 mt-[-1px] overflow-hidden"
     >
@@ -155,9 +173,15 @@ const OurWorkSection = () => {
           ref={scrollRef}
           onScroll={handleScroll}
           onMouseEnter={() => (isHovered.current = true)}
-          onMouseLeave={() => (isHovered.current = false)}
+          onMouseLeave={() => {
+            isHovered.current = false;
+            handleMouseUp();
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
           className="flex overflow-x-auto pb-6 gap-6 lg:gap-8 no-scrollbar select-none cursor-grab active:cursor-grabbing"
-          style={{ scrollBehavior: "auto" }} // auto is better for continuous scripts
+          style={{ scrollBehavior: "auto" }}
         >
           {/* Loop over duplicated items */}
           {duplicatedItems.map((project, index) => (

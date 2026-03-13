@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-    FaTwitter,
     FaFacebookF,
     FaYoutube,
     FaInstagram,
@@ -58,16 +57,21 @@ export default function Footer() {
 
                     {/* SOCIAL ICONS */}
                     <div className="flex items-center justify-center gap-4 w-full">
-                        {[FaTwitter, FaFacebookF, FaYoutube, FaInstagram].map(
-                            (Icon, i) => (
-                                <div
-                                    key={i}
-                                    className="w-12 h-12 rounded-full bg-black/15 flex justify-center items-center cursor-pointer hover:bg-white hover:text-[#0a7061] transition-all duration-300"
-                                >
-                                    <Icon size={20} />
-                                </div>
-                            ),
-                        )}
+                        {[
+                            { Icon: FaFacebookF, href: "#" },
+                            { Icon: FaYoutube, href: "https://www.youtube.com/@AnujaSushantPatilFoundation" },
+                            { Icon: FaInstagram, href: "https://www.instagram.com/anuja_sushant_patil_foundation/" },
+                        ].map(({ Icon, href }, i) => (
+                            <a
+                                key={i}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 rounded-full bg-black/15 flex justify-center items-center cursor-pointer hover:bg-white hover:text-[#0a7061] transition-all duration-300"
+                            >
+                                <Icon size={20} />
+                            </a>
+                        ))}
                     </div>
                 </div>
 
