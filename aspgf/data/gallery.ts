@@ -95,7 +95,7 @@ export const pageContent = {
       date: "08/07/2025",
       images: [
         "/Images/Gallery/Schoolrship-Distribution/scholarship_image_1.webp",
-        "/Images/Gallery/Schoolrship-Distribution/scholarship_image_2.webp",
+        // "/Images/Gallery/Schoolrship-Distribution/scholarship_image_2.webp",
         "/Images/Gallery/Schoolrship-Distribution/scholarship_image_3.webp",
         "/Images/Gallery/Schoolrship-Distribution/scholarship_image_4.webp",
         "/Images/Gallery/Schoolrship-Distribution/scholarship_image_5.webp",
@@ -151,11 +151,12 @@ export const pageContent = {
       categories: "Orphanage",
       date: "12/08/2025",
       images: [
+        "/Images/Gallery/Begger/begger_image_5.webp",
+
         "/Images/Gallery/Begger/begger_image_1.webp",
         "/Images/Gallery/Begger/begger_image_2.webp",
         "/Images/Gallery/Begger/begger_image_3.webp",
         "/Images/Gallery/Begger/begger_image_4.webp",
-        "/Images/Gallery/Begger/begger_image_5.webp",
         "/Images/Gallery/Begger/begger_image_6.webp",
         "/Images/Gallery/Begger/begger_image_7.webp",
         "/Images/Gallery/Begger/begger_image_8.webp",

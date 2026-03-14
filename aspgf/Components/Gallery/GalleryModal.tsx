@@ -31,9 +31,16 @@ export default function GalleryModal({
       setSelectedIndex(initialIndex);
       setShowInfo(true);
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
   }, [isOpen, initialIndex]);
 
   const handlePrev = (e?: any) => {
@@ -116,7 +123,7 @@ export default function GalleryModal({
 
       {/* Sidebar/Overlay Info */}
       <div
-        className={`fixed md:relative bottom-0 left-0 right-0 md:top-0 w-full md:w-[400px] h-[60vh] md:h-full bg-black/80 md:bg-black/95 backdrop-blur-2xl border-t md:border-t-0 md:border-l border-white/10 p-6 md:p-8 pt-20 md:pt-24 transition-all duration-500 z-[150] overflow-y-auto no-scrollbar ${showInfo
+        className={`fixed md:relative bottom-0 left-0 right-0 md:top-0 w-full md:w-[400px] h-[60vh] md:h-full bg-black/80 md:bg-black/95 backdrop-blur-2xl border-t md:border-t-0 md:border-l border-white/10 p-6 md:p-8 pt-20 md:pt-24 transition-all duration-500 z-[150] overflow-y-auto custom-scrollbar ${showInfo
           ? "translate-y-0 md:translate-x-0 opacity-100"
           : "translate-y-full md:translate-x-full opacity-0 pointer-events-none md:absolute md:right-0"
           }`}
@@ -157,7 +164,7 @@ export default function GalleryModal({
         >
           Event Gallery
         </h3>
-        <div className="grid grid-cols-4 gap-2 overflow-y-auto no-scrollbar">
+        <div className="grid grid-cols-4 gap-2 overflow-y-auto custom-scrollbar">
           {items.map((item: any, idx: number) => (
             <div
               key={idx}

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { MapPin, Phone } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import ContactMap from "@/Components/ContactUs/ContactMap";
+import InquiryButton from "@/Components/ContactUs/InquiryButton";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -39,13 +40,15 @@ export default function ContactPage() {
             Feel free to reach out with any questions or feedback.
           </h1>
 
-          <p className={`${cabin.className} text-gray-600 mb-10`}>
+          <p className={`${cabin.className} text-gray-600 mb-8`}>
             Feel free to reach out with any questions, feedback, or partnership
             inquiries. Whether you are interested in volunteering, supporting
             our initiatives, or learning more about the work of Anuja Sushant
             Patil Global Foundation, our team is always ready to connect and
             collaborate.{" "}
           </p>
+
+          <InquiryButton />
 
           {/* CLIENT COMPONENT */}
           {/* <ContactForm /> */}

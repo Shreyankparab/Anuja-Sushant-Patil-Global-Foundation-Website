@@ -90,7 +90,14 @@ export default function DonateUsComponent() {
                                         className="flex items-center gap-4 group/upi w-full md:w-fit hover:opacity-90 transition-all overflow-hidden"
                                     >
                                         <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/upi:bg-white/30 transition-colors flex-shrink-0">
-                                            <Landmark size={24} />
+                                            <div className="relative w-8 h-4">
+                                                <Image
+                                                    src="/Icons/upi_logo_icon_169316.svg"
+                                                    alt="UPI Logo"
+                                                    fill
+                                                    className="object-contain brightness-0 invert"
+                                                />
+                                            </div>
                                         </div>
                                         <div className="min-w-0">
                                             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">Pay via UPI</p>
@@ -122,8 +129,15 @@ export default function DonateUsComponent() {
                                         href="upi://pay?pa=anujasushantpatilglo.82069939@hdfcbank&pn=Anuja%20Sushant%20Patil%20Global%20Foundation"
                                         className="md:hidden mt-8 w-full max-w-[280px] py-4 bg-white text-[#00735C] rounded-2xl flex items-center justify-center gap-3 font-black uppercase tracking-widest shadow-xl active:scale-95 transition-all border-2 border-transparent"
                                     >
-                                        <div className="w-8 h-8 rounded-full bg-[#00735C]/10 flex items-center justify-center">
-                                            <Landmark size={18} />
+                                        <div className="w-10 h-10 rounded-full bg-[#00735C]/10 flex items-center justify-center">
+                                            <div className="relative w-6 h-3">
+                                                <Image
+                                                    src="/Icons/upi_logo_icon_169316.svg"
+                                                    alt="UPI Logo"
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
                                         </div>
                                         <span>Donate Now</span>
                                     </a>
@@ -133,7 +147,7 @@ export default function DonateUsComponent() {
                     </div>
 
                     {/* Right Side: Donation Form */}
-                    <div className="w-full lg:w-1/2">
+                    <div id="inquiry-form" className="w-full lg:w-1/2">
                         <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
                             <div className="mb-8">
                                 <h2 className={`${nunito.className} text-3xl font-extrabold text-[#1A2E35] mb-2`}>Inquiry</h2>

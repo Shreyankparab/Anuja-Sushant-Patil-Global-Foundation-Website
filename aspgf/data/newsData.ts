@@ -23,7 +23,7 @@ export const newsData: NewsItem[] = [
         title: "Scholarship Distribution Ceremony",
         category: "Education",
         image: "/Images/News/news2.webp",
-        location: "Alandi",
+        location: "Pune",
         date: "23/07/2025",//NA
     },
     {
@@ -31,7 +31,7 @@ export const newsData: NewsItem[] = [
         title: "Scholarship Distribution Ceremony",
         category: "Education",
         image: "/Images/News/news10.webp",
-        location: "Alandi",
+        location: "Pune",
         date: "11/07/2025",
     },
     {
@@ -47,7 +47,7 @@ export const newsData: NewsItem[] = [
         title: "Sweater Distribution Ceremony",
         category: "Orphanage",
         image: "/Images/News/news5.webp",
-        location: "Mumbai",
+        location: "Pune",
         date: "27/08/2025",
     },
     {
@@ -63,7 +63,7 @@ export const newsData: NewsItem[] = [
         title: "Blanket, Sweater Distribution Ceremony",
         category: "Orphanage",
         image: "/Images/News/news7.webp",
-        location: "Nashik",
+        location: "Pune",
         date: "22/11/2025",
     },
     {
@@ -79,7 +79,7 @@ export const newsData: NewsItem[] = [
         title: "Scolarship Distribution Ceremony",
         category: "Education",
         image: "/Images/News/news3.webp",
-        location: "Mumbai",
+        location: "Pune",
         date: "09/07/2025",
     },
     {
