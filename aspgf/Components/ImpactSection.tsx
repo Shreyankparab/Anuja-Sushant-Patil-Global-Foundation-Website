@@ -382,8 +382,8 @@ export default function ImpactSection() {
                         key={video.id}
                         onClick={() => setActiveVideo(video)}
                         className={`group flex items-start gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeVideo.id === video.id
-                            ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
-                            : "hover:bg-white/10"
+                          ? "bg-[#00735C]/20 ring-1 ring-[#00735C]"
+                          : "hover:bg-white/10"
                           }`}
                       >
                         <div className="relative w-28 aspect-video rounded-lg overflow-hidden flex-shrink-0">
