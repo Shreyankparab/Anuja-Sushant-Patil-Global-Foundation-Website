@@ -1,8 +1,10 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { motion } from "framer-motion";
+import { BookMarked } from "lucide-react";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -10,79 +12,47 @@ const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] }
 
 export default function StoryHero() {
   return (
-    <section className="relative w-full h-[80vh] min-h-[520px] overflow-hidden flex items-center">
-      {/* Background with zoom-in animation */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2.5, ease: "easeOut" }}
-      >
+    <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 px-6">
+      <div className="absolute inset-0 z-0">
         <Image
           src="/Images/story-hero-bg.png"
-          alt="Children studying - Our Inspiring Beginning"
+          alt="Children studying"
           fill
           priority
-          className="object-cover"
+          className="object-cover opacity-15 sepia-[.3] mix-blend-multiply filter"
         />
-        {/* Dark overlay matching AboutHero gradient style */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/90 md:via-black/30 md:to-transparent" />
-      </motion.div>
-
-      {/* Content */}
-      <div className="relative z-10 w-full px-6 md:px-12 lg:pl-[120px] lg:pr-10">
-        <div className="max-w-4xl">
-          {/* Caveat subtitle - matching AboutHero */}
-          <motion.div
-            className="flex flex-col mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-          >
-            <p className={`${caveat.className} text-[#00b874] text-[28px] md:text-[40px] leading-none mb-1`}>
-              A Small Thought, A Big Mission
-            </p>
-            <div className="h-[3px] w-24 bg-[#00735C] rounded-full" />
-          </motion.div>
-
-          {/* H1 - matching AboutHero exactly */}
-          <motion.h1
-            className={`${nunito.className} text-white text-[34px] sm:text-[44px] md:text-[68px] font-[900] leading-[1.05] mb-8 tracking-tighter`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.55 }}
-          >
-            Our Inspiring <br />
-            <span className="text-[#00b874]">Beginning</span>
-          </motion.h1>
-
-          {/* Description - matching AboutHero */}
-          <motion.div
-            className="max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.8 }}
-          >
-            <div className="h-[2px] w-12 bg-white/30 mb-6 hidden md:block" />
-            <p className={`${cabin.className} text-white/90 text-[18px] md:text-[22px] font-medium leading-[1.6] tracking-wide`}>
-              The story of a small thought that became a big mission
-            </p>
-          </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            className="mt-10 flex items-center gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <div className="w-px h-12 bg-white/30" />
-            <p className={`${cabin.className} text-white/50 text-sm tracking-widest uppercase`}>
-              Scroll to read
-            </p>
-          </motion.div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/80 via-[#FAF9F6]/40 to-[#FAF9F6]" />
       </div>
+
+      <motion.div
+        className="relative z-10 max-w-3xl text-center flex flex-col items-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <BookMarked className="w-12 h-12 text-[#00735C] mb-6 opacity-80" />
+        <p className={`${caveat.className} text-[#00b874] text-3xl md:text-4xl mb-4 font-bold tracking-wider`}>
+          A Small Thought, A Big Mission
+        </p>
+        <h1 className={`${nunito.className} text-[44px] sm:text-[60px] md:text-[80px] font-[900] leading-[1.05] text-[#0A2520] tracking-tight mb-8 drop-shadow-sm`}>
+          Our Inspiring <br className="hidden sm:block" />
+          <span className="text-[#00735C] relative inline-block">
+            Beginning
+            <svg className="absolute -bottom-3 left-0 w-full h-4 text-[#00b874]/30" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M0 15 Q 50 0 100 15" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+            </svg>
+          </span>
+        </h1>
+        <p className={`${cabin.className} text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed`}>
+          The founding story of ASPGF  -  written not in boardrooms, but through the compassionate eyes of a child.
+        </p>
+
+        <div className="mt-16 animate-bounce text-[#00735C]/50">
+          <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 4v32M6 28l6 8 6-8" />
+          </svg>
+        </div>
+      </motion.div>
     </section>
   );
 }

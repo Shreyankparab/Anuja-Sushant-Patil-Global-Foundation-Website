@@ -1,68 +1,41 @@
 "use client";
 
+import React from "react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
-const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
+const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export default function StoryHighlight() {
   return (
-    <section className="bg-[#F0FAF5] py-20 md:py-28 px-6">
+    <section className="relative z-10 w-full bg-[#0A2520] text-white py-24 md:py-32 px-6">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <motion.div
-          className="flex flex-col items-center text-center mb-14"
-          initial={{ opacity: 0, y: 40 }}
+          className="flex flex-col items-center text-center"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
         >
-          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#00735C]/10 mb-5">
-            <Heart className="w-6 h-6 text-[#00735C]" fill="#00735C" />
-          </div>
-          <p className={`${caveat.className} text-[#00b874] text-2xl font-bold mb-3`}>
+          <Heart className="w-10 h-10 text-[#00b874] mb-8 fill-[#00b874]" />
+          <h3 className={`${caveat.className} text-[#00b874] text-3xl md:text-5xl mb-6`}>
             A moment that changed everything
-          </p>
-          <h2 className={`${nunito.className} text-3xl md:text-4xl font-extrabold text-[#0A2520] leading-tight`}>
-            The Girl Who Got to Stay in School
-          </h2>
-          <div className="h-1 w-16 bg-[#00735C] rounded-full mt-5" />
-        </motion.div>
+          </h3>
 
-        {/* Story paragraphs */}
-        <div className="space-y-6">
-          {[
-            "Among the children who received support was a young girl whose parents had stopped sending her to school. They simply could not afford the fees and saw no other way.",
-            "When the foundation stepped in and paid her school fees, their reaction was indescribable. Tears of joy filled the parents' eyes. A new ray of hope began to shine - not just for their daughter, but for their entire family's belief in a better future.",
-            "Witnessing those tears, that relief, that gratitude - it deeply moved everyone at ASPGF. It was in that moment that we understood: this is not just a project. This is a calling.",
-          ].map((text, i) => (
-            <motion.p
-              key={i}
-              className={`${cabin.className} text-gray-700 text-lg md:text-xl leading-[1.85]`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.15 }}
-              viewport={{ once: true, margin: "-60px" }}
-            >
-              {text}
-            </motion.p>
-          ))}
-        </div>
-
-        {/* Pull quote */}
-        <motion.div
-          className="mt-14 pl-6 border-l-4 border-[#00735C]"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          <p className={`${nunito.className} text-[#0A2520] text-xl md:text-2xl font-bold italic leading-relaxed`}>
-            "Witnessing those tears of joy - that single moment made us realize this small decision could change countless lives."
-          </p>
+          <div className={`${cabin.className} space-y-8 text-lg md:text-2xl leading-relaxed text-[#FAF9F6]/90 font-light max-w-3xl`}>
+            <p>
+              Among the children who received early support was a young girl whose parents had decided to pull her out of school. They simply could not afford the fees and saw no other way.
+            </p>
+            <p>
+              When our foundation stepped in and paid her fees, their reaction was indescribable. Tears of absolute joy filled the parents' eyes. A new ray of hope began to shine  -  not just for their daughter's education, but for their entire family's belief in a better future.
+            </p>
+            <p className={`${nunito.className} text-xl md:text-3xl font-bold italic text-white leading-snug pt-6`}>
+              "Witnessing those tears of joy  -  that single moment made us realize this small decision could change countless lives."
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

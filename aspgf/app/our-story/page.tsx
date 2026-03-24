@@ -1,15 +1,13 @@
 import { Metadata } from "next";
 import StoryHero from "@/Components/OurStory/StoryHero";
-import StoryIntro from "@/Components/OurStory/StoryIntro";
-import StoryNarrative from "@/Components/OurStory/StoryNarrative";
+import StoryForeword from "@/Components/OurStory/StoryForeword";
+import StoryChapters from "@/Components/OurStory/StoryChapters";
 import StoryHighlight from "@/Components/OurStory/StoryHighlight";
 import StoryMovement from "@/Components/OurStory/StoryMovement";
-import StoryBelief from "@/Components/OurStory/StoryBelief";
 import StorySignature from "@/Components/OurStory/StorySignature";
-import StoryCTA from "@/Components/OurStory/StoryCTA";
 
 export const metadata: Metadata = {
-  title: "Our Story | Anuja Sushant Patil Global Foundation",
+  title: "Our Story - The Narrative | Anuja Sushant Patil Global Foundation",
   description:
     "Read the inspiring founding story of ASPGF - how a young child's compassionate question sparked a movement to support underprivileged children's education across India.",
   openGraph: {
@@ -30,15 +28,13 @@ export const metadata: Metadata = {
 
 export default function OurStoryPage() {
   return (
-    <main className="w-full bg-white">
+    <main className="w-full bg-[#FAF9F6] text-[#0A2520] pb-32 overflow-hidden">
       <StoryHero />
-      <StoryIntro />
-      <StoryNarrative />
+      <StoryForeword />
+      <StoryChapters />
       <StoryHighlight />
       <StoryMovement />
-      <StoryBelief />
       <StorySignature />
-      <StoryCTA />
     </main>
   );
 }
