@@ -36,7 +36,7 @@ export default function Page() {
 
       <FoundersSectionMain />
       <NewsSection />
-      <InquiryCTA />
+      {/* <InquiryCTA /> */}
       <ImpactSection />
       <FAQSection />
 
