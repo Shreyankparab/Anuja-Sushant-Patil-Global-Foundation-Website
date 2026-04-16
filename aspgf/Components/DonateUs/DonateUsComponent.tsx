@@ -75,11 +75,11 @@ export default function DonateUsComponent() {
                         <div className="bg-[#00735C] rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden transition-all hover:shadow-xl hover:shadow-[#00735C]/20">
                             <div className="absolute right-[-20px] bottom-[-20px] w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
 
-                            <div className="flex flex-col md:flex-row gap-8 relative z-10 items-start">
+                            <div className="flex flex-col md:flex-row gap-8 relative z-10 items-center justify-between">
                                 {/* Left Content: Text + UPI */}
-                                <div className="w-full md:w-full flex flex-col gap-10">
-                                    <div className="md:w-[55%]">
-                                        <h3 className={`${nunito.className} text-2xl font-bold mb-4`}>Support the Change</h3>
+                                <div className="w-full md:w-7/12 flex flex-col gap-10">
+                                    <div className="w-full">
+                                        <h3 className={`${nunito.className} text-2xl font-bold mb-4 text-white`}>Support the Change</h3>
                                         <p className={`${cabin.className} text-white/90 mb-0 text-lg leading-relaxed italic`}>
                                             &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
                                         </p>
@@ -106,8 +106,8 @@ export default function DonateUsComponent() {
                                     </a>
                                 </div>
 
-                                {/* Right: QR Image (Absolute on Desktop for Size) */}
-                                <div className="w-full md:absolute md:top-[-20px] md:right-0 md:w-auto flex flex-col items-center justify-center">
+                                {/* Right: QR Image */}
+                                <div className="w-full md:w-5/12 flex flex-col items-center justify-center md:mt-[-40px]">
                                     <div
                                         onClick={() => setIsQRModalOpen(true)}
                                         className="bg-white p-5 rounded-[32px] shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 cursor-pointer w-full max-w-[280px]"

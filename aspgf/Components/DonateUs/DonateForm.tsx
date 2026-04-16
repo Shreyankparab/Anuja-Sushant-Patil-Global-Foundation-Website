@@ -27,7 +27,7 @@ type FormData = {
     message: string;
 };
 
-export default function DonateForm() {
+export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
     const {
         register,
         handleSubmit,
@@ -68,6 +68,7 @@ export default function DonateForm() {
         await submitToGoogleSheets(submissionData);
         setIsSubmitting(false);
         setQrOpen(true);
+        if (onSuccess) onSuccess();
     };
 
     const handleCloseQr = () => {

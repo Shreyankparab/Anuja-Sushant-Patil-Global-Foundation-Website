@@ -5,6 +5,7 @@ import { Navbar } from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { Suspense } from "react";
 import LoadingHandler, { LoadingProvider } from "@/Components/Common/LoadingHandler";
+import StickyInquiry from "@/Components/Common/StickyInquiry";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,6 +105,7 @@ export default function RootLayout({
             </main>
 
             <Footer />
+            <StickyInquiry />
 
           </div>
         </LoadingProvider>      </body>
