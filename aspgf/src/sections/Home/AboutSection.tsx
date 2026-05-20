@@ -2,16 +2,8 @@
 
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -76,7 +68,7 @@ const AboutSection = () => {
                       />
                     </defs>
                     <text
-                      className={`text-[8.5px] fill-[#6F7775] font-extrabold ${cabin.className} tracking-[0.12em] uppercase`}
+                      className="text-[8.5px] fill-[#6F7775] font-extrabold font-cabin tracking-[0.12em] uppercase"
                     >
                       <textPath href="#circlePath" startOffset="0%">
                         A.S.P Global Foundation • 25 Years Experience •
@@ -98,20 +90,20 @@ const AboutSection = () => {
 
           <div className="flex items-center gap-2 mb-1 reveal delay-100">
             <span
-              className={`${caveat.className} text-[#6f7775] text-[24px] font-bold tracking-wide mt-1`}
+              className="font-caveat text-[#6f7775] text-[24px] font-bold tracking-wide mt-1"
             >
               About Us
             </span>
           </div>
 
           <h2
-            className={`${nunito.className} text-[#00715D] text-4xl lg:text-5xl font-extrabold leading-[1.15] max-w-[600px] pr-4 reveal delay-200`}
+            className="font-nunito text-[#00715D] text-4xl lg:text-5xl font-extrabold leading-[1.15] max-w-[600px] pr-4 reveal delay-200"
           >
             Collective effort can create meaningful social impact
           </h2>
 
           <p
-            className={`${cabin.className} text-gray-500 leading-relaxed text-[15px] lg:text-[16px] max-w-[600px] reveal delay-300`}
+            className="font-cabin text-gray-500 leading-relaxed text-[15px] lg:text-[16px] max-w-[600px] reveal delay-300"
           >
             Anuja Sushant Patil Global Foundation is a registered not-for-profit
             organization established in 2025, focused on community development,
@@ -123,7 +115,7 @@ const AboutSection = () => {
           >
             <div className="absolute left-0 top-1 bottom-1 w-1 bg-[#00715D] rounded-full"></div>
             <p
-              className={`${cabin.className} text-gray-700 text-[15px] lg:text-[16px] font-medium leading-[1.7]`}
+              className="font-cabin text-gray-700 text-[15px] lg:text-[16px] font-medium leading-[1.7]"
             >
               Active since <span className="text-pink-600 font-bold">2025</span>{" "}
               , the foundation has undertaken multiple community initiatives in{" "}
@@ -141,7 +133,7 @@ const AboutSection = () => {
                 startLoading();
                 router.push("/about-us");
               }}
-              className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
+              className="font-cabin cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider"
             >
               Know More
             </button>

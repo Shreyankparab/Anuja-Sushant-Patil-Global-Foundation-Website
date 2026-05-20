@@ -2,12 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { Nunito, Cabin, Caveat } from "next/font/google";
 import { motion, useScroll, useTransform } from "framer-motion";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export default function StoryChapters() {
   const containerRef = useRef<HTMLElement>(null);
@@ -62,8 +57,8 @@ export default function StoryChapters() {
       {/* Chapter 1 */}
       <div className="flex flex-col gap-8 md:gap-0">
         <div className="md:hidden text-center z-10 px-4">
-          <p className={`${cabin.className} text-[#00b874] uppercase tracking-widest text-sm font-bold mb-2`}>Chapter One</p>
-          <h2 className={`${nunito.className} text-4xl font-extrabold text-[#0A2520]`}>The Assignment</h2>
+          <p className="font-cabin text-[#00b874] uppercase tracking-widest text-sm font-bold mb-2">Chapter One</p>
+          <h2 className="font-nunito text-4xl font-extrabold text-[#0A2520]">The Assignment</h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24 relative">
           <motion.div
@@ -77,7 +72,7 @@ export default function StoryChapters() {
               <div className="relative w-full h-full overflow-hidden rounded-sm">
                 <Image src="/images/our-story/story-1.png" alt="School Assignment" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
-              <div className={`${caveat.className} text-center mt-3 text-lg text-gray-500`}>A simple question</div>
+              <div className="font-caveat text-center mt-3 text-lg text-gray-500">A simple question</div>
             </div>
           </motion.div>
 
@@ -92,16 +87,16 @@ export default function StoryChapters() {
             <div ref={nodeRef} className="hidden sm:block absolute left-[-22px] md:left-[-48px] lg:left-[-60px] top-4 w-4 h-4 rounded-full bg-[#FAF9F6] border-4 border-[#00735C] z-10 shadow-[0_0_0_8px_#FAF9F6]" />
 
             <div className="hidden md:block">
-              <p className={`${cabin.className} text-[#00b874] uppercase tracking-widest text-sm font-bold mb-3`}>Chapter One</p>
-              <h2 className={`${nunito.className} text-3xl md:text-5xl font-extrabold text-[#0A2520] mb-6`}>The Assignment</h2>
+              <p className="font-cabin text-[#00b874] uppercase tracking-widest text-sm font-bold mb-3">Chapter One</p>
+              <h2 className="font-nunito text-3xl md:text-5xl font-extrabold text-[#0A2520] mb-6">The Assignment</h2>
             </div>
 
-            <div className={`${cabin.className} text-lg text-gray-600 leading-[1.8] space-y-6`}>
+            <div className="font-cabin text-lg text-gray-600 leading-[1.8] space-y-6">
               <p>
                 <span className="float-left text-7xl font-bold text-[#00735C] pr-3 pb-2 leading-[0.8] mt-1 font-serif">O</span>
                 ne day, Master Atharv Sushant Patil returned home from school with a project question his teacher had given the class:
               </p>
-              <blockquote className={`${caveat.className} text-2xl md:text-3xl text-[#0A2520] pl-6 border-l-2 border-[#00b874] py-2`}>
+              <blockquote className="font-caveat text-2xl md:text-3xl text-[#0A2520] pl-6 border-l-2 border-[#00b874] py-2">
                 "What can you do for the education of underprivileged children? What are their needs, and how can you help them?"
               </blockquote>
               <p>
@@ -115,8 +110,8 @@ export default function StoryChapters() {
       {/* Chapter 2 */}
       <div className="flex flex-col gap-8 md:gap-0">
         <div className="md:hidden text-center z-10 px-4">
-          <p className={`${cabin.className} text-[#00b874] uppercase tracking-widest text-sm font-bold mb-2`}>Chapter Two</p>
-          <h2 className={`${nunito.className} text-4xl font-extrabold text-[#0A2520]`}>The Conversation</h2>
+          <p className="font-cabin text-[#00b874] uppercase tracking-widest text-sm font-bold mb-2">Chapter Two</p>
+          <h2 className="font-nunito text-4xl font-extrabold text-[#0A2520]">The Conversation</h2>
         </div>
         <div className="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24 relative">
           <motion.div
@@ -130,7 +125,7 @@ export default function StoryChapters() {
               <div className="relative w-full h-full overflow-hidden rounded-sm">
                 <Image src="/images/our-story/story-2.png" alt="The Conversation" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
-              <div className={`${caveat.className} text-center mt-3 text-lg text-gray-500`}>A heartfelt chat</div>
+              <div className="font-caveat text-center mt-3 text-lg text-gray-500">A heartfelt chat</div>
             </div>
           </motion.div>
 
@@ -145,11 +140,11 @@ export default function StoryChapters() {
             <div className="hidden sm:block absolute right-[-22px] md:right-[-48px] lg:right-[-60px] top-4 w-4 h-4 rounded-full bg-[#FAF9F6] border-4 border-[#00735C] z-10 shadow-[0_0_0_8px_#FAF9F6]" />
 
             <div className="hidden md:block">
-              <p className={`${cabin.className} text-[#00b874] uppercase tracking-widest text-sm font-bold mb-3`}>Chapter Two</p>
-              <h2 className={`${nunito.className} text-3xl md:text-5xl font-extrabold text-[#0A2520] mb-6`}>The Conversation</h2>
+              <p className="font-cabin text-[#00b874] uppercase tracking-widest text-sm font-bold mb-3">Chapter Two</p>
+              <h2 className="font-nunito text-3xl md:text-5xl font-extrabold text-[#0A2520] mb-6">The Conversation</h2>
             </div>
 
-            <div className={`${cabin.className} text-lg text-gray-600 leading-[1.8] space-y-6 md:text-right`}>
+            <div className="font-cabin text-lg text-gray-600 leading-[1.8] space-y-6 md:text-right">
               <p>
                 After coming home, Atharv sat down with his parents and began sharing the weight of what was on his mind.
               </p>
@@ -167,8 +162,8 @@ export default function StoryChapters() {
       {/* Chapter 3 */}
       <div className="flex flex-col gap-8 md:gap-0">
         <div className="md:hidden text-center z-10 px-4">
-          <p className={`${cabin.className} text-[#00b874] uppercase tracking-widest text-sm font-bold mb-2`}>Chapter Three</p>
-          <h2 className={`${nunito.className} text-4xl font-extrabold text-[#0A2520]`}>The Decision</h2>
+          <p className="font-cabin text-[#00b874] uppercase tracking-widest text-sm font-bold mb-2">Chapter Three</p>
+          <h2 className="font-nunito text-4xl font-extrabold text-[#0A2520]">The Decision</h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24 relative">
           <motion.div
@@ -182,7 +177,7 @@ export default function StoryChapters() {
               <div className="relative w-full h-full overflow-hidden rounded-sm">
                 <Image src="/images/our-story/story-3.png" alt="The Decision" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
-              <div className={`${caveat.className} text-center mt-3 text-lg text-gray-500`}>The foundation begins</div>
+              <div className="font-caveat text-center mt-3 text-lg text-gray-500">The foundation begins</div>
             </div>
           </motion.div>
 
@@ -197,11 +192,11 @@ export default function StoryChapters() {
             <div className="hidden sm:block absolute left-[-22px] md:left-[-48px] lg:left-[-60px] top-4 w-4 h-4 rounded-full bg-[#FAF9F6] border-4 border-[#00735C] z-10 shadow-[0_0_0_8px_#FAF9F6]" />
 
             <div className="hidden md:block">
-              <p className={`${cabin.className} text-[#00b874] uppercase tracking-widest text-sm font-bold mb-3`}>Chapter Three</p>
-              <h2 className={`${nunito.className} text-3xl md:text-5xl font-extrabold text-[#0A2520] mb-6`}>The Decision</h2>
+              <p className="font-cabin text-[#00b874] uppercase tracking-widest text-sm font-bold mb-3">Chapter Three</p>
+              <h2 className="font-nunito text-3xl md:text-5xl font-extrabold text-[#0A2520] mb-6">The Decision</h2>
             </div>
 
-            <div className={`${cabin.className} text-lg text-gray-600 leading-[1.8] space-y-6`}>
+            <div className="font-cabin text-lg text-gray-600 leading-[1.8] space-y-6">
               <p>
                 That very evening, looking into Atharv's hopeful eyes, a small but resolute decision was made  -  to help underprivileged children in whatever way possible. It wasn't a grand corporate strategy. It was a family's answer to a child's compassion.
               </p>

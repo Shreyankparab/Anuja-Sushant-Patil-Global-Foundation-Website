@@ -9,11 +9,6 @@ import {
   MapPin,
   Info
 } from "lucide-react";
-import { Nunito, Cabin } from "next/font/google";
-
-const nunito = Nunito({ subsets: ["latin"] });
-
-const cabin = Cabin({ subsets: ["latin"] });
 
 export default function GalleryModal({
   isOpen,
@@ -66,7 +61,7 @@ export default function GalleryModal({
       {/* Top Bar Actions */}
       <div className="absolute top-0 inset-x-0 h-24 flex items-center justify-between px-8 z-[200] pointer-events-none">
         <div
-          className={`${cabin.className} text-white/50 text-sm font-bold pointer-events-auto bg-black/20 px-4 py-2 rounded-full backdrop-blur-md`}
+          className="font-cabin text-white/50 text-sm font-bold pointer-events-auto bg-black/20 px-4 py-2 rounded-full backdrop-blur-md"
         >
           {selectedIndex + 1} / {items.length}
         </div>
@@ -140,18 +135,18 @@ export default function GalleryModal({
         </div>
 
         <div className="flex items-center justify-between mb-8 pr-20">
-          <h2 className={`${nunito.className} text-white text-xl md:text-2xl font-black leading-tight pr-4`}>
+          <h2 className="font-nunito text-white text-xl md:text-2xl font-black leading-tight pr-4">
             {currentItem.title}
           </h2>
         </div>
         <div className="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
           <span
-            className={`${cabin.className} text-[#3ed0a6] text-xs font-bold uppercase tracking-widest flex items-center gap-2`}
+            className="font-cabin text-[#3ed0a6] text-xs font-bold uppercase tracking-widest flex items-center gap-2"
           >
             <Calendar size={14} /> {currentItem.date}
           </span>
           <span
-            className={`${cabin.className} text-white/40 text-xs font-bold uppercase tracking-widest flex items-center gap-2`}
+            className="font-cabin text-white/40 text-xs font-bold uppercase tracking-widest flex items-center gap-2"
           >
             <MapPin size={14} /> {currentItem.location}
           </span>
@@ -160,7 +155,7 @@ export default function GalleryModal({
 
         {/* Thumbnails list */}
         <h3
-          className={`${cabin.className} text-white/30 text-[10px] font-bold uppercase tracking-[0.3em] mb-4`}
+          className="font-cabin text-white/30 text-[10px] font-bold uppercase tracking-[0.3em] mb-4"
         >
           Event Gallery
         </h3>

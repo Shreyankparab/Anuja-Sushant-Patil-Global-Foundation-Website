@@ -5,14 +5,8 @@ import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { pageContent } from "@/data/gallery";
 import GalleryModal from "@/sections/Gallery/GalleryModal";
-import { Nunito, Cabin, Caveat, Inter } from "next/font/google";
 import { FiCalendar, FiMapPin, FiCamera, FiArrowRight } from "react-icons/fi";
 import { ChevronDown, ChevronLeft, ChevronRight, Grid, Layout } from "lucide-react";
-
-const nunito = Nunito({ subsets: ["latin"] });
-const cabin = Cabin({ subsets: ["latin"] });
-const caveat = Caveat({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
 
 export default function EventsGallery() {
   const revealRef = useScrollReveal();
@@ -81,13 +75,13 @@ export default function EventsGallery() {
       {/* SIMPLE HEADER SECTION */}
       <div className="bg-[#0f766e] py-16 text-white text-center relative">
         <div className="flex justify-center mb-4 reveal">
-          <span className={`${caveat.className} text-2xl text-white`}>
+          <span className="font-caveat text-2xl text-white">
             Visual Journey
           </span>
         </div>
 
         <h2
-          className={`${nunito.className} text-4xl font-bold reveal delay-100`}
+          className="font-nunito text-4xl font-bold reveal delay-100"
         >
           Capturing Moments of Impact.
         </h2>
@@ -99,7 +93,7 @@ export default function EventsGallery() {
         <div className="md:hidden relative max-w-[280px] mx-auto z-30">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={`${nunito.className} w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1A2E35] shadow-sm transition-all focus:border-[#0f766e]`}
+            className="font-nunito w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1A2E35] shadow-sm transition-all focus:border-[#0f766e]"
           >
             <span>{activeCategory}</span>
             <ChevronDown size={18} className={`text-[#0f766e] transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -114,7 +108,7 @@ export default function EventsGallery() {
                     setActiveCategory(cat);
                     setIsDropdownOpen(false);
                   }}
-                  className={`${nunito.className} w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
+                  className={`font-nunito w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
                     ? "bg-[#0f766e]/5 text-[#0f766e]"
                     : "text-gray-600 hover:bg-gray-50 hover:text-[#0f766e]"
                     }`}
@@ -156,12 +150,12 @@ export default function EventsGallery() {
                     <div className="flex items-center gap-3 text-[#0f766e] font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3">
                       <span className="px-2 py-0.5 bg-[#0f766e]/10 rounded">{event.categories}</span>
                     </div>
-                    <h2 className={`${nunito.className} text-xl md:text-4xl font-black text-[#1A2E35] group-hover:text-[#0f766e] transition-colors duration-300`}>
+                    <h2 className="font-nunito text-xl md:text-4xl font-black text-[#1A2E35] group-hover:text-[#0f766e] transition-colors duration-300">
                       {event.title}
                     </h2>
                   </div>
 
-                  <div className={`${inter.className} flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-gray-500 font-semibold mb-1`}>
+                  <div className="font-sans flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-gray-500 font-semibold mb-1">
                     <span className="flex items-center gap-2">
                       <FiCalendar className="text-[#0f766e]" /> {event.date}
                     </span>
@@ -220,7 +214,7 @@ export default function EventsGallery() {
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Layout className="text-gray-300 w-10 h-10" />
               </div>
-              <h3 className={`${nunito.className} text-2xl font-bold text-gray-400`}>No events found in this category</h3>
+              <h3 className="font-nunito text-2xl font-bold text-gray-400">No events found in this category</h3>
               <button
                 onClick={() => setActiveCategory("All")}
                 className="mt-6 text-[#0f766e] font-bold underline underline-offset-4"

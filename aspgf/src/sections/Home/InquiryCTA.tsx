@@ -1,17 +1,7 @@
-"use client";
-
 import React from "react";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
 import { ArrowRight } from "lucide-react";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export default function InquiryCTA() {
   const router = useRouter();
@@ -24,13 +14,13 @@ export default function InquiryCTA() {
       
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
         <div className="w-full lg:w-2/3">
-          <p className={`${caveat.className} text-[#6f7775] text-3xl md:text-4xl mb-6 font-medium`}>
+          <p className="font-caveat text-[#6f7775] text-3xl md:text-4xl mb-6 font-medium">
             Get In Touch
           </p>
-          <h2 className={`${nunito.className} text-[#0A2520] text-3xl md:text-5xl lg:text-6xl font-black mb-8 leading-[1.15] tracking-tight`}>
+          <h2 className="font-nunito text-[#0A2520] text-3xl md:text-5xl lg:text-6xl font-black mb-8 leading-[1.15] tracking-tight">
             Feel free to reach out with <br className="hidden md:block" /> any questions or feedback.
           </h2>
-          <p className={`${cabin.className} text-gray-500 text-lg md:text-xl leading-relaxed max-w-3xl opacity-90`}>
+          <p className="font-cabin text-gray-500 text-lg md:text-xl leading-relaxed max-w-3xl opacity-90">
             Feel free to reach out with any questions, feedback, or partnership inquiries. 
             Whether you are interested in volunteering, supporting our initiatives, or learning more about the work of Anuja Sushant Patil Global Foundation, our team is always ready to connect and collaborate.
           </p>
@@ -42,7 +32,7 @@ export default function InquiryCTA() {
               startLoading();
               router.push("/donate-us#inquiry-form");
             }}
-            className={`${cabin.className} group relative flex items-center gap-6 px-10 py-5 font-black text-white rounded-full text-xl bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-2xl shadow-[#006e57]/30 hover:shadow-[#00b874]/40 transition-all duration-500 transform hover:-translate-y-1 tracking-widest uppercase overflow-hidden`}
+            className="font-cabin group relative flex items-center gap-6 px-10 py-5 font-black text-white rounded-full text-xl bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-2xl shadow-[#006e57]/30 hover:shadow-[#00b874]/40 transition-all duration-500 transform hover:-translate-y-1 tracking-widest uppercase overflow-hidden"
           >
             <span className="relative z-10">Inquiry Form</span>
             <div className="relative z-10 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-45">

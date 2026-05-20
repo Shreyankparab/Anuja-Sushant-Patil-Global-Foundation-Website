@@ -12,6 +12,8 @@
   --font-mono: var(--font-geist-mono);
   --font-nunito: var(--font-nunito);
   --font-cabin: var(--font-cabin);
+  --font-caveat: var(--font-caveat);
+  --font-lexend: var(--font-lexend);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -177,3 +179,43 @@ input[type="submit"],
 input[type="button"] {
   cursor: pointer !important;
 }
+
+/* About Us Hero Animations */
+@keyframes hero-zoom-out {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom-out 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-up-300 {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 300ms forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-500 {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 500ms forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-700 {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 700ms forwards;
+  opacity: 0;
+}

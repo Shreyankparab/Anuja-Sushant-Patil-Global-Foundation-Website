@@ -4,14 +4,7 @@ import Image from "next/image";
 import { JSX, useEffect, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-import { Caveat, Nunito, Cabin } from "next/font/google";
 
-const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 // founding year
 const START_YEAR = 2025;
@@ -185,22 +178,21 @@ export default function HistorySection(): JSX.Element {
           <div className="py-6 pl-0 md:pl-16 reveal-right">
 
             <div className="flex items-center gap-2 mb-3 reveal delay-100">
-              <span className={`${caveat.className} text-[#6F7775] text-2xl`}>
+              <span className="font-caveat text-[#6F7775] text-2xl">
                 Our History
               </span>
             </div>
-            <h2 className={`${nunito.className} text-[36px] md:text-[42px] font-extrabold text-[#00735C] mb-4 reveal delay-200`}>
+            <h2 className="font-nunito text-[36px] md:text-[42px] font-extrabold text-[#00735C] mb-4 reveal delay-200">
               Journey Was Started
             </h2>
             <div className="h-1.5 w-48 bg-[#00735C] rounded-full mb-8 reveal delay-300"></div>
 
-            {/* YEAR SELECTION SECTION */}
             <div className="mb-4 relative select-none mr-0 reveal delay-400">
               <div className="flex justify-between items-center mb-10 px-1">
-                <h3 className={`${nunito.className} text-[13px] font-bold text-gray-400 uppercase tracking-widest`}>Journey Roadmap</h3>
+                <h3 className="font-nunito text-[13px] font-bold text-gray-400 uppercase tracking-widest">Journey Roadmap</h3>
                 <div className="px-5 py-2 bg-[#e6f1ef] rounded-2xl border border-[#00735C]/20 shadow-sm flex items-center gap-3">
                   <div className="w-2.5 h-2.5 bg-[#00735C] rounded-full animate-pulse shadow-[0_0_8px_rgba(0,115,92,0.4)]"></div>
-                  <span className={`${nunito.className} font-extrabold text-[#00735C] text-xl`}>{activeYear}</span>
+                  <span className="font-nunito font-extrabold text-[#00735C] text-xl">{activeYear}</span>
                 </div>
               </div>
 
@@ -233,7 +225,7 @@ export default function HistorySection(): JSX.Element {
 
                         {/* Year Label Below */}
                         <span
-                          className={`absolute top-10 ${nunito.className} text-[14px] md:text-[15px] font-extrabold transition-all duration-300 whitespace-nowrap
+                          className={`absolute top-10 font-nunito text-[14px] md:text-[15px] font-extrabold transition-all duration-300 whitespace-nowrap
                                                         ${isActive
                               ? 'text-[#00735C] scale-110 translate-y-1'
                               : 'text-gray-400 group-hover:text-gray-500'}`}
@@ -248,18 +240,18 @@ export default function HistorySection(): JSX.Element {
             </div>
 
             <div className={`transition-all duration-300 transform ${isChanging ? 'opacity-0 translate-x-5' : 'opacity-100 translate-x-0'}`}>
-              <p className={`${nunito.className} text-[#00735C] font-extrabold mb-2 text-sm`}>
+              <p className="font-nunito text-[#00735C] font-extrabold mb-2 text-sm">
                 {currentData.year}
               </p>
 
-              <h3 className={`${nunito.className} text-[24px] font-extrabold text-gray-900 mb-6`}>
+              <h3 className="font-nunito text-[24px] font-extrabold text-gray-900 mb-6">
                 {currentData.title}
               </h3>
 
               <ul className="space-y-4">
                 {currentData.points.map((item: any, idx: number) => (
                   <li key={idx}>
-                    <p className={`${cabin.className} font-bold text-gray-900 text-[15px]`}>
+                    <p className="font-cabin font-bold text-gray-900 text-[15px]">
                       {item.head}
                     </p>
 
@@ -267,7 +259,7 @@ export default function HistorySection(): JSX.Element {
                       {item.sub.map((subItem: string, sIdx: number) => (
                         <li
                           key={sIdx}
-                          className={`${cabin.className} text-gray-600 text-sm`}
+                          className="font-cabin text-gray-600 text-sm"
                         >
                           • {subItem}
                         </li>

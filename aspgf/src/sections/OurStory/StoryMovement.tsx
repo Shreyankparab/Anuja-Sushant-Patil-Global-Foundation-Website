@@ -1,13 +1,8 @@
 "use client";
 
 import React from "react";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { motion } from "framer-motion";
 import { BookOpen, Backpack, Users, Sprout } from "lucide-react";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 const stats = [
   { icon: BookOpen, title: "First chapters written", desc: "Atharv personally handed notebooks, pencils, and school supplies to children in need." },
@@ -20,10 +15,10 @@ export default function StoryMovement() {
   return (
     <section className="relative z-10 max-w-5xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-20">
-        <p className={`${caveat.className} text-[#00735C] text-3xl md:text-4xl mb-4 font-bold`}>
+        <p className="font-caveat text-[#00735C] text-3xl md:text-4xl mb-4 font-bold">
           From one act to many
         </p>
-        <h2 className={`${nunito.className} text-3xl md:text-5xl font-extrabold text-[#0A2520]`}>
+        <h2 className="font-nunito text-3xl md:text-5xl font-extrabold text-[#0A2520]">
           How a Story Became a Movement
         </h2>
       </div>
@@ -44,8 +39,8 @@ export default function StoryMovement() {
                 <Icon size={28} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className={`${nunito.className} text-xl font-bold text-[#0A2520] mb-2`}>{item.title}</h4>
-                <p className={`${cabin.className} text-gray-600 leading-relaxed`}>{item.desc}</p>
+                <h4 className="font-nunito text-xl font-bold text-[#0A2520] mb-2">{item.title}</h4>
+                <p className="font-cabin text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             </motion.div>
           )

@@ -2,17 +2,9 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { allWorkItems } from "@/data/ourWorkData";
 import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const OurWorkSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -124,13 +116,13 @@ const OurWorkSection = () => {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-1">
               <span
-                className={`${caveat.className} text-[#ffffff] text-[20px] md:text-[24px] font-bold tracking-wide mt-1`}
+                className="font-caveat text-[#ffffff] text-[20px] md:text-[24px] font-bold tracking-wide mt-1"
               >
                 Our Work
               </span>
             </div>
             <h2
-              className={`${nunito.className} text-white text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] max-w-[600px]`}
+              className="font-nunito text-white text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] max-w-[600px]"
             >
               Explore Our Successful Camping Work
             </h2>
@@ -142,7 +134,7 @@ const OurWorkSection = () => {
                 startLoading();
                 router.push("/our-work");
               }}
-              className={`group ${cabin.className} cursor-pointer font-bold text-[14px] md:text-[16px] flex items-center gap-4 md:gap-6 bg-white xl:hover:bg-gray-50 text-[#00715D] py-1 md:py-1.5 pl-6 md:pl-8 pr-1 md:pr-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 min-w-0 md:min-w-[220px] max-w-[240px] border border-white/20`}
+              className="group font-cabin cursor-pointer font-bold text-[14px] md:text-[16px] flex items-center gap-4 md:gap-6 bg-white xl:hover:bg-gray-50 text-[#00715D] py-1 md:py-1.5 pl-6 md:pl-8 pr-1 md:pr-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 min-w-0 md:min-w-[220px] max-w-[240px] border border-white/20"
             >
               <span className="flex-grow text-left">View our Works</span>
               <span className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#00715D] text-white transition-transform duration-500 xl:group-hover:rotate-45 flex-shrink-0">
@@ -216,12 +208,12 @@ const OurWorkSection = () => {
                   className={`absolute inset-x-5 bottom-5 p-5 bg-white/15 backdrop-blur-xl rounded-[15px] border border-white/20 translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out z-30 ${activeIndex === index ? "translate-y-0 opacity-100" : ""} mb-20 md:mb-0`}
                 >
                   <h3
-                    className={`${nunito.className} text-[22px] font-extrabold text-[#FFDA3D] mb-1`}
+                    className="font-nunito text-[22px] font-extrabold text-[#FFDA3D] mb-1"
                   >
                     {project.title}
                   </h3>
                   <p
-                    className={`${cabin.className} text-white/90 text-[13.5px] leading-tight mb-4 font-medium line-clamp-2`}
+                    className="font-cabin text-white/90 text-[13.5px] leading-tight mb-4 font-medium line-clamp-2"
                   >
                     {project.description}
                   </p>

@@ -1,15 +1,9 @@
 "use client";
 
-import React from "react";
-import { Caveat, Nunito, Cabin } from "next/font/google";
+import React, { useState } from "react";
 import { Banknote, Building2, CreditCard, Landmark, X, HandHeart } from "lucide-react";
 import DonateForm from "./DonateForm";
 import Image from "next/image";
-import { useState } from "react";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export default function DonateUsComponent() {
     const [isQRModalOpen, setIsQRModalOpen] = useState(false);
@@ -19,13 +13,13 @@ export default function DonateUsComponent() {
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
-                    <p className={`${caveat.className} text-[#00735C] text-3xl mb-4`}>
+                    <p className="font-caveat text-[#00735C] text-3xl mb-4">
                         Make a Difference
                     </p>
-                    <h1 className={`${nunito.className} text-[#0A2520] text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight`}>
+                    <h1 className="font-nunito text-[#0A2520] text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
                         Your Support Fuels Our Mission for Change
                     </h1>
-                    <p className={`${cabin.className} text-gray-600 text-lg leading-relaxed`}>
+                    <p className="font-cabin text-gray-600 text-lg leading-relaxed">
                         Join us in our journey to empower communities and create a lasting impact. Your generous contribution helps us provide education, healthcare, and support to those who need it most.
                     </p>
                 </div>
@@ -34,7 +28,7 @@ export default function DonateUsComponent() {
                     {/* Left Side: Account Details & Why Donate */}
                     <div className="w-full lg:w-1/2 flex flex-col gap-10">
                         <div>
-                            <h2 className={`${nunito.className} text-2xl font-extrabold text-[#1A2E35] mb-6 flex items-center gap-3`}>
+                            <h2 className="font-nunito text-2xl font-extrabold text-[#1A2E35] mb-6 flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-[#D5EBE1] flex items-center justify-center">
                                     <Landmark className="text-[#00735C]" size={20} />
                                 </div>
@@ -45,29 +39,29 @@ export default function DonateUsComponent() {
                                 {/* Bank Name */}
                                 <div className="bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md">
                                     <Building2 className="text-[#00735C] mb-3" size={24} />
-                                    <p className={`${nunito.className} text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>Bank Name</p>
-                                    <p className={`${cabin.className} text-[#1A2E35] font-bold text-base`}>HDFC BANK LTD</p>
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1">Bank Name</p>
+                                    <p className="font-cabin text-[#1A2E35] font-bold text-base">HDFC BANK LTD</p>
                                 </div>
 
                                 {/* Account Holder */}
                                 <div className="bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md">
                                     <CreditCard className="text-[#00735C] mb-3" size={24} />
-                                    <p className={`${nunito.className} text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>Account Holder</p>
-                                    <p className={`${cabin.className} text-[#1A2E35] font-bold text-base`}>Anuja Sushant Patil Global Foundation</p>
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1">Account Holder</p>
+                                    <p className="font-cabin text-[#1A2E35] font-bold text-base">Anuja Sushant Patil Global Foundation</p>
                                 </div>
 
                                 {/* Account Number */}
                                 <div className="bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md">
                                     <Banknote className="text-[#00735C] mb-3" size={24} />
-                                    <p className={`${nunito.className} text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>Account Number</p>
-                                    <p className={`${cabin.className} text-[#1A2E35] font-extrabold text-lg tracking-wider`}>50200110314690</p>
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1">Account Number</p>
+                                    <p className="font-cabin text-[#1A2E35] font-extrabold text-lg tracking-wider">50200110314690</p>
                                 </div>
 
                                 {/* IFSC Code */}
                                 <div className="bg-[#f8faf9] p-6 rounded-2xl border border-[#e8f1ec] transition-all hover:shadow-md">
                                     <Landmark className="text-[#00735C] mb-3" size={24} />
-                                    <p className={`${nunito.className} text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1`}>IFSC Code</p>
-                                    <p className={`${cabin.className} text-[#1A2E35] font-extrabold text-lg tracking-wider`}>HDFC0002453</p>
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-1">IFSC Code</p>
+                                    <p className="font-cabin text-[#1A2E35] font-extrabold text-lg tracking-wider">HDFC0002453</p>
                                 </div>
                             </div>
                         </div>
@@ -79,8 +73,8 @@ export default function DonateUsComponent() {
                                 {/* Left Content: Text + UPI */}
                                 <div className="w-full md:w-7/12 flex flex-col gap-10">
                                     <div className="w-full">
-                                        <h3 className={`${nunito.className} text-2xl font-bold mb-4 text-white`}>Support the Change</h3>
-                                        <p className={`${cabin.className} text-white/90 mb-0 text-lg leading-relaxed italic`}>
+                                        <h3 className="font-nunito text-2xl font-bold mb-4 text-white">Support the Change</h3>
+                                        <p className="font-cabin text-white/90 mb-0 text-lg leading-relaxed italic">
                                             &quot;Your small contribution can bring a big change. Every single rupee donated goes directly towards empowering those in need and creating a better tomorrow.&quot;
                                         </p>
                                     </div>
@@ -121,7 +115,7 @@ export default function DonateUsComponent() {
                                                 className="rounded-xl w-full h-auto"
                                             />
                                         </div>
-                                        <p className={`${nunito.className} text-[#00735C] text-xs font-black text-center mt-4 uppercase tracking-[0.2em]`}>Scan to Support</p>
+                                        <p className="font-nunito text-[#00735C] text-xs font-black text-center mt-4 uppercase tracking-[0.2em]">Scan to Support</p>
                                     </div>
 
                                     {/* Mobile Click to Pay Button */}
@@ -150,8 +144,8 @@ export default function DonateUsComponent() {
                     <div id="inquiry-form" className="w-full lg:w-1/2">
                         <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
                             <div className="mb-8">
-                                <h2 className={`${nunito.className} text-3xl font-extrabold text-[#1A2E35] mb-2`}>Inquiry</h2>
-                                <p className={`${cabin.className} text-gray-500`}>Fill out this form and we'll get in touch with you regarding your contribution.</p>
+                                <h2 className="font-nunito text-3xl font-extrabold text-[#1A2E35] mb-2">Inquiry</h2>
+                                <p className="font-cabin text-gray-500">Fill out this form and we'll get in touch with you regarding your contribution.</p>
                             </div>
                             <DonateForm />
                         </div>
@@ -185,7 +179,7 @@ export default function DonateUsComponent() {
 
                         {/* Scrollable area within the fixed container */}
                         <div className="overflow-y-auto no-scrollbar p-6 md:p-10 flex flex-col items-center">
-                            <div className={`${nunito.className} text-center mb-6`}>
+                            <div className="font-nunito text-center mb-6">
                                 <h3 className="text-xl md:text-2xl font-[900] text-[#0A2520] mb-1 tracking-tight">Scan & Support</h3>
                                 <p className="text-[#00735C] font-bold opacity-70 text-[12px] md:text-sm">Anuja Sushant Patil Global Foundation</p>
                             </div>
@@ -233,7 +227,7 @@ export default function DonateUsComponent() {
                                     </a>
                                 </div>
 
-                                <p className={`${cabin.className} hidden md:block text-center text-gray-400 text-[11px] font-bold mt-1 opacity-80 leading-relaxed`}>
+                                <p className="font-cabin hidden md:block text-center text-gray-400 text-[11px] font-bold mt-1 opacity-80 leading-relaxed">
                                     Open any UPI app like GPay, PhonePe, or Paytm to scan and donate.
                                 </p>
                             </div>

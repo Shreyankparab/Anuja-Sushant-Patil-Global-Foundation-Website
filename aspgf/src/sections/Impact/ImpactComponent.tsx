@@ -2,20 +2,12 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { Play, X, ChevronLeft, ChevronRight, Info } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import StatsSection from "@/components/StatsSection";
 import { videoStories } from "@/data/impactData";
 
 type VideoStory = (typeof videoStories)[0];
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["400", "700", "800", "900"],
-});
-const cabin = Cabin({ subsets: ["latin"] });
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -76,7 +68,7 @@ export default function ImpactComponent() {
           <div className="flex items-center justify-center gap-4 mb-2 reveal">
             <div className="h-[1px] w-12 md:w-20 bg-gray-300"></div>
             <span
-              className={`${caveat.className} text-xl md:text-2xl text-[#6f7775] font-bold italic`}
+              className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold italic"
             >
               Proof of changes
             </span>
@@ -84,13 +76,13 @@ export default function ImpactComponent() {
           </div>
 
           <h2
-            className={`${nunito.className} text-4xl md:text-6xl font-black text-[#00735C] mb-6 leading-tight uppercase reveal delay-100`}
+            className="font-nunito text-4xl md:text-6xl font-black text-[#00735C] mb-6 leading-tight uppercase reveal delay-100"
           >
             Our <br className="hidden md:block" /> Impact
           </h2>
 
           <p
-            className={`${cabin.className} max-w-2xl mx-auto text-gray-600 text-base md:text-lg mb-16 leading-relaxed font-semibold reveal delay-200`}
+            className="font-cabin max-w-2xl mx-auto text-gray-600 text-base md:text-lg mb-16 leading-relaxed font-semibold reveal delay-200"
           >
             Real change created through compassion, collaboration, and a shared
             commitment to building stronger and more resilient communities.
@@ -114,12 +106,12 @@ export default function ImpactComponent() {
           {/* Section Header */}
           <div className="mb-12">
             <p
-              className={`${caveat.className} text-xl md:text-2xl text-[#6f7775] font-bold italic mb-2 px-1 text-left`}
+              className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold italic mb-2 px-1 text-left"
             >
               Words of reality
             </p>
             <h2
-              className={`${nunito.className} text-4xl md:text-5xl font-black leading-tight text-left text-[#1A2E35]`}
+              className="font-nunito text-4xl md:text-5xl font-black leading-tight text-left text-[#1A2E35]"
             >
               Stories that <span className="text-[#00735C]">defines us</span>
             </h2>
@@ -149,18 +141,18 @@ export default function ImpactComponent() {
                   </div>
                   <div className="p-5 flex-1">
                     <div
-                      className={`${cabin.className} flex items-center gap-1.5 text-[#00735C] font-bold text-xs mb-3 uppercase tracking-wider`}
+                      className="font-cabin flex items-center gap-1.5 text-[#00735C] font-bold text-xs mb-3 uppercase tracking-wider"
                     >
                       <FaMapMarkerAlt size={14} />
                       <span>{featuredVideo.location}</span>
                     </div>
                     <h3
-                      className={`${nunito.className} text-black font-extrabold text-xl md:text-2xl leading-tight mb-3 text-left line-clamp-2`}
+                      className="font-nunito text-black font-extrabold text-xl md:text-2xl leading-tight mb-3 text-left line-clamp-2"
                     >
                       {featuredVideo.title}
                     </h3>
                     <div
-                      className={`${cabin.className} text-gray-500 text-xs font-semibold text-left uppercase tracking-wide`}
+                      className="font-cabin text-gray-500 text-xs font-semibold text-left uppercase tracking-wide"
                     >
                       {featuredVideo.year} | {featuredVideo.duration}
                     </div>
@@ -194,18 +186,18 @@ export default function ImpactComponent() {
                   </div>
                   <div className="p-4 flex-1">
                     <div
-                      className={`${cabin.className} flex items-center gap-1.5 text-[#00735C] font-bold text-[10px] mb-2 uppercase tracking-wider`}
+                      className="font-cabin flex items-center gap-1.5 text-[#00735C] font-bold text-[10px] mb-2 uppercase tracking-wider"
                     >
                       <FaMapMarkerAlt size={12} />
                       <span>{video.location}</span>
                     </div>
                     <h3
-                      className={`${nunito.className} text-black font-extrabold text-sm md:text-base leading-tight mb-2 line-clamp-2 text-left`}
+                      className="font-nunito text-black font-extrabold text-sm md:text-base leading-tight mb-2 line-clamp-2 text-left"
                     >
                       {video.title}
                     </h3>
                     <div
-                      className={`${cabin.className} text-gray-500 text-[10px] font-semibold text-left uppercase tracking-wide`}
+                      className="font-cabin text-gray-500 text-[10px] font-semibold text-left uppercase tracking-wide"
                     >
                       {video.year} | {video.duration}
                     </div>
@@ -240,18 +232,18 @@ export default function ImpactComponent() {
                 </div>
                 <div className="p-5 flex-1">
                   <div
-                    className={`${cabin.className} flex items-center gap-1.5 text-[#00735C] font-bold text-[10px] mb-2 uppercase tracking-wider`}
+                    className="font-cabin flex items-center gap-1.5 text-[#00735C] font-bold text-[10px] mb-2 uppercase tracking-wider"
                   >
                     <FaMapMarkerAlt size={12} />
                     <span>{video.location}</span>
                   </div>
                   <h3
-                    className={`${nunito.className} text-black font-extrabold text-base md:text-lg leading-tight mb-2 line-clamp-2 text-left`}
+                    className="font-nunito text-black font-extrabold text-base md:text-lg leading-tight mb-2 line-clamp-2 text-left"
                   >
                     {video.title}
                   </h3>
                   <div
-                    className={`${cabin.className} text-gray-500 text-[10px] font-semibold text-left uppercase tracking-wide`}
+                    className="font-cabin text-gray-500 text-[10px] font-semibold text-left uppercase tracking-wide"
                   >
                     {video.year} | {video.duration}
                   </div>
@@ -312,12 +304,12 @@ export default function ImpactComponent() {
             <div className="flex justify-between items-center mb-6 gap-4">
               <div className="flex flex-col min-w-0 flex-1">
                 <span
-                  className={`${caveat.className} text-[#00735C] text-xl font-bold italic`}
+                  className="font-caveat text-[#00735C] text-xl font-bold italic"
                 >
                   Impact Stories
                 </span>
                 <h2
-                  className={`${nunito.className} text-white text-xl md:text-3xl font-extrabold leading-tight`}
+                  className="font-nunito text-white text-xl md:text-3xl font-extrabold leading-tight"
                 >
                   {activeVideo.title}
                 </h2>
@@ -380,7 +372,7 @@ export default function ImpactComponent() {
                   <div className="flex items-center gap-3 text-[#00735C]">
                     <Play size={20} fill="currentColor" />
                     <h3
-                      className={`${nunito.className} text-white font-bold text-lg`}
+                      className="font-nunito text-white font-bold text-lg"
                     >
                       More Stories
                     </h3>
@@ -432,7 +424,7 @@ export default function ImpactComponent() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4
-                            className={`${nunito.className} text-white font-bold text-sm line-clamp-2 leading-tight mb-1`}
+                            className="font-nunito text-white font-bold text-sm line-clamp-2 leading-tight mb-1"
                           >
                             {video.title}
                           </h4>

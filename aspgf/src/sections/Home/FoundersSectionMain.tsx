@@ -1,22 +1,15 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const manrope = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export default function FoundersSection() {
   return (
     <section className="w-full flex flex-col items-center py-16 bg-white">
       {/* HEADING */}
       <h2
-        className={`${nunito.className} text-4xl md:text-5xl font-extrabold text-[#0b6a52] mb-12 text-center`}
+        className="font-nunito text-4xl md:text-5xl font-extrabold text-[#0b6a52] mb-12 text-center"
       >
         Meet Our Founders
       </h2>
@@ -133,17 +126,17 @@ function AnimatedCard({ name1, name2, role, experience, image, link }: any) {
           ${isOpen ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
         `}
       >
-        <h3 className={`${nunito.className} text-[24px] font-extrabold`}>
+        <h3 className="font-nunito text-[24px] font-extrabold">
           {name1}
         </h3>
 
         {name2 && (
-          <h3 className={`${nunito.className} text-[24px] font-extrabold`}>
+          <h3 className="font-nunito text-[24px] font-extrabold">
             {name2}
           </h3>
         )}
 
-        <p className={`${manrope.className} text-[16px] font-bold mt-2`}>
+        <p className="font-cabin text-[16px] font-bold mt-2">
           {role}
         </p>
       </div>
@@ -161,21 +154,21 @@ function AnimatedCard({ name1, name2, role, experience, image, link }: any) {
           }
         `}
       >
-        <h3 className={`${nunito.className} text-[26px] font-extrabold`}>
+        <h3 className="font-nunito text-[26px] font-extrabold">
           {name1}
         </h3>
 
         {name2 && (
-          <h3 className={`${nunito.className} text-[26px] font-extrabold`}>
+          <h3 className="font-nunito text-[26px] font-extrabold">
             {name2}
           </h3>
         )}
 
-        <p className={`${manrope.className} text-[20px] font-bold mt-2`}>
+        <p className="font-cabin text-[20px] font-bold mt-2">
           {role}
         </p>
 
-        <p className={`${manrope.className} text-[14px] mt-3 opacity-90`}>
+        <p className="font-cabin text-[14px] mt-3 opacity-90">
           {experience}
         </p>
 

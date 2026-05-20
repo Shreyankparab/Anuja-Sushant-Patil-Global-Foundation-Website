@@ -2,9 +2,6 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { Nunito } from "next/font/google";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 
 export default function LoadingScreen() {
     return (
@@ -33,7 +30,7 @@ export default function LoadingScreen() {
 
                 {/* Minimalist Branding */}
                 <div className="flex flex-col items-center gap-1">
-                    <h2 className={`${nunito.className} text-[#073D30] text-sm font-extrabold tracking-[0.2em] uppercase`}>
+                    <h2 className="font-nunito text-[#073D30] text-sm font-extrabold tracking-[0.2em] uppercase">
                         ASPGF
                     </h2>
                     <div className="flex gap-1.5 mt-2">

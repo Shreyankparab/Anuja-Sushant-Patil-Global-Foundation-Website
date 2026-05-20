@@ -2,13 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { motion } from "framer-motion";
 import { BookMarked } from "lucide-react";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export default function StoryHero() {
   return (
@@ -31,10 +26,10 @@ export default function StoryHero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <BookMarked className="w-12 h-12 text-[#00735C] mb-6 opacity-80" />
-        <p className={`${caveat.className} text-[#00b874] text-3xl md:text-4xl mb-4 font-bold tracking-wider`}>
+        <p className="font-caveat text-[#00b874] text-3xl md:text-4xl mb-4 font-bold tracking-wider">
           A Small Thought, A Big Mission
         </p>
-        <h1 className={`${nunito.className} text-[44px] sm:text-[60px] md:text-[80px] font-[900] leading-[1.05] text-[#0A2520] tracking-tight mb-8 drop-shadow-sm`}>
+        <h1 className="font-nunito text-[44px] sm:text-[60px] md:text-[80px] font-[900] leading-[1.05] text-[#0A2520] tracking-tight mb-8 drop-shadow-sm">
           Our Inspiring <br className="hidden sm:block" />
           <span className="text-[#00735C] relative inline-block">
             Beginning
@@ -43,7 +38,7 @@ export default function StoryHero() {
             </svg>
           </span>
         </h1>
-        <p className={`${cabin.className} text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed`}>
+        <p className="font-cabin text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed">
           The founding story of ASPGF  -  written not in boardrooms, but through the compassionate eyes of a child.
         </p>
 

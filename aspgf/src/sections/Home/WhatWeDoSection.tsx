@@ -3,14 +3,6 @@
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { FaCheckCircle, FaPlay, FaTrophy, FaTimes } from "react-icons/fa";
-import { Caveat, Nunito, Cabin } from "next/font/google";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -111,7 +103,7 @@ export default function WhatWeDoSection() {
           {/* WHAT WE DO TAG */}
           <div className="flex items-center gap-3 mb-4">
             <p
-              className={`${caveat.className} text-[#6f7775] font-bold text-[24px] mt-1`}
+              className="font-caveat text-[#6f7775] font-bold text-[24px] mt-1"
             >
               What We Do
             </p>
@@ -119,7 +111,7 @@ export default function WhatWeDoSection() {
 
           {/* HEADING */}
           <h2
-            className={`${nunito.className} text-[#0b6a52] text-3xl md:text-5xl font-extrabold leading-[1.15] mb-8 pr-4`}
+            className="font-nunito text-[#0b6a52] text-3xl md:text-5xl font-extrabold leading-[1.15] mb-8 pr-4"
           >
             Empowering Communities for a Sustainable Tomorrow
           </h2>
@@ -130,7 +122,7 @@ export default function WhatWeDoSection() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`${cabin.className} px-4 md:px-8 py-3 rounded-full font-extrabold text-[14px] md:text-[15px] tracking-wide transition-all duration-300 shadow-sm whitespace-nowrap ${activeTab === tab
+                className={`font-cabin px-4 md:px-8 py-3 rounded-full font-extrabold text-[14px] md:text-[15px] tracking-wide transition-all duration-300 shadow-sm whitespace-nowrap ${activeTab === tab
                   ? "bg-[#0b6a52] text-white shadow-md"
                   : "bg-white text-[#1A2E35] border border-gray-200 hover:bg-gray-50"
                   }`}
@@ -142,14 +134,14 @@ export default function WhatWeDoSection() {
 
           {/* DESCRIPTION */}
           <p
-            className={`${cabin.className} text-gray-500 leading-relaxed text-[15px] lg:text-[16px] mb-8 min-h-[60px]`}
+            className="font-cabin text-gray-500 leading-relaxed text-[15px] lg:text-[16px] mb-8 min-h-[60px]"
           >
             {tabContent[activeTab].description}
           </p>
 
           {/* CHECK LIST */}
           <ul
-            className={`${nunito.className} space-y-5 text-[#1A2E35] font-bold text-[16px]`}
+            className="font-nunito space-y-5 text-[#1A2E35] font-bold text-[16px]"
           >
             {tabContent[activeTab].points.map((point, index) => (
               <li
@@ -170,7 +162,7 @@ export default function WhatWeDoSection() {
             <div className="mt-8 transition-all duration-700 transform opacity-100 translate-y-0">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className={`${cabin.className} bg-[#0b6a52] text-white px-8 py-3 rounded-full font-bold text-[15px] hover:bg-[#0a5a45] transition-colors shadow-md`}
+                className="font-cabin bg-[#0b6a52] text-white px-8 py-3 rounded-full font-bold text-[15px] hover:bg-[#0a5a45] transition-colors shadow-md"
               >
                 Check Eligibility
               </button>
@@ -254,21 +246,21 @@ export default function WhatWeDoSection() {
 
             {/* Scrollable Content */}
             <div className="overflow-y-auto p-6 md:p-10 scrollbar-hide relative z-10">
-              <h3 className={`${nunito.className} text-[#0b6a52] text-2xl md:text-3xl font-extrabold mb-6 pr-8`}>
+              <h3 className="font-nunito text-[#0b6a52] text-2xl md:text-3xl font-extrabold mb-6 pr-8">
                 Eligibility Criteria for (ASPGF) Scholarship
               </h3>
 
-              <ul className={`${cabin.className} space-y-4 text-[#2b2b2b] text-[16px] md:text-[18px] mb-10`}>
+              <ul className="font-cabin space-y-4 text-[#2b2b2b] text-[16px] md:text-[18px] mb-10">
                 <li>The applicant must generally be an Indian citizen.</li>
                 <li>The family's annual income should not exceed a specified limit.</li>
                 <li>The student must have obtained minimum qualifying marks in the previous examination.</li>
               </ul>
 
-              <h3 className={`${nunito.className} text-[#0b6a52] text-2xl md:text-3xl font-extrabold mb-6`}>
+              <h3 className="font-nunito text-[#0b6a52] text-2xl md:text-3xl font-extrabold mb-6">
                 Documents Required for Scholarship Application
               </h3>
 
-              <ul className={`${cabin.className} space-y-3 text-[#2b2b2b] text-[16px] md:text-[18px] list-none`}>
+              <ul className="font-cabin space-y-3 text-[#2b2b2b] text-[16px] md:text-[18px] list-none">
                 {[
                   { label: "Bonafide Certificate", desc: "Bonafide certificate from the educational institution." },
                   { label: "Admission Fee Receipt", desc: "Proof of admission to the educational institution." },

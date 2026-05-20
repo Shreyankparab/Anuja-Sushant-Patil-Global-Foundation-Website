@@ -2,10 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { GraduationCap, Users, HandHeart } from "lucide-react";
-import { Nunito, Cabin } from "next/font/google";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
-const cabin = Cabin({ subsets: ["latin"] });
 
 const statsData = [
   {
@@ -89,7 +85,7 @@ export default function StatsSection() {
             {stat.icon}
           </div>
 
-          <div className={`${nunito.className} text-4xl md:text-5xl font-black text-[#1A2E35] mb-2 flex items-baseline`}>
+          <div className="font-nunito text-4xl md:text-5xl font-black text-[#1A2E35] mb-2 flex items-baseline">
             {stat.prefix && <span>{stat.prefix}</span>}
             <span>
               <Counter target={stat.value} trigger={hasIntersected} />
@@ -97,7 +93,7 @@ export default function StatsSection() {
             <span>{stat.suffix}</span>
           </div>
 
-          <p className={`${cabin.className} text-gray-500 font-bold uppercase tracking-wider text-xs md:text-sm`}>
+          <p className="font-cabin text-gray-500 font-bold uppercase tracking-wider text-xs md:text-sm">
             {stat.label}
           </p>
         </div>

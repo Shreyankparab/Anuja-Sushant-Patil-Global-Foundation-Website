@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Nunito, Cabin } from "next/font/google";
+import { Geist, Geist_Mono, Nunito, Cabin, Caveat, Lexend } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,6 +27,18 @@ const cabin = Cabin({
   variable: "--font-cabin",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["700"],
+});
+
+const lexend = Lexend({
+  variable: "--font-lexend",
+  subsets: ["latin"],
+  weight: ["800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -85,7 +97,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${cabin.variable} antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${cabin.variable} ${caveat.variable} ${lexend.variable} antialiased overflow-x-hidden`}
       >
         <LoadingProvider>
           <Suspense fallback={null}>
@@ -105,7 +117,7 @@ export default function RootLayout({
             </main>
 
             <Footer />
-            <StickyInquiry />
+            {/* <StickyInquiry /> */}
 
           </div>
         </LoadingProvider>      </body>

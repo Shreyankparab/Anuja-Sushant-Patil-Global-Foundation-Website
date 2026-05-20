@@ -2,14 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Target, Eye, Heart, ArrowRight, Download } from "lucide-react";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 
-const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -33,18 +26,18 @@ export default function AboutClient() {
         {/* LEFT CONTENT */}
         <div className="lg:w-[45%]">
           <p
-            className={`${caveat.className} text-[#6F7775] text-3xl mb-4 font-normal reveal delay-100`}
+            className="font-caveat text-[#6F7775] text-3xl mb-4 font-normal reveal delay-100"
           >
             Our Approach
           </p>
           <h2
-            className={`${nunito.className} text-[#0A2520] text-4xl font-extrabold mb-4 reveal delay-200`}
+            className="font-nunito text-[#0A2520] text-4xl font-extrabold mb-4 reveal delay-200"
           >
             Building a Sustainable Future with Innovation
           </h2>
           <div className="h-1 w-40 bg-[#00735C] rounded-full mb-8 reveal delay-300"></div>
 
-          <p className={`${cabin.className} text-gray-600 mb-8 font-normal reveal delay-400`}>
+          <p className="font-cabin text-gray-600 mb-8 font-normal reveal delay-400">
             We believe transformation starts from the ground up. By fostering
             innovation and collaboration we empower communities for sustainable
             development.
@@ -56,7 +49,7 @@ export default function AboutClient() {
               href="/Brochure-ASPGF.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${nunito.className} group relative inline-flex items-center gap-4 md:gap-5 bg-[#00735C] text-white px-7 py-3.5 md:px-10 md:py-5 rounded-full font-extrabold overflow-hidden transition-all duration-300 shadow-xl shadow-[#00735C]/20 hover:shadow-2xl hover:shadow-[#00735C]/40 hover:-translate-y-1 active:scale-95`}
+              className="font-nunito group relative inline-flex items-center gap-4 md:gap-5 bg-[#00735C] text-white px-7 py-3.5 md:px-10 md:py-5 rounded-full font-extrabold overflow-hidden transition-all duration-300 shadow-xl shadow-[#00735C]/20 hover:shadow-2xl hover:shadow-[#00735C]/40 hover:-translate-y-1 active:scale-95"
             >
               {/* Subtle Hover Layer */}
               <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -78,7 +71,7 @@ export default function AboutClient() {
           <div className="flex bg-gray-100 rounded-xl p-2 mb-8 reveal-right delay-200">
             <button
               onClick={() => setActiveTab("mission")}
-              className={`${nunito.className} flex-1 py-4 rounded-lg font-extrabold transition-colors ${activeTab === "mission" ? "bg-[#00735C] text-white" : "text-[#0A2520] hover:text-[#00735C]"
+              className={`font-nunito flex-1 py-4 rounded-lg font-extrabold transition-colors ${activeTab === "mission" ? "bg-[#00735C] text-white" : "text-[#0A2520] hover:text-[#00735C]"
                 }`}
             >
               <Target className="mx-auto mb-1" />
@@ -87,7 +80,7 @@ export default function AboutClient() {
 
             <button
               onClick={() => setActiveTab("vision")}
-              className={`${nunito.className} flex-1 py-4 rounded-lg font-extrabold transition-colors ${activeTab === "vision" ? "bg-[#00735C] text-white" : "text-[#0A2520] hover:text-[#00735C]"
+              className={`font-nunito flex-1 py-4 rounded-lg font-extrabold transition-colors ${activeTab === "vision" ? "bg-[#00735C] text-white" : "text-[#0A2520] hover:text-[#00735C]"
                 }`}
             >
               <Eye className="mx-auto mb-1" />
@@ -96,7 +89,7 @@ export default function AboutClient() {
 
             <button
               onClick={() => setActiveTab("value")}
-              className={`${nunito.className} flex-1 py-4 rounded-lg font-extrabold transition-colors ${activeTab === "value" ? "bg-[#00735C] text-white" : "text-[#0A2520] hover:text-[#00735C]"
+              className={`font-nunito flex-1 py-4 rounded-lg font-extrabold transition-colors ${activeTab === "value" ? "bg-[#00735C] text-white" : "text-[#0A2520] hover:text-[#00735C]"
                 }`}
             >
               <Heart className="mx-auto mb-1" />
@@ -108,7 +101,7 @@ export default function AboutClient() {
           <div>
             {activeTab === "mission" && (
               <div className="fade-up">
-                <p className={`${cabin.className} text-gray-600 mb-6`}>
+                <p className="font-cabin text-gray-600 mb-6">
                   Our mission is to build inclusive platforms that empower
                   communities through education, healthcare, and sustainable
                   opportunities. Our mission is to build inclusive platforms
@@ -118,7 +111,7 @@ export default function AboutClient() {
 
                 <ul className="space-y-3">
                   <li
-                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                    className="font-cabin flex items-start gap-3 text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To support students from financially challenged backgrounds
@@ -126,7 +119,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                    className="font-cabin flex items-start gap-3 text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To uplift vulnerable communities through social, emotional,
@@ -134,7 +127,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                    className="font-cabin flex items-start gap-3 text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To create safe and nurturing spaces for children, women, and
@@ -142,7 +135,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 text-gray-700`}
+                    className="font-cabin flex items-start gap-3 text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     To strengthen society with programs that promote mental
@@ -155,7 +148,7 @@ export default function AboutClient() {
             {activeTab === "vision" && (
               <div className="fade-up">
                 <p
-                  className={`${cabin.className} text-gray-600 mb-6 font-normal`}
+                  className="font-cabin text-gray-600 mb-6 font-normal"
                 >
                   To build a society where education empowers, compassion
                   uplifts, and equal opportunities enable every individual to
@@ -166,7 +159,7 @@ export default function AboutClient() {
 
                 <ul className="space-y-3">
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Ensure every child and student has access to quality
@@ -175,7 +168,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Support senior citizens with a safe, respectful, and caring
@@ -183,7 +176,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Provide shelter, education, and protection for orphaned
@@ -192,7 +185,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Build compassionate and inclusive communities where everyone
@@ -205,7 +198,7 @@ export default function AboutClient() {
             {activeTab === "value" && (
               <div className="fade-up">
                 <p
-                  className={`${cabin.className} text-gray-600 mb-6 font-normal`}
+                  className="font-cabin text-gray-600 mb-6 font-normal"
                 >
                   At Anuja Sushant Patil Global Foundation, our work is guided
                   by a strong commitment to integrity, compassion, and
@@ -218,16 +211,8 @@ export default function AboutClient() {
                 </p>
 
                 <ul className="space-y-3">
-                  {/* <li
-                  className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
-                >
-                  <ArrowRight className="text-[#00735C] w-5 h-5 min-w-[20px] mt-1 flex-shrink-0" />
-                  Upholding integrity and transparency in every initiative and
-                  community partnership.
-                </li> */}
-
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Expanding access to quality education and opportunities for
@@ -235,7 +220,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Promoting equality, dignity, and respect for every
@@ -243,7 +228,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Encouraging sustainable development and responsible
@@ -251,7 +236,7 @@ export default function AboutClient() {
                   </li>
 
                   <li
-                    className={`${cabin.className} flex items-start gap-3 font-normal text-gray-700`}
+                    className="font-cabin flex items-start gap-3 font-normal text-gray-700"
                   >
                     <div className="w-2 h-2 mt-2.5 rounded-full bg-[#00735C] flex-shrink-0" />
                     Creating long-term social impact through collaboration,

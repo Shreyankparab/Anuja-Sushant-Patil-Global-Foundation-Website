@@ -4,11 +4,7 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageSquareText } from "lucide-react";
-import { Nunito, Cabin } from "next/font/google";
 import DonateForm from "@/sections/DonateUs/DonateForm";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 const themeColors: Record<string, string> = {
     "/": "#00735C",
@@ -94,7 +90,7 @@ export default function StickyInquiry() {
 
                     <div className="flex flex-col items-center gap-2">
                         <MessageSquareText size={20} className="mb-2" />
-                        <span className={`${nunito.className} font-black uppercase tracking-[0.2em] [writing-mode:vertical-lr] rotate-180 text-sm whitespace-nowrap`}>
+                        <span className="font-nunito font-black uppercase tracking-[0.2em] [writing-mode:vertical-lr] rotate-180 text-sm whitespace-nowrap">
                             Inquiry Now
                         </span>
                     </div>
@@ -132,8 +128,8 @@ export default function StickyInquiry() {
                                 </button>
 
                                 <div className="mb-6">
-                                    <span className={`${cabin.className} text-[#00735C] font-black uppercase tracking-[0.3em] text-[10px] mb-2 block`}>Get started</span>
-                                    <h2 className={`${nunito.className} text-2xl font-black text-[#1A2E35] mb-2 leading-tight`}>
+                                    <span className="font-cabin text-[#00735C] font-black uppercase tracking-[0.3em] text-[10px] mb-2 block">Get started</span>
+                                    <h2 className="font-nunito text-2xl font-black text-[#1A2E35] mb-2 leading-tight">
                                         Inquiry Form
                                     </h2>
                                     <div className="w-10 h-1 bg-[#00735C] rounded-full" />

@@ -2,20 +2,12 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Nunito, Cabin, Caveat } from "next/font/google";
 import { FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { videoStories, type ImpactVideoStory } from "@/data/impactData";
 import { Play, X, Info } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 
 const verticalThumbnails: Record<number, string> = {
   1: "/images/impact/impact-vertical/chetan-nachare.png",
@@ -113,7 +105,7 @@ export default function ImpactSection() {
           <div className="w-full lg:w-[40%] text-left  md:mb-20">
             <div className="flex items-center gap-3 mb-6">
               <span
-                className={`${caveat.className} text-[#6f7775] text-2xl font-bold tracking-wide`}
+                className="font-caveat text-[#6f7775] text-2xl font-bold tracking-wide"
               >
                 Impact
               </span>
@@ -121,7 +113,7 @@ export default function ImpactSection() {
 
             <div className="relative inline-block mb-8">
               <h2
-                className={`${nunito.className} text-[#073D30] text-[36px] md:text-[56px] font-[900] leading-[1.1] tracking-tight`}
+                className="font-nunito text-[#073D30] text-[36px] md:text-[56px] font-[900] leading-[1.1] tracking-tight"
               >
                 {/* First Line - whitespace-nowrap prevents breaking into two lines on desktop */}
                 <span className="block whitespace-nowrap">
@@ -144,7 +136,7 @@ export default function ImpactSection() {
             </div>
 
             <p
-              className={`${cabin.className} text-gray-500 text-[17px] leading-relaxed max-w-[400px] opacity-90`}
+              className="font-cabin text-gray-500 text-[17px] leading-relaxed max-w-[400px] opacity-90"
             >
               Real stories from those who have witnessed meaningful change
               through our initiatives.
@@ -156,7 +148,7 @@ export default function ImpactSection() {
                   startLoading();
                   router.push("/impact");
                 }}
-                className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
+                className="font-cabin cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider"
               >
                 Explore More
               </button>
@@ -223,7 +215,7 @@ export default function ImpactSection() {
                       <div className="w-full md:w-[55%] p-6 md:p-10 flex flex-col justify-between text-white h-full">
                         <div className="mb-4 md:mb-6">
                           <p
-                            className={`${cabin.className} text-[13px] md:text-[15px] lg:text-[16px] leading-[1.5] md:leading-[1.6] opacity-90 font-medium italic line-clamp-6 md:line-clamp-10`}
+                            className="font-cabin text-[13px] md:text-[15px] lg:text-[16px] leading-[1.5] md:leading-[1.6] opacity-90 font-medium italic line-clamp-6 md:line-clamp-10"
                           >
                             "{story.description}"
                           </p>
@@ -231,13 +223,13 @@ export default function ImpactSection() {
 
                         <div className="mt-2">
                           <h4
-                            className={`${nunito.className} text-[18px] md:text-[22px] font-extrabold tracking-tight`}
+                            className="font-nunito text-[18px] md:text-[22px] font-extrabold tracking-tight"
                           >
                             {story.name}
                           </h4>
 
                           <p
-                            className={`${cabin.className} text-gray-400 text-[11px] md:text-[13px] font-medium opacity-80 mt-1 uppercase tracking-widest`}
+                            className="font-cabin text-gray-400 text-[11px] md:text-[13px] font-medium opacity-80 mt-1 uppercase tracking-widest"
                           >
                             {story.designation}
                           </p>
@@ -258,7 +250,7 @@ export default function ImpactSection() {
                     startLoading();
                     router.push("/impact");
                   }}
-                  className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider  `}
+                  className="font-cabin cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider"
                 >
                   Explore More
                 </button>
@@ -297,12 +289,12 @@ export default function ImpactSection() {
             <div className="flex justify-between items-center mb-6 gap-4">
               <div className="flex flex-col min-w-0 flex-1">
                 <span
-                  className={`${caveat.className} text-[#00735C] text-xl font-bold italic`}
+                  className="font-caveat text-[#00735C] text-xl font-bold italic"
                 >
                   Impact Stories
                 </span>
                 <h2
-                  className={`${nunito.className} text-white text-xl md:text-3xl font-extrabold leading-tight`}
+                  className="font-nunito text-white text-xl md:text-3xl font-extrabold leading-tight"
                 >
                   {activeVideo.title}
                 </h2>
@@ -362,7 +354,7 @@ export default function ImpactSection() {
                   <div className="flex items-center gap-3 text-[#00735C]">
                     <Play size={20} fill="currentColor" />
                     <h3
-                      className={`${nunito.className} text-white font-bold text-lg`}
+                      className="font-nunito text-white font-bold text-lg"
                     >
                       More Stories
                     </h3>
@@ -412,7 +404,7 @@ export default function ImpactSection() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4
-                            className={`${nunito.className} text-white font-bold text-sm line-clamp-2 leading-tight mb-1`}
+                            className="font-nunito text-white font-bold text-sm line-clamp-2 leading-tight mb-1"
                           >
                             {video.title}
                           </h4>

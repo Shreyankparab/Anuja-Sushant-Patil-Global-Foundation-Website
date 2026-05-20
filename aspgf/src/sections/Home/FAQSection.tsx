@@ -3,14 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import { Caveat, Nunito, Cabin } from "next/font/google";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const manrope = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -56,20 +48,20 @@ export default function FAQSection() {
             {/* LABEL WITH ICON */}
             <div className="flex items-center gap-2 mb-4">
               <span
-                className={`${caveat.className} text-[#6f7775] text-[24px] font-bold tracking-wide mt-1`}
+                className="font-caveat text-[#6f7775] text-[24px] font-bold tracking-wide mt-1"
               >
                 Frequently asked Questions
               </span>
             </div>
 
             <h2
-              className={`${nunito.className} text-[#00715D] text-3xl md:text-5xl font-extrabold leading-[1.15] mb-8 pr-4`}
+              className="font-nunito text-[#00715D] text-3xl md:text-5xl font-extrabold leading-[1.15] mb-8 pr-4"
             >
               People are frequently asking some questions from us
             </h2>
 
             <p
-              className={`${manrope.className} text-gray-600 leading-relaxed max-w-lg`}
+              className="font-cabin text-gray-600 leading-relaxed max-w-lg"
             >
               We believe in transparency and open communication with our
               community. Here are some of the most common questions people ask
@@ -98,7 +90,7 @@ export default function FAQSection() {
                       }`}
                   >
                     <h3
-                      className={`${nunito.className} text-[16px] md:text-lg font-bold transition-colors duration-300 ${isOpen ? "text-[#00715D]" : "text-[#1A2E35]"
+                      className={`font-nunito text-[16px] md:text-lg font-bold transition-colors duration-300 ${isOpen ? "text-[#00715D]" : "text-[#1A2E35]"
                         }`}
                     >
                       {item.question}
@@ -128,7 +120,7 @@ export default function FAQSection() {
                     <div className="overflow-hidden">
                       <div className="px-6 pb-6 md:px-8 md:pb-8">
                         <p
-                          className={`${manrope.className} text-gray-600 leading-relaxed text-[15px] md:text-[16px]`}
+                          className="font-cabin text-gray-600 leading-relaxed text-[15px] md:text-[16px]"
                         >
                           {item.answer}
                         </p>

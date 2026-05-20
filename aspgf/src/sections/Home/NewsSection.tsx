@@ -4,18 +4,10 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import { newsData } from "@/data/newsData";
 import NewsModal from "@/sections/News/NewsModal";
 import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export default function NewsSection() {
   const router = useRouter();
@@ -66,14 +58,14 @@ export default function NewsSection() {
         <div className="relative w-full lg:w-[580px] flex-shrink-0 px-6 md:px-20 lg:px-0 lg:pl-[128px] lg:pt-10 z-10 bg-[#F8F5EF]">
           <div className="flex items-center gap-2 mb-4">
             <h3
-              className={`${caveat.className} text-[#6f7775] font-bold text-[24px] mt-1`}
+              className="font-caveat text-[#6f7775] font-bold text-[24px] mt-1"
             >
               News & Events
             </h3>
           </div>
 
           <h2
-            className={`${nunito.className} text-[#0B4635] text-4xl md:text-5xl font-extrabold leading-[1.15] mb-6`}
+            className="font-nunito text-[#0B4635] text-4xl md:text-5xl font-extrabold leading-[1.15] mb-6"
           >
             News covered <br />
             by popular <br />
@@ -81,11 +73,11 @@ export default function NewsSection() {
           </h2>
 
           <p
-            className={`${cabin.className} text-gray-500 leading-relaxed text-[17px] opacity-90 flex flex-col mb-2 lg:mb-8`}
+            className="font-cabin text-gray-500 leading-relaxed text-[17px] opacity-90 flex flex-col mb-2 lg:mb-8"
           >
             Many Maharashtrian and Indian News paper covers{" "}
             <span
-              className={`${cabin.className} text-gray-500 leading-relaxed text-[17px] opacity-90`}
+              className="font-cabin text-gray-500 leading-relaxed text-[17px] opacity-90"
             >
               the news of the charity events
             </span>
@@ -98,7 +90,7 @@ export default function NewsSection() {
                 router.push("/news");
               }}
 
-              className={`${cabin.className} cursor-pointer mt-4 px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider`}
+              className="font-cabin cursor-pointer mt-4 px-10 py-4 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 hover:shadow-[0_8px_30px_rgb(0,110,87,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider"
 
             >
               Read More
@@ -149,7 +141,7 @@ export default function NewsSection() {
                 startLoading();
                 router.push("/news");
               }}
-              className={`${cabin.className} lg:hidden px-10 py-3.5 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 active:scale-95 transition-all flex-shrink-0`}
+              className="font-cabin lg:hidden px-10 py-3.5 font-extrabold text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-lg shadow-[#006e57]/20 active:scale-95 transition-all flex-shrink-0"
             >
               Read More
             </button>
@@ -240,13 +232,13 @@ function NewsCard({ card, onOpen }: { card: any; onOpen: () => void }) {
 
       <div className="absolute inset-0 flex flex-col justify-end p-6 z-20 whitespace-normal">
         <div
-          className={`${cabin.className} flex items-center gap-2 text-white/90 text-[12px] font-bold mb-2`}
+          className="font-cabin flex items-center gap-2 text-white/90 text-[12px] font-bold mb-2"
         >
           <FaMapMarkerAlt size={14} className="text-[#3ed0a6]" /> {card.location}
         </div>
 
         <h3
-          className={`${nunito.className} text-white text-[18px] md:text-[21px] font-black leading-tight mb-4 line-clamp-2 whitespace-normal`}
+          className="font-nunito text-white text-[18px] md:text-[21px] font-black leading-tight mb-4 line-clamp-2 whitespace-normal"
         >
           {card.title}
         </h3>

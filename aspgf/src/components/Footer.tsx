@@ -7,14 +7,7 @@ import {
     FaYoutube,
     FaInstagram,
 } from "react-icons/fa";
-import { Nunito, Cabin } from "next/font/google";
 import { usePathname } from "next/navigation";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-});
 
 export default function Footer() {
     const pathname = usePathname();
@@ -33,7 +26,7 @@ export default function Footer() {
 
     return (
         <footer
-            className={`${cabin.className} w-full bg-[#0a7061] text-white pt-8 pb-0`}
+            className="font-cabin w-full bg-[#0a7061] text-white pt-8 pb-0"
         >
             {/* TOP SECTION */}
             <div className="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 pb-6">
@@ -79,7 +72,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-6 md:pl-12 md:border-l md:border-white/100">
                     <div>
                         <h3
-                            className={`${nunito.className} text-[24px] font-extrabold mb-6 tracking-wide`}
+                            className="font-nunito text-[24px] font-extrabold mb-6 tracking-wide"
                         >
                             Quick Links
                         </h3>
@@ -101,7 +94,7 @@ export default function Footer() {
 
                     <div className="pt-4 border-t border-white/100">
                         <h3
-                            className={`${nunito.className} text-[24px] font-extrabold mb-6 tracking-wide`}
+                            className="font-nunito text-[24px] font-extrabold mb-6 tracking-wide"
                         >
                             Contact Us
                         </h3>
@@ -120,7 +113,7 @@ export default function Footer() {
                                     href="mailto:project.director@aspgf.org"
                                     className="hover:underline transition-all"
                                 >
-                                    project.director<span className={nunito.className}>@</span>aspgf.org
+                                    project.director<span className="font-nunito">@</span>aspgf.org
                                 </a>
                             </div>
 

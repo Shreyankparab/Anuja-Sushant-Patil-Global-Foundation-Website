@@ -12,14 +12,9 @@ import {
 } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import NewsModal from "./NewsModal";
 
 const categories: Category[] = ["All", "Education", "Orphanage", "Charity", "Old Age"];
-
-const caveat = Caveat({ subsets: ["latin"] });
-const nunito = Nunito({ subsets: ["latin"] });
-const cabin = Cabin({ subsets: ["latin"] });
 
 export default function NewsComponent() {
     const revealRef = useScrollReveal();
@@ -72,13 +67,13 @@ export default function NewsComponent() {
             {/* HEADER */}
             <div className="bg-[#0f766e] py-16 text-white text-center relative">
                 <div className="flex justify-center mb-4 reveal">
-                    <span className={`${caveat.className} text-2xl text-white`}>
+                    <span className="font-caveat text-2xl text-white">
                         News & Events
                     </span>
                 </div>
 
                 <h2
-                    className={`${nunito.className} text-4xl font-bold reveal delay-100`}
+                    className="font-nunito text-4xl font-bold reveal delay-100"
                 >
                     Community-focused work for a better tomorrow.
                 </h2>
@@ -90,7 +85,7 @@ export default function NewsComponent() {
                 <div className="md:hidden relative max-w-[280px] mx-auto z-30">
                     <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className={`${nunito.className} w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1A2E35] shadow-sm transition-all focus:border-[#0f766e]`}
+                        className="font-nunito w-full flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-bold text-[#1A2E35] shadow-sm transition-all focus:border-[#0f766e]"
                     >
                         <span>{activeCategory}</span>
                         <ChevronDown size={18} className={`text-[#0f766e] transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -105,7 +100,7 @@ export default function NewsComponent() {
                                         setActiveCategory(cat);
                                         setIsDropdownOpen(false);
                                     }}
-                                    className={`${nunito.className} w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
+                                    className={`font-nunito w-full text-left px-5 py-3.5 text-sm font-semibold transition-colors ${activeCategory === cat
                                         ? "bg-[#0f766e]/5 text-[#0f766e]"
                                         : "text-gray-600 hover:bg-gray-50 hover:text-[#0f766e]"
                                         }`}
@@ -164,7 +159,7 @@ export default function NewsComponent() {
                             {/* OVERLAY */}
                             <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent text-white text-left">
                                 <p
-                                    className={`${cabin.className} flex items-center justify-start gap-4 text-xs mb-2 opacity-90`}
+                                    className="font-cabin flex items-center justify-start gap-4 text-xs mb-2 opacity-90"
                                 >
                                     <span className="flex items-center gap-1.5">
                                         <FiCalendar size={12} className="text-[#3ed0a6]" />
@@ -178,7 +173,7 @@ export default function NewsComponent() {
                                 </p>
 
                                 <h3
-                                    className={`${nunito.className} text-lg font-bold leading-tight`}
+                                    className="font-nunito text-lg font-bold leading-tight"
                                 >
                                     {item.title}
                                 </h3>

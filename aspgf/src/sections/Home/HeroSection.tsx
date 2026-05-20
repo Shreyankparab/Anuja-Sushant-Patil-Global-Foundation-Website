@@ -1,17 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Caveat, Nunito, Cabin } from "next/font/google";
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import Link from "next/link";
-
-const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const slides = [
   {
@@ -98,9 +90,8 @@ const HeroSection: React.FC = () => {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
         >
           {/* BACKGROUND IMAGE */}
           <div className={`absolute inset-0 transition-transform duration-[3000ms] ease-out ${isLoaded && index === currentSlide ? 'scale-100' : 'scale-110'}`}>
@@ -127,9 +118,8 @@ const HeroSection: React.FC = () => {
               {/* SUBTITLE */}
               {slide.subtitle && (
                 <p
-                  className={`${caveat.className} text-[#38b6a1] text-2xl md:text-3xl font-bold mb-4 tracking-wide transition-all duration-1000 ${
-                    index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`font-caveat text-[#38b6a1] text-2xl md:text-3xl font-bold mb-4 tracking-wide transition-all duration-1000 ${index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 >
                   {slide.subtitle}
                 </p>
@@ -137,39 +127,36 @@ const HeroSection: React.FC = () => {
 
               {/* TITLE */}
               <h1
-                className={`${nunito.className} text-4xl md:text-6xl font-extrabold leading-[1.15] text-white mb-6 transition-all duration-1000 delay-200 ${
-                  index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`font-nunito text-4xl md:text-6xl font-extrabold leading-[1.15] text-white mb-6 transition-all duration-1000 delay-200 ${index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
               >
                 {slide.title}
               </h1>
 
               {/* DESCRIPTION */}
               <p
-                className={`${cabin.className} text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-2xl transition-all duration-1000 delay-400 ${
-                  index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`font-cabin text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-2xl transition-all duration-1000 delay-400 ${index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
               >
                 {slide.description}
               </p>
 
               {/* BUTTON */}
               <div
-                className={`mt-8 md:mt-10 transition-all duration-1000 delay-600 ${
-                  index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`mt-8 md:mt-10 transition-all duration-1000 delay-600 ${index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
               >
                 {slide.link ? (
                   <Link
                     href={slide.link}
-                    className={`${cabin.className} inline-block cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 tracking-wider uppercase bg-gradient-to-r from-[#00735C] to-[#00b874] shadow-[#00735C]/20 hover:shadow-[#00735C]/40`}
+                    className="font-cabin inline-block cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 tracking-wider uppercase bg-gradient-to-r from-[#00735C] to-[#00b874] shadow-[#00735C]/20 hover:shadow-[#00735C]/40"
                   >
                     {slide.buttonText}
                   </Link>
                 ) : (
                   <button
                     onClick={() => handleScroll(slide.scrollId!)}
-                    className={`${cabin.className} cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 tracking-wider uppercase bg-gradient-to-r from-[#00735C] to-[#00b874] shadow-[#00735C]/20 hover:shadow-[#00735C]/40`}
+                    className="font-cabin cursor-pointer px-10 py-4 font-extrabold text-white rounded-full text-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 tracking-wider uppercase bg-gradient-to-r from-[#00735C] to-[#00b874] shadow-[#00735C]/20 hover:shadow-[#00735C]/40"
                   >
                     {slide.buttonText}
                   </button>
@@ -200,9 +187,8 @@ const HeroSection: React.FC = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-500 rounded-full cursor-pointer ${
-              index === currentSlide ? "w-10 h-3 bg-[#38b6a1]" : "w-3 h-3 bg-white/50 hover:bg-white"
-            }`}
+            className={`transition-all duration-500 rounded-full cursor-pointer ${index === currentSlide ? "w-10 h-3 bg-[#38b6a1]" : "w-3 h-3 bg-white/50 hover:bg-white"
+              }`}
           />
         ))}
       </div>

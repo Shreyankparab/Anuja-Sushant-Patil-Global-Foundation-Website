@@ -6,14 +6,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 import { Phone, Mail, MapPin, Menu, X, HandHeart } from "lucide-react";
-import { Nunito, Cabin } from "next/font/google";
-
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-});
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,7 +72,7 @@ export function Navbar() {
     return (
         <>
             <header
-                className={`${cabin.className} w-full bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-[10020] transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "xl:-translate-y-full"}`}
+                className={`font-cabin w-full bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-[10020] transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "xl:-translate-y-full"}`}
             >
                 {/* ================= TOP BAR ================= */}
                 <div className="hidden xl:flex w-full px-6 lg:px-10 h-16 items-center justify-between relative">
@@ -106,11 +98,11 @@ export function Navbar() {
                         {/* CIN Number */}
                         <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full bg-[#00715D]/10 flex items-center justify-center">
-                                <span className={`${nunito.className} text-[#00715D] font-black text-[10px]`}>CIN</span>
+                                <span className="font-nunito text-[#00715D] font-black text-[10px]">CIN</span>
                             </div>
                             <div>
-                                <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Corporate ID</p>
-                                <p className={`${cabin.className} font-extrabold text-[#1A2E35]`}>U85499PN2025NPL237590</p>
+                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Corporate ID</p>
+                                <p className="font-cabin font-extrabold text-[#1A2E35]">U85499PN2025NPL237590</p>
                             </div>
                         </div>
 
@@ -120,13 +112,13 @@ export function Navbar() {
                         <div className="flex items-center gap-2">
                             <Phone size={14} className="text-[#00715D]" />
                             <div>
-                                <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Helpline</p>
+                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Helpline</p>
                                 <a
                                     href="tel:+919684001643"
                                     className="hover:underline"
                                 >
                                     <p
-                                        className={`${cabin.className} font-extrabold text-[#1A2E35]`}
+                                        className="font-cabin font-extrabold text-[#1A2E35]"
                                     >
                                         9684001643
                                     </p>
@@ -140,15 +132,15 @@ export function Navbar() {
                         <div className="flex items-center gap-2">
                             <Mail size={14} className="text-[#00715D]" />
                             <div>
-                                <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Send email</p>
+                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Send email</p>
                                 <a
                                     href="mailto:project.director@aspgf.org"
                                     className="hover:underline"
                                 >
                                     <p
-                                        className={`${cabin.className} font-extrabold text-[#1A2E35] lowercase`}
+                                        className="font-cabin font-extrabold text-[#1A2E35] lowercase"
                                     >
-                                        project.director<span className={nunito.className}>@</span>aspgf.org
+                                        project.director<span className="font-nunito">@</span>aspgf.org
                                     </p>
                                 </a>
                             </div>
@@ -160,9 +152,9 @@ export function Navbar() {
                         <div className="flex items-center gap-2">
                             <MapPin size={14} className="text-[#00715D]" />
                             <div>
-                                <p className={`${nunito.className} text-gray-400 font-bold uppercase tracking-tighter`}>Balewadi</p>
+                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Balewadi</p>
                                 <p
-                                    className={`${cabin.className} font-extrabold text-[#1A2E35]`}
+                                    className="font-cabin font-extrabold text-[#1A2E35]"
                                 >
                                     Pune, India
                                 </p>
@@ -248,8 +240,7 @@ export function Navbar() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className={`${nunito.className} text-xl font-extrabold transition-colors flex items-center justify-between group ${isActive ? "text-[#00735C]" : "text-[#1A2E35] xl:hover:text-[#00735C]"
-                                            }`}
+                                        className="font-nunito text-xl font-extrabold transition-colors flex items-center justify-between group text-[#1A2E35] xl:hover:text-[#00735C]"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         {link.name}
