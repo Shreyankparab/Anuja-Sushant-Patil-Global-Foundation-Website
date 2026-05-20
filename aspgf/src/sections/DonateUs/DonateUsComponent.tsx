@@ -108,7 +108,7 @@ export default function DonateUsComponent() {
                                     >
                                         <div className="relative p-2 bg-gray-50 rounded-2xl border border-gray-100">
                                             <Image
-                                                src="/images/donate-now/qr-code-aspgf.webp"
+                                                src="/images/donate-now/qr-code-aspgf.png"
                                                 alt="Donation QR Code"
                                                 width={260}
                                                 height={260}
