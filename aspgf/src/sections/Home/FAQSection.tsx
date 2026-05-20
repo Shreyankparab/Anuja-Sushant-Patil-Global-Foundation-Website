@@ -39,7 +39,7 @@ export default function FAQSection() {
   return (
     <section className="relative w-full py-12 md:py-20 bg-[#f6f1e7] overflow-hidden">
       {/* Background Image Subtly Visible */}
-      <div className="absolute inset-0 opacity-20 bg-[url('/images/home-page/faqs.png')] bg-cover bg-center filter blur-sm pointer-events-none"></div>
+      <div className="absolute inset-0 opacity-20 bg-[url('/images/home-page/faqs.webp')] bg-cover bg-center filter blur-sm pointer-events-none"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -80,8 +80,8 @@ export default function FAQSection() {
                 <div
                   key={index}
                   className={`transition-all duration-500 ease-in-out bg-white shadow-sm rounded-[32px] border border-gray-100 overflow-hidden ${isOpen
-                      ? "ring-2 ring-[#00715D]/5 ring-offset-0 scale-[1.02]"
-                      : "hover:border-[#00715D]/30"
+                    ? "ring-2 ring-[#00715D]/5 ring-offset-0 scale-[1.02]"
+                    : "hover:border-[#00715D]/30"
                     }`}
                 >
                   <button
@@ -98,8 +98,8 @@ export default function FAQSection() {
 
                     <span
                       className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500 flex-shrink-0 ${isOpen
-                          ? "bg-[#00715D] text-white rotate-180"
-                          : "bg-gray-100 text-[#00715D]"
+                        ? "bg-[#00715D] text-white rotate-180"
+                        : "bg-gray-100 text-[#00715D]"
                         }`}
                     >
                       {isOpen ? (
@@ -113,8 +113,8 @@ export default function FAQSection() {
                   {/* ANSWER WRAPPER WITH SMOOTH HEIGHT TRANSITION */}
                   <div
                     className={`grid transition-all duration-500 ease-in-out ${isOpen
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                       }`}
                   >
                     <div className="overflow-hidden">

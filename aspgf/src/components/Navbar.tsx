@@ -81,7 +81,7 @@ export function Navbar() {
                         <div className="relative w-72 h-28 lg:w-80 lg:h-32">
                             <Link href="/">
                                 <Image
-                                    src="/images/aspgf-logo.png"
+                                    src="/images/aspgf-logo.webp"
                                     alt="ASPGF Logo"
                                     fill
                                     className="object-contain cursor-pointer"
@@ -207,7 +207,7 @@ export function Navbar() {
                 <div className="xl:hidden flex items-center justify-between px-6 md:px-10 h-20 bg-white shadow-sm">
                     <Link href="/" className="relative w-56 h-14 md:w-64 md:h-16">
                         <Image
-                            src="/images/aspgf-logo.png"
+                            src="/images/aspgf-logo.webp"
                             alt="Logo"
                             fill
                             className="object-contain"

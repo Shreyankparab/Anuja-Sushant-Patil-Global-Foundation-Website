@@ -139,7 +139,7 @@ export const videoStories: ImpactVideoStory[] = [
 
   // {
   //   id: 10,
-  //   thumbnail: "/Images/impact-5.png",
+  //   thumbnail: "/Images/impact-5.webp",
   //   title: "How Fee Assistance Changed My Future",
   //   location: "PUNE",
   //   year: "2023",
@@ -153,7 +153,7 @@ export const videoStories: ImpactVideoStory[] = [
   // },
   // {
   //   id: 11,
-  //   thumbnail: "/Images/impact-6.png",
+  //   thumbnail: "/Images/impact-6.webp",
   //   title:
   //     "How timely educational assistance helps students stay focused and motivated",
   //   location: "PUNE",

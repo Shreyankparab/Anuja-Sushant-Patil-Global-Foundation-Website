@@ -163,7 +163,7 @@ export default function HistorySection(): JSX.Element {
 
               <div className="animate-float-delayed absolute bottom-[-10%] left-[-4%] w-[85%] border-[10px] border-white rounded-[32px] overflow-hidden shadow-xl">
                 <Image
-                  src="/images/home-page/about-image.png"
+                  src="/images/home-page/about-image.webp"
                   alt="Family support"
                   width={350}
                   height={450}

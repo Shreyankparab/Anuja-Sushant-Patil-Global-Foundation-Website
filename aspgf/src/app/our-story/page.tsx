@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://aspgf.org/our-story",
     images: [
       {
-        url: "https://aspgf.org/images/home-page/story-hero-bg.png",
+        url: "https://aspgf.org/images/home-page/story-hero-bg.webp",
         width: 1200,
         height: 630,
         alt: "Our Inspiring Beginning - ASPGF Story",

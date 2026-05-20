@@ -70,7 +70,7 @@ export default function StoryChapters() {
           >
             <div className="relative w-full max-w-md aspect-[4/5] rounded-sm transform -rotate-2 bg-white p-3 shadow-xl shadow-black/5 hover:rotate-0 transition-transform duration-500">
               <div className="relative w-full h-full overflow-hidden rounded-sm">
-                <Image src="/images/our-story/story-1.png" alt="School Assignment" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/our-story/story-1.webp" alt="School Assignment" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="font-caveat text-center mt-3 text-lg text-gray-500">A simple question</div>
             </div>
@@ -123,7 +123,7 @@ export default function StoryChapters() {
           >
             <div className="relative w-full max-w-md aspect-[4/5] rounded-sm transform rotate-2 bg-white p-3 shadow-xl shadow-black/5 hover:rotate-0 transition-transform duration-500">
               <div className="relative w-full h-full overflow-hidden rounded-sm">
-                <Image src="/images/our-story/story-2.png" alt="The Conversation" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/our-story/story-2.webp" alt="The Conversation" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="font-caveat text-center mt-3 text-lg text-gray-500">A heartfelt chat</div>
             </div>
@@ -175,7 +175,7 @@ export default function StoryChapters() {
           >
             <div className="relative w-full max-w-md aspect-[4/5] rounded-sm transform -rotate-1 bg-white p-3 shadow-xl shadow-black/5 hover:rotate-0 transition-transform duration-500">
               <div className="relative w-full h-full overflow-hidden rounded-sm">
-                <Image src="/images/our-story/story-3.png" alt="The Decision" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/our-story/story-3.webp" alt="The Decision" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="font-caveat text-center mt-3 text-lg text-gray-500">The foundation begins</div>
             </div>

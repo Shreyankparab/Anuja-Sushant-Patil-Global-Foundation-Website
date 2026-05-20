@@ -108,7 +108,7 @@ export default function DonateUsComponent() {
                                     >
                                         <div className="relative p-2 bg-gray-50 rounded-2xl border border-gray-100">
                                             <Image
-                                                src="/images/donate-now/qr-code-aspgf.png"
+                                                src="/images/donate-now/qr-code-aspgf.webp"
                                                 alt="Donation QR Code"
                                                 width={260}
                                                 height={260}
@@ -188,7 +188,7 @@ export default function DonateUsComponent() {
                             <div className="bg-[#f8faf9] p-4 md:p-8 rounded-[32px] border-2 border-[#D5EBE1] w-full md:w-[90%] aspect-square relative mb-6 shadow-inner overflow-hidden flex items-center justify-center">
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/images/donate-now/qr-code-aspgf.png"
+                                        src="/images/donate-now/qr-code-aspgf.webp"
                                         alt="Donation QR Code"
                                         fill
                                         className="object-contain p-2 rounded-[24px]"

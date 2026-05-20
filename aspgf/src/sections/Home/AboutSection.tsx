@@ -36,7 +36,7 @@ const AboutSection = () => {
           <div className="relative w-[75%] max-w-[360px] aspect-[4/5.5] z-10 ml-auto mt-[10%] mr-0 bg-white opacity-100 rounded-tl-0 rounded-tr-[100px] rounded-bl-[335px] rounded-br-[335px] shadow-2xl">
             <div className="relative w-full h-full rounded-tl-0 rounded-tr-[100px] rounded-bl-[335px] rounded-br-[335px] overflow-hidden opacity-100">
               <Image
-                src="/images/home-page/about-image.png"
+                src="/images/home-page/about-image.webp"
                 alt="Children in need"
                 fill
                 className="object-cover opacity-100"

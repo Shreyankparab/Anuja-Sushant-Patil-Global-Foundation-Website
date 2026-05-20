@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/aspgf-logo.png",
+        url: "/images/aspgf-logo.webp",
         width: 1200,
         height: 630,
         alt: "Anuja Sushant Patil Global Foundation Logo",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anuja Sushant Patil Global Foundation",
     description: "Empowering change through kindness and community support.",
-    images: ["/images/aspgf-logo.png"],
+    images: ["/images/aspgf-logo.webp"],
   },
   icons: {
     icon: "/images/home-page/simple-peacock.svg",
