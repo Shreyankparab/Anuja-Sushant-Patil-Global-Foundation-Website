@@ -24,7 +24,7 @@ export default function AboutHero() {
             <div className={`absolute inset-0 z-0 transition-transform duration-[3000ms] ease-out w-full h-full ${isLoaded ? 'scale-100' : 'scale-110'}`}>
                 {/* Desktop Background Image */}
                 <Image
-                    src="/Images/About_Hero.webp"
+                    src="/images/home-page/about-hero.webp"
                     alt="About Us Hero"
                     fill
                     className="hidden md:block object-cover object-center"
@@ -32,7 +32,7 @@ export default function AboutHero() {
                 />
                 {/* Mobile Background Image */}
                 <Image
-                    src="/Images/hero-image-about-us.svg"
+                    src="/images/about-us/hero-image-about-us.png"
                     alt="Happy children in community mobile"
                     fill
                     className="block md:hidden object-cover object-center"

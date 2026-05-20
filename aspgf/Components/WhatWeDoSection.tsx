@@ -237,7 +237,7 @@ export default function WhatWeDoSection() {
             {/* Peacock SVG Background */}
             <div className="absolute inset-0 opacity-30 pointer-events-none z-0 flex items-center justify-center">
               <Image
-                src="/Images/simple-peacock.svg"
+                src="/images/home-page/simple-peacock.svg"
                 alt="Peacock Background"
                 fill
                 className="object-contain scale-[0.8] md:scale-[0.7]"

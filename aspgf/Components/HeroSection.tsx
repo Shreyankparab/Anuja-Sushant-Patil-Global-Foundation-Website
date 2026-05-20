@@ -25,8 +25,8 @@ const slides = [
     ),
     description: '"Leading with Integrity, Serving with Empathy."',
     buttonText: "DISCOVER MORE",
-    imageDesktop: "/Images/hero5.svg",
-    imageMobile: "/Images/mobile-hero-img.svg",
+    imageDesktop: "/images/home-page/desktop-hero-img.png",
+    imageMobile: "/images/home-page/mobile-hero-img.png",
     overlay: "bg-black/30",
     scrollId: "our-work",
     theme: "teal"
@@ -37,8 +37,8 @@ const slides = [
     title: "Our Inspiring Beginning",
     description: "The story of a small thought that became a big mission",
     buttonText: "Read Our Story",
-    imageDesktop: "/Images/story-hero-bg.png",
-    imageMobile: "/Images/story-hero-bg.png",
+    imageDesktop: "/images/home-page/story-hero-bg.png",
+    imageMobile: "/images/home-page/story-hero-bg.png",
     overlay: "bg-gradient-to-r from-[#003366]/90 via-[#003366]/50 to-transparent",
     link: "/our-story",
     theme: "blue"

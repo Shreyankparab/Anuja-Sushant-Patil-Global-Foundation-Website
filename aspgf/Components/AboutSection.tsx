@@ -44,7 +44,7 @@ const AboutSection = () => {
           <div className="relative w-[75%] max-w-[360px] aspect-[4/5.5] z-10 ml-auto mt-[10%] mr-0 bg-white opacity-100 rounded-tl-0 rounded-tr-[100px] rounded-bl-[335px] rounded-br-[335px] shadow-2xl">
             <div className="relative w-full h-full rounded-tl-0 rounded-tr-[100px] rounded-bl-[335px] rounded-br-[335px] overflow-hidden opacity-100">
               <Image
-                src="/Images/about-image.png"
+                src="/images/home-page/about-image.png"
                 alt="Children in need"
                 fill
                 className="object-cover opacity-100"
@@ -57,7 +57,7 @@ const AboutSection = () => {
               <div className="relative w-full h-full rounded-full border border-gray-100 flex items-center justify-center">
                 <div className="relative w-[80%] h-[80%] z-10">
                   <Image
-                    src="/Images/simple-peacock.svg"
+                    src="/images/home-page/simple-peacock.svg"
                     alt="Peacock Logo"
                     fill
                     className="object-contain"

@@ -15,7 +15,7 @@ export interface ImpactVideoStory {
 export const videoStories: ImpactVideoStory[] = [
   {
     id: 1,
-    thumbnail: "/Images/Impact/impact-1.webp",
+    thumbnail: "/images/impact/impact-1.webp",
     title: "Student Scholarship Support Changed My Education",
     location: "PUNE",
     year: "2025",
@@ -30,7 +30,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 2,
-    thumbnail: "/Images/Impact/impact-8.webp",
+    thumbnail: "/images/impact/impact-8.webp",
     title: "Scholarship Support for My Daughter’s Education",
     location: "PUNE",
     year: "2025",
@@ -43,7 +43,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 3,
-    thumbnail: "/Images/Impact/impact-3.webp",
+    thumbnail: "/images/impact/impact-3.webp",
     title: "Support for Students in Financial Need",
     location: "PUNE",
     year: "2025",
@@ -58,7 +58,7 @@ export const videoStories: ImpactVideoStory[] = [
   {
     id: 4,
 
-    thumbnail: "/Images/Impact/impact-6.webp",
+    thumbnail: "/images/impact/impact-6.webp",
     title: "₹1.25 Lakh Support for Students",
     location: "PUNE",
     year: "2025",
@@ -71,7 +71,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 5,
-    thumbnail: "/Images/Impact/impact-5.webp",
+    thumbnail: "/images/impact/impact-5.webp",
     title: "Scholarship Support for My Education",
     location: "PUNE",
     year: "2025",
@@ -84,7 +84,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 6,
-    thumbnail: "/Images/Impact/impact-4.webp",
+    thumbnail: "/images/impact/impact-4.webp",
     title: "Fee Support for My Education",
     location: "PUNE",
     year: "2025",
@@ -98,7 +98,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 7,
-    thumbnail: "/Images/Impact/impact-7.webp",
+    thumbnail: "/images/impact/impact-7.webp",
     title: "Education Support for Underprivileged Students",
     location: "PUNE",
     year: "2025",
@@ -111,7 +111,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 8,
-    thumbnail: "/Images/Impact/impact-2.webp",
+    thumbnail: "/images/impact/impact-2.webp",
     title: "Education Support for a Better Future",
     location: "PUNE",
     year: "2025",
@@ -124,7 +124,7 @@ export const videoStories: ImpactVideoStory[] = [
   },
   {
     id: 9,
-    thumbnail: "/Images/Impact/impact-9.webp",
+    thumbnail: "/images/impact/impact-9.webp",
     title: "₹5.13 Lakh Scholarship Support for Students",
     location: "PUNE",
     year: "2025",

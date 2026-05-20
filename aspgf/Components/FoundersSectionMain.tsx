@@ -26,7 +26,7 @@ export default function FoundersSection() {
           name2="Patil"
           role="Founder, ASPGF"
           // experience="20+ years of leadership in social development"
-          image="/Images/SushantPatil.webp"
+          image="/images/home-page/sushant-patil-home.webp"
           link="/about-us#sushant-patil"
         />
         <AnimatedCard
@@ -34,7 +34,7 @@ export default function FoundersSection() {
           name2="Patil"
           role="Founder, ASPGF"
           // experience="20+ years of experience in the education industry"
-          image="/Images/AnujaPatil.webp"
+          image="/images/home-page/anuja-patil-home.webp"
           link="/about-us#anuja-patil"
         />
       </div>

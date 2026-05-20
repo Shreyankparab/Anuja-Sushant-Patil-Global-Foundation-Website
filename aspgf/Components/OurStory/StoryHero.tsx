@@ -15,7 +15,7 @@ export default function StoryHero() {
     <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 px-6">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Images/story-hero-bg.png"
+          src="/images/home-page/story-hero-bg.png"
           alt="Children studying"
           fill
           priority

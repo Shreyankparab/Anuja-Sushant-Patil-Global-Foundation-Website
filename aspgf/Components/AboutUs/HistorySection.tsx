@@ -159,7 +159,7 @@ export default function HistorySection(): JSX.Element {
             <div className="relative w-full aspect-[4/5] max-w-[320px] md:max-w-[520px]">
               <div className="animate-float absolute top-0 right-[-5%] w-[85%] border-[10px] border-white rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Images/WhatWeDo2.webp"
+                  src="/images/what-we-do/what-we-do-2.webp"
                   alt="Community work"
                   width={450}
                   height={550}
@@ -170,7 +170,7 @@ export default function HistorySection(): JSX.Element {
 
               <div className="animate-float-delayed absolute bottom-[-10%] left-[-4%] w-[85%] border-[10px] border-white rounded-[32px] overflow-hidden shadow-xl">
                 <Image
-                  src="/Images/about-image.png"
+                  src="/images/home-page/about-image.png"
                   alt="Family support"
                   width={350}
                   height={450}

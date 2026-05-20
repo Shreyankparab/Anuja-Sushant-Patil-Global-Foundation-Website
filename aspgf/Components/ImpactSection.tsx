@@ -18,15 +18,15 @@ const cabin = Cabin({
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 
 const verticalThumbnails: Record<number, string> = {
-  1: "/Images/Impact/impact-vertical/Chetan_Nachare.png",
-  2: "/Images/Impact/impact-vertical/Priya_Jadhav.png",
-  3: "/Images/Impact/impact-vertical/Pradnya_Wankhede_Student.png",
-  4: "/Images/Impact/impact-vertical/Vahol_Sir.png",
-  5: "/Images/Impact/impact-vertical/Kirti_Chorghe.png",
-  6: "/Images/Impact/impact-vertical/Oum_Aene.png",
-  7: "/Images/Impact/impact-vertical/Archana_Shelke.png",
-  8: "/Images/Impact/impact-vertical/Shubham_Shinde.png",
-  9: "/Images/Impact/impact-vertical/L_V_Rode.png",
+  1: "/images/impact/impact-vertical/chetan-nachare.png",
+  2: "/images/impact/impact-vertical/priya-jadhav.png",
+  3: "/images/impact/impact-vertical/pradnya-wankhede.png",
+  4: "/images/impact/impact-vertical/vahol-sir.png",
+  5: "/images/impact/impact-vertical/kirti-chorghe.png",
+  6: "/images/impact/impact-vertical/oum-aene.png",
+  7: "/images/impact/impact-vertical/archana-shelke.png",
+  8: "/images/impact/impact-vertical/shubham-shinde.png",
+  9: "/images/impact/impact-vertical/l-v-rode.png",
 };
 
 export default function ImpactSection() {
@@ -132,7 +132,7 @@ export default function ImpactSection() {
                 <div className="flex items-center gap-4 mt-2">
                   <div className="relative w-10 h-10 md:w-14 md:h-14 min-w-[40px] min-h-[40px] flex-shrink-0">
                     <Image
-                      src="/Images/Quattaion.svg"
+                      src="/images/home-page/quattaion.svg"
                       alt="Quotation icon"
                       fill
                       className="object-contain"

@@ -92,7 +92,7 @@ export default function DonateUsComponent() {
                                         <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/upi:bg-white/30 transition-colors flex-shrink-0">
                                             <div className="relative w-8 h-4">
                                                 <Image
-                                                    src="/Icons/upi_logo_icon_169316.svg"
+                                                    src="/images/icons/upi-icon.svg"
                                                     alt="UPI Logo"
                                                     fill
                                                     className="object-contain brightness-0 invert"
@@ -114,7 +114,7 @@ export default function DonateUsComponent() {
                                     >
                                         <div className="relative p-2 bg-gray-50 rounded-2xl border border-gray-100">
                                             <Image
-                                                src="/Images/qr-code-aspgf.png"
+                                                src="/images/donate-now/qr-code-aspgf.png"
                                                 alt="Donation QR Code"
                                                 width={260}
                                                 height={260}
@@ -132,7 +132,7 @@ export default function DonateUsComponent() {
                                         <div className="w-10 h-10 rounded-full bg-[#00735C]/10 flex items-center justify-center">
                                             <div className="relative w-6 h-3">
                                                 <Image
-                                                    src="/Icons/upi_logo_icon_169316.svg"
+                                                    src="/images/icons/upi-icon.svg"
                                                     alt="UPI Logo"
                                                     fill
                                                     className="object-contain"
@@ -194,7 +194,7 @@ export default function DonateUsComponent() {
                             <div className="bg-[#f8faf9] p-4 md:p-8 rounded-[32px] border-2 border-[#D5EBE1] w-full md:w-[90%] aspect-square relative mb-6 shadow-inner overflow-hidden flex items-center justify-center">
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/Images/qr-code-aspgf.png"
+                                        src="/images/donate-now/qr-code-aspgf.png"
                                         alt="Donation QR Code"
                                         fill
                                         className="object-contain p-2 rounded-[24px]"
@@ -207,7 +207,7 @@ export default function DonateUsComponent() {
                                     <div className="flex items-center gap-2">
                                         <div className="w-16 h-8 relative flex-shrink-0 opacity-90">
                                             <Image
-                                                src="/Icons/upi_logo_icon_169316.svg"
+                                                src="/images/icons/upi-icon.svg"
                                                 alt="UPI Logo"
                                                 fill
                                                 className="object-contain"

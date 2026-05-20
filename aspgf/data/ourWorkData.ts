@@ -19,7 +19,7 @@ export const workCategories = [
 export const allWorkItems: WorkItem[] = [
     {
         id: 1,
-        image: "/Images/Gallery/variProgram/aashadi_vari_image_7.webp",
+        image: "/images/gallery/vari-program/aashadi-vari-7.webp",
         category: "Charity",
         date: "22/06/2025",
         title: "Vari Program",
@@ -31,7 +31,7 @@ export const allWorkItems: WorkItem[] = [
 
     {
         id: 2,
-        image: "/Images/Gallery/Schoolrship-Distribution/scholarship_image_1.webp",
+        image: "/images/gallery/scholarship-distribution/scholarship-1.webp",
         category: "Education",
         date: "08/07/2025",
         title: "Scholarship Distribution Program",
@@ -40,7 +40,7 @@ export const allWorkItems: WorkItem[] = [
     },
     {
         id: 3,
-        image: "/Images/Gallery/Begger/begger_image_1.webp",
+        image: "/images/gallery/beggar-rehabilitation/beggar-1.webp",
         category: "Orphanage",
         date: "15/11/2025",
         title: "Beggar Rehabilitation Center",
@@ -50,7 +50,7 @@ export const allWorkItems: WorkItem[] = [
     },
     {
         id: 4,
-        image: "/Images/Gallery/Matruchhaya-Children-Home/mch_image_1.webp",
+        image: "/images/gallery/matruchhaya-children-home/matruchaya-1.webp",
         category: "Orphanage",
         date: "25/10/2025",
         title: "Malhar Birthday Celebration",
@@ -59,7 +59,7 @@ export const allWorkItems: WorkItem[] = [
     },
     {
         id: 5,
-        image: "/Images/Gallery/christmas/christmas_image_2.webp",
+        image: "/images/gallery/christmas/christmas-2.webp",
         category: "Orphanage",
         date: "24/12/2025",
         title: "Stationery Kit and Snacks Distribution Program on the Occasion of Christmas",
@@ -68,7 +68,7 @@ export const allWorkItems: WorkItem[] = [
     },
     {
         id: 6,
-        image: "/Images/Gallery/Old-Age/old_age_image_1.webp",
+        image: "/images/gallery/old-age/old-age-1.webp",
         category: "Old Age",
         date: "29/08/2025",
         title: "Swarnanagari Old Age Home Program",
@@ -77,7 +77,7 @@ export const allWorkItems: WorkItem[] = [
     },
     // {
     //     id: 7,
-    //     image: "/Images/Impact/impact-1.webp",
+    //     image: "/images/impact/impact-1.webp",
     //     category: "Charity",
     //     date: "12/08/2025",
     //     title: "A Visit That Inspires: Poona Blind School & Home",
@@ -86,7 +86,7 @@ export const allWorkItems: WorkItem[] = [
     // },
     // {
     //     id: 7,
-    //     image: "/Images/Gallery/Malhar-Bday/malhar_birthday_1.webp",
+    //     image: "/images/gallery/malhar-birthday/malhar-birthday-1.webp",
     //     category: "Charity",
     //     date: "15/09/2025",
     //     title: "Malhar Birthday Celebration",
@@ -95,7 +95,7 @@ export const allWorkItems: WorkItem[] = [
     // },
     // {
     //     id: 8,
-    //     image: "/Images/Gallery/Schoolrship-Distribution/scholarship_image_2.webp",
+    //     image: "/images/gallery/scholarship-distribution/scholarship-2.webp",
     //     category: "Education",
     //     date: "26/11/2025",
     //     title: "Scholarship Distribution Program",
