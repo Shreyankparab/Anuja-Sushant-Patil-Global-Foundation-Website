@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { MapPin, Phone } from "lucide-react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
-import ContactMap from "@/Components/ContactUs/ContactMap";
-import InquiryButton from "@/Components/ContactUs/InquiryButton";
+import ContactMap from "@/Sections/ContactUs/ContactMap";
+import InquiryButton from "@/Sections/ContactUs/InquiryButton";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });

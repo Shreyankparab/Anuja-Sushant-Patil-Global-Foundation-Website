@@ -3,7 +3,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useLoading } from "../Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 import { Cabin } from "next/font/google";
 
 const cabin = Cabin({

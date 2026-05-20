@@ -1,4 +1,4 @@
-import EventsGallery from "@/Components/Gallery/GalleryComponent";
+import EventsGallery from "@/Sections/Gallery/GalleryComponent";
 
 import { Metadata } from "next";
 

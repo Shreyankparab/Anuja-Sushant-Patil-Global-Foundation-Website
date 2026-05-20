@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageSquareText } from "lucide-react";
 import { Nunito, Cabin } from "next/font/google";
-import DonateForm from "../DonateUs/DonateForm";
+import DonateForm from "@/Sections/DonateUs/DonateForm";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
 const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });

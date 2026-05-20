@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
-import { useLoading } from "./Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const manrope = Cabin({

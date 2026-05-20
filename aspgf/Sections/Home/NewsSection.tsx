@@ -6,9 +6,9 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { newsData } from "@/data/newsData";
-import NewsModal from "./News/NewsModal";
+import NewsModal from "@/Sections/News/NewsModal";
 import { useRouter } from "next/navigation";
-import { useLoading } from "./Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });

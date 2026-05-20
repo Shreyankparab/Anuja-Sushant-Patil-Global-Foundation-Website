@@ -1,4 +1,4 @@
-import DonateUsComponent from "@/Components/DonateUs/DonateUsComponent";
+import DonateUsComponent from "@/Sections/DonateUs/DonateUsComponent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -3,7 +3,7 @@
 import React from "react";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
-import { useLoading } from "./Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 import { ArrowRight } from "lucide-react";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });

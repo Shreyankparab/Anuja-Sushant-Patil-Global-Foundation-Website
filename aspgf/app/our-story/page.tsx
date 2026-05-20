@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import StoryHero from "@/Components/OurStory/StoryHero";
-import StoryForeword from "@/Components/OurStory/StoryForeword";
-import StoryChapters from "@/Components/OurStory/StoryChapters";
-import StoryHighlight from "@/Components/OurStory/StoryHighlight";
-import StoryMovement from "@/Components/OurStory/StoryMovement";
-import StorySignature from "@/Components/OurStory/StorySignature";
+import StoryHero from "@/Sections/OurStory/StoryHero";
+import StoryForeword from "@/Sections/OurStory/StoryForeword";
+import StoryChapters from "@/Sections/OurStory/StoryChapters";
+import StoryHighlight from "@/Sections/OurStory/StoryHighlight";
+import StoryMovement from "@/Sections/OurStory/StoryMovement";
+import StorySignature from "@/Sections/OurStory/StorySignature";
 
 export const metadata: Metadata = {
   title: "Our Story - The Narrative | Anuja Sushant Patil Global Foundation",

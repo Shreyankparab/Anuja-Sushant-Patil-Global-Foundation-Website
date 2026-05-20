@@ -114,7 +114,7 @@ export default function Footer() {
                         <div className="flex flex-wrap gap-6 mt-4">
                             <div className="flex items-center gap-3 text-[16px] font-bold">
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-2">
-                                    <Image src="/mail.svg" width={20} height={20} alt="mail" />
+                                    <Image src="/images/icons/mail.svg" width={20} height={20} alt="mail" />
                                 </div>
                                 <a
                                     href="mailto:project.director@aspgf.org"
@@ -126,7 +126,7 @@ export default function Footer() {
 
                             <div className="flex items-center gap-3 text-[16px] font-bold">
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-2">
-                                    <Image src="/call.svg" width={20} height={20} alt="phone" />
+                                    <Image src="/images/icons/call.svg" width={20} height={20} alt="phone" />
                                 </div>
                                 <a
                                     href="tel:+919684001643"

@@ -8,7 +8,7 @@ import { videoStories, type ImpactVideoStory } from "@/data/impactData";
 import { Play, X, Info } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { useLoading } from "./Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
 const cabin = Cabin({

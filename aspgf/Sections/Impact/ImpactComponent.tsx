@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { Play, X, ChevronLeft, ChevronRight, Info } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import StatsSection from "../StatsSection";
+import StatsSection from "@/Components/StatsSection";
 import { videoStories } from "@/data/impactData";
 
 type VideoStory = (typeof videoStories)[0];

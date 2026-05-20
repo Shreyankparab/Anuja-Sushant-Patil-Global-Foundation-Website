@@ -1,17 +1,17 @@
-import HeroSection from "@/Components/HeroSection";
-import FAQSection from "@/Components/FAQSection";
+import HeroSection from "@/Sections/Home/HeroSection";
+import FAQSection from "@/Sections/Home/FAQSection";
 
-import FocusArea from "@/Components/FocusArea";
+import FocusArea from "@/Sections/Home/FocusArea";
 import StatsSection from "@/Components/StatsSection";
-import NewsSection from "@/Components/NewsSection";
-import InquiryCTA from "@/Components/InquiryCTA";
-import FoundersSectionMain from "@/Components/FoundersSectionMain";
-import AboutSection from "@/Components/AboutSection";
-import WhatWeDoSection from "@/Components/WhatWeDoSection";
-import OurWorkSection from "@/Components/OurWorkSection";
+import NewsSection from "@/Sections/Home/NewsSection";
+import InquiryCTA from "@/Sections/Home/InquiryCTA";
+import FoundersSectionMain from "@/Sections/Home/FoundersSectionMain";
+import AboutSection from "@/Sections/Home/AboutSection";
+import WhatWeDoSection from "@/Sections/Home/WhatWeDoSection";
+import OurWorkSection from "@/Sections/Home/OurWorkSection";
 
 
-import ImpactSection from "@/Components/ImpactSection";
+import ImpactSection from "@/Sections/Home/ImpactSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

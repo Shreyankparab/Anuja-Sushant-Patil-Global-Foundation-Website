@@ -1,4 +1,4 @@
-import ImpactComponent from "@/Components/Impact/ImpactComponent";
+import ImpactComponent from "@/Sections/Impact/ImpactComponent";
 
 import { Metadata } from "next";
 

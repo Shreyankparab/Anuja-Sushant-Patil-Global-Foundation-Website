@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { useRouter } from "next/navigation";
-import { useLoading } from "./Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
@@ -33,7 +33,7 @@ const AboutSection = () => {
           <div className="absolute top-0 left-[-5%] w-[85%] aspect-[9/10] bg-[#F9F7F1] z-0 block border border-transparent shadow-sm">
             <div className="absolute inset-0 opacity-100 flex items-center justify-center p-4 overflow-hidden">
               <Image
-                src="/peacock-svg.svg"
+                src="/images/home-page/peacock-svg.svg"
                 alt="Peacock texture"
                 fill
                 className="object-contain scale-[1.1] origin-center opacity-80"

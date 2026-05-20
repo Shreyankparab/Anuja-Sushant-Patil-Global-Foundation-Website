@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import AboutHero from "@/Components/AboutUs/AboutHero";
-import AboutClient from "@/Components/AboutUs/AboutClient";
+import AboutHero from "@/Sections/AboutUs/AboutHero";
+import AboutClient from "@/Sections/AboutUs/AboutClient";
 
 // Dynamic imports for "Instant Rendering" by splitting JS bundles
 const StatsSection = dynamic(() => import("@/Components/StatsSection"), {
@@ -9,12 +9,12 @@ const StatsSection = dynamic(() => import("@/Components/StatsSection"), {
     loading: () => <div className="h-40 animate-pulse bg-gray-50 rounded-3xl" />
 });
 
-const LeadershipSection = dynamic(() => import("@/Components/AboutUs/LeadershipSection"), {
+const LeadershipSection = dynamic(() => import("@/Sections/AboutUs/LeadershipSection"), {
     ssr: true,
     loading: () => <div className="h-96 animate-pulse bg-gray-50 rounded-[40px]" />
 });
 
-const HistorySection = dynamic(() => import("@/Components/AboutUs/HistorySection"), {
+const HistorySection = dynamic(() => import("@/Sections/AboutUs/HistorySection"), {
     ssr: true,
     loading: () => <div className="h-96 animate-pulse bg-gray-100 rounded-[60px]" />
 });

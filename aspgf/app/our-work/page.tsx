@@ -1,4 +1,4 @@
-import OurWorkComponent from "@/Components/OurWork/OurWorkComponent";
+import OurWorkComponent from "@/Sections/OurWork/OurWorkComponent";
 
 import { Metadata } from "next";
 

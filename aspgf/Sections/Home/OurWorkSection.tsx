@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Caveat, Nunito, Cabin } from "next/font/google";
 import { allWorkItems } from "@/data/ourWorkData";
 import { useRouter } from "next/navigation";
-import { useLoading } from "./Common/LoadingHandler";
+import { useLoading } from "@/Components/Common/LoadingHandler";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });

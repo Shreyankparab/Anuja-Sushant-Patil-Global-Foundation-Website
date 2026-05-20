@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { pageContent } from "@/data/gallery";
-import GalleryModal from "@/Components/Gallery/GalleryModal";
+import GalleryModal from "@/Sections/Gallery/GalleryModal";
 import { Nunito, Cabin, Caveat, Inter } from "next/font/google";
 import { FiCalendar, FiMapPin, FiCamera, FiArrowRight } from "react-icons/fi";
 import { ChevronDown, ChevronLeft, ChevronRight, Grid, Layout } from "lucide-react";

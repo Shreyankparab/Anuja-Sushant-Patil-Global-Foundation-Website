@@ -1,4 +1,4 @@
-import NewsComponent from "@/Components/News/NewsComponent";
+import NewsComponent from "@/Sections/News/NewsComponent";
 
 import { Metadata } from "next";
 
