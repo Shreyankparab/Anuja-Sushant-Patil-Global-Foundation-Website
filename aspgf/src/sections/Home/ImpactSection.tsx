@@ -10,15 +10,15 @@ import { useRouter } from "next/navigation";
 import { useLoading } from "@/components/LoadingHandler";
 
 const verticalThumbnails: Record<number, string> = {
-  1: "/images/impact/impact-vertical/chetan-nachare.png",
-  2: "/images/impact/impact-vertical/priya-jadhav.png",
-  3: "/images/impact/impact-vertical/pradnya-wankhede.png",
-  4: "/images/impact/impact-vertical/vahol-sir.png",
-  5: "/images/impact/impact-vertical/kirti-chorghe.png",
-  6: "/images/impact/impact-vertical/oum-aene.png",
-  7: "/images/impact/impact-vertical/archana-shelke.png",
-  8: "/images/impact/impact-vertical/shubham-shinde.png",
-  9: "/images/impact/impact-vertical/l-v-rode.png",
+  1: "/images/impact/impact-vertical/chetan-nachare.webp",
+  2: "/images/impact/impact-vertical/priya-jadhav.webp",
+  3: "/images/impact/impact-vertical/pradnya-wankhede.webp",
+  4: "/images/impact/impact-vertical/vahol-sir.webp",
+  5: "/images/impact/impact-vertical/kirti-chorghe.webp",
+  6: "/images/impact/impact-vertical/oum-aene.webp",
+  7: "/images/impact/impact-vertical/archana-shelke.webp",
+  8: "/images/impact/impact-vertical/shubham-shinde.webp",
+  9: "/images/impact/impact-vertical/l-v-rode.webp",
 };
 
 export default function ImpactSection() {
