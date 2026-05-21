@@ -114,7 +114,7 @@ export default function NewsModal({ isOpen, onClose, items, initialIndex }: News
             {/* Top Controls Bar */}
             <div className="absolute top-0 inset-x-0 h-16 md:h-20 flex items-center justify-between px-4 md:px-12 z-[10005] bg-gradient-to-b from-black/80 to-transparent pointer-events-none">
                 <div className="flex items-center gap-4 pointer-events-auto">
-                    <span className="font-sans text-white/50 text-xs md:text-sm font-medium">
+                    <span className="font-cabin text-white/50 text-xs md:text-sm font-medium">
                         {selectedIndex + 1} / {items.length}
                     </span>
                 </div>
@@ -230,10 +230,10 @@ export default function NewsModal({ isOpen, onClose, items, initialIndex }: News
 
                     {/* Metadata Tags (Date & Location) */}
                     <div className="flex items-center gap-4 flex-wrap mb-8">
-                        <span className="font-sans flex items-center gap-2 text-[#3ed0a6] text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                        <span className="font-cabin flex items-center gap-2 text-[#3ed0a6] text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
                             <FiCalendar size={13} className="opacity-80" /> {selectedNews.date}
                         </span>
-                        <span className="font-sans flex items-center gap-2 text-white/40 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                        <span className="font-cabin flex items-center gap-2 text-white/40 text-[10px] md:text-xs font-bold uppercase tracking-widest">
                             <FiMapPin size={13} /> {selectedNews.location}
                         </span>
                     </div>
@@ -242,7 +242,7 @@ export default function NewsModal({ isOpen, onClose, items, initialIndex }: News
 
 
                     <div className="flex flex-col gap-6">
-                        <h3 className="font-sans text-[#3ed0a6] text-[11px] font-bold uppercase tracking-[0.25em] mb-2">
+                        <h3 className="font-nunito text-[#3ed0a6] text-[11px] font-bold uppercase tracking-[0.25em] mb-2">
                             More Stories
                         </h3>
 

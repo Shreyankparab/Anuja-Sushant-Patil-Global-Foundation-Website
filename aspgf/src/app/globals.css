@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Caveat:wght@700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Lexend:wght@800;900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -9,12 +8,12 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* --font-sans: "Geist", sans-serif; */
-  /* --font-mono: "Geist Mono", monospace; */
-  --font-nunito: "Nunito", sans-serif;
-  --font-cabin: "Cabin", sans-serif;
-  --font-caveat: "Caveat", cursive;
-  /* --font-lexend: "Lexend", sans-serif; */
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
+  --font-nunito: var(--font-nunito);
+  --font-cabin: var(--font-cabin);
+  --font-caveat: var(--font-caveat);
+  /* --font-lexend: var(--font-lexend); */
 }
 
 @media (prefers-color-scheme: dark) {

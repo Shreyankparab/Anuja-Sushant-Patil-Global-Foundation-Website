@@ -14,7 +14,7 @@ const focusItems = [
 ];
 
 const Separator = () => (
-  <span className="font-lexend mx-12 md:mx-20 text-[60px] md:text-[80px] font-black text-[#006e57]">
+  <span className="font-nunito mx-12 md:mx-20 text-[60px] md:text-[80px] font-black text-[#006e57]">
     |
   </span>
 );
@@ -30,7 +30,7 @@ export default function FocusArea() {
             <React.Fragment key={`f1-${index}`}>
               <span
                 className="
-                font-lexend
+                font-nunito
                 text-[60px]
                 md:text-[100px]
                 font-black
@@ -58,7 +58,7 @@ export default function FocusArea() {
             <React.Fragment key={`f2-${index}`}>
               <span
                 className="
-                font-lexend
+                font-nunito
                 text-[60px]
                 md:text-[100px]
                 font-black

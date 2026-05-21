@@ -143,7 +143,7 @@ export default function EventsGallery() {
                     </h2>
                   </div>
 
-                  <div className="font-sans flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-gray-500 font-semibold mb-1">
+                  <div className="font-cabin flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-gray-500 font-semibold mb-1">
                     <span className="flex items-center gap-2">
                       <FiCalendar className="text-[#0f766e]" /> {event.date}
                     </span>

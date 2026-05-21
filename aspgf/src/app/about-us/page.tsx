@@ -117,7 +117,7 @@ function OrganizationSchema() {
         url: "https://aspgf.org",
 
         logo:
-            "https://aspgf.org/images/aspgf-logo.webp",
+            "https://aspgf.org/images/aspgf-logo.png",
 
         description:
             "Empowering communities through education healthcare and sustainable development.",
@@ -172,7 +172,7 @@ export default function AboutPage() {
                     />
                     {/* Mobile Background Image */}
                     <Image
-                        src="/images/about-us/hero-image-about-us.webp"
+                        src="/images/about-us/hero-image-about-us.png"
                         alt="Happy children in community mobile"
                         fill
                         sizes="100vw"
@@ -245,7 +245,7 @@ export default function AboutPage() {
 
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
                                         <Image
-                                            src="/images/about-us/sushant-patil.webp"
+                                            src="/images/about-us/sushant-patil.png"
                                             alt="Dr. Sushant Patil, Founder of Anuja Sushant Patil Global Foundation"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 400px"
@@ -365,7 +365,7 @@ export default function AboutPage() {
 
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
                                         <Image
-                                            src="/images/about-us/anuja-patil.webp"
+                                            src="/images/about-us/anuja-patil.png"
                                             alt="Advocate Anuja Sushant Patil, Founder of Anuja Sushant Patil Global Foundation"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 400px"
@@ -492,7 +492,7 @@ export default function AboutPage() {
 
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
                                         <Image
-                                            src="/images/about-us/shriram-sir.webp"
+                                            src="/images/about-us/shriram-sir.png"
                                             alt="Dr. Shriram Chavan, Project Director of Anuja Sushant Patil Global Foundation"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 400px"

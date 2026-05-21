@@ -93,7 +93,7 @@ export default function StoryChapters() {
 
             <div className="font-cabin text-lg text-gray-600 leading-[1.8] space-y-6">
               <p>
-                <span className="float-left text-7xl font-bold text-[#00735C] pr-3 pb-2 leading-[0.8] mt-1 font-serif">O</span>
+                <span className="float-left text-7xl font-bold text-[#00735C] pr-3 pb-2 leading-[0.8] mt-1 font-nunito">O</span>
                 ne day, Master Atharv Sushant Patil returned home from school with a project question his teacher had given the class:
               </p>
               <blockquote className="font-caveat text-2xl md:text-3xl text-[#0A2520] pl-6 border-l-2 border-[#00b874] py-2">
