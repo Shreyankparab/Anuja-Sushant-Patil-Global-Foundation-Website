@@ -73,19 +73,7 @@ export default function EventsGallery() {
   return (
     <main ref={revealRef} className="min-h-screen bg-[#fafafa] overflow-hidden">
       {/* SIMPLE HEADER SECTION */}
-      <div className="bg-[#0f766e] py-16 text-white text-center relative">
-        <div className="flex justify-center mb-4 reveal">
-          <span className="font-caveat text-2xl text-white">
-            Visual Journey
-          </span>
-        </div>
 
-        <h2
-          className="font-nunito text-4xl font-bold reveal delay-100"
-        >
-          Capturing Moments of Impact.
-        </h2>
-      </div>
 
       {/* CATEGORY BAR */}
       <div className="py-8 bg-white border-b border-gray-100 px-6">

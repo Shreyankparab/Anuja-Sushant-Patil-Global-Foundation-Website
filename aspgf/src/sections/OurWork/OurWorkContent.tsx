@@ -2,11 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Nunito, Cabin } from "next/font/google";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 import { allWorkItems, WorkItem } from "@/data/ourWorkData";
 
@@ -114,7 +110,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
     };
 
     return (
-        <div ref={containerRef} className={`${cabin.className} flex-1 min-w-0 scroll-mt-32`}>
+        <div ref={containerRef} className="font-cabin flex-1 min-w-0 scroll-mt-32">
 
             {/* Featured Card */}
             {featured && (
@@ -138,7 +134,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                         <span className="inline-block text-[11px] font-extrabold tracking-[0.2em] uppercase bg-[#00735C]/10 text-[#00735C] rounded-full px-4 py-1.5 mb-6 w-fit">
                             Latest
                         </span>
-                        <h2 className={`${nunito.className} text-3xl md:text-4xl font-extrabold text-[#1A2E35] mb-5 leading-tight`}>
+                        <h2 className="font-nunito text-3xl md:text-4xl font-extrabold text-[#1A2E35] mb-5 leading-tight">
                             {featured.title}
                         </h2>
                         <p className="text-gray-500 text-base leading-relaxed line-clamp-4 md:line-clamp-none font-medium">
@@ -176,7 +172,7 @@ export default function OurWorkContent({ activeCategory, searchQuery }: OurWorkC
                                         {item.date}
                                     </span>
                                 </div>
-                                <h3 className={`${nunito.className} font-extrabold text-[#1A2E35] text-xl mb-3 leading-snug`}>
+                                <h3 className="font-nunito font-extrabold text-[#1A2E35] text-xl mb-3 leading-snug">
                                     {item.title}
                                 </h3>
                                 {item.description.length <= DESC_LIMIT ? (

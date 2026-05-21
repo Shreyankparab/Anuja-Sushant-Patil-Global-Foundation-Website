@@ -2,11 +2,6 @@
 
 import Link from "next/link";
 import { Home, ArrowLeft } from "lucide-react";
-import { Nunito, Cabin, Caveat } from "next/font/google";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 
 export default function NotFound() {
     return (
@@ -17,25 +12,25 @@ export default function NotFound() {
 
             <div className="relative z-10 flex flex-col items-center">
                 {/* 404 Number with floating animation */}
-                <h1 className={`${nunito.className} text-[120px] md:text-[200px] font-black text-[#00735C]/10 leading-none select-none animate-bounce-slow inline-block`}>
+                <h1 className="font-nunito text-[120px] md:text-[200px] font-black text-[#00735C]/10 leading-none select-none animate-bounce-slow inline-block">
                     404
                 </h1>
 
                 <div className="-mt-10 md:-mt-20">
-                    <p className={`${caveat.className} text-[#A828C6] text-3xl md:text-4xl mb-4`}>
+                    <p className="font-caveat text-[#A828C6] text-3xl md:text-4xl mb-4">
                         Oops! You're lost
                     </p>
-                    <h2 className={`${nunito.className} text-3xl md:text-5xl font-extrabold text-[#1A2E35] mb-6`}>
+                    <h2 className="font-nunito text-3xl md:text-5xl font-extrabold text-[#1A2E35] mb-6">
                         Page Not Found
                     </h2>
-                    <p className={`${cabin.className} text-gray-500 text-lg max-w-md mx-auto mb-10 leading-relaxed font-medium`}>
+                    <p className="font-cabin text-gray-500 text-lg max-w-md mx-auto mb-10 leading-relaxed font-medium">
                         The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
                         <Link
                             href="/"
-                            className={`${cabin.className} flex items-center gap-2 bg-[#00735C] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-[#005c4a] transition-all hover:shadow-lg hover:shadow-[#00735C]/20 hover:-translate-y-1`}
+                            className="font-cabin flex items-center gap-2 bg-[#00735C] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-[#005c4a] transition-all hover:shadow-lg hover:shadow-[#00735C]/20 hover:-translate-y-1"
                         >
                             <Home size={18} />
                             Go to Home
@@ -43,7 +38,7 @@ export default function NotFound() {
 
                         <button
                             onClick={() => window.history.back()}
-                            className={`${cabin.className} flex items-center gap-2 border-2 border-gray-100 text-[#1A2E35] px-8 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-gray-50 transition-all hover:border-gray-200`}
+                            className="font-cabin flex items-center gap-2 border-2 border-gray-100 text-[#1A2E35] px-8 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-gray-50 transition-all hover:border-gray-200"
                         >
                             <ArrowLeft size={18} />
                             Go Back

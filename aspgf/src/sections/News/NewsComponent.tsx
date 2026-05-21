@@ -65,7 +65,7 @@ export default function NewsComponent() {
     return (
         <div ref={revealRef} className="bg-[#f5f5f5]">
             {/* HEADER */}
-            <div className="bg-[#0f766e] py-16 text-white text-center relative">
+            {/* <div className="bg-[#0f766e] py-16 text-white text-center relative">
                 <div className="flex justify-center mb-4 reveal">
                     <span className="font-caveat text-2xl text-white">
                         News & Events
@@ -77,7 +77,7 @@ export default function NewsComponent() {
                 >
                     Community-focused work for a better tomorrow.
                 </h2>
-            </div>
+            </div> */}
 
             {/* CATEGORY BAR */}
             <div className="py-8 bg-white border-b border-gray-100 px-6">

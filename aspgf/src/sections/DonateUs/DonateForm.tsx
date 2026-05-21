@@ -5,12 +5,8 @@ import { useForm, Controller } from "react-hook-form";
 import { X, CheckCircle2 } from "lucide-react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Nunito, Cabin } from "next/font/google";
 import { submitToGoogleSheets } from "@/lib/googleSheets";
 import { Loader2 } from "lucide-react";
-
-const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const cabin = Cabin({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 type FormData = {
     name: string;
@@ -82,7 +78,7 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Name */}
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="name" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Your Name <span className="text-red-500">*</span></label>
+                        <label htmlFor="name" className="text-sm font-bold text-[#1A2E35] font-nunito">Your Name <span className="text-red-500">*</span></label>
                         <input
                             {...register("name", {
                                 required: "Name is required",
@@ -95,14 +91,14 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
                             id="name"
                             placeholder="Enter your name"
                             suppressHydrationWarning
-                            className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.name ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${cabin.className}`}
+                            className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.name ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 font-cabin`}
                         />
                         {errors.name && <span className="text-red-500 text-xs font-semibold">{errors.name.message}</span>}
                     </div>
 
                     {/* Email */}
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="email" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Email <span className="text-red-500">*</span></label>
+                        <label htmlFor="email" className="text-sm font-bold text-[#1A2E35] font-nunito">Email <span className="text-red-500">*</span></label>
                         <input
                             {...register("email", {
                                 required: "Email is required",
@@ -115,7 +111,7 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
                             id="email"
                             placeholder="Enter your email address"
                             suppressHydrationWarning
-                            className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.email ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${nunito.className}`}
+                            className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.email ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 font-nunito`}
                         />
                         {errors.email && <span className="text-red-500 text-xs font-semibold">{errors.email.message}</span>}
                     </div>
@@ -124,7 +120,7 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Phone */}
                     <div className="flex flex-col gap-2">
-                        <label className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Phone Number <span className="text-red-500">*</span></label>
+                        <label className="text-sm font-bold text-[#1A2E35] font-nunito">Phone Number <span className="text-red-500">*</span></label>
                         <div className={`relative rounded-2xl bg-gray-50 border ${errors.phone ? 'border-red-500' : 'border-gray-100 focus-within:border-[#00735C] focus-within:ring-2 focus-within:ring-[#00735C]/20'} transition-all`}>
                             <Controller
                                 name="phone"
@@ -198,7 +194,7 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
 
                     {/* Company Toggle Section */}
                     <div className="flex flex-col gap-3 justify-center">
-                        <label className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Are you a Company / Group?</label>
+                        <label className="text-sm font-bold text-[#1A2E35] font-nunito">Are you a Company / Group?</label>
                         <div className="flex items-center gap-3">
                             <span className={`text-xs font-bold transition-colors ${!isCompany ? 'text-[#00735C]' : 'text-gray-400'}`}>No</span>
                             <button
@@ -215,42 +211,42 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
 
                 {/* Company Name (Conditional - Full Width) */}
                 <div className={`flex flex-col gap-2 transition-all duration-500 ease-in-out ${isCompany ? 'opacity-100 max-h-40 pointer-events-auto' : 'opacity-0 max-h-0 pointer-events-none overflow-hidden'}`}>
-                    <label htmlFor="company" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Company Name <span className="text-red-500">*</span></label>
+                    <label htmlFor="company" className="text-sm font-bold text-[#1A2E35] font-nunito">Company Name <span className="text-red-500">*</span></label>
                     <input
                         {...register("company", { required: isCompany ? "Company Name is required" : false })}
                         type="text"
                         id="company"
                         placeholder="Your Company Name"
                         suppressHydrationWarning
-                        className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.company ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 ${cabin.className}`}
+                        className={`w-full h-14 px-5 rounded-2xl bg-gray-50 border ${errors.company ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 font-cabin`}
                     />
                     {errors.company && <span className="text-red-500 text-xs font-semibold">{errors.company.message}</span>}
                 </div>
 
                 {/* Address */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="address" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Address <span className="text-red-500">*</span></label>
+                    <label htmlFor="address" className="text-sm font-bold text-[#1A2E35] font-nunito">Address <span className="text-red-500">*</span></label>
                     <textarea
                         {...register("address", { required: "Address is required" })}
                         id="address"
                         rows={2}
                         placeholder="Your full address"
                         suppressHydrationWarning
-                        className={`w-full p-5 rounded-2xl bg-gray-50 border ${errors.address ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 resize-none ${cabin.className}`}
+                        className={`w-full p-5 rounded-2xl bg-gray-50 border ${errors.address ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-100 focus:border-[#00735C] focus:ring-[#00735C]/20'} focus:ring-2 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 resize-none font-cabin`}
                     ></textarea>
                     {errors.address && <span className="text-red-500 text-xs font-semibold">{errors.address.message}</span>}
                 </div>
 
                 {/* Additional Info */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className={`text-sm font-bold text-[#1A2E35] ${nunito.className}`}>Additional Information</label>
+                    <label htmlFor="message" className="text-sm font-bold text-[#1A2E35] font-nunito">Additional Information</label>
                     <textarea
                         {...register("message")}
                         id="message"
                         rows={4}
                         placeholder="Enter additional information"
                         suppressHydrationWarning
-                        className={`w-full p-5 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#00735C] focus:ring-2 focus:ring-[#00735C]/20 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 resize-none ${cabin.className}`}
+                        className={`w-full p-5 rounded-2xl bg-gray-50 border border-gray-100 focus:border-[#00735C] focus:ring-2 focus:ring-[#00735C]/20 outline-none transition-all text-[#1A2E35] placeholder:text-gray-400 resize-none font-cabin`}
                     ></textarea>
                 </div>
 
@@ -258,7 +254,7 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full sm:w-60 h-14 bg-[#00735C] text-white font-extrabold rounded-2xl hover:bg-[#005c4a] transition-colors shadow-lg shadow-[#00735C]/20 uppercase tracking-widest text-sm flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed ${cabin.className}`}
+                        className={`w-full sm:w-60 h-14 bg-[#00735C] text-white font-extrabold rounded-2xl hover:bg-[#005c4a] transition-colors shadow-lg shadow-[#00735C]/20 uppercase tracking-widest text-sm flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-cabin`}
                     >
                         {isSubmitting ? (
                             <>
@@ -294,14 +290,14 @@ export default function DonateForm({ onSuccess }: { onSuccess?: () => void }) {
                             <div className="w-20 h-20 bg-[#D5EBE1] rounded-full flex items-center justify-center mx-auto mb-6">
                                 <CheckCircle2 className="text-[#00735C]" size={40} />
                             </div>
-                            <h3 className={`text-2xl font-extrabold text-[#1A2E35] mb-3 ${nunito.className}`}>Inquiry Received!</h3>
-                            <p className={`text-gray-500 text-[16px] leading-relaxed mb-8 ${cabin.className}`}>
+                            <h3 className="text-2xl font-extrabold text-[#1A2E35] mb-3 font-nunito">Inquiry Received!</h3>
+                            <p className="text-gray-500 text-[16px] leading-relaxed mb-8 font-cabin">
                                 Thank you for your interest in supporting our foundation. We have received your details and will get in touch with you shortly to guide you through the process.
                             </p>
 
                             <button
                                 onClick={handleCloseQr}
-                                className={`w-full py-4 bg-[#00735C] text-white font-extrabold rounded-2xl hover:bg-[#005c4a] transition-colors uppercase tracking-widest text-sm ${cabin.className}`}
+                                className="w-full py-4 bg-[#00735C] text-white font-extrabold rounded-2xl hover:bg-[#005c4a] transition-colors uppercase tracking-widest text-sm font-cabin"
                             >
                                 Close
                             </button>

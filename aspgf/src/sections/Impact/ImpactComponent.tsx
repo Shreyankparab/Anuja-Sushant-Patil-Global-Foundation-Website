@@ -62,40 +62,8 @@ export default function ImpactComponent() {
 
   return (
     <main className="min-h-screen relative">
-      <section ref={sectionRef} className="py-20 px-6 bg-white overflow-hidden">
-        {/* Wrap header in ref and add animation classes */}
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-2 reveal">
-            <div className="h-[1px] w-12 md:w-20 bg-gray-300"></div>
-            <span
-              className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold italic"
-            >
-              Proof of changes
-            </span>
-            <div className="h-[1px] w-12 md:w-20 bg-gray-300"></div>
-          </div>
 
-          <h2
-            className="font-nunito text-4xl md:text-6xl font-black text-[#00735C] mb-6 leading-tight uppercase reveal delay-100"
-          >
-            Our <br className="hidden md:block" /> Impact
-          </h2>
 
-          <p
-            className="font-cabin max-w-2xl mx-auto text-gray-600 text-base md:text-lg mb-16 leading-relaxed font-semibold reveal delay-200"
-          >
-            Real change created through compassion, collaboration, and a shared
-            commitment to building stronger and more resilient communities.
-          </p>
-
-          <div className="mt-16 reveal delay-300">
-            <StatsSection />
-          </div>
-        </div>
-      </section>
-
-      {/* Rest of the code remains exactly the same... */}
-      {/* VIDEO STORIES SECTION... */}
 
       {/* VIDEO STORIES SECTION (Light Theme) */}
       <section
@@ -442,5 +410,5 @@ export default function ImpactComponent() {
         </div>
       )}
     </main>
-  );
+  )
 }
