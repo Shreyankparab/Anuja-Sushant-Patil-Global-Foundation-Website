@@ -29,10 +29,10 @@ export default function Footer() {
             className="font-cabin w-full bg-[#0a7061] text-white pt-8 pb-0"
         >
             {/* TOP SECTION */}
-            <div className="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 pb-6">
+            <div className="px-6 min-[870px]:px-20 grid grid-cols-1 min-[870px]:grid-cols-2 gap-8 pb-6">
                 {/* LEFT SIDE */}
-                <div className="flex flex-col items-center text-center pl-2 md:pl-16 lg:pl-20">
-                    <div className="relative w-[300px] md:w-[450px] h-[80px] md:h-[110px] mx-auto bg-white rounded-2xl p-4 mb-6 shadow-sm">
+                <div className="flex flex-col items-center text-center  min-[870px]:pl-16 lg:pl-20">
+                    <div className="relative w-[300px] min-[1200px]:w-[450px] h-[80px] min-[1200px]:h-[110px] mx-auto bg-white rounded-2xl p-4 mb-6 shadow-sm">
                         <Image
                             src="/images/aspgf-logo.webp"
                             alt="Logo"
@@ -69,7 +69,7 @@ export default function Footer() {
                 </div>
 
                 {/* RIGHT SIDE - LINKS + CONTACT */}
-                <div className="flex flex-col gap-6 md:pl-12 md:border-l md:border-white/100">
+                <div className="flex flex-col gap-6 min-[870px]:pl-12 min-[870px]:border-l min-[870px]:border-white/100">
                     <div>
                         <h3
                             className="font-nunito text-[24px] font-extrabold mb-6 tracking-wide"
@@ -134,13 +134,13 @@ export default function Footer() {
             </div>
 
             {/* BOTTOM BAR */}
-            <div className="w-full bg-[#004540] py-6 px-8 md:px-20 text-[14px] flex flex-col-reverse md:flex-row justify-between items-center text-white gap-6 md:gap-4">
+            <div className="w-full bg-[#004540] py-6 px-8 min-[870px]:px-20 text-[14px] flex flex-col-reverse min-[870px]:flex-row justify-between items-center text-white gap-6 min-[870px]:gap-4">
 
-                <p className="opacity-70 text-center md:text-left md:pl-16 flex-1 font-medium">
+                <p className="opacity-70 text-center min-[870px]:text-left min-[870px]:pl-16 flex-1 font-medium">
                     © 2026 Anuja Sushant Patil Global Foundation. All Rights Reserved.
                 </p>
 
-                <div className="flex justify-between md:justify-end items-center w-full md:w-auto gap-6 md:gap-10 font-bold">
+                <div className="flex justify-between min-[870px]:justify-end items-center w-full min-[870px]:w-auto gap-6 min-[870px]:gap-10 font-bold">
                     <Link
                         href="/privacy-policy"
                         className="opacity-70 hover:opacity-100 transition-opacity"

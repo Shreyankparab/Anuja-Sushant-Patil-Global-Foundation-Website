@@ -172,7 +172,7 @@ export default function AboutPage() {
                     />
                     {/* Mobile Background Image */}
                     <Image
-                        src="/images/about-us/hero-image-about-us.png"
+                        src="/images/about-us/hero-image-about-us.webp"
                         alt="Happy children in community mobile"
                         fill
                         sizes="100vw"
@@ -245,7 +245,7 @@ export default function AboutPage() {
 
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
                                         <Image
-                                            src="/images/about-us/sushant-patil.png"
+                                            src="/images/about-us/sushant-patil.webp"
                                             alt="Dr. Sushant Patil, Founder of Anuja Sushant Patil Global Foundation"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 400px"
@@ -365,7 +365,7 @@ export default function AboutPage() {
 
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
                                         <Image
-                                            src="/images/about-us/anuja-patil.png"
+                                            src="/images/about-us/anuja-patil.webp"
                                             alt="Advocate Anuja Sushant Patil, Founder of Anuja Sushant Patil Global Foundation"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 400px"
@@ -492,7 +492,7 @@ export default function AboutPage() {
 
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-transparent border-[6px] border-white relative z-10">
                                         <Image
-                                            src="/images/about-us/shriram-sir.png"
+                                            src="/images/about-us/shriram-sir.webp"
                                             alt="Dr. Shriram Chavan, Project Director of Anuja Sushant Patil Global Foundation"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 400px"

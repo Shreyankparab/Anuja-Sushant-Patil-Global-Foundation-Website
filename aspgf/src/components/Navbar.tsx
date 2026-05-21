@@ -35,7 +35,7 @@ export function Navbar() {
                 // Threshold to prevent flickering (e.g., 50px)
                 if (Math.abs(currentScrollY - lastScrollY) < 10) return;
 
-                if (window.innerWidth >= 1025) {
+                if (window.innerWidth >= 1000) {
                     if (currentScrollY > lastScrollY && currentScrollY > 150) {
                         setIsVisible(false); // Scrolling down
                     } else {
@@ -72,53 +72,53 @@ export function Navbar() {
     return (
         <>
             <header
-                className={`font-cabin w-full bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-[10020] transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "xl:-translate-y-full"}`}
+                className={`font-cabin w-full bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-[10020] transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "nav:-translate-y-full"}`}
             >
-                {/* ================= TOP BAR ================= */}
-                <div className="hidden xl:flex w-full px-6 lg:px-10 h-16 items-center justify-between relative">
-                    {/* LOGO - Hanging over Top and Nav Bar */}
-                    <div className="absolute left-6 lg:left-10 top-0 z-[10025]">
-                        <div className="relative w-72 h-28 lg:w-80 lg:h-32">
-                            <Link href="/">
-                                <Image
-                                    src="/images/aspgf-logo.webp"
-                                    alt="ASPGF Logo"
-                                    fill
-                                    className="object-contain cursor-pointer"
-                                    priority
-                                />
-                            </Link>
-                        </div>
+                {/* LOGO - Hanging over Top and Nav Bar */}
+                <div className="hidden nav:block absolute left-6 xl:left-10 top-1/2 -translate-y-1/2 z-[10025]">
+                    <div className="relative w-52 h-20 xl:w-80 xl:h-32">
+                        <Link href="/">
+                            <Image
+                                src="/images/aspgf-logo.webp"
+                                alt="ASPGF Logo"
+                                fill
+                                className="object-contain cursor-pointer"
+                                priority
+                            />
+                        </Link>
                     </div>
+                </div>
 
+                {/* ================= TOP BAR ================= */}
+                <div className="hidden nav:flex w-full px-6 lg:px-10 h-12 xl:h-16 items-center justify-between relative">
                     <div>{/* Empty space for logo */}</div>
 
                     {/* CONTACT INFO */}
-                    <div className="hidden lg:flex items-center gap-6 ml-auto text-[12px]">
+                    <div className="hidden nav:flex items-center gap-3 xl:gap-6 ml-auto text-[11px] xl:text-[12px]">
                         {/* CIN Number */}
-                        <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-[#00715D]/10 flex items-center justify-center">
-                                <span className="font-nunito text-[#00715D] font-black text-[10px]">CIN</span>
+                        <div className="flex items-center gap-1.5 xl:gap-2">
+                            <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full bg-[#00715D]/10 flex items-center justify-center shrink-0">
+                                <span className="font-nunito text-[#00715D] font-black text-[9px] xl:text-[10px]">CIN</span>
                             </div>
                             <div>
-                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Corporate ID</p>
-                                <p className="font-cabin font-extrabold text-[#1A2E35]">U85499PN2025NPL237590</p>
+                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Corporate ID</p>
+                                <p className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px] tracking-tight">U85499PN2025NPL237590</p>
                             </div>
                         </div>
 
                         <div className="h-8 w-px bg-gray-200" />
 
                         {/* Phone */}
-                        <div className="flex items-center gap-2">
-                            <Phone size={14} className="text-[#00715D]" />
+                        <div className="flex items-center gap-1.5 xl:gap-2">
+                            <Phone size={13} className="text-[#00715D] xl:w-3.5 xl:h-3.5 shrink-0" />
                             <div>
-                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Helpline</p>
+                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Helpline</p>
                                 <a
                                     href="tel:+919684001643"
                                     className="hover:underline"
                                 >
                                     <p
-                                        className="font-cabin font-extrabold text-[#1A2E35]"
+                                        className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px]"
                                     >
                                         9684001643
                                     </p>
@@ -129,16 +129,16 @@ export function Navbar() {
                         <div className="h-8 w-px bg-gray-200" />
 
                         {/* Email */}
-                        <div className="flex items-center gap-2">
-                            <Mail size={14} className="text-[#00715D]" />
+                        <div className="flex items-center gap-1.5 xl:gap-2">
+                            <Mail size={13} className="text-[#00715D] xl:w-3.5 xl:h-3.5 shrink-0" />
                             <div>
-                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Send email</p>
+                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Send email</p>
                                 <a
                                     href="mailto:project.director@aspgf.org"
                                     className="hover:underline"
                                 >
                                     <p
-                                        className="font-cabin font-extrabold text-[#1A2E35] lowercase"
+                                        className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px] lowercase"
                                     >
                                         project.director<span className="font-nunito">@</span>aspgf.org
                                     </p>
@@ -149,12 +149,12 @@ export function Navbar() {
                         <div className="h-8 w-px bg-gray-200" />
 
                         {/* Location */}
-                        <div className="flex items-center gap-2">
-                            <MapPin size={14} className="text-[#00715D]" />
+                        <div className="flex items-center gap-1.5 xl:gap-2">
+                            <MapPin size={13} className="text-[#00715D] xl:w-3.5 xl:h-3.5 shrink-0" />
                             <div>
-                                <p className="font-nunito text-gray-400 font-bold uppercase tracking-tighter">Balewadi</p>
+                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Balewadi</p>
                                 <p
-                                    className="font-cabin font-extrabold text-[#1A2E35]"
+                                    className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px]"
                                 >
                                     Pune, India
                                 </p>
@@ -164,12 +164,12 @@ export function Navbar() {
                 </div>
 
                 {/* ================= NAV BAR ================= */}
-                <div className="hidden xl:flex w-full items-stretch">
+                <div className="hidden nav:flex w-full items-stretch">
                     {/* LEFT SPACER (aligns curve visually) */}
-                    <div className="hidden xl:block w-[15%] ml-60" />
+                    <div className="hidden nav:block w-[4%] xl:w-[15%] ml-52 xl:ml-60" />
 
-                    <nav className="bg-[#00735C] flex-1 flex items-center px-10 rounded-tl-[45px] h-16">
-                        <ul className="flex items-center gap-16 text-white font-bold text-[15px] tracking-wide">
+                    <nav className="bg-[#00735C] flex-1 flex items-center pl-12 pr-4 xl:px-10 rounded-tl-[45px] h-12 xl:h-16">
+                        <ul className="flex items-center gap-4 lg:gap-6 xl:gap-8 2xl:gap-16 text-white font-bold text-[13.5px] lg:text-[14px] xl:text-[15px] tracking-wide">
                             {navLinks.map((link) => {
                                 const isActive = pathname === link.href;
                                 return (
@@ -195,7 +195,7 @@ export function Navbar() {
                     {/* DONATE BUTTON */}
                     <Link
                         href="/donate-us"
-                        className="h-16 px-10 bg-[#A828C6] hover:bg-[#9122AB] transition-all flex items-center gap-2 text-white font-black text-sm uppercase tracking-widest cursor-pointer whitespace-nowrap"
+                        className="h-12 xl:h-16 px-5 lg:px-8 xl:px-10 bg-[#A828C6] hover:bg-[#9122AB] transition-all flex items-center gap-2 text-white font-black text-xs lg:text-sm uppercase tracking-widest cursor-pointer whitespace-nowrap"
                     >
                         <HandHeart size={22} strokeWidth={2.5} />
                         <span>Donate</span>
@@ -204,7 +204,7 @@ export function Navbar() {
                 </div>
 
                 {/* ================= MOBILE HEADER ================= */}
-                <div className="xl:hidden flex items-center justify-between px-6 md:px-10 h-20 bg-white shadow-sm">
+                <div className="nav:hidden flex items-center justify-between px-6 md:px-10 h-20 bg-white shadow-sm">
                     <Link href="/" className="relative w-56 h-14 md:w-64 md:h-16">
                         <Image
                             src="/images/aspgf-logo.webp"
@@ -225,11 +225,11 @@ export function Navbar() {
 
             {/* MOBILE MENU OVERLAY */}
             <div
-                className={`xl:hidden fixed inset-0 bg-[#00000080] backdrop-blur-sm transition-all duration-300 z-[10010] ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                className={`nav:hidden fixed inset-0 bg-[#00000080] backdrop-blur-sm transition-all duration-300 z-[10010] ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                     }`}
                 onClick={() => setIsMenuOpen(false)}
             />            <div
-                className={`xl:hidden fixed top-0 right-0 h-full w-[85%] md:w-[400px] bg-white shadow-2xl transition-transform duration-500 ease-in-out z-[10015] ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                className={`nav:hidden fixed top-0 right-0 h-full w-[85%] md:w-[400px] bg-white shadow-2xl transition-transform duration-500 ease-in-out z-[10015] ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 <div className="p-8 pt-24 flex flex-col h-full">
@@ -240,12 +240,12 @@ export function Navbar() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="font-nunito text-xl font-extrabold transition-colors flex items-center justify-between group text-[#1A2E35] xl:hover:text-[#00735C]"
+                                        className="font-nunito text-xl font-extrabold transition-colors flex items-center justify-between group text-[#1A2E35] nav:hover:text-[#00735C]"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         {link.name}
                                         <div
-                                            className={`w-2 h-2 rounded-full bg-[#00735C] transition-opacity ${isActive ? "opacity-100" : "opacity-0 xl:group-hover:opacity-100"
+                                            className={`w-2 h-2 rounded-full bg-[#00735C] transition-opacity ${isActive ? "opacity-100" : "opacity-0 nav:group-hover:opacity-100"
                                                 }`}
                                         />
                                     </Link>

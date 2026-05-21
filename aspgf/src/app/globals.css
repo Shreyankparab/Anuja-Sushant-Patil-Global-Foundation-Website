@@ -13,7 +13,8 @@
   --font-nunito: var(--font-nunito);
   --font-cabin: var(--font-cabin);
   --font-caveat: var(--font-caveat);
-  /* --font-lexend: var(--font-lexend); */
+  --font-lexend: var(--font-lexend);
+  --breakpoint-nav: 1000px;
 }
 
 @media (prefers-color-scheme: dark) {

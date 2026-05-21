@@ -35,11 +35,11 @@ const caveat = Caveat({
   weight: ["700"],
 });
 
-// const lexend = Lexend({
-//   variable: "--font-lexend",
-//   subsets: ["latin"],
-//   weight: ["800", "900"],
-// });
+const lexend = Lexend({
+  variable: "--font-lexend",
+  subsets: ["latin"],
+  weight: ["800", "900"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -97,7 +97,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${nunito.variable} ${cabin.variable} ${caveat.variable} antialiased overflow-x-hidden`}
+        className={`${nunito.variable} ${cabin.variable} ${caveat.variable} ${lexend.variable} antialiased overflow-x-hidden`}
       >
         <LoadingProvider>
           <Suspense fallback={null}>
@@ -111,8 +111,8 @@ export default function RootLayout({
               <Navbar />
             </div>
 
-            {/* Page Content */}
-            <main className="pt-20 xl:pt-28 w-full">
+             {/* Page Content */}
+            <main className="pt-20 nav:pt-[96px] xl:pt-[128px] w-full">
               {children}
             </main>
 
