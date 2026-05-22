@@ -302,19 +302,19 @@ export default function ImpactSection() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => setShowSidebar(!showSidebar)}
-                  className={`p-3 rounded-full transition-all hover:scale-110 active:scale-95 ${showSidebar ? "bg-[#00735C] text-black" : "bg-white/10 text-white"}`}
+                  className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${showSidebar ? "bg-[#00735C] text-white hover:bg-[#00735C] hover:text-white" : "bg-white/10 text-white/60 hover:text-white hover:bg-[#00735C]"}`}
                   title="Toggle Stories"
                 >
-                  <Info size={16} className="md:w-6 md:h-6" />
+                  <Info size={24} />
                 </button>
                 <button
                   onClick={() => setActiveVideo(null)}
-                  className="text-white/60 hover:text-white transition-colors p-3 bg-white/10 rounded-full hover:bg-red-500/80 group"
+                  className="w-12 h-12 flex-shrink-0 bg-white/10 text-white/60 hover:text-white hover:bg-red-500 rounded-full flex items-center justify-center transition-all duration-300 group"
                   title="Close View"
                 >
                   <X
                     size={24}
-                    className="md:w-8 md:h-8 group-rotate-90 transition-transform duration-300"
+                    className="transition-transform duration-300 group-hover:rotate-90"
                   />
                 </button>
               </div>
@@ -333,16 +333,6 @@ export default function ImpactSection() {
                     allow="autoplay; encrypted-media"
                     allowFullScreen
                   ></iframe>
-                </div>
-                <div className="hidden lg:flex items-center gap-6 p-4 bg-white/5 rounded-xl border border-white/5">
-                  <div className="flex items-center gap-2 text-gray-400 font-bold">
-                    <FaMapMarkerAlt size={18} className="text-[#00735C]" />
-                    <span>{activeVideo.location}</span>
-                  </div>
-                  <div className="w-px h-6 bg-white/10" />
-                  <div className="text-gray-400 font-bold">
-                    {activeVideo.year} | {activeVideo.duration}
-                  </div>
                 </div>
               </div>
 

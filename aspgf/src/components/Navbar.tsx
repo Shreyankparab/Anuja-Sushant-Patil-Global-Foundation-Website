@@ -75,8 +75,8 @@ export function Navbar() {
                 className={`font-cabin w-full bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-[10020] transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "nav:-translate-y-full"}`}
             >
                 {/* LOGO - Hanging over Top and Nav Bar */}
-                <div className="hidden nav:block absolute left-6 xl:left-10 top-1/2 -translate-y-1/2 z-[10025]">
-                    <div className="relative w-52 h-20 xl:w-80 xl:h-32">
+                <div className="hidden nav:block absolute left-6 min-[1200px]:left-10 top-1/2 -translate-y-1/2 z-[10025]">
+                    <div className="relative w-52 h-20 min-[1200px]:w-80 min-[1200px]:h-32">
                         <Link href="/">
                             <Image
                                 src="/images/aspgf-logo.webp"
@@ -90,35 +90,35 @@ export function Navbar() {
                 </div>
 
                 {/* ================= TOP BAR ================= */}
-                <div className="hidden nav:flex w-full px-6 lg:px-10 h-12 xl:h-16 items-center justify-between relative">
+                <div className="hidden nav:flex w-full px-6 lg:px-10 h-12 min-[1200px]:h-16 items-center justify-between relative">
                     <div>{/* Empty space for logo */}</div>
 
                     {/* CONTACT INFO */}
-                    <div className="hidden nav:flex items-center gap-3 xl:gap-6 ml-auto text-[11px] xl:text-[12px]">
+                    <div className="hidden nav:flex items-center gap-3 min-[1200px]:gap-6 ml-auto text-[11px] min-[1200px]:text-[12px]">
                         {/* CIN Number */}
-                        <div className="flex items-center gap-1.5 xl:gap-2">
-                            <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full bg-[#00715D]/10 flex items-center justify-center shrink-0">
-                                <span className="font-nunito text-[#00715D] font-black text-[9px] xl:text-[10px]">CIN</span>
+                        <div className="flex items-center gap-1.5 min-[1200px]:gap-2">
+                            <div className="w-7 h-7 min-[1200px]:w-8 min-[1200px]:h-8 rounded-full bg-[#00715D]/10 flex items-center justify-center shrink-0">
+                                <span className="font-nunito text-[#00715D] font-black text-[9px] min-[1200px]:text-[10px]">CIN</span>
                             </div>
                             <div>
-                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Corporate ID</p>
-                                <p className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px] tracking-tight">U85499PN2025NPL237590</p>
+                                <p className="hidden min-[1200px]:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Corporate ID</p>
+                                <p className="font-cabin font-extrabold text-[#1A2E35] text-[11px] min-[1200px]:text-[12px] tracking-tight">U85499PN2025NPL237590</p>
                             </div>
                         </div>
 
                         <div className="h-8 w-px bg-gray-200" />
 
                         {/* Phone */}
-                        <div className="flex items-center gap-1.5 xl:gap-2">
-                            <Phone size={13} className="text-[#00715D] xl:w-3.5 xl:h-3.5 shrink-0" />
+                        <div className="flex items-center gap-1.5 min-[1200px]:gap-2">
+                            <Phone size={13} className="text-[#00715D] min-[1200px]:w-3.5 min-[1200px]:h-3.5 shrink-0" />
                             <div>
-                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Helpline</p>
+                                <p className="hidden min-[1200px]:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Helpline</p>
                                 <a
                                     href="tel:+919011553365"
                                     className="hover:underline"
                                 >
                                     <p
-                                        className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px]"
+                                        className="font-cabin font-extrabold text-[#1A2E35] text-[11px] min-[1200px]:text-[12px]"
                                     >
                                         9011553365
                                     </p>
@@ -129,16 +129,16 @@ export function Navbar() {
                         <div className="h-8 w-px bg-gray-200" />
 
                         {/* Email */}
-                        <div className="flex items-center gap-1.5 xl:gap-2">
-                            <Mail size={13} className="text-[#00715D] xl:w-3.5 xl:h-3.5 shrink-0" />
+                        <div className="flex items-center gap-1.5 min-[1200px]:gap-2">
+                            <Mail size={13} className="text-[#00715D] min-[1200px]:w-3.5 min-[1200px]:h-3.5 shrink-0" />
                             <div>
-                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Send email</p>
+                                <p className="hidden min-[1200px]:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Send email</p>
                                 <a
                                     href="mailto:project.director@aspgf.org"
                                     className="hover:underline"
                                 >
                                     <p
-                                        className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px] lowercase"
+                                        className="font-cabin font-extrabold text-[#1A2E35] text-[11px] min-[1200px]:text-[12px] lowercase"
                                     >
                                         project.director<span className="font-nunito">@</span>aspgf.org
                                     </p>
@@ -149,12 +149,12 @@ export function Navbar() {
                         <div className="h-8 w-px bg-gray-200" />
 
                         {/* Location */}
-                        <div className="flex items-center gap-1.5 xl:gap-2">
-                            <MapPin size={13} className="text-[#00715D] xl:w-3.5 xl:h-3.5 shrink-0" />
+                        <div className="flex items-center gap-1.5 min-[1200px]:gap-2">
+                            <MapPin size={13} className="text-[#00715D] min-[1200px]:w-3.5 min-[1200px]:h-3.5 shrink-0" />
                             <div>
-                                <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Balewadi</p>
+                                <p className="hidden min-[1200px]:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Balewadi</p>
                                 <p
-                                    className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px]"
+                                    className="font-cabin font-extrabold text-[#1A2E35] text-[11px] min-[1200px]:text-[12px]"
                                 >
                                     Pune, India
                                 </p>
@@ -166,10 +166,10 @@ export function Navbar() {
                 {/* ================= NAV BAR ================= */}
                 <div className="hidden nav:flex w-full items-stretch">
                     {/* LEFT SPACER (aligns curve visually) */}
-                    <div className="hidden nav:block w-[4%] xl:w-[15%] ml-52 xl:ml-60" />
+                    <div className="hidden nav:block w-[4%] min-[1200px]:w-[15%] ml-52 min-[1200px]:ml-60" />
 
-                    <nav className="bg-[#00735C] flex-1 flex items-center pl-12 pr-4 xl:px-10 rounded-tl-[45px] h-12 xl:h-16">
-                        <ul className="flex items-center gap-4 lg:gap-6 xl:gap-8 2xl:gap-16 text-white font-bold text-[13.5px] lg:text-[14px] xl:text-[15px] tracking-wide">
+                    <nav className="bg-[#00735C] flex-1 flex items-center pl-12 pr-4 min-[1200px]:pl-16 min-[1200px]:pr-12 rounded-tl-[45px] h-12 min-[1200px]:h-16">
+                        <ul className="flex items-center gap-4 lg:gap-6 xl:gap-8 2xl:gap-16 text-white font-bold text-[13.5px] lg:text-[14px] xl:text-[15px] tracking-wide min-[1200px]:w-full min-[1200px]:justify-between">
                             {navLinks.map((link) => {
                                 const isActive = pathname === link.href;
                                 return (
@@ -195,7 +195,7 @@ export function Navbar() {
                     {/* DONATE BUTTON */}
                     <Link
                         href="/donate-us"
-                        className="h-12 xl:h-16 px-5 lg:px-8 xl:px-10 bg-[#A828C6] hover:bg-[#9122AB] transition-all flex items-center gap-2 text-white font-black text-xs lg:text-sm uppercase tracking-widest cursor-pointer whitespace-nowrap"
+                        className="h-12 min-[1200px]:h-16 px-5 lg:px-8 min-[1200px]:px-10 bg-[#A828C6] hover:bg-[#9122AB] transition-all flex items-center gap-2 text-white font-black text-xs lg:text-sm uppercase tracking-widest cursor-pointer whitespace-nowrap"
                     >
                         <HandHeart size={22} strokeWidth={2.5} />
                         <span>Donate</span>

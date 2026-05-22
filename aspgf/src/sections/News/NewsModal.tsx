@@ -124,21 +124,21 @@ export default function NewsModal({ isOpen, onClose, items, initialIndex }: News
                             e.stopPropagation();
                             setShowInfo(!showInfo);
                         }}
-                        className={`p-2.5 md:p-3 rounded-full transition-all hover:scale-110 active:scale-95 ${showInfo ? "bg-[#00715D] text-black" : "bg-white/10 text-white"}`}
+                        className={`w-10 h-10 md:w-12 md:h-12 flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${showInfo ? "bg-[#00715D] text-white hover:bg-[#00715D] hover:text-white" : "bg-white/10 text-white/60 hover:text-white hover:bg-[#00715D]"}`}
                     >
                         <InfoIcon className="w-5 h-5" />
                     </button>
                     <button
                         onClick={toggleZoom}
-                        className="p-2.5 md:p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-110 active:scale-95"
+                        className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
                     >
                         <ZoomIcon className="w-5 h-5" />
                     </button>
                     <button
                         onClick={onClose}
-                        className="p-2.5 md:p-3 rounded-full bg-white/10 hover:bg-red-500/80 text-white transition-all hover:scale-110 active:scale-95 group"
+                        className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 bg-white/10 text-white/60 hover:text-white hover:bg-red-500 rounded-full flex items-center justify-center transition-all duration-300 group"
                     >
-                        <FiX className="text-lg md:text-2xl group-rotate-90 transition-transform duration-300" />
+                        <FiX className="text-lg md:text-2xl transition-transform duration-300 group-hover:rotate-90" />
                     </button>
                 </div>
             </div>

@@ -71,16 +71,17 @@ export default function GalleryModal({
               e.stopPropagation();
               setShowInfo(!showInfo);
             }}
-            className={`p-3 rounded-full transition-all ${showInfo ? "bg-[#00735C] text-white" : "bg-white/10 text-white hover:bg-white/20"}`}
+            className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${showInfo ? "bg-[#00735C] text-white hover:bg-[#00735C] hover:text-white" : "bg-white/10 text-white/60 hover:text-white hover:bg-[#00735C]"}`}
             title="Toggle Info"
           >
-            <Info size={20} />
+            <Info size={24} />
           </button>
           <button
             onClick={onClose}
-            className="p-3 rounded-full bg-white/10 text-white hover:bg-red-500 transition-colors"
+            className="w-12 h-12 flex-shrink-0 bg-white/10 text-white/60 hover:text-white hover:bg-red-500 rounded-full flex items-center justify-center transition-all duration-300 group"
+            title="Close View"
           >
-            <X size={20} />
+            <X size={24} className="transition-transform duration-300 group-hover:rotate-90" />
           </button>
         </div>
       </div>

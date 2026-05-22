@@ -114,7 +114,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <p className="font-nunito text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1.5">
+                    <p className="font-nunito text-[10px] font-black text-[#00735C] uppercase tracking-[0.15em] mb-1.5">
                       Address
                     </p>
 
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <p className="font-nunito text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1">
+                    <p className="font-nunito text-[10px] font-black text-[#00735C] uppercase tracking-[0.15em] mb-1">
                       Helpline
                     </p>
 
@@ -157,7 +157,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <p className="font-nunito text-[10px] font-bold text-[#00735C] uppercase tracking-[0.15em] mb-1">
+                    <p className="font-nunito text-[10px] font-black text-[#00735C] uppercase tracking-[0.15em] mb-1">
                       Email
                     </p>
 
@@ -233,11 +233,8 @@ export default function ContactPage() {
               <div className="flex items-center justify-between mb-2">
                 <div className="flex flex-col">
                   <h3 className="font-nunito text-[22px] font-extrabold text-[#1A2E35]">
-                    Solitaire Business Hub
-                  </h3>
-                  <p className="font-cabin text-[#00735C] text-[10px] font-extrabold uppercase tracking-widest mt-1">
                     Operating Hours
-                  </p>
+                  </h3>
                 </div>
 
                 {!isSunday ? (

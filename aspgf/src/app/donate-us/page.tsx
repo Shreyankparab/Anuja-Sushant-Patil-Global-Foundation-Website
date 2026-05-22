@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function DonateUsPage() {
     return (
         <>
-            <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-24 select-none">
+            <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-24">
                 <div className="max-w-7xl mx-auto">
                     {/* Header Section */}
                     <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -31,88 +31,84 @@ export default function DonateUsPage() {
                         </p>
                     </div>
 
-                    <div className="flex flex-col xl:flex-row items-stretch gap-10 xl:gap-14">
+                    <div className="flex flex-col min-[1200px]:flex-row items-stretch gap-10 min-[1200px]:gap-14">
 
                         {/* LEFT SIDE */}
-                        <div className="w-full xl:w-1/2 flex flex-col justify-between">
-
-                            <div>
-                                <h2 className="font-nunito text-2xl md:text-3xl font-extrabold text-[#1A2E35] mb-8 flex items-center gap-3">
-                                    <div className="w-11 h-11 rounded-full bg-[#D5EBE1] flex items-center justify-center flex-shrink-0">
-                                        <Landmark className="text-[#00735C]" size={22} />
-                                    </div>
-                                    Bank Account Details
-                                </h2>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-                                    {/* Bank Name */}
-                                    <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all">
-                                        <Building2 className="text-[#00735C] mb-3" size={24} />
-                                        <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
-                                            Bank Name
-                                        </p>
-                                        <p className="font-cabin text-[#1A2E35] font-bold text-base leading-relaxed">
-                                            HDFC BANK LTD
-                                        </p>
-                                    </div>
-
-                                    {/* Account Holder */}
-                                    <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all">
-                                        <CreditCard className="text-[#00735C] mb-3" size={24} />
-                                        <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
-                                            Account Holder
-                                        </p>
-                                        <p className="font-cabin text-[#1A2E35] font-bold text-base leading-relaxed">
-                                            Anuja Sushant Patil Global Foundation
-                                        </p>
-                                    </div>
-
-                                    {/* Account Number */}
-                                    <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all">
-                                        <Banknote className="text-[#00735C] mb-3" size={24} />
-                                        <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
-                                            Account Number
-                                        </p>
-                                        <p className="font-cabin text-[#1A2E35] font-extrabold text-lg tracking-wider break-all">
-                                            50200110314690
-                                        </p>
-                                    </div>
-
-                                    {/* IFSC */}
-                                    <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all">
-                                        <Landmark className="text-[#00735C] mb-3" size={24} />
-                                        <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
-                                            IFSC Code
-                                        </p>
-                                        <p className="font-cabin text-[#1A2E35] font-extrabold text-lg tracking-wider">
-                                            HDFC0002453
-                                        </p>
-                                    </div>
-
+                        <div className="w-full min-[1200px]:w-1/2 flex flex-col justify-between">
+                            <h2 className="font-nunito text-2xl md:text-3xl font-extrabold text-[#1A2E35] mb-8 flex items-center gap-3">
+                                <div className="w-11 h-11 rounded-full bg-[#D5EBE1] flex items-center justify-center flex-shrink-0">
+                                    <Landmark className="text-[#00735C]" size={22} />
                                 </div>
-                            </div>
+                                Bank Account Details
+                            </h2>
 
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                {/* Bank Name */}
+                                <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all flex flex-col h-full">
+                                    <Building2 className="text-[#00735C] mb-3" size={24} />
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
+                                        Bank Name
+                                    </p>
+                                    <p className="font-cabin text-[#1A2E35] font-bold text-base leading-relaxed">
+                                        HDFC BANK LTD
+                                    </p>
+                                </div>
+
+                                {/* Account Holder */}
+                                <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all flex flex-col h-full">
+                                    <CreditCard className="text-[#00735C] mb-3" size={24} />
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
+                                        Account Holder
+                                    </p>
+                                    <p className="font-cabin text-[#1A2E35] font-bold text-base leading-relaxed">
+                                        Anuja Sushant Patil Global Foundation
+                                    </p>
+                                </div>
+
+                                {/* Account Number */}
+                                <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all flex flex-col h-full">
+                                    <Banknote className="text-[#00735C] mb-3" size={24} />
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
+                                        Account Number
+                                    </p>
+                                    <p className="font-cabin text-[#1A2E35] font-bold text-base leading-relaxed break-all">
+                                        50200110314690
+                                    </p>
+                                </div>
+
+                                {/* IFSC */}
+                                <div className="bg-[#f8faf9] p-6 rounded-3xl border border-[#e8f1ec] hover:shadow-lg transition-all flex flex-col h-full">
+                                    <Landmark className="text-[#00735C] mb-3" size={24} />
+                                    <p className="font-nunito text-xs font-extrabold text-[#00735C] uppercase tracking-wider mb-2">
+                                        IFSC Code
+                                    </p>
+                                    <p className="font-cabin text-[#1A2E35] font-bold text-base leading-relaxed">
+                                        HDFC0002453
+                                    </p>
+                                </div>
+
+                            </div>
                         </div>
 
                         {/* RIGHT SIDE */}
-                        <div className="w-full xl:w-1/2">
+                        <div className="w-full min-[1200px]:w-1/2">
 
-                            <div className="bg-[#00735C] rounded-[36px] p-7 md:p-10 h-full relative overflow-hidden hover:shadow-2xl transition-all">
+                            <div className="bg-[#00735C] rounded-[36px] p-6 md:p-8 h-full relative overflow-hidden hover:shadow-2xl transition-all">
 
                                 <div className="absolute right-[-40px] bottom-[-40px] w-56 h-56 bg-white/5 rounded-full blur-3xl"></div>
 
-                                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 h-full">
+                                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 h-full">
 
                                     {/* LEFT CONTENT */}
-                                    <div className="w-full lg:w-[58%] flex flex-col justify-center gap-8">
+                                    <div className="w-full lg:w-[58%] flex flex-col justify-center gap-6">
 
                                         <div>
-                                            <h3 className="font-nunito text-3xl font-extrabold text-white mb-5">
+                                            <h3 className="font-nunito text-2xl md:text-3xl font-extrabold text-white mb-3">
                                                 Support the Change
                                             </h3>
 
-                                            <p className="font-cabin text-white/90 text-lg leading-relaxed">
+                                            <p className="font-cabin text-white/90 text-base md:text-lg leading-relaxed">
                                                 "Your small contribution can bring a big change.
                                                 Every rupee donated directly empowers lives and
                                                 helps create a brighter tomorrow."
@@ -124,9 +120,9 @@ export default function DonateUsPage() {
                                             href="upi://pay?pa=anujasushantpatilglo.82069939@hdfcbank&pn=Anuja%20Sushant%20Patil%20Global%20Foundation"
                                             className="flex items-center gap-4 group w-full"
                                         >
-                                            <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all flex-shrink-0">
+                                            <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all flex-shrink-0">
 
-                                                <div className="relative w-8 h-4">
+                                                <div className="relative w-6 h-3">
                                                     <Image
                                                         src="/images/icons/upi-icon.svg"
                                                         alt="UPI"
@@ -138,7 +134,7 @@ export default function DonateUsPage() {
                                             </div>
 
                                             <div className="min-w-0">
-                                                <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-white/70 mb-1">
+                                                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 mb-1">
                                                     Pay via UPI
                                                 </p>
 
@@ -155,19 +151,19 @@ export default function DonateUsPage() {
 
                                         <a
                                             href="#open-qr-modal"
-                                            className="bg-white p-5 rounded-[32px] shadow-2xl hover:scale-105 transition-all duration-500 w-full max-w-[260px]"
+                                            className="bg-white p-4 rounded-[24px] shadow-2xl hover:scale-105 transition-all duration-500 w-full max-w-[210px]"
                                         >
                                             <div className="bg-gray-50 rounded-2xl border border-gray-100 p-2">
                                                 <Image
                                                     src="/images/donate-now/qr-code-aspgf.png"
                                                     alt="Donation QR"
-                                                    width={250}
-                                                    height={250}
+                                                    width={200}
+                                                    height={200}
                                                     className="rounded-xl w-full h-auto"
                                                 />
                                             </div>
 
-                                            <p className="font-nunito text-[#00735C] text-xs font-black text-center mt-4 uppercase tracking-[0.2em]">
+                                            <p className="font-nunito text-[#00735C] text-xs font-black text-center mt-3 uppercase tracking-[0.2em]">
                                                 Scan to Support
                                             </p>
                                         </a>

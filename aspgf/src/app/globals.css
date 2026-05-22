@@ -222,3 +222,12 @@ input[type="button"] {
   animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 700ms forwards;
   opacity: 0;
 }
+
+/* Make all images and SVGs non-draggable */
+img, svg {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
