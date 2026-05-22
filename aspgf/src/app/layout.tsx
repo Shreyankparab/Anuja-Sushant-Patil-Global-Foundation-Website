@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import { Suspense } from "react";
 import LoadingHandler, { LoadingProvider } from "@/components/LoadingHandler";
 import StickyInquiry from "@/components/StickyInquiry";
-import GlobalDragBlocker from "@/components/GlobalDragBlocker";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -101,7 +100,6 @@ export default function RootLayout({
         className={`${nunito.variable} ${cabin.variable} ${caveat.variable} ${lexend.variable} antialiased overflow-x-hidden`}
       >
         <LoadingProvider>
-          <GlobalDragBlocker />
           <Suspense fallback={null}>
             <LoadingHandler />
           </Suspense>

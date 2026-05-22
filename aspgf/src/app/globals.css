@@ -223,11 +223,9 @@ input[type="button"] {
   opacity: 0;
 }
 
-/* Make all images and SVGs non-draggable */
+/* Make all images and SVGs non-draggable and non-selectable */
 img, svg {
   -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
