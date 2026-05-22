@@ -39,7 +39,7 @@ export default function FAQSection() {
   return (
     <section className="relative w-full py-12 md:py-20 bg-[#f6f1e7] overflow-hidden">
       {/* Background Image Subtly Visible */}
-      <div className="absolute inset-0 opacity-20 bg-[url('/images/home-page/faqs.webp')] bg-cover bg-top filter blur-sm pointer-events-none"></div>
+      <div className="absolute top-0 left-0 right-0 h-[2000px] md:inset-0 md:h-full opacity-20 bg-[url('/images/home-page/faqs.webp')] bg-cover bg-top filter blur-sm pointer-events-none"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
