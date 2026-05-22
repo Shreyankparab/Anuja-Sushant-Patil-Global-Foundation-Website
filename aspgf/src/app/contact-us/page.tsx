@@ -91,10 +91,10 @@ export default function ContactPage() {
             </p>
             <div>
               <a
-                href="/donate-us#inquiry-form"
+                href="/donate-us"
                 className="font-cabin group relative inline-flex items-center gap-4 px-8 py-4 font-black text-white rounded-full text-lg bg-gradient-to-r from-[#006e57] to-[#00b874] shadow-xl shadow-[#006e57]/20 hover:shadow-[#00b874]/30 transition-all duration-500 transform hover:-translate-y-1 tracking-widest uppercase overflow-hidden"
               >
-                <span className="relative z-10">Inquiry Form</span>
+                <span className="relative z-10">Donate Now</span>
                 <div className="relative z-10 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-45">
                   <ArrowRight size={18} strokeWidth={3} />
                 </div>
