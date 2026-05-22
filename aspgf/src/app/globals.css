@@ -224,8 +224,9 @@ input[type="button"] {
 }
 
 /* Make all images and SVGs non-draggable and non-selectable */
-img, svg {
+img,
+svg {
   -webkit-user-drag: none;
   user-select: none;
-  pointer-events: none;
+
 }

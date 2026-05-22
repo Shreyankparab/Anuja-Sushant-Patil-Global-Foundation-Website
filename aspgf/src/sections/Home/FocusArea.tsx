@@ -79,6 +79,12 @@ export default function FocusArea() {
         .animate-marquee {
           animation: marquee 30s linear infinite;
         }
+
+        @media (min-width: 1200px) {
+          .animate-marquee {
+            animation: marquee 40s linear infinite;
+          }
+        }
       `}</style>
     </section>
   );
