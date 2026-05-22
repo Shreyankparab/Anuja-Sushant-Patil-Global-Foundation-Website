@@ -35,7 +35,7 @@ export default function ContactPage() {
     "logo": "https://aspgf.org/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9684001643",
+      "telephone": "+91-9011553365",
       "contactType": "helpline",
       "availableLanguage": ["en", "Hindi", "Marathi"]
     },
@@ -138,11 +138,11 @@ export default function ContactPage() {
                     </p>
 
                     <a
-                      href="tel:+919684001643"
+                      href="tel:+919011553365"
                       className="hover:underline transition-all"
                     >
                       <p className="font-nunito text-[#1A2E35] font-medium text-[14px] leading-tight">
-                        +91 9684001643
+                        +91 9011553365
                       </p>
                     </a>
                   </div>

@@ -114,13 +114,13 @@ export function Navbar() {
                             <div>
                                 <p className="hidden xl:block font-nunito text-gray-400 font-bold uppercase tracking-tighter">Helpline</p>
                                 <a
-                                    href="tel:+919684001643"
+                                    href="tel:+919011553365"
                                     className="hover:underline"
                                 >
                                     <p
                                         className="font-cabin font-extrabold text-[#1A2E35] text-[11px] xl:text-[12px]"
                                     >
-                                        9684001643
+                                        9011553365
                                     </p>
                                 </a>
                             </div>

@@ -57,7 +57,7 @@ export default function ImpactPage() {
 
                         <div className="flex items-center justify-center gap-4 mb-2 animate-[fade-up_0.6s_ease-out_both]">
                             <div className="h-[1px] w-12 md:w-20 bg-gray-300"></div>
-                            <span className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold italic">
+                            <span className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold">
                                 Proof of changes
                             </span>
                             <div className="h-[1px] w-12 md:w-20 bg-gray-300"></div>

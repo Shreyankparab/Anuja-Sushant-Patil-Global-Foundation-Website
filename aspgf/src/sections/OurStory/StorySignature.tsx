@@ -1,17 +1,17 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export default function StorySignature() {
+  const { ref, isIntersecting } = useIntersectionObserver({ rootMargin: "-100px" });
+
   return (
-    <section className="relative z-10 max-w-3xl mx-auto text-center px-6 pb-20">
-      <motion.div
-        className="bg-white p-12 rounded-2xl shadow-xl shadow-black/5"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+    <section ref={ref} className="relative z-10 max-w-3xl mx-auto text-center px-6 pb-20">
+      <div
+        className={`bg-white p-12 rounded-2xl shadow-xl shadow-black/5 transition-all duration-[800ms] ease-out ${
+          isIntersecting ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
       >
         <p className="font-cabin uppercase text-xs tracking-widest text-gray-400 font-bold mb-6">
           The End is Just the Beginning
@@ -29,7 +29,7 @@ export default function StorySignature() {
             The spark behind ASPGF
           </p>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

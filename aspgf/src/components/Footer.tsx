@@ -122,10 +122,10 @@ export default function Footer() {
                                     <Image src="/images/icons/call.svg" width={20} height={20} alt="phone" />
                                 </div>
                                 <a
-                                    href="tel:+919684001643"
+                                    href="tel:+919011553365"
                                     className="hover:underline transition-all"
                                 >
-                                    96840 01643
+                                    90115 53365
                                 </a>
                             </div>
                         </div>

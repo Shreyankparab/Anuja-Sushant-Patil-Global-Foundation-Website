@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageSquareText } from "lucide-react";
 import DonateForm from "@/sections/DonateUs/DonateForm";
 
@@ -19,8 +18,15 @@ const themeColors: Record<string, string> = {
 
 export default function StickyInquiry() {
     const [isOpen, setIsOpen] = useState(false);
+    const [renderModal, setRenderModal] = useState(false);
+    const [animateModal, setAnimateModal] = useState(false);
+    const [isButtonVisible, setIsButtonVisible] = useState(false);
     const pathname = usePathname();
     const [themeColor, setThemeColor] = useState("#1E40AF");
+
+    useEffect(() => {
+        setIsButtonVisible(true);
+    }, []);
 
     useEffect(() => {
         // Find matching color based on path prefix
@@ -30,6 +36,19 @@ export default function StickyInquiry() {
         const color = matchingPath ? themeColors[matchingPath] : themeColors["/"];
         setThemeColor(color);
     }, [pathname]);
+
+    // Manage exit and entry animation lifecycle
+    useEffect(() => {
+        if (isOpen) {
+            setRenderModal(true);
+            const timer = setTimeout(() => setAnimateModal(true), 10);
+            return () => clearTimeout(timer);
+        } else {
+            setAnimateModal(false);
+            const timer = setTimeout(() => setRenderModal(false), 300); // match Tailwind transition duration
+            return () => clearTimeout(timer);
+        }
+    }, [isOpen]);
 
     // Close modal on escape key
     useEffect(() => {
@@ -73,15 +92,15 @@ export default function StickyInquiry() {
         <>
             {/* Sticky Button */}
             <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[9995] flex flex-col items-end">
-                <motion.button
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                <button
                     onClick={() => setIsOpen(true)}
                     style={{
                         backgroundColor: themeColor,
                         boxShadow: `0 10px 30px ${themeColor}40`
                     }}
-                    className="relative overflow-hidden flex items-center gap-3 py-6 px-3 rounded-l-2xl text-white group cursor-pointer"
+                    className={`relative overflow-hidden flex items-center gap-3 py-6 px-3 rounded-l-2xl text-white group cursor-pointer transition-all duration-500 ease-out ${
+                        isButtonVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[100px]"
+                    }`}
                 >
                     {/* Diagonal Shine Effect */}
                     <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -94,55 +113,53 @@ export default function StickyInquiry() {
                             Inquiry Now
                         </span>
                     </div>
-                </motion.button>
+                </button>
             </div>
 
-            {/* Modal Overlay */}
-            <AnimatePresence>
-                {isOpen && (
-                    <div className="fixed inset-0 z-[10000] flex justify-end items-start p-4 md:p-6 overflow-hidden pointer-events-none">
-                        {/* Backdrop */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setIsOpen(false)}
-                            className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto"
-                        />
+            {/* Modal Overlay with transition container */}
+            {renderModal && (
+                <div className="fixed inset-0 z-[10000] flex justify-end items-start p-4 md:p-6 overflow-hidden pointer-events-none">
+                    {/* Backdrop */}
+                    <div
+                        onClick={() => setIsOpen(false)}
+                        className={`absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto transition-opacity duration-300 ${
+                            animateModal ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
 
-                        {/* Modal Container */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50, y: -20, scale: 0.95 }}
-                            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, x: 50, y: -20, scale: 0.95 }}
-                            className="relative w-full max-w-lg bg-white rounded-[32px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] pointer-events-auto"
-                        >
-                            {/* Form Section */}
-                            <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar relative">
-                                {/* Close Button */}
-                                <button
-                                    onClick={() => setIsOpen(false)}
-                                    className="absolute top-4 right-4 z-50 w-10 h-10 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-all group shadow-sm"
-                                >
-                                    <X size={20} className="group-hover:rotate-90 transition-transform duration-300" />
-                                </button>
+                    {/* Modal Container */}
+                    <div
+                        className={`relative w-full max-w-lg bg-white rounded-[32px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] pointer-events-auto transition-all duration-300 ease-out ${
+                            animateModal
+                                ? "opacity-100 translate-x-0 translate-y-0 scale-100"
+                                : "opacity-0 translate-x-[50px] -translate-y-[20px] scale-95"
+                        }`}
+                    >
+                        {/* Form Section */}
+                        <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar relative">
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                className="absolute top-4 right-4 z-50 w-10 h-10 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-all group shadow-sm"
+                            >
+                                <X size={20} className="group-hover:rotate-90 transition-transform duration-300" />
+                            </button>
 
-                                <div className="mb-6">
-                                    <span className="font-cabin text-[#00735C] font-black uppercase tracking-[0.3em] text-[10px] mb-2 block">Get started</span>
-                                    <h2 className="font-nunito text-2xl font-black text-[#1A2E35] mb-2 leading-tight">
-                                        Inquiry Form
-                                    </h2>
-                                    <div className="w-10 h-1 bg-[#00735C] rounded-full" />
-                                </div>
-
-                                <div className="w-full">
-                                    <DonateForm />
-                                </div>
+                            <div className="mb-6">
+                                <span className="font-cabin text-[#00735C] font-black uppercase tracking-[0.3em] text-[10px] mb-2 block">Get started</span>
+                                <h2 className="font-nunito text-2xl font-black text-[#1A2E35] mb-2 leading-tight">
+                                    Inquiry Form
+                                </h2>
+                                <div className="w-10 h-1 bg-[#00735C] rounded-full" />
                             </div>
-                        </motion.div>
+
+                            <div className="w-full">
+                                <DonateForm />
+                            </div>
+                        </div>
                     </div>
-                )}
-            </AnimatePresence>
+                </div>
+            )}
         </>
     );
 }

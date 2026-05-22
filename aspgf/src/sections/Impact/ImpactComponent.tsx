@@ -74,7 +74,7 @@ export default function ImpactComponent() {
           {/* Section Header */}
           <div className="mb-12">
             <p
-              className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold italic mb-2 px-1 text-left"
+              className="font-caveat text-xl md:text-2xl text-[#6f7775] font-bold mb-2 px-1 text-left"
             >
               Words of reality
             </p>

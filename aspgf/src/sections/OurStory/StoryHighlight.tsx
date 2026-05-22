@@ -1,19 +1,19 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Heart } from "lucide-react";
 
 export default function StoryHighlight() {
+  const { ref, isIntersecting } = useIntersectionObserver({ rootMargin: "-100px" });
+
   return (
-    <section className="relative z-10 w-full bg-[#0A2520] text-white py-24 md:py-32 px-6">
+    <section ref={ref} className="relative z-10 w-full bg-[#0A2520] text-white py-24 md:py-32 px-6">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          className="flex flex-col items-center text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+        <div
+          className={`flex flex-col items-center text-center transition-all duration-[1000ms] ease-out ${
+            isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]"
+          }`}
         >
           <Heart className="w-10 h-10 text-[#00b874] mb-8 fill-[#00b874]" />
           <h3 className="font-caveat text-[#00b874] text-3xl md:text-5xl mb-6">
@@ -31,7 +31,7 @@ export default function StoryHighlight() {
               "Witnessing those tears of joy  -  that single moment made us realize this small decision could change countless lives."
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

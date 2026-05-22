@@ -1,11 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { BookMarked } from "lucide-react";
 
 export default function StoryHero() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 px-6">
       <div className="absolute inset-0 z-0">
@@ -19,11 +24,10 @@ export default function StoryHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/80 via-[#FAF9F6]/40 to-[#FAF9F6]" />
       </div>
 
-      <motion.div
-        className="relative z-10 max-w-3xl text-center flex flex-col items-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+      <div
+        className={`relative z-10 max-w-3xl text-center flex flex-col items-center transition-all duration-[1200ms] ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]"
+        }`}
       >
         <BookMarked className="w-12 h-12 text-[#00735C] mb-6 opacity-80" />
         <p className="font-caveat text-[#00b874] text-3xl md:text-4xl mb-4 font-bold tracking-wider">
@@ -47,7 +51,7 @@ export default function StoryHero() {
             <path d="M12 4v32M6 28l6 8 6-8" />
           </svg>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

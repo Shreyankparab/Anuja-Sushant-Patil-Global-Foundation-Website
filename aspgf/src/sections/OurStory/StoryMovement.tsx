@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { BookOpen, Backpack, Users, Sprout } from "lucide-react";
 
 const stats = [
@@ -12,8 +12,10 @@ const stats = [
 ];
 
 export default function StoryMovement() {
+  const { ref, isIntersecting } = useIntersectionObserver({ rootMargin: "-50px" });
+
   return (
-    <section className="relative z-10 max-w-5xl mx-auto px-6 py-24 md:py-32">
+    <section ref={ref} className="relative z-10 max-w-5xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-20">
         <p className="font-caveat text-[#00735C] text-3xl md:text-4xl mb-4 font-bold">
           From one act to many
@@ -27,13 +29,12 @@ export default function StoryMovement() {
         {stats.map((item, i) => {
           const Icon = item.icon;
           return (
-            <motion.div
+            <div
               key={i}
-              className="flex gap-6 group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              className={`flex gap-6 group transition-all duration-[600ms] ease-out ${
+                isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]"
+              }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
               <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white border border-[#00735C]/20 flex items-center justify-center text-[#00735C] group-hover:bg-[#00735C] group-hover:text-white group-hover:scale-110 transition-all shadow-sm">
                 <Icon size={28} strokeWidth={1.5} />
@@ -42,8 +43,8 @@ export default function StoryMovement() {
                 <h4 className="font-nunito text-xl font-bold text-[#0A2520] mb-2">{item.title}</h4>
                 <p className="font-cabin text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
-            </motion.div>
-          )
+            </div>
+          );
         })}
       </div>
     </section>
