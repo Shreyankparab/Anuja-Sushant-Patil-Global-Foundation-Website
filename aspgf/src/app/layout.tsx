@@ -83,9 +83,9 @@ export const metadata: Metadata = {
     images: ["/images/aspgf-logo.png"],
   },
   icons: {
-    icon: "/images/home-page/simple-peacock.svg",
-    shortcut: "/images/home-page/simple-peacock.svg",
-    apple: "/images/home-page/simple-peacock.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   }
 };
 
